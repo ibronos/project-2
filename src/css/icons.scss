@@ -13,12 +13,34 @@
 	}
 
 	$icons: (
-		(caret_down, 20, 10),
+		(arrow_right, 15, 10),
+		(arrow_left, 15, 10),
+		(caret_down, 11, 8),
 		(chevron_left, 20, 20),
 		(chevron_right, 20, 20),
-		(close, 20, 20),
-		(logo, 33, 20),
-		(search, 20, 20)
+		(clock, 12, 12),
+		(close, 30, 30),
+		(email, 14, 11),
+		(expand, 5, 12),
+		(facebook, 19, 19),
+		(flickr, 19, 9),
+		(grid, 15, 15),
+		(home, 12, 12),
+		(instagram, 19, 19),
+		(link, 18, 18),
+		(linkedin, 19, 19),
+		(logo, 155, 33),
+		(marker, 9, 13),
+		(menu, 30, 17),
+		(pause, 12, 12),
+		(phone, 15, 15),
+		(play, 12, 12),
+		(printer, 14, 14),
+		(quote, 14, 10),
+		(search, 19, 21),
+		(stretcher, 20, 20),
+		(twitter, 19, 16),
+		(youtube, 19, 14)
 	);
 
 	@each $label, $w, $h in $icons {

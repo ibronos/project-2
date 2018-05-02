@@ -5,7 +5,7 @@
   "author": "Fastspot",
   "repository": {
     "type": "git",
-    "url": "url"
+    "url": "https://github.com/Fastspot/trinity-biggie.git"
   },
   "urls": [
     {
@@ -22,9 +22,9 @@
     }
   ],
   "vars": {
-    "namespace": "fs",
-    "name": "Client Name",
-    "domain": "www.example.com",
+    "namespace": "trinity",
+    "name": "Trinity College",
+    "domain": "http://www.trincoll.edu/Pages/default.aspx",
     "description": "",
     "schemaType": "Organization",
     "twitter": "TwitterName",
@@ -165,14 +165,35 @@
   "links": {
     "mainNav": [
       {
-        "name": "Main Link",
+        "name": "Admissions & Aid",
         "children": [
           "One Child",
           "Two Child"
         ]
       },
       {
-        "name": "Main Link",
+        "name": "Academics",
+        "children": [
+          "One Child",
+          "Two Child"
+        ]
+			},
+      {
+        "name": "Student Life",
+        "children": [
+          "One Child",
+          "Two Child"
+        ]
+      },
+      {
+        "name": "About",
+        "children": [
+          "One Child",
+          "Two Child"
+        ]
+      },
+      {
+        "name": "Athletics",
         "children": [
           "One Child",
           "Two Child"
@@ -182,20 +203,33 @@
     "secondaryNav": [
       {
         "modifier": "",
-        "name": "Secondary Link",
+        "name": "News",
         "children": ""
       },
       {
         "modifier": "",
-        "name": "Secondary Link",
+        "name": "Events",
         "children": ""
       }
     ],
-    "utilityNav": [],
-    "quickNav": [],
+    "utilityNav": [
+			"Apply",
+			"Visit",
+			"Contact",
+			"Give"
+		],
+    "quickNav": [
+			"Current Student",
+			"Alumni",
+			"Faculty",
+			"Staff"
+		],
     "footerNav": [
-      "Footer Link",
-      "Footer Link"
+      "Inclusion",
+			"Campus Map",
+			"Employment",
+			"People Directory",
+			"Department Directory"
     ],
     "socialNav": [
       {
@@ -212,12 +246,6 @@
       },
       {
         "modifier": "",
-        "icon": "instagram",
-        "name": "Instagram",
-        "href": "//www.instagram.com"
-      },
-      {
-        "modifier": "",
         "icon": "youtube",
         "name": "Youtube",
         "href": "//www.youtube.com"
@@ -227,6 +255,18 @@
         "icon": "linkedin",
         "name": "Linkedin",
         "href": "//www.linkedin.com"
+      },
+      {
+        "modifier": "",
+        "icon": "instagram",
+        "name": "Instagram",
+        "href": "//www.instagram.com"
+      },
+      {
+        "modifier": "",
+        "icon": "flickr",
+        "name": "Flickr",
+        "href": "//www.flickr.com"
       }
     ],
     "subNav": [
@@ -283,21 +323,38 @@
     ]
   },
   "colors": {
+    "brand": {
+      "navy": "#003473",
+			"yellow": "#FFD600"
+    },
     "primary": {
-      "black": "#000",
-      "white": "#fff",
-      "jade": "#187B79"
+      "blue": "#1573DD",
+			"frog": "#43FD71",
+			"leaf": "#CAFF00",
+			"bee": "#FFE300"
     },
     "secondary": {
-      "blue": "#006bc0",
-      "red": "#D31243"
-    }
+      "sea": "#2AC6CA",
+			"forest": "#35C85A",
+			"mute": "#33545C",
+			"toad": "#4F775F",
+			"fog": "#844D5A",
+			"plum": "#44164E",
+			"jazz": "#AD2880",
+			"fire": "#F8485E"
+		},
+		"neutral": {
+			"dark": "#0F0F11",
+			"mist": "#766F67",
+			"beige": "#EAE5DF",
+			"gray": "#F5F7F9"
+		}
   },
   "fontsService": "fonts.com",
   "fonts": [
     {
-      "name": "Futura",
-      "reference": "Futura",
+      "name": "Unit Offc Pro",
+      "reference": "Unit Offc Pro",
       "weights": [
         {
           "value": "bold"
@@ -308,8 +365,8 @@
       ]
     },
     {
-      "name": "Avenir",
-      "reference": "Avenir",
+      "name": "Meta Serif Offc Pro",
+      "reference": "Meta Serif Offc Pro",
       "weights": [
         {
           "value": "bold"

@@ -2,10 +2,47 @@
 	Colors
 ============================================================================= */
 
-$black: #222;
+$navy: #003473;
+$yellow: #FFD600;
+
+$blue: #1573DD;
+$frog: #43FD71;
+$leaf: #CAFF00;
+$bee: #FFE300;
+
+$sea: #2AC6CA;
+$forest: #35C85A;
+$mute: #33545C;
+$toad: #4F775F;
+$fog: #844D5A;
+$plum: #44164E;
+$jazz: #AD2880;
+$fire: #F8485E;
+
+$dark: #0F0F11;
+$mist: #766F67;
+$beige: #EAE5DF;
+$gray: #F5F7F9;
 
 $theme_colors: (
-	(black, $black)
+	(navy, $navy),
+	(yellow, $yellow),
+	(blue, $blue),
+	(frog, $frog),
+	(leaf, $leaf),
+	(bee, $bee),
+	(sea, $sea),
+	(forest, $forest),
+	(mute, $mute),
+	(toad, $toad),
+	(fog, $fog),
+	(plum, $plum),
+	(jazz, $jazz),
+	(fire, $fire),
+	(dark, $dark),
+	(mist, $mist),
+	(beige, $beige),
+	(gray, $gray)
 );
 
 $gray_10: #EAEAEA;

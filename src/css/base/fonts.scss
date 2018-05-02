@@ -17,7 +17,18 @@
 	}
 }
 
-@mixin family($weight: 400) {
-	font-family: "font_family_name", sans-serif;
+@mixin u($weight: null) {
+
+	@if $weight == 300 {
+		font-family: "Unit Offc W10 Light", sans-serif;
+	} @elseif $weight == 500 {
+		font-family: "Unit Offc W10 Medium", sans-serif;
+	} @elseif $weight == 700 {
+		font-family: "Unit Offc W10 Bold", sans-serif;
+	}
+}
+
+@mixin m($weight: null) {
+	font-family: "Meta Serif Offc Pro";
 	font-weight: $weight;
 }

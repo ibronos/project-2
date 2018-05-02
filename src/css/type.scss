@@ -3,61 +3,108 @@
 ============================================================================= */
 
 @mixin h1() {
-	font-size: 30px;
-	line-height: (70 / 60);
+	@include u(300);
 
-	@media #{$min_md} {
+	font-size: 40px;
+	line-height: (70 / 40);
+
+	@media #{$min_lg} {
 		font-size: 60px;
+		line-height: (80 / 60);
+	}
+
+	@media #{$min_xl} {
+		font-size: 80px;
+		line-height: (100 / 80);
 	}
 }
 
 @mixin h2() {
-	font-size: 26px;
-	line-height: (60 / 50);
+	@include u(700);
+
+	font-size: 32px;
+	line-height: (46 / 32);
 
 	@media #{$min_md} {
-		font-size: 50px;
+		font-size: 34px;
+		line-height: (48 / 34);
 	}
 }
 
 @mixin h3() {
-	font-size: 24px;
-	line-height: (50 / 40);
+	@include u(700);
+
+	font-size: 28px;
+	line-height: (44 / 28);
 
 	@media #{$min_md} {
-		font-size: 40px;
+		font-size: 32px;
+		line-height: (46 / 32);
 	}
 }
 
 @mixin h4() {
-	font-size: 22px;
-	line-height: (40 / 30);
+	@include u(700);
+
+	font-size: 24px;
+	line-height: (34 / 24);
 
 	@media #{$min_md} {
-		font-size: 30px;
+		font-size: 28px;
+		line-height: (44 / 28);
 	}
 }
 
 @mixin h5() {
-	font-size: 20px;
-	line-height: (30 / 20);
+	@include m(700);
+
+	font-size: 24px;
+	line-height: (34 / 24);
 }
 
 @mixin h6() {
-	font-size: 16px;
-	line-height: (24 / 16);
+	@include u(500);
+
+	font-size: 18px;
+	letter-spacing: 1px;
+	line-height: (24 / 18);
+	text-transform: uppercase;
 }
 
-@mixin intro_text() {}
+@mixin intro_text() {
+	@include u(300);
+
+	font-size: 24px;
+	line-height: (40 / 24);	
+
+	@media #{$min_md} {
+		font-size: 32px;
+		line-height: (48 / 32);
+	}
+}
 
 @mixin body_text() {
-	font-size: 16px;
-	line-height: (24 / 16);
+	@include u(300);
+
+	font-size: 20px;
+	line-height: (32 / 20);
+
+	@media #{$min_md} {
+		font-size: 24px;
+		line-height: (40 / 24);	
+	}
 }
 
-@mixin label_text() {}
+@mixin label_text() {
+	@include u(300);
+
+	font-size: 20px;
+	line-height: (32 / 20);
+}
 
 @mixin caption_text() {
+	@include u(300);
+
 	font-size: 14px;
 	line-height: (22 / 14);
 }

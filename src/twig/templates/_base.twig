@@ -123,34 +123,19 @@
 										modifier: "header",
 										icon: "logo"
 									} %}
-
-									{% include "../partials/navigation/main.twig" with {
-										modifier: "lg",
-										title: "Site Navigation",
-										links: mainNavAlias,
-										active: activePage
-									} %}
-
-									{% include "../partials/navigation/basic.twig" with {
-										class: "secondary_nav",
-										modifier: "lg",
-										title: "Secondary Navigation",
-										links: secondaryNavAlias
-									} %}
-
+									
 									<div class="header_group">
+										{% include "../partials/navigation/basic.twig" with {
+											class: "utility_nav",
+											modifier: "lg",
+											title: "Utility Navigation",
+											links: utilityNavAlias
+										} %}
+
 										{% include "../partials/handle.twig" with {
 											class: "mobile_sidebar",
 											modifier: "primary",
 											label: "Menu"
-										} %}
-
-										{% include "../partials/search-handle.twig" %}
-
-										{% include "../partials/search.twig" with {
-											modifier: "lg",
-											placeholder: "Search",
-											buttonText: "Submit Search Query"
 										} %}
 									</div>
 								</div>
@@ -253,31 +238,50 @@
 					<div class="fs-row">
 						<div class="fs-cell">
 							<div class="footer_ribbon_inner">
-								{% include "../partials/logo.twig" with {
-									modifier: "footer",
-									icon: "logo"
-								} %}
+								<div class="footer_ribbon_group">
+									<div class="footer_group">
+										{% include "../partials/logo.twig" with {
+											modifier: "footer",
+											icon: "logo"
+										} %}
 
-								{% include "../partials/address.twig" with {
-									name: "Fastspot",
-									street: "2980 Falls Road",
-									city: "Baltimore",
-									state: "MD",
-									zip: "21211",
-									tel: "202-432-1200"
-								} %}
+										{% include "../partials/address.twig" with {
+											name: "Trinity College",
+											street: "300 Summit Street",
+											city: "Hartford",
+											state: "CT",
+											zip: "06106",
+											tel: "(860) 297-2000"
+										} %}
+									</div>
+								</div>
 
-								{% include "../partials/navigation/basic.twig" with {
-									class: "footer_nav",
-									title: "Footer Navigation",
-									links: footerNavAlias
-								} %}
+								<div class="footer_ribbon_group">
+									<div class="footer_group">
+										{% include "../partials/navigation/social.twig" with {
+											title: "Social Navigation",
+											links: socialNavAlias
+										} %}
 
-								{% include "../partials/navigation/social.twig" with {
-									title: "Social Navigation",
-									links: socialNavAlias
-								} %}
+										{% include "../partials/navigation/basic.twig" with {
+											class: "quick_nav",
+											title: "Quick Navigation",
+											links: quickNavAlias
+										} %}
+									</div>
+								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer_sole">
+					<div class="fs-row">
+						<div class="fs-cell">
+							{% include "../partials/navigation/basic.twig" with {
+								class: "footer_nav",
+								title: "Footer Navigation",
+								links: footerNavAlias
+							} %}
 						</div>
 					</div>
 				</div>

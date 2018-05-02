@@ -1,0 +1,28 @@
+/* ==========================================================================
+	Quick Navigation Common
+============================================================================= */
+
+.quick_nav {}
+
+.quick_nav_header {}
+
+.quick_nav_title {
+	@include visually_hide;
+}
+
+
+// Seconadry Links
+// =============================================================================
+
+.quick_nav_list {}
+
+.quick_nav_item {}
+
+.quick_nav_link {
+	display: block;
+
+	&:focus,
+	&:hover {}
+}
+
+.quick_nav_link_label {}

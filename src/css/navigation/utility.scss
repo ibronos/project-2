@@ -1,0 +1,28 @@
+/* ==========================================================================
+	Utility Navigation Common
+============================================================================= */
+
+.utility_nav {}
+
+.utility_nav_header {}
+
+.utility_nav_title {
+	@include visually_hide;
+}
+
+
+// Seconadry Links
+// =============================================================================
+
+.utility_nav_list {}
+
+.utility_nav_item {}
+
+.utility_nav_link {
+	display: block;
+
+	&:focus,
+	&:hover {}
+}
+
+.utility_nav_link_label {}
