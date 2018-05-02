@@ -1,0 +1,44 @@
+/* ==========================================================================
+	Pagination
+============================================================================= */
+
+.pagination {
+
+	@media print {
+		display: none;
+	}
+}
+
+.pagination_arrow {
+	position: relative;
+
+	&:focus:not(.pagination_arrow_disabled),
+	&:hover:not(.pagination_arrow_disabled) {}
+
+	&_disabled {}
+
+	&_label {}
+
+	&_icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		transform: translate(-50%, -50%);
+	}
+}
+
+.pagination_nav {}
+
+.pagination_link {
+	display: inline-block;
+	padding: 4px;
+	vertical-align: middle;
+
+	&:focus,
+	&:hover {}
+
+	&.active {}
+}
+
+.pagination_more {}
