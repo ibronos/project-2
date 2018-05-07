@@ -4,6 +4,11 @@
 
 .social_nav {
 	margin: 0 -10px 38px;
+
+	@media #{$min_lg} {
+		margin: 0 -20px 0;
+		order: 2;
+	}
 }
 
 .social_nav_header {}
@@ -31,11 +36,21 @@
 	display: block;
 	padding: 10px;
 
+	@media #{$min_lg} {
+		padding: 21px 22px 20px;
+	}
+
 	&:focus,
 	&:hover {}
 }
 
-.social_nav_icon {}
+.social_nav_icon {
+	display: block;
+
+	@media #{$min_lg} {
+		transform: scale(1.25);
+	}
+}
 
 .social_nav_label {
 	@include visually_hide;

@@ -4,6 +4,10 @@
 
 .footer_nav {
 	padding: 13px 0;
+
+	@media #{$min_lg} {
+		padding: 0;
+	}
 }
 
 .footer_nav_header {}
@@ -16,9 +20,28 @@
 // Footer Links
 // =============================================================================
 
-.footer_nav_list {}
+.footer_nav_list {
+	
+	@media #{$min_sm} {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-.footer_nav_item {}
+	@media #{$min_lg} {
+		justify-content: space-between;
+	}
+}
+
+.footer_nav_item {
+
+	@media #{$min_sm} {
+		width: 50%;
+	}
+
+	@media #{$min_lg} {
+		width: auto;
+	}
+}
 
 .footer_nav_link {
 	@include u(400);
@@ -31,6 +54,15 @@
 	padding: 8px 0 7px;
 	text-transform: uppercase;
 	transition: color .25s;
+
+	@media #{$min_lg} {
+		padding: 21px 0;
+	}
+
+	@media #{$min_xl} {
+		font-size: 16px;
+		padding: 18px 0;
+	}
 
 	&:focus,
 	&:hover {}

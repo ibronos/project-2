@@ -239,39 +239,35 @@
 						<div class="fs-cell">
 							<div class="footer_ribbon_inner">
 								<div class="footer_ribbon_group">
-									<div class="footer_group">
-										{% include "../partials/logo.twig" with {
-											modifier: "footer",
-											icon: "logo"
-										} %}
+									{% include "../partials/logo.twig" with {
+										modifier: "footer",
+										icon: "logo"
+									} %}
 
-										{% include "../partials/address.twig" with {
-											name: "Trinity College",
-											street: "300 Summit Street, ",
-											city: "Hartford",
-											state: "CT",
-											zip: "06106",
-											tel: "(860) 297-2000"
-										} %}
-									</div>
+									{% include "../partials/address.twig" with {
+										name: "Trinity College",
+										street: "300 Summit Street, ",
+										city: "Hartford",
+										state: "CT",
+										zip: "06106",
+										tel: "(860) 297-2000"
+									} %}
 								</div>
 
 								<div class="footer_ribbon_group">
-									<div class="footer_group">
-										{% include "../partials/navigation/social.twig" with {
-											title: "Social Navigation",
-											links: socialNavAlias
-										} %}
+									{% include "../partials/navigation/social.twig" with {
+										title: "Social Navigation",
+										links: socialNavAlias
+									} %}
 
-										<div class="quick_nav_wrapper">
-											<header class="quick_nav_header">
-												<h2 class="quick_nav_title">Information For</h2>
-											</header>
-											{% include "../partials/navigation/basic.twig" with {
-												class: "quick_nav",
-												links: quickNavAlias
-											} %}
-										</div>
+									<div class="quick_nav_wrapper">
+										<header class="quick_nav_header">
+											<h2 class="quick_nav_title">Information For</h2>
+										</header>
+										{% include "../partials/navigation/basic.twig" with {
+											class: "quick_nav",
+											links: quickNavAlias
+										} %}
 									</div>
 								</div>
 							</div>

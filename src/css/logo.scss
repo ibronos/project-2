@@ -7,6 +7,10 @@
 
 	&_footer {
 		margin-bottom: 17px;
+
+		@media #{$min_lg} {
+			margin-bottom: 0;
+		}
 	}
 }
 
@@ -39,9 +43,18 @@
 
 .icon_logo {
 
+	.logo_header & {
+		color: $navy;
+	}
+
 	.logo_footer & {
 		height: 59px;
 		width: 279px;
+
+		@media #{$min_lg} {
+			height: 61px;
+			width: 290px;
+		}
 	}
 }
 

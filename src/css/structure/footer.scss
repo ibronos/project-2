@@ -13,9 +13,56 @@
 .footer_ribbon {
 	background: $navy;
 	padding: 40px 0 38px;
+
+	@media #{$min_lg} {
+		padding: 60px 0 62px;
+	}
 }
 
-.footer_ribbon_inner {}
+.footer_ribbon_inner {
+	max-width: 320px;
+
+	margin: 0 auto;
+
+	@media #{$min_md} #{$and_max_lg} {
+		max-width: inherit;
+
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@media #{$min_lg} {
+		max-width: inherit;
+	}
+}
+
+.footer_ribbon_group {
+
+	@media #{$min_md} #{$and_max_lg} {
+		width: 300px;
+	}
+
+	@media #{$min_lg} {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&:first-child {
+
+		@media #{$min_lg} {
+			border-bottom: 2px solid $yellow;
+			padding-bottom: 24px;
+		}
+	}
+
+	&:last-child {
+
+		@media #{$min_lg} {
+			padding-top: 12px;
+		}
+	}
+}
 
 .footer_sole {
 	background: #fff;
@@ -32,6 +79,15 @@
 	font-size: 16px;
 	line-height: (26 / 16);
 	margin-bottom: 7px;
+
+	@media #{$min_md} {
+		margin-bottom: 0;
+	}
+
+	@media #{$min_xl} {
+		font-size: 18px;
+		line-height: (24 / 18);
+	}
 }
 
 .footer_address_name {
@@ -52,6 +108,26 @@
 	color: inherit;
 	display: block;
 	margin-top: 8px;
+
+	@media #{$min_lg} {
+		display: inline-block;
+		margin-top: 0;
+	}
+
+	&:before {
+		
+		@media #{$min_lg} {
+			color: $yellow;
+			content: "•";
+			display: inline-block;
+			margin: 0 10px;
+		}
+
+		@media #{$min_xl} {
+			font-size: 16px;
+			margin: 0 20px;
+		}
+	}
 }
 
 .footer_address_icon {}
