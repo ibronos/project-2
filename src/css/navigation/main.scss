@@ -3,7 +3,8 @@
 ============================================================================= */
 
 .main_nav {
-
+	margin-bottom: 20px;
+	
 	&.main_nav_lg {
 
 		@media #{$max_lg} {
@@ -19,6 +20,7 @@
 .main_nav_list {}
 
 .main_nav_item {
+	border-bottom: 1px solid rgba(#fff, .3);
 
 	.main_nav_sm & {
 
@@ -56,7 +58,12 @@
 }
 
 .main_nav_link {
+	@include m(700);
+
+	color: #fff;
 	display: inline-block;
+	font-size: 22px;
+	padding: 22px 0 21px;
 	vertical-align: top;
 
 	.main_nav_item.focused &,
@@ -93,10 +100,11 @@
 .main_nav_toggle_icon {
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	right: 0;
 
-	transform: translate(-50%, -50%);
-	transition: transform $base_speed;
+	color: $yellow;
+	transform: translate(0, -50%);
+	transition: transform .25s;
 
 	.fs-swap-active & {}
 }

@@ -14,7 +14,57 @@
 	}
 }
 
-.mobile_sidebar_handle {}
+.mobile_sidebar_handle {
+	height: 60px;
+	width: 60px;
+
+	background: $navy;
+	display: flex;
+}
+
+.mobile_sidebar_handle_icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	color: $yellow;
+	transition: transform .25s;
+
+	&_open {
+		margin-top: 1px;
+		margin-left: -1px;
+
+		transform: 
+			translate(-50%, -50%)
+			scale(1);
+
+		.fs-swap-active & {
+			transform: 
+				translate(-50%, -50%)
+				scale(0);
+		}
+	}
+
+	&_close {
+		stroke: $yellow;
+		transform: 
+			translate(-50%, -50%)
+			scale(0);
+
+		.fs-swap-active & {
+			transform: 
+				translate(-50%, -50%)
+				scale(1);
+		}
+	}
+}
+
+.mobile_sidebar_handle_label {
+	
+	@media #{$max_lg} {
+		@include visually_hide;
+	}
+}
 
 
 // Sidebar
@@ -23,26 +73,25 @@
 .mobile_sidebar {
 	@include focus_outline_none;
 
-	background: #fff;
+	width: 100%;
+	max-width: 320px;
+	height: calc(100% - 60px);
 
-	.js & {
-		width: 100%;
-		max-width: 320px;
-		height: 100%;
+	position: fixed;
+	top: 60px;
+	right: 0;
+	z-index: 400;
 
-		position: fixed;
-		top: 0;
-		right: 0;
-		z-index: 400;
-
-		opacity: 0;
-		overflow-y: auto;
-		visibility: hidden;
-		transition:
-			opacity .35s,
-			transform .35s,
-			visibility .35s;
-	}
+	background: $navy;
+	display: block;
+	opacity: 0;
+	overflow-y: auto;
+	padding: 14px 24px 100px 24px;
+	visibility: hidden;
+	transition:
+		opacity .35s,
+		transform .35s,
+		visibility .35s;
 
 	@media print {
 		display: none;

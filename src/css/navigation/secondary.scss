@@ -27,7 +27,14 @@
 .secondary_nav_item {}
 
 .secondary_nav_link {
+	@include u(500);
+
+	color: $yellow;
 	display: block;
+	font-size: 14px;
+	letter-spacing: 1.6px;
+	padding: 10px 0;
+	text-transform: uppercase;
 
 	&:focus,
 	&:hover {}

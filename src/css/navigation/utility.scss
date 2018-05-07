@@ -2,7 +2,13 @@
 	Utility Navigation Common
 ============================================================================= */
 
-.utility_nav {}
+.utility_nav {
+	display: none;
+
+	@media #{$min_lg} {
+		display: block;
+	}
+}
 
 .utility_nav_header {}
 

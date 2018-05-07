@@ -3,8 +3,15 @@
 ============================================================================= */
 
 .header {
-	background: #eee;
-	padding: 20px 0;
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 800;
+
+	background: #fff;
+	padding: 13px 0;
 
 	@media print {
 		display: none;
@@ -15,4 +22,8 @@
 
 .header_ribbon_inner {}
 
-.header_group {}
+.header_group {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
