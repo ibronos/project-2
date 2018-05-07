@@ -3995,6 +3995,10 @@ button {
 
 .logo_header .icon_logo {
   color: #003473; }
+  @media screen and (min-width: 740px) {
+    .logo_header .icon_logo {
+      height: 48px;
+      width: 229px; } }
 
 .logo_footer .icon_logo {
   height: 59px;
@@ -4039,6 +4043,9 @@ button {
 .site_search {
   position: relative;
   border-bottom: 3px solid #FFD600; }
+  @media screen and (min-width: 740px) {
+    .site_search {
+      border-bottom-width: 5px; } }
 
 .site_search_label {
   width: 1px;
@@ -4074,6 +4081,11 @@ button {
   [data-whatinput="mouse"] .site_search_input:focus,
   [data-whatinput="touch"] .site_search_input:focus {
     outline: none; }
+  @media screen and (min-width: 740px) {
+    .site_search_input {
+      font-size: 20px;
+      font-size: 1.25rem;
+      padding: 23px 50px 24px 0; } }
   .site_search_input::-webkit-input-placeholder {
     color: #F5F7F9;
     text-overflow: ellipsis; }
@@ -4122,6 +4134,12 @@ button {
   pointer-events: none;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%); }
+  @media screen and (min-width: 740px) {
+    .site_search_button_icon {
+      -webkit-transform-origin: right center;
+              transform-origin: right center;
+      -webkit-transform: translate(0, -50%) scale(1.5);
+              transform: translate(0, -50%) scale(1.5); } }
 
 /* ==========================================================================
    Google Search Results
@@ -4312,15 +4330,22 @@ button {
   left: 0;
   z-index: 800;
   background: #fff;
-  padding: 13px 0; }
+  -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  padding: 14px 0 12px; }
   @media print {
     .header {
       display: none; } }
+  @media screen and (min-width: 740px) {
+    .header {
+      padding: 19px 0 15px; } }
 
 .header_group {
   position: absolute;
-  top: 0;
-  right: 0; }
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%); }
 
 /* ==========================================================================
 	Mobile Sidebar
@@ -4341,6 +4366,10 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  @media screen and (min-width: 740px) {
+    .mobile_sidebar_handle {
+      height: 82px;
+      width: 82px; } }
 
 .mobile_sidebar_handle_icon {
   position: absolute;
@@ -4387,7 +4416,7 @@ button {
 
 .mobile_sidebar {
   width: 100%;
-  max-width: 320px;
+  max-width: 720px;
   height: calc(100% - 60px);
   position: fixed;
   top: 60px;
@@ -4409,6 +4438,9 @@ button {
   @media print {
     .mobile_sidebar {
       display: none; } }
+  @media screen and (min-width: 740px) {
+    .mobile_sidebar {
+      padding: 62px 80px 100px 80px; } }
   .mobile_sidebar.fs-swap-active {
     opacity: 1;
     visibility: visible; }
@@ -4426,8 +4458,6 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
-  .fs-mobile-lock .page_wrapper {
-    pointer-events: none; }
 
 .page_inner {
   -webkit-box-flex: 1;
@@ -4573,6 +4603,9 @@ button {
 ============================================================================= */
 .main_nav {
   margin-bottom: 20px; }
+  @media screen and (min-width: 740px) {
+    .main_nav {
+      margin-bottom: 29px; } }
   @media screen and (max-width: 979px) {
     .main_nav.main_nav_lg {
       display: none; } }
@@ -4593,12 +4626,18 @@ button {
 .main_nav_link {
   font-family: "Meta Serif W01 Bold";
   font-weight: 400;
+  width: calc(100% - 50px);
   color: #fff;
-  display: inline-block;
+  display: block;
   font-size: 22px;
   font-size: 1.375rem;
-  padding: 22px 0 21px;
+  padding: 20px 0 25px;
   vertical-align: top; }
+  @media screen and (min-width: 740px) {
+    .main_nav_link {
+      font-size: 34px;
+      font-size: 2.125rem;
+      padding: 28px 0 33px; } }
 
 .no-js .main_nav_toggle {
   display: none; }
@@ -4636,23 +4675,52 @@ button {
   top: 50%;
   right: 0;
   color: #FFD600;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%) rotateX(0);
+          transform: translate(0, -50%) rotateX(0);
   -webkit-transition: -webkit-transform .25s;
   transition: -webkit-transform .25s;
   transition: transform .25s;
   transition: transform .25s, -webkit-transform .25s; }
+  @media screen and (min-width: 740px) {
+    .main_nav_toggle_icon {
+      -webkit-transform-origin: right center;
+              transform-origin: right center;
+      -webkit-transform: translate(0, -50%) scale(1.5) rotateX(0);
+              transform: translate(0, -50%) scale(1.5) rotateX(0); } }
+  .main_nav_item.fs-swap-active .main_nav_toggle_icon {
+    -webkit-transform: translate(0, -50%) rotateX(180deg);
+            transform: translate(0, -50%) rotateX(180deg); }
+    @media screen and (min-width: 740px) {
+      .main_nav_item.fs-swap-active .main_nav_toggle_icon {
+        -webkit-transform: translate(0, -50%) scale(1.5) rotateX(180deg);
+                transform: translate(0, -50%) scale(1.5) rotateX(180deg); } }
 
-.main_nav_lg .main_nav_children {
-  position: absolute;
-  display: block;
-  opacity: 0;
-  -webkit-transition: opacity 0.25s, visibility 0.25s;
-  transition: opacity 0.25s, visibility 0.25s;
-  visibility: hidden; }
+.main_nav_children {
+  padding-bottom: 25px; }
+  @media screen and (min-width: 740px) {
+    .main_nav_children {
+      padding-bottom: 33px; } }
+  .main_nav_lg .main_nav_children {
+    position: absolute;
+    display: block;
+    opacity: 0;
+    -webkit-transition: opacity 0.25s, visibility 0.25s;
+    transition: opacity 0.25s, visibility 0.25s;
+    visibility: hidden; }
 
 .main_nav_child_link {
-  display: block; }
+  font-weight: 400;
+  font-family: "Unit Offc W01 Regular", sans-serif;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 11px 20px; }
+  @media screen and (min-width: 740px) {
+    .main_nav_child_link {
+      font-size: 20px;
+      font-size: 1.25rem;
+      padding: 11px 20px 10px; } }
 
 /* ==========================================================================
 	Quick Navigation Common
@@ -4764,6 +4832,13 @@ button {
   letter-spacing: 0.1rem;
   padding: 10px 0;
   text-transform: uppercase; }
+  @media screen and (min-width: 740px) {
+    .secondary_nav_link {
+      font-size: 16px;
+      font-size: 1rem;
+      letter-spacing: 2.6px;
+      letter-spacing: 0.1625rem;
+      padding: 15px 0; } }
 
 /* ==========================================================================
 	Social Navigation

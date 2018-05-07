@@ -45,6 +45,11 @@
 
 	.logo_header & {
 		color: $navy;
+
+		@media #{$min_md} {
+			height: 48px;
+			width: 229px;
+		}
 	}
 
 	.logo_footer & {

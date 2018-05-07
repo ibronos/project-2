@@ -4,6 +4,10 @@
 
 .main_nav {
 	margin-bottom: 20px;
+
+	@media #{$min_md} {
+		margin-bottom: 29px;
+	}
 	
 	&.main_nav_lg {
 
@@ -60,11 +64,18 @@
 .main_nav_link {
 	@include m(700);
 
+	width: calc(100% - 50px);
+
 	color: #fff;
-	display: inline-block;
+	display: block;
 	font-size: 22px;
-	padding: 22px 0 21px;
+	padding: 20px 0 25px;
 	vertical-align: top;
+
+	@media #{$min_md} {
+		font-size: 34px;
+		padding: 28px 0 33px;
+	}
 
 	.main_nav_item.focused &,
 	.main_nav_item:focus &,
@@ -103,10 +114,31 @@
 	right: 0;
 
 	color: $yellow;
-	transform: translate(0, -50%);
+	transform: 
+		translate(0, -50%)
+		rotateX(0);
 	transition: transform .25s;
 
-	.fs-swap-active & {}
+	@media #{$min_md} {
+		transform-origin: right center;
+		transform: 
+			translate(0, -50%)
+			scale(1.5)
+			rotateX(0);
+	}
+
+	.main_nav_item.fs-swap-active & {
+		transform: 
+			translate(0, -50%)
+			rotateX(180deg);
+
+		@media #{$min_md} {
+			transform: 
+				translate(0, -50%)
+				scale(1.5)
+				rotateX(180deg);
+		}
+	}
 }
 
 
@@ -114,6 +146,11 @@
 // =============================================================================
 
 .main_nav_children {
+	padding-bottom: 25px;
+
+	@media #{$min_md} {
+		padding-bottom: 33px;
+	}
 
 	.main_nav_lg & {
 		position: absolute;
@@ -132,5 +169,15 @@
 .main_nav_child_item {}
 
 .main_nav_child_link {
+	@include u(400);
+
+	color: #fff;
 	display: block;
+	font-size: 16px;
+	padding: 11px 20px;
+
+	@media #{$min_md} {
+		font-size: 20px;
+		padding: 11px 20px 10px;
+	}
 }

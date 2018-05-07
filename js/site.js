@@ -733,7 +733,7 @@ Site.modules.Page = (function($, Site) {
 
 	function onDocumentClick() {
 		if ($("body").hasClass("fs-mobile-lock")) {
-			if (!$(event.target).closest(".js-mobile-sidebar").length) {
+			if (!$(event.target).closest(".js-mobile-sidebar, .js-mobile-sidebar-handle").length) {
 				$(".js-mobile-sidebar-handle").swap("deactivate");
 			}
 		}

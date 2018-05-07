@@ -20,6 +20,11 @@
 
 	background: $navy;
 	display: flex;
+
+	@media #{$min_md} {
+		height: 82px;
+		width: 82px;
+	}
 }
 
 .mobile_sidebar_handle_icon {
@@ -74,7 +79,7 @@
 	@include focus_outline_none;
 
 	width: 100%;
-	max-width: 320px;
+	max-width: 720px;
 	height: calc(100% - 60px);
 
 	position: fixed;
@@ -95,6 +100,10 @@
 
 	@media print {
 		display: none;
+	}
+
+	@media #{$min_md} {
+		padding: 62px 80px 100px 80px;
 	}
 
 	&.fs-swap-active {
