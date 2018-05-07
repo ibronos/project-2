@@ -247,7 +247,7 @@
 
 										{% include "../partials/address.twig" with {
 											name: "Trinity College",
-											street: "300 Summit Street",
+											street: "300 Summit Street, ",
 											city: "Hartford",
 											state: "CT",
 											zip: "06106",
@@ -263,11 +263,15 @@
 											links: socialNavAlias
 										} %}
 
-										{% include "../partials/navigation/basic.twig" with {
-											class: "quick_nav",
-											title: "Quick Navigation",
-											links: quickNavAlias
-										} %}
+										<div class="quick_nav_wrapper">
+											<header class="quick_nav_header">
+												<h2 class="quick_nav_title">Information For</h2>
+											</header>
+											{% include "../partials/navigation/basic.twig" with {
+												class: "quick_nav",
+												links: quickNavAlias
+											} %}
+										</div>
 									</div>
 								</div>
 							</div>

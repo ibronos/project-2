@@ -4,22 +4,58 @@
 
 .quick_nav {}
 
-.quick_nav_header {}
+.quick_nav_header {
+	align-items: center;
+	display: flex;
+
+	&:before,
+	&:after {
+		height: 1px;
+
+		flex: auto;
+
+		background: $yellow;
+		content: "";
+	}
+
+	&:before {
+		margin-right: 12px;
+	}
+
+	&:after {
+		margin-left: 12px;
+	}
+}
 
 .quick_nav_title {
-	@include visually_hide;
+	@include u(500);
+
+	color: #EAE5DF;
+	font-size: 12px;
+	letter-spacing: 2.3px;
+	margin: 0;
+	text-transform: uppercase;
 }
 
 
 // Seconadry Links
 // =============================================================================
 
-.quick_nav_list {}
+.quick_nav_list {
+	display: flex;
+	justify-content: space-between;
+}
 
 .quick_nav_item {}
 
 .quick_nav_link {
+	@include u(500);
+
+	color: #fff;
 	display: block;
+	font-size: 14px;
+	line-height: (24 / 14);
+	padding: 13px 0;
 
 	&:focus,
 	&:hover {}

@@ -4,6 +4,10 @@
 
 .logo {
 	margin: 0;
+
+	&_footer {
+		margin-bottom: 17px;
+	}
 }
 
 .logo_link {
@@ -25,9 +29,20 @@
 }
 
 .logo_link_icon {
-	color: #000;
 	display: inline-block;
 	vertical-align: top;
+
+	.logo_footer & {
+		color: #fff;
+	}
+}
+
+.icon_logo {
+
+	.logo_footer & {
+		height: 59px;
+		width: 279px;
+	}
 }
 
 .logo_print {

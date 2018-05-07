@@ -3,25 +3,40 @@
 ============================================================================= */
 
 .footer {
-	background: #eee;
-	padding: 20px 0;
-
+	text-align: center;
+	
 	@media print {
 		display: none;
 	}
 }
 
-.footer_ribbon {}
+.footer_ribbon {
+	background: $navy;
+	padding: 40px 0 38px;
+}
 
 .footer_ribbon_inner {}
+
+.footer_sole {
+	background: #fff;
+}
 
 
 // Address
 // =============================================================================
 
-.footer_address {}
+.footer_address {
+	@include u(500);
 
-.footer_address_name {}
+	color: #fff;
+	font-size: 16px;
+	line-height: (26 / 16);
+	margin-bottom: 7px;
+}
+
+.footer_address_name {
+	@include visually_hide;
+}
 
 .footer_address_street {}
 
@@ -35,6 +50,8 @@
 
 .footer_address_phone {
 	color: inherit;
+	display: block;
+	margin-top: 8px;
 }
 
 .footer_address_icon {}

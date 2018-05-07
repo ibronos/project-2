@@ -2,7 +2,9 @@
 	Footer Navigation
 ============================================================================= */
 
-.footer_nav {}
+.footer_nav {
+	padding: 13px 0;
+}
 
 .footer_nav_header {}
 
@@ -19,7 +21,16 @@
 .footer_nav_item {}
 
 .footer_nav_link {
+	@include u(400);
+
+	color: $navy;
 	display: block;
+	font-size: 12px;
+	letter-spacing: 1.8px;
+	line-height: (20 / 12);
+	padding: 8px 0 7px;
+	text-transform: uppercase;
+	transition: color .25s;
 
 	&:focus,
 	&:hover {}

@@ -2,7 +2,9 @@
 	Social Navigation
 ============================================================================= */
 
-.social_nav {}
+.social_nav {
+	margin: 0 -10px 38px;
+}
 
 .social_nav_header {}
 
@@ -14,14 +16,20 @@
 // Social Links
 // =============================================================================
 
-.social_nav_list {}
+.social_nav_list {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
 
 .social_nav_item {
 	display: inline-block;
 }
 
 .social_nav_link {
+	color: #fff;
 	display: block;
+	padding: 10px;
 
 	&:focus,
 	&:hover {}
