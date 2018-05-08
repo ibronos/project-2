@@ -1,8 +1,8 @@
 /* ==========================================================================
-	Quote
+	stat
 ============================================================================= */
 
-@mixin pair_theme_quote() {
+@mixin pair_theme_stat() {
 
 	@each $l, $c1, $c2, $t in $pair_theme_colors {
 		
@@ -17,23 +17,23 @@
 				border-left-color: $c1;
 			}
 
-			.quote_icon {
-				color: $c1;
-			}
-
-			.quote_body {
+			.stat_label {
 				color: $t;
+
+				&:after {
+					color: $c1;
+				}
 			}
 
-			.quote_cite {
+			.stat_body {
 				color: $t;
 			}
 		}
 	}
 }
 
-.quote {
-	@include pair_theme_quote;
+.stat {
+	@include pair_theme_stat;
 	@include margined_lg_top;
 	@include margined_xl_bottom;
 
@@ -87,11 +87,11 @@
 	}
 
 	&.theme_image:after {
-		border-color: $bee;
+		border-color: $frog;
 	}
 }
 
-.quote_background {
+.stat_background {
 	@include cover;
 
 	height: calc(100% + 10px);
@@ -122,14 +122,14 @@
 	}
 }
 
-.quote_inner {
+.stat_inner {
 	position: relative;
 	z-index: 4;
 
 	padding: 20px;
 }
 
-.quote_content {
+.stat_content {
 	padding: 20px 20px 0;
 
 	@media #{$min_md} {
@@ -137,46 +137,35 @@
 	}
 
 	@media #{$min_lg} {
-		padding: 90px 70px 60px;
+		padding: 45px 70px 27px;
 	}
 }
 
-.quote_icon {
-	display: inline-block;
-	margin-bottom: 10px;
-
-	@media #{$min_md} {
-		margin-bottom: 20px;
-		transform-origin: left top;
-		transform: scale(2);
-	}
-
-	@media #{$min_lg} {
-		margin-bottom: 33px;
-		transform: scale(2.85);
-	}
-
-	.theme_image & {
-		color: $bee;
-	}
-}
-
-.quote_body {
+.stat_label {
+	@include h1;
 	@include u(700);
 
-	font-size: 18px;
-	line-height: (28 / 18);
+	display: inline-block;
 
-	@media #{$min_md} {
-		font-size: 24px;
-		line-height: (38 / 24);
+	&:after {
+		height: 8px;
+		width: 50px;
+
+		background: currentColor;
+		content: "";
+		display: block;
+		margin: 18px 0 20px;
 	}
-
-	@media #{$min_lg} {
-		font-size: 28px;
-		line-height: (44 / 28);
+	
+	.theme_image & {
+		color: $frog;
 	}
+}
 
+.stat_body {
+	@include h3;
+	@include u(300);
+	
 	.theme_image & {
 		color: #fff;
 	}
@@ -184,40 +173,4 @@
 	p {
 		margin: 0;
 	}
-}
-
-.quote_cite {
-	display: block;
-	font-size: 16px;
-	font-style: normal;
-	letter-spacing: 1.5px;
-	margin-top: 20px;
-	text-transform: uppercase;
-
-	@media #{$min_md} {
-		font-size: 18px;	
-	}
-
-	@media #{$min_lg} {
-		font-size: 20px;
-		letter-spacing: 2px;
-		margin-top: 48px;
-	}
-
-	.theme_image & {
-		color: #fff;
-	}
-}
-
-.quote_cite_name {
-	@include u(300);
-
-	&:before {
-		content: "—";
-		margin-right: 7px;
-	}
-}
-
-.quote_cite_label {
-	@include u(700);
 }

@@ -5722,7 +5722,6 @@ button {
     position: absolute;
     top: 0;
     left: 10px;
-    background: red;
     content: ""; }
     @media screen and (min-width: 740px) {
       .quote:before {
@@ -5862,6 +5861,171 @@ button {
 .quote_cite_label {
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif; }
+
+/* ==========================================================================
+	stat
+============================================================================= */
+.stat {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  margin: 0; }
+  .stat.theme_yellow:before {
+    background: #FFFD00; }
+  .stat.theme_yellow:after {
+    border-bottom-color: #FFD600;
+    border-left-color: #FFD600; }
+  .stat.theme_yellow .stat_label {
+    color: #0F0F11; }
+    .stat.theme_yellow .stat_label:after {
+      color: #FFD600; }
+  .stat.theme_yellow .stat_body {
+    color: #0F0F11; }
+  .stat.theme_green:before {
+    background: #43FD71; }
+  .stat.theme_green:after {
+    border-bottom-color: #35C85A;
+    border-left-color: #35C85A; }
+  .stat.theme_green .stat_label {
+    color: #0F0F11; }
+    .stat.theme_green .stat_label:after {
+      color: #35C85A; }
+  .stat.theme_green .stat_body {
+    color: #0F0F11; }
+  @media screen and (min-width: 740px) {
+    .stat {
+      margin-top: 60px; } }
+  @media screen and (min-width: 980px) {
+    .stat {
+      margin-top: 80px; } }
+  @media screen and (min-width: 740px) {
+    .stat {
+      margin-bottom: 60px; } }
+  @media screen and (min-width: 980px) {
+    .stat {
+      margin-bottom: 80px; } }
+  @media screen and (min-width: 1220px) {
+    .stat {
+      margin-bottom: 100px; } }
+  .stat:before {
+    height: calc(100% + 10px);
+    width: calc(100% - 10px);
+    position: absolute;
+    top: 0;
+    left: 10px;
+    content: ""; }
+    @media screen and (min-width: 740px) {
+      .stat:before {
+        height: calc(100% + 20px);
+        width: calc(100% - 20px);
+        left: 20px; } }
+  .stat:after {
+    height: 100%;
+    width: calc(100% - 10px);
+    position: absolute;
+    top: 20px;
+    left: 0;
+    border-bottom: 10px solid;
+    border-left: 10px solid;
+    content: "";
+    pointer-events: none; }
+    @media screen and (min-width: 740px) {
+      .stat:after {
+        width: calc(100% - 20px);
+        top: 40px;
+        border-bottom-width: 20px;
+        border-left-width: 20px; } }
+  .stat.theme_image:before {
+    display: none; }
+  .stat.theme_image:after {
+    border-color: #43FD71; }
+
+.stat_background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% + 10px); }
+  @media screen and (min-width: 740px) {
+    .stat_background {
+      height: calc(100% + 20px); } }
+  .stat_background:before {
+    height: calc(100% - 10px);
+    width: calc(100% - 20px);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    content: ""; }
+    @media screen and (min-width: 740px) {
+      .stat_background:before {
+        height: calc(100% - 20px);
+        width: calc(100% - 40px);
+        top: 20px;
+        left: 20px; } }
+
+.stat_inner {
+  position: relative;
+  z-index: 4;
+  padding: 20px; }
+
+.stat_content {
+  padding: 20px 20px 0; }
+  @media screen and (min-width: 740px) {
+    .stat_content {
+      padding: 40px 30px 20px; } }
+  @media screen and (min-width: 980px) {
+    .stat_content {
+      padding: 45px 70px 27px; } }
+
+.stat_label {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Light", sans-serif;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1.75;
+  font-weight: 400;
+  font-family: "Unit Offc W01 Bold", sans-serif;
+  display: inline-block; }
+  @media screen and (min-width: 980px) {
+    .stat_label {
+      font-size: 60px;
+      font-size: 3.75rem;
+      line-height: 1.33333; } }
+  @media screen and (min-width: 1220px) {
+    .stat_label {
+      font-size: 80px;
+      font-size: 5rem;
+      line-height: 1.25; } }
+  .stat_label:after {
+    height: 8px;
+    width: 50px;
+    background: currentColor;
+    content: "";
+    display: block;
+    margin: 18px 0 20px; }
+  .theme_image .stat_label {
+    color: #43FD71; }
+
+.stat_body {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Bold", sans-serif;
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 1.57143;
+  font-weight: 400;
+  font-family: "Unit Offc W01 Light", sans-serif; }
+  @media screen and (min-width: 740px) {
+    .stat_body {
+      font-size: 32px;
+      font-size: 2rem;
+      line-height: 1.4375; } }
+  .theme_image .stat_body {
+    color: #fff; }
+  .stat_body p {
+    margin: 0; }
 
 /* ==========================================================================
 	Topic Row

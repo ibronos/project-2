@@ -64,6 +64,12 @@
 			"Department News"
 		]
 	} %}
+
+	{% include inc ~ "stat.twig" with {
+		background: 2,
+		label: "90%",
+		caption: "Percentage of English alumni find a job or attend graduate school within a year of graduation. "
+	} %}
 {% endblock %}
 
 {% block full_width_callouts %}
