@@ -5718,7 +5718,7 @@ button {
       margin-bottom: 100px; } }
   .quote:before {
     height: calc(100% + 10px);
-    width: 100%;
+    width: calc(100% - 10px);
     position: absolute;
     top: 0;
     left: 10px;
@@ -5727,6 +5727,7 @@ button {
     @media screen and (min-width: 740px) {
       .quote:before {
         height: calc(100% + 20px);
+        width: calc(100% - 20px);
         left: 20px; } }
   .quote:after {
     height: 100%;
@@ -5740,7 +5741,7 @@ button {
     pointer-events: none; }
     @media screen and (min-width: 740px) {
       .quote:after {
-        width: calc(100% - 10px);
+        width: calc(100% - 20px);
         top: 40px;
         border-bottom-width: 20px;
         border-left-width: 20px; } }
