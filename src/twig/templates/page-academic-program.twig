@@ -18,6 +18,13 @@
 {% endblock %}
 
 {% block in_content_callouts %}
+	{% include inc ~ "quote.twig" with {
+		background: 1,
+		quote: "Being an English Major absolutely prepared me to be an English teacher. I teach several of the books I studied at Trinity and I look back fondly on my college class notes from time to time (especially now that I’m teaching World Literature and we’re starting the year with a novel I read with Okey Ndibe in an African Literature course).",
+		name: "Elyssa Michael",
+		label: "‘10"
+	} %}
+
 	{% include inc ~ "wysiwyg.twig" with {
 		content: "<h3>About the Program</h3><p>Here, you will be able to learn about our faculty, the requirements for our major and our concentrations in literary studies, creative writing, and film, our course offerings, our students, past and present, and the variety of opportunities and career paths available to English majors at Trinity.  The Web site also offers a view into the kind of community of students, scholars, artists, and teachers we are, as it outlines for you the range of readings, programs, activities, and events that enhance and augment our work in classrooms, seminars, and conferences throughout the academic year.</p>"
 	} %}

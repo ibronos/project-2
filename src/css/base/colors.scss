@@ -45,6 +45,11 @@ $theme_colors: (
 	(gray, $gray)
 );
 
+$pair_theme_colors: (
+	(yellow, $yellow, #FFFD00, $dark),
+	(green, $forest, $frog, $dark)
+);
+
 $gray_10: #EAEAEA;
 $gray_20: #CCCCCC;
 $gray_30: #B2B2B2;
