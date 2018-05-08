@@ -12,6 +12,11 @@
 
 .page_inner {
 	flex-grow: 1;
+	padding-top: 60px;
+
+	@media #{$min_md} {
+		padding-top: 82px;
+	}
 }
 
 .page_feature {}

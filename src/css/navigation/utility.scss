@@ -7,6 +7,7 @@
 
 	@media #{$min_lg} {
 		display: block;
+		margin-right: 30px;
 	}
 }
 
@@ -20,12 +21,24 @@
 // Seconadry Links
 // =============================================================================
 
-.utility_nav_list {}
+.utility_nav_list {
+	white-space: nowrap;
+}
 
-.utility_nav_item {}
+.utility_nav_item {
+	display: inline-block;
+	vertical-align: top;
+}
 
 .utility_nav_link {
+	@include u(500);
+
+	color: $navy;
 	display: block;
+	font-size: 16px;
+	letter-spacing: 2px;
+	padding: 16px 24px;
+	text-transform: uppercase;
 
 	&:focus,
 	&:hover {}

@@ -28,9 +28,14 @@
 .header_ribbon_inner {}
 
 .header_group {
+	height: 100%;
+
 	position: absolute;
-	top: 50%;
+	top: 0;
 	right: 0;
 
-	transform: translate(0, -50%);
+	@media #{$min_lg} {
+		align-items: center;
+		display: flex;
+	}
 }

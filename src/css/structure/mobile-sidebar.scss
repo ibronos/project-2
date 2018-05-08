@@ -2,28 +2,34 @@
 	Mobile Sidebar
 ============================================================================= */
 
-.mobile_sidebar_handle_wrapper {
-	position: relative;
-
-	@media print {
-		display: none;
-	}
-
-	@media #{$min_lg} {
-		display: none;
-	}
-}
-
 .mobile_sidebar_handle {
 	height: 60px;
 	width: 60px;
 
+	position: absolute;
+	top: 0;
+	right: 0;
+
 	background: $navy;
-	display: flex;
 
 	@media #{$min_md} {
 		height: 82px;
 		width: 82px;
+	}
+
+	@media #{$min_lg} {
+		width: auto;
+
+		position: relative;
+
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		padding: 0 35px;
+	}
+
+	@media print {
+		display: none;
 	}
 }
 
@@ -35,6 +41,10 @@
 	color: $yellow;
 	transition: transform .25s;
 
+	@media #{$min_lg} {
+		left: 35px;
+	}
+
 	&_open {
 		margin-top: 1px;
 		margin-left: -1px;
@@ -43,10 +53,35 @@
 			translate(-50%, -50%)
 			scale(1);
 
+		@media #{$min_md} {
+			transform: 
+				translate(-50%, -50%)
+				scale(1.25);
+		}
+
+		@media #{$min_lg} {
+			margin-top: 2px;
+			transform: 
+				translate(0, -50%)
+				scale(1.25);
+		}
+
 		.fs-swap-active & {
 			transform: 
 				translate(-50%, -50%)
 				scale(0);
+
+			@media #{$min_md} {
+				transform: 
+					translate(-50%, -50%)
+					scale(0);
+			}
+
+			@media #{$min_lg} {
+				transform: 
+					translate(0, -50%)
+					scale(0);
+			}
 		}
 	}
 
@@ -56,10 +91,29 @@
 			translate(-50%, -50%)
 			scale(0);
 
+		@media #{$min_lg} {
+			margin-left: 5px;
+			transform: 
+				translate(0, -50%)
+				scale(0);
+		}
+
 		.fs-swap-active & {
 			transform: 
 				translate(-50%, -50%)
 				scale(1);
+
+			@media #{$min_md} {
+				transform: 
+					translate(-50%, -50%)
+					scale(1.5);
+			}
+
+			@media #{$min_lg} {
+				transform: 
+					translate(0, -50%)
+					scale(1.5);
+			}
 		}
 	}
 }
@@ -68,6 +122,16 @@
 	
 	@media #{$max_lg} {
 		@include visually_hide;
+	}
+
+	@media #{$min_lg} {
+		@include u(500);
+
+		color: #fff;
+		font-size: 16px;
+		letter-spacing: 2px;
+		padding-left: 50px;
+		text-transform: uppercase;
 	}
 }
 
