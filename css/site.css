@@ -4353,7 +4353,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 800;
+  z-index: 80;
   background: #fff;
   -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
@@ -5473,7 +5473,11 @@ button {
 /* ==========================================================================
 	Lightbox
 ============================================================================= */
+.fs-lightbox-overlay {
+  display: none; }
+
 .fs-lightbox {
+  z-index: 800;
   background: rgba(0, 0, 0, 0.75);
   outline: 0; }
   .fs-lightbox .fs-lightbox-close {
@@ -5481,7 +5485,9 @@ button {
     top: auto;
     right: 0;
     bottom: 100%;
-    margin-bottom: 10px; }
+    color: #fff;
+    margin-bottom: 10px;
+    stroke: #fff; }
     @media screen and (min-width: 1220px) {
       .fs-lightbox .fs-lightbox-close {
         top: 0;
@@ -5705,6 +5711,7 @@ button {
             align-items: center; } }
 
 .topic_figure {
+  position: relative;
   display: none; }
   @media screen and (min-width: 740px) {
     .topic_figure {
@@ -5722,6 +5729,24 @@ button {
 .topic_image {
   width: 100%;
   display: block; }
+
+.topic_video_button {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(202, 255, 0, 0.7);
+  border-radius: 50%;
+  color: #fff; }
+
+.topic_video_button_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: 1px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
 
 @media screen and (min-width: 740px) {
   .topic_wrapper {

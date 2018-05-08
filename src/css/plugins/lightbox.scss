@@ -2,7 +2,13 @@
 	Lightbox
 ============================================================================= */
 
+.fs-lightbox-overlay {
+	display: none;
+}
+
 .fs-lightbox {
+	z-index: 800;
+
 	background: rgba(#000, .75);
 	outline: 0;
 	
@@ -12,7 +18,9 @@
 		right: 0;
 		bottom: 100%;
 
+		color: #fff;
 		margin-bottom: 10px;
+		stroke: #fff;
 
 		@media #{$min_xl} {
 			top: 0;

@@ -685,6 +685,12 @@ Site.modules.Page = (function($, Site) {
 			.on("enable.swap", onSubSwapEnable)
 			.on("disable.swap", onSubSwapDisable);
 
+		$(window).on("open.lightbox", function() {
+			$("body").addClass("fs-navigation-lock fs-mobile-lock");
+		}).on("close.lightbox", function() {
+			$("body").removeClass("fs-navigation-lock fs-mobile-lock");
+		});
+
 		fixIEsvg();
 		bindGenericUI();
 		responsiveVideo();

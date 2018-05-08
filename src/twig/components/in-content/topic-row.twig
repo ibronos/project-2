@@ -6,9 +6,14 @@
 				{% if item.image %}
 				<figure class="topic_figure">
 					{% if item.link %}
-					<a class="topic_figure_link" href="#">
+					<a class="{% if item.video %}js-lightbox {% endif %}topic_figure_link" href="{% if item.video %}{{item.video}}{% else %}#{% endif %}">
 					{% endif %}
 						{{site.image("topic", img.classic.xsml, item.image)}}
+						{% if item.video %}
+							<span class="topic_video_button">
+								<span class="topic_video_button_icon">{{site.icon("play")}}</span>
+							</span>
+						{% endif %}
 					{% if item.link %}
 					</a>
 					{% endif %}
