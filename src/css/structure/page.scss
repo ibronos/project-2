@@ -57,10 +57,14 @@
 	display: block;
 }
 
-.page_header {}
+.page_header {
+	position: relative;
+}
 
 .page_title {
 	@include h1;
+
+	margin: 0;
 }
 
 .sidebar_wrapper {
