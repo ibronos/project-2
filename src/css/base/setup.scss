@@ -434,6 +434,10 @@ $margin_xl: 100px;
 	@media #{$min_xl} {
 		padding-right: calc((100% - 1200px) / 2 + 1.04166667%);
 	}
+
+	@media #{$min_xxl} {
+		padding-right: calc((100% - 1340px) / 2 + 1.04166667%);
+	}
 }
 
 @mixin fake_padded_left() {
@@ -449,6 +453,10 @@ $margin_xl: 100px;
 
 	@media #{$min_xl} {
 		padding-left: calc((100% - 1200px) / 2 + 1.04166667%);
+	}
+
+	@media #{$min_xxl} {
+		padding-left: calc((100% - 1340px) / 2 + 1.04166667%);
 	}
 }
 

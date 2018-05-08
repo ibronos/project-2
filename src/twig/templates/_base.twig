@@ -209,10 +209,12 @@
 									<h1 class="page_title">{{page.title}}</h1>
 									{% endif %}
 
-									{% include "../partials/navigation/sub.twig" with {
-										title: sectionTitle,
-										links: subNavAlias
-									} %}
+									{% block subNav_block %}
+										{% include "../partials/navigation/sub.twig" with {
+											title: sectionTitle,
+											links: subNavAlias
+										} %}
+									{% endblock %}
 								</div>
 							</div>
 						</div>
@@ -285,6 +287,7 @@
 
 								<div class="footer_ribbon_group">
 									{% include "../partials/navigation/social.twig" with {
+										modifier: "base",
 										title: "Social Navigation",
 										links: socialNavAlias
 									} %}

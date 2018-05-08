@@ -3,11 +3,14 @@
 ============================================================================= */
 
 .social_nav {
-	margin: 0 -10px 38px;
 
-	@media #{$min_lg} {
-		margin: 0 -20px 0;
-		order: 2;
+	&_base {
+		margin: 0 -10px 38px;
+
+		@media #{$min_lg} {
+			margin: 0 -20px 0;
+			order: 2;
+		}
 	}
 }
 
@@ -22,9 +25,12 @@
 // =============================================================================
 
 .social_nav_list {
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
+
+	.social_nav_base & {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 .social_nav_item {
@@ -32,12 +38,20 @@
 }
 
 .social_nav_link {
-	color: #fff;
 	display: block;
-	padding: 10px;
 
-	@media #{$min_lg} {
-		padding: 21px 22px 20px;
+	.social_nav_base & {
+		color: #fff;
+		padding: 10px;
+
+		@media #{$min_lg} {
+			padding: 21px 22px 20px;
+		}
+	}
+
+	.social_nav_contact & {
+		color: $dark;
+		padding: 20px 14px;
 	}
 
 	&:focus,
