@@ -167,6 +167,10 @@
 	}
 
 	@media #{$min_md} {
+		height: calc(100% - 82px);
+		
+		top: 82px;
+
 		padding: 62px 80px 100px 80px;
 	}
 

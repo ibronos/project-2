@@ -4353,7 +4353,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 80;
+  z-index: 400;
   background: #fff;
   -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
@@ -4525,6 +4525,8 @@ button {
       display: none; } }
   @media screen and (min-width: 740px) {
     .mobile_sidebar {
+      height: calc(100% - 82px);
+      top: 82px;
       padding: 62px 80px 100px 80px; } }
   .mobile_sidebar.fs-swap-active {
     opacity: 1;
