@@ -3402,11 +3402,11 @@ hr {
     .icon {
       display: none; } }
   .icon_arrow_right {
-    height: 10px;
-    width: 15px; }
+    height: 11px;
+    width: 16px; }
   .icon_arrow_left {
-    height: 10px;
-    width: 15px; }
+    height: 11px;
+    width: 16px; }
   .icon_caret_down {
     height: 5px;
     width: 7px; }
@@ -5123,9 +5123,6 @@ button {
   .js .sub_nav_handle [class*="label"] {
     display: inline-block;
     vertical-align: middle; }
-  @media screen and (min-width: 980px) {
-    .js .sub_nav_handle {
-      display: none; } }
 
 @media print {
   .sub_nav_handle {
@@ -5426,6 +5423,91 @@ button {
 /* ==========================================================================
 	Component
 ============================================================================= */
+/* ==========================================================================
+	Topic Row
+============================================================================= */
+.topic_block {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+  @media screen and (min-width: 740px) {
+    .topic_block {
+      margin-top: 50px; } }
+  @media screen and (min-width: 980px) {
+    .topic_block {
+      margin-top: 60px; } }
+  @media screen and (min-width: 740px) {
+    .topic_block {
+      margin-bottom: 50px; } }
+  @media screen and (min-width: 980px) {
+    .topic_block {
+      margin-bottom: 60px; } }
+
+.topic_item {
+  margin-bottom: 30px; }
+  @media screen and (min-width: 980px) {
+    .topic_item {
+      margin-bottom: 60px; } }
+  .topic_item:last-child {
+    margin-bottom: 0; }
+
+.topic_figure_link {
+  display: block; }
+
+.topic_image {
+  width: 100%;
+  display: block; }
+
+.topic_title {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Bold", sans-serif;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.41667;
+  color: #0F0F11;
+  margin: 0 0 14px; }
+  @media screen and (min-width: 740px) {
+    .topic_title {
+      font-size: 28px;
+      font-size: 1.75rem;
+      line-height: 1.57143; } }
+
+.topic_title_link {
+  color: inherit; }
+
+.topic_caption {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Light", sans-serif;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.6; }
+  .topic_caption p {
+    margin: 0; }
+
+.topic_footer {
+  margin-top: 8px; }
+
+.topic_link {
+  color: #1573DD;
+  display: inline-block;
+  padding: 10px 0; }
+  .topic_link [class*="icon"] {
+    display: inline-block;
+    vertical-align: middle; }
+    @media print {
+      .topic_link [class*="icon"] {
+        display: none; } }
+  .topic_link [class*="label"] {
+    display: inline-block;
+    vertical-align: middle; }
+  .topic_link [class*="label"] {
+    font-weight: 400;
+    font-family: "Unit Offc W01 Medium", sans-serif;
+    font-size: 16px;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    letter-spacing: 0.09375rem;
+    text-transform: uppercase; }
+
 /* ==========================================================================
 	Component
 ============================================================================= */

@@ -43,7 +43,7 @@
 		&:after {
 			@include u(300);
 
-			color: #0F0F11;
+			color: $dark;
 			content: "/";
 			display: inline-block;
 			font-size: 18px;

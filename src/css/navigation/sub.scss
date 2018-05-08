@@ -35,10 +35,6 @@
 		margin-bottom: 0;
 		padding-right: 40px;
 		text-align: left;
-
-		@media #{$min_lg} {
-			display: none;
-		}
 	}
 
 	@media print {

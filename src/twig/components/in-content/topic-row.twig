@@ -1,32 +1,39 @@
-<div class="topic_block{% if theme %} theme_{{theme}}{% endif %}">
-	{% if title %}
-	<header class="topic_block_header">
-		<h2 class="topic_block_title">{{title}}</h2>
-	</header>
-	{% endif %}
+<div class="topic_block">
 	<div class="topic_items">
 		{% for item in items %}
-		<article class="topic_row">
-			<div class="topic_row_inner">
+		<article class="topic_item">
+			<div class="topic_item_inner">
 				{% if item.image %}
 				<figure class="topic_figure">
-					{{site.image("topic", img.square.xsml, item.image)}}
+					{% if item.link %}
+					<a class="topic_figure_link" href="#">
+					{% endif %}
+						{{site.image("topic", img.classic.xsml, item.image)}}
+					{% if item.link %}
+					</a>
+					{% endif %}
 				</figure>
 				{% endif %}
 				<div class="topic_wrapper">
 					<header class="topic_header">
-						<h3 class="topic_title">{{item.title}}</h3>
+						<h3 class="topic_title">
+							{% if item.link %}
+							<a class="topic_title_link" href="#">
+							{% endif %}
+								{{item.title}}
+							{% if item.link %}
+							</a>
+							{% endif %}
+						</h3>
 					</header>
 					<div class="topic_body">
 						<div class="topic_caption">
 							<p>{{item.caption}}</p>
 						</div>
 					</div>
-					{% if item.links %}
-					<footer class="topic_links">
-						{% for link in item.links %}
-						{{site.button("topic", link.name, link.href, "arrow_right")}}
-						{% endfor %}
+					{% if item.link %}
+					<footer class="topic_footer">
+						{{site.button("topic", item.link.name, item.link.href, "arrow_right")}}
 					</footer>
 					{% endif %}
 				</div>

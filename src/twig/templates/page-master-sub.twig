@@ -19,6 +19,28 @@
 {% endblock %}
 
 {% block in_content_callouts %}
+	{% include inc ~ "topic-row.twig" with {
+		items: [
+			{
+				image: 1,
+				title: "A Community of Diversity",
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus. Pellentesque vitae ultrices orci. Ut lobortis faucibus turpis quis tincidunt.",
+				link: {
+					href: "#",
+					name: "Learn More"
+				}
+			},
+			{
+				image: 2,
+				title: "Student Clubs & Involvement",
+				caption: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas cursus eleifend tristique. Integer ullamcorper tincidunt metus, nec sodales neque ornare eu.",
+				link: {
+					href: "#",
+					name: "Learn More"
+				}
+			}
+		]
+	} %}
 {% endblock %}
 
 {% block sidebar %}

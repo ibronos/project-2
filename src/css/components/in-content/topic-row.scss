@@ -1,0 +1,68 @@
+/* ==========================================================================
+	Topic Row
+============================================================================= */
+
+.topic_block {
+	@include margined_lg;
+}
+
+.topic_items {}
+
+.topic_item {
+	margin-bottom: 30px;
+
+	@media #{$min_lg} {
+		margin-bottom: 60px;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.topic_item_inner {}
+
+.topic_figure {}
+
+.topic_figure_link {
+	display: block;
+}
+
+.topic_image {
+	width: 100%;
+
+	display: block;
+}
+
+.topic_wrapper {}
+
+.topic_header {}
+
+.topic_title {
+	@include h4;
+
+	color: $dark;
+	margin: 0 0 14px;
+}
+
+.topic_title_link {
+	color: inherit;
+}
+
+.topic_body {}
+
+.topic_caption {
+	@include label_text;
+
+	p {
+		margin: 0;
+	}
+}
+
+.topic_footer {
+	margin-top: 8px;
+}
+
+.topic_link {
+	@include button_plain;
+}
