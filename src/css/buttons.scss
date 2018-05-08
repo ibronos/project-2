@@ -70,11 +70,11 @@ button {
 @mixin button_fill(
 	$b: $blue,
 	$b2: $navy,
-	$c: #fff,
+	$lc: #fff,
 	$ic: #fff
 ) {
 	background: $b;
-	color: $c;
+	color: $lc;
 
 	&:focus,
 	&:hover {}
@@ -95,7 +95,9 @@ button {
 
 	[class*="label"] {}
 
-	[class*="icon"] {}
+	[class*="icon"] {
+		color: $ic;
+	}
 }
 
 @mixin button_inline($layout: true) {

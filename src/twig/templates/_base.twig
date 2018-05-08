@@ -172,29 +172,39 @@
 				</div>
 				<!-- END: Page Feature -->
 
-				<div class="breadcrumb_nav_wrapper">
-					<div class="fs-row">
-						<div class="fs-cell fs-lg-9 fs-lg-push-1">
-							<div class="breadcrumb_nav_inner">
-								{% include "../partials/navigation/breadcrumb.twig" with {
-									icon: "home",
-									links: breadcrumbNav
-								} %}
+				{% if page.layout != "home" %}
+				<!-- Page Header -->
+				{% block page_header %}
+				<div class="page_header">
+					<div class="breadcrumb_nav_wrapper">
+						<div class="fs-row">
+							<div class="fs-cell fs-lg-9 fs-lg-push-1">
+								<div class="breadcrumb_nav_inner">
+									{% include "../partials/navigation/breadcrumb.twig" with {
+										icon: "home",
+										links: breadcrumbNav
+									} %}
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<!-- Page Content -->
-				<div class="page_content">
-					<div class="fs-row">
-						<!-- Main Content -->
-						<div class="fs-cell{% if page.layout == "default" or page.layout == "style-guide" %} fs-lg-9 fs-lg-push-1{% endif %} content_wrapper">
-							<main class="main_content" id="main_content" itemprop="mainContentOfPage">
-								{% if page.layout != "home" %}
-								<!-- Page Header -->
-								{% block page_header %}
-								<div class="page_header">
+					{% if page.image %}
+						{% include "../partials/background.twig" with {
+							class: "page",
+							image: image,
+							sources: {
+								"0px": img.full.sml,
+								"500px": img.wide.med,
+								"980px": img.wide.lrg,
+								"1220px": img.ultrawide.lrg
+							}
+						} %}
+					{% endif %}
+					<div class="page_header_inner">
+						<div class="fs-row">
+							<!-- Main Content -->
+							<div class="fs-cell{% if page.layout == "default" or page.layout == "style-guide" %} fs-lg-9 fs-lg-push-1{% endif %} content_wrapper">
+								<div class="page_header_body">
 									{% if page.title %}
 									<h1 class="page_title">{{page.title}}</h1>
 									{% endif %}
@@ -204,10 +214,20 @@
 										links: subNavAlias
 									} %}
 								</div>
-								{% endblock %}
-								<!-- END: Page Header -->
-								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endblock %}
+				<!-- END: Page Header -->
+				{% endif %}
 
+				<!-- Page Content -->
+				<div class="page_content">
+					<div class="fs-row">
+						<!-- Main Content -->
+						<div class="fs-cell{% if page.layout == "default" or page.layout == "style-guide" %} fs-lg-9 fs-lg-push-1{% endif %} content_wrapper">
+							<main class="main_content" id="main_content" itemprop="mainContentOfPage">
 								<!-- WYSIWYG - wrap all WYSIWYG text areas in `.typography` -->
 								<div class="typography">
 									{% block typography %}

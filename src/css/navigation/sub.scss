@@ -4,6 +4,7 @@
 
 .sub_nav {
 	position: relative;
+	margin-top: 20px;
 
 	@media print {
 		display: none;
@@ -13,8 +14,10 @@
 		min-width: 280px;
 
 		position: absolute;
-		bottom: 0;
+		bottom: 30px;
 		right: -150px;
+
+		margin-top: 0;
 	}
 }
 
@@ -48,6 +51,15 @@
 
 	.js .page_theme_default & {
 		@include button_fill;
+	}
+
+	.js .page_theme_image & {
+		@include button_fill(
+			$b: #fff,
+			$b2: $blue,
+			$lc: $dark,
+			$ic: $blue
+		);
 	}
 
 	@media print {
@@ -106,6 +118,10 @@
 
 	.page_theme_default & {
 		background: $navy;
+	}
+
+	.page_theme_image & {
+		background: $blue;
 	}
 }
 

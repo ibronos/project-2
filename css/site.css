@@ -3502,7 +3502,8 @@ strong {
   font-family: "Unit Offc W01 Light", sans-serif;
   font-size: 20px;
   font-size: 1.25rem;
-  line-height: 1.6; }
+  line-height: 1.6;
+  color: #0F0F11; }
   @media screen and (min-width: 740px) {
     .typography {
       font-size: 24px;
@@ -3843,6 +3844,8 @@ button {
     z-index: -2;
     background: #003473;
     content: ""; }
+  .skip_link [class*="icon"] {
+    color: #fff; }
   .skip_link:focus, .skip_link:active {
     -webkit-transform: translate(-50%, 40px);
             transform: translate(-50%, 40px); }
@@ -4578,6 +4581,46 @@ button {
 .page_header {
   position: relative; }
 
+.page_background {
+  padding-bottom: 75%; }
+  @media screen and (min-width: 500px) {
+    .page_background {
+      padding-bottom: 56%; } }
+  @media screen and (min-width: 1220px) {
+    .page_background {
+      padding-bottom: 43%; } }
+  .page_background:before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.65)), color-stop(50%, rgba(0, 0, 0, 0)));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0) 50%);
+    content: ""; }
+
+.page_header_inner {
+  position: relative;
+  z-index: 4; }
+  .page_theme_default .page_header_inner {
+    padding-top: 30px; }
+    @media screen and (min-width: 1220px) {
+      .page_theme_default .page_header_inner {
+        padding-top: 50px;
+        padding-bottom: 20px; } }
+  .page_theme_image .page_header_inner {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+    @media screen and (min-width: 1220px) {
+      .page_theme_image .page_header_inner {
+        padding-bottom: 54px; } }
+
+.page_header_body {
+  position: relative; }
+
 .page_title {
   font-weight: 400;
   font-family: "Unit Offc W01 Light", sans-serif;
@@ -4595,6 +4638,13 @@ button {
       font-size: 80px;
       font-size: 5rem;
       line-height: 1.25; } }
+  @media screen and (min-width: 1220px) {
+    .page_title {
+      padding-right: 150px; } }
+  .page_theme_default .page_title {
+    color: #0F0F11; }
+  .page_theme_image .page_title {
+    color: #fff; }
 
 .sidebar_wrapper {
   clear: right; }
@@ -4619,6 +4669,12 @@ button {
       display: block; } }
   .page_theme_default .breadcrumb_nav_wrapper {
     background: #F5F7F9; }
+  .page_theme_image .breadcrumb_nav_wrapper {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(15, 15, 17, 0.5); }
 
 .breadcrumb_item {
   font-weight: 400;
@@ -4634,13 +4690,18 @@ button {
   .breadcrumb_item:not(:last-child):after {
     font-weight: 400;
     font-family: "Unit Offc W01 Light", sans-serif;
-    color: #0F0F11;
     content: "/";
     display: inline-block;
     font-size: 18px;
     font-size: 1.125rem;
     margin: 0 17px;
     vertical-align: middle; }
+    .page_theme_default .breadcrumb_item:not(:last-child):after {
+      color: #0F0F11; }
+    .page_theme_image .breadcrumb_item:not(:last-child):after {
+      color: rgba(255, 255, 255, 0.7); }
+  .page_theme_image .breadcrumb_item {
+    color: #fff; }
 
 .breadcrumb_link {
   color: inherit;
@@ -4676,6 +4737,8 @@ button {
   vertical-align: middle; }
   .page_theme_default .breadcrumb_name_icon {
     color: #1573DD; }
+  .page_theme_image .breadcrumb_name_icon {
+    color: #FFD600; }
 
 .breadcrumb_dropdown {
   width: 230px;
@@ -5102,7 +5165,8 @@ button {
 	Sub Navigation
 ============================================================================= */
 .sub_nav {
-  position: relative; }
+  position: relative;
+  margin-top: 20px; }
   @media print {
     .sub_nav {
       display: none; } }
@@ -5110,8 +5174,9 @@ button {
     .sub_nav {
       min-width: 280px;
       position: absolute;
-      bottom: 0;
-      right: -150px; } }
+      bottom: 30px;
+      right: -150px;
+      margin-top: 0; } }
 
 .sub_nav_title {
   width: 1px;
@@ -5171,6 +5236,23 @@ button {
     z-index: -2;
     background: #003473;
     content: ""; }
+  .js .page_theme_default .sub_nav_handle [class*="icon"] {
+    color: #fff; }
+
+.js .page_theme_image .sub_nav_handle {
+  background: #fff;
+  color: #0F0F11; }
+  .js .page_theme_image .sub_nav_handle:before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: -2;
+    background: #1573DD;
+    content: ""; }
+  .js .page_theme_image .sub_nav_handle [class*="icon"] {
+    color: #1573DD; }
 
 @media print {
   .sub_nav_handle {
@@ -5212,6 +5294,8 @@ button {
     display: block; }
   .page_theme_default .sub_nav_list {
     background: #003473; }
+  .page_theme_image .sub_nav_list {
+    background: #1573DD; }
 
 .sub_nav_link {
   font-weight: 400;

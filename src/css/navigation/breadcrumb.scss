@@ -15,6 +15,16 @@
 	.page_theme_default & {
 		background: #F5F7F9;
 	}
+
+	.page_theme_image & {
+		width: 100%;
+		
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		background: rgba($dark, .5);
+	}
 }
 
 .breadcrumb_nav_inner {}
@@ -43,13 +53,26 @@
 		&:after {
 			@include u(300);
 
-			color: $dark;
 			content: "/";
 			display: inline-block;
 			font-size: 18px;
 			margin: 0 17px;
 			vertical-align: middle;
+
+			.page_theme_default & {
+				color: $dark;
+			}
+
+			.page_theme_image & {
+				color: rgba(#fff, .7);
+			}
 		}
+	}
+
+	.page_theme_default & {}
+
+	.page_theme_image & {
+		color: #fff;
 	}
 }
 
@@ -58,9 +81,7 @@
 	transition: color .25s;
 	
 	&:focus,
-	&:hover {
-		
-	}
+	&:hover {}
 }
 
 .breadcrumb_name {}
@@ -85,6 +106,10 @@
 
 	.page_theme_default & {
 		color: $blue;
+	}
+
+	.page_theme_image & {
+		color: $yellow;
 	}
 }
 
