@@ -41,6 +41,21 @@
 			}
 		]
 	} %}
+
+	{% include inc ~ "linked-list.twig" with {
+		icon: "link",
+		title: "Campus Life Resources",
+		items: [
+			"Housing & Dining",
+			"Community-Based Housing",
+			"Greek Life",
+			"Health & Wellness",
+			"Safety & Support",
+			"Recreation & Fitness",
+			"Spiritual & Religious Life",
+			"Offices"
+		]
+	} %}
 {% endblock %}
 
 {% block sidebar %}

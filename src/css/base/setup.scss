@@ -40,9 +40,9 @@ $and_max_xl: "and (max-width:" + ($mq_min_xl - 1px) + ")";
 $and_max_xxl: "and (max-width:" + ($mq_min_xxl - 1px) + ")";
 
 $margin_sm: 40px;
-$margin_md: 50px;
-$margin_lg: 60px;
-$margin_xl: 80px;
+$margin_md: 60px;
+$margin_lg: 80px;
+$margin_xl: 100px;
 
 
 // Mixins

@@ -5423,6 +5423,97 @@ button {
 /* ==========================================================================
 	Component
 ============================================================================= */
+.linked_list {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-top: 5px solid #003473; }
+  @media screen and (min-width: 740px) {
+    .linked_list {
+      margin-top: 60px; } }
+  @media screen and (min-width: 980px) {
+    .linked_list {
+      margin-top: 80px; } }
+  @media screen and (min-width: 740px) {
+    .linked_list {
+      margin-bottom: 60px; } }
+  @media screen and (min-width: 980px) {
+    .linked_list {
+      margin-bottom: 80px; } }
+
+.linked_list_header {
+  padding: 13px 0 10px; }
+
+.linked_list_title {
+  margin: 0; }
+
+.linked_list_title_icon {
+  color: #1573DD;
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle; }
+
+.linked_list_title_label {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  display: inline-block;
+  font-size: 16px;
+  font-size: 1rem;
+  letter-spacing: 1.4px;
+  letter-spacing: 0.0875rem;
+  vertical-align: middle;
+  text-transform: uppercase; }
+
+.linked_list_group {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  @media screen and (min-width: 740px) {
+    .linked_list_group {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      margin: 0 -14px; } }
+
+@media screen and (min-width: 740px) {
+  .linked_list_item {
+    width: calc(50% - 28px);
+    margin: 0 14px; } }
+
+@media screen and (min-width: 1360px) {
+  .linked_list_item {
+    width: calc(33.33% - 28px); } }
+
+.linked_list_link {
+  border-bottom: 1px solid rgba(118, 111, 103, 0.5);
+  color: #1573DD;
+  display: block;
+  padding: 16px 0 15px; }
+  @media screen and (min-width: 740px) {
+    .linked_list_link {
+      padding: 24px 0 23px; } }
+
+.linked_list_link_inner {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.linked_list_label {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  letter-spacing: 1.4px;
+  letter-spacing: 0.0875rem;
+  text-transform: uppercase; }
+
 /* ==========================================================================
 	Topic Row
 ============================================================================= */
@@ -5431,16 +5522,16 @@ button {
   margin-bottom: 40px; }
   @media screen and (min-width: 740px) {
     .topic_block {
-      margin-top: 50px; } }
+      margin-top: 60px; } }
   @media screen and (min-width: 980px) {
     .topic_block {
-      margin-top: 60px; } }
+      margin-top: 80px; } }
   @media screen and (min-width: 740px) {
     .topic_block {
-      margin-bottom: 50px; } }
+      margin-bottom: 60px; } }
   @media screen and (min-width: 980px) {
     .topic_block {
-      margin-bottom: 60px; } }
+      margin-bottom: 80px; } }
 
 .topic_item {
   margin-bottom: 40px; }
