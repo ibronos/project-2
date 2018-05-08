@@ -75,7 +75,24 @@
 
 		{% block breadcrumbNav %}
 			{% set breadcrumbNav = [
-				page.title
+				{
+					name: "Master Sub",
+					children: [
+						"Page",
+						"Master Sub",
+						"Page",
+						"Not Page"
+					]
+				},
+				{
+					name: page.title|default("Page"),
+					children: [
+						"Not Page",
+						"Master Sub",
+						"Not Page",
+						page.title|default("Page")
+					]
+				}
 			] %}
 		{% endblock %}
 
@@ -155,6 +172,19 @@
 				</div>
 				<!-- END: Page Feature -->
 
+				<div class="breadcrumb_nav_wrapper">
+					<div class="fs-row">
+						<div class="fs-cell fs-lg-9 fs-lg-push-1">
+							<div class="breadcrumb_nav_inner">
+								{% include "../partials/navigation/breadcrumb.twig" with {
+									icon: "home",
+									links: breadcrumbNav
+								} %}
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<!-- Page Content -->
 				<div class="page_content">
 					<div class="fs-row">
@@ -165,10 +195,6 @@
 								<!-- Page Header -->
 								{% block page_header %}
 								<div class="page_header">
-									{% include "../partials/navigation/breadcrumb.twig" with {
-										links: breadcrumbNav
-									} %}
-
 									{% if page.title %}
 									<h1 class="page_title">{{page.title}}</h1>
 									{% endif %}

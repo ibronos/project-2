@@ -1,13 +1,6 @@
 {#
 	Breadcrumb markup as defined by Google structured data
 	https://developers.google.com/structured-data/breadcrumbs
-
-	{% include "../partials/navigation/breadcrumb.twig" with {
-		modifier: "lg",
-		links: breadcrumbNav,
-		icon: true
-	} %}
-
 #}
 
 <div class="breadcrumb_nav{% if modifier %} breadcrumb_nav_{{modifier}}{% endif %}">
@@ -16,28 +9,36 @@
 			<a class="breadcrumb_link" href="page-home.html" itemprop="item">
 				<span class="breadcrumb_name" itemprop="name">
 					{% if icon %}
-					<span class="breadcrumb_name_icon">{{site.icon("home")}}</span>
+						<span class="breadcrumb_name_icon">{{site.icon("home")}}</span>
 					{% endif %}
-					<span class="breadcrumb_name_label">Home</span>
+					<span class="breadcrumb_name_label_hide">Home</span>
 				</span>
 			</a>
 			<meta itemprop="position" content="1">
 		</div>
 		{% for link in links %}
-		<div class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-			{% if loop.last %}
-			<span class="breadcrumb_name" itemprop="item">
-				<span class="breadcrumb_name_label" itemprop="name">{% if link.name %}{{link.name}}{% elseif link %}{{link}}{% endif %}</span>
-			</span>
-			{% else %}
-			<a class="breadcrumb_link" href="{% if link.href %}{{link.href}}{% else %}#{% endif %}" itemprop="item">
-				<span class="breadcrumb_name" itemprop="name">
-					<span class="breadcrumb_name_label">{% if link.name %}{{link.name}}{% elseif link %}{{link}}{% endif %}</span>
-				</span>
-			</a>
-			{% endif %}
-			<meta itemprop="position" content="{{loop.index + 1}}">
-		</div>
+			<div class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+				{% if link.children %}
+					<span class="breadcrumb_name{% if link.children %} breadcrumb_name_switch{% endif %}" itemprop="item">
+						<span class="breadcrumb_name_label" itemprop="name">{% if link.name %}{{link.name}}{% elseif link %}{{link}}{% endif %}</span>
+						<span class="breadcrumb_name_icon">{{site.icon("expand")}}</span>
+					</span>
+				{% else %}
+					<a class="breadcrumb_link{% if link.children %} breadcrumb_name_switch{% endif %}" href="{% if link.href %}{{link.href}}{% else %}#{% endif %}" itemprop="item">
+						<span class="breadcrumb_name" itemprop="name">
+							<span class="breadcrumb_name_label">{% if link.name %}{{link.name}}{% elseif link %}{{link}}{% endif %}</span>
+						</span>
+					</a>
+				{% endif %}
+				<meta itemprop="position" content="{{loop.index + 1}}">
+				{% if link.children %}
+					<div class="breadcrumb_dropdown">
+						{% for child in link.children %}
+							<a class="breadcrumb_dropdown_item" href="#">{{child}}</a>
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div>
 		{% endfor %}
 	</div>
 </div>

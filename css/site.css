@@ -3426,7 +3426,7 @@ hr {
     height: 11px;
     width: 14px; }
   .icon_expand {
-    height: 12px;
+    height: 13px;
     width: 5px; }
   .icon_facebook {
     height: 19px;
@@ -4584,20 +4584,105 @@ button {
 /* ==========================================================================
 	Breadcrumb Navigation
 ============================================================================= */
-.breadcrumb_nav {
+.breadcrumb_nav_wrapper {
+  position: relative;
+  z-index: 8;
   display: none; }
   @media screen and (min-width: 980px) {
-    .breadcrumb_nav {
+    .breadcrumb_nav_wrapper {
       display: block; } }
-
-.breadcrumb_list {
-  overflow-x: auto;
-  white-space: nowrap; }
+  .page_theme_default .breadcrumb_nav_wrapper {
+    background: #F5F7F9; }
 
 .breadcrumb_item {
-  display: inline-block; }
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
+  padding: 20px 0;
+  text-transform: uppercase; }
   .breadcrumb_item:not(:last-child):after {
-    content: "/"; }
+    font-weight: 400;
+    font-family: "Unit Offc W01 Light", sans-serif;
+    color: #0F0F11;
+    content: "/";
+    display: inline-block;
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin: 0 17px;
+    vertical-align: middle; }
+
+.breadcrumb_link {
+  color: inherit;
+  -webkit-transition: color .25s;
+  transition: color .25s; }
+
+.breadcrumb_name_switch {
+  cursor: pointer; }
+
+.breadcrumb_name_label {
+  display: inline-block;
+  vertical-align: middle; }
+  .breadcrumb_name_label_hide {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    border: 0;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    overflow: hidden;
+    padding: 0; }
+    .breadcrumb_name_label_hide.focusable:active, .breadcrumb_name_label_hide.focusable:focus {
+      width: auto;
+      height: auto;
+      position: static;
+      clip: auto;
+      margin: 0;
+      overflow: visible; }
+
+.breadcrumb_name_icon {
+  display: inline-block;
+  margin-left: 2px;
+  vertical-align: middle; }
+  .page_theme_default .breadcrumb_name_icon {
+    color: #1573DD; }
+
+.breadcrumb_dropdown {
+  width: 230px;
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  background: #003473;
+  border-radius: 3px;
+  opacity: 0;
+  padding: 10px 20px;
+  visibility: hidden;
+  -webkit-transition: opacity .25s, visibility .25s;
+  transition: opacity .25s, visibility .25s; }
+  .breadcrumb_item:hover .breadcrumb_dropdown {
+    opacity: 1;
+    visibility: visible; }
+
+.breadcrumb_dropdown_item {
+  -webkit-box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
+  padding: 10px 0 9px;
+  -webkit-transition: color .25s, -webkit-box-shadow .25s;
+  transition: color .25s, -webkit-box-shadow .25s;
+  transition: box-shadow .25s, color .25s;
+  transition: box-shadow .25s, color .25s, -webkit-box-shadow .25s; }
+  .breadcrumb_dropdown_item:focus, .breadcrumb_dropdown_item:hover {
+    color: rgba(0, 0, 0, 0.6); }
 
 /* ==========================================================================
 	Footer Navigation
