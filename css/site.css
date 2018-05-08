@@ -3512,7 +3512,7 @@ strong {
     -webkit-transition: color 0.25s, background 0.25s;
     transition: color 0.25s, background 0.25s; }
   .typography p {
-    margin: 20px 0; }
+    margin: 40px 0; }
   .typography h1 + *, .typography h2 + *, .typography h3 + *, .typography h4 + *, .typography h5 + *, .typography h6 + * {
     margin-top: 0; }
   .typography h1 {
@@ -3521,7 +3521,7 @@ strong {
     font-size: 40px;
     font-size: 2.5rem;
     line-height: 1.75;
-    margin: 40px 0 20px; }
+    margin: 47px 0 28px; }
     @media screen and (min-width: 980px) {
       .typography h1 {
         font-size: 60px;
@@ -3538,7 +3538,7 @@ strong {
     font-size: 32px;
     font-size: 2rem;
     line-height: 1.4375;
-    margin: 40px 0 20px; }
+    margin: 47px 0 20px; }
     @media screen and (min-width: 740px) {
       .typography h2 {
         font-size: 34px;
@@ -3550,7 +3550,7 @@ strong {
     font-size: 28px;
     font-size: 1.75rem;
     line-height: 1.57143;
-    margin: 40px 0 20px; }
+    margin: 47px 0 20px; }
     @media screen and (min-width: 740px) {
       .typography h3 {
         font-size: 32px;
@@ -3562,7 +3562,7 @@ strong {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.41667;
-    margin: 40px 0 20px; }
+    margin: 38px 0 10px; }
     @media screen and (min-width: 740px) {
       .typography h4 {
         font-size: 28px;
@@ -3574,17 +3574,17 @@ strong {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.41667;
-    margin: 40px 0 20px; }
+    margin: 41px 0 13px; }
   .typography h6 {
     font-weight: 400;
     font-family: "Unit Offc W01 Medium", sans-serif;
-    font-size: 18px;
-    font-size: 1.125rem;
-    letter-spacing: 1px;
-    letter-spacing: 0.0625rem;
-    line-height: 1.33333;
+    font-size: 16px;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    letter-spacing: 0.075rem;
+    line-height: 1.5;
     text-transform: uppercase;
-    margin: 40px 0 20px; }
+    margin: 43px 0 10px; }
   .typography .intro {
     font-weight: 400;
     font-family: "Unit Offc W01 Light", sans-serif;
@@ -3735,11 +3735,11 @@ strong {
   .typography table th {
     font-weight: 400;
     font-family: "Unit Offc W01 Medium", sans-serif;
-    font-size: 18px;
-    font-size: 1.125rem;
-    letter-spacing: 1px;
-    letter-spacing: 0.0625rem;
-    line-height: 1.33333;
+    font-size: 16px;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    letter-spacing: 0.075rem;
+    line-height: 1.5;
     text-transform: uppercase;
     background: #666666;
     color: #fff;
@@ -3867,11 +3867,11 @@ button {
 .form-builder .form_builder_sublabel {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;
-  font-size: 18px;
-  font-size: 1.125rem;
-  letter-spacing: 1px;
-  letter-spacing: 0.0625rem;
-  line-height: 1.33333;
+  font-size: 16px;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  letter-spacing: 0.075rem;
+  line-height: 1.5;
   text-transform: uppercase; }
 
 .form-builder input,
