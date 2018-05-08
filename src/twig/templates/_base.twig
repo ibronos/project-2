@@ -158,19 +158,8 @@
 				<!-- Page Content -->
 				<div class="page_content">
 					<div class="fs-row">
-						{% if page.layout == "default" or page.layout == "style-guide" %}
-						<!-- Sub Nav -->
-						<div class="fs-cell-right fs-lg-4 aside_wrapper subnav_wrapper">
-							{% include "../partials/navigation/sub.twig" with {
-								title: sectionTitle,
-								links: subNavAlias
-							} %}
-						</div>
-						<!-- END: Sub Nav -->
-						{% endif %}
-
 						<!-- Main Content -->
-						<div class="fs-cell{% if page.layout == "default" or page.layout == "style-guide" %} fs-lg-8{% elseif page.layout == "full" %} fs-lg-10 fs-all-justify-center{% endif %} content_wrapper">
+						<div class="fs-cell{% if page.layout == "default" or page.layout == "style-guide" %} fs-lg-9 fs-lg-push-1{% endif %} content_wrapper">
 							<main class="main_content" id="main_content" itemprop="mainContentOfPage">
 								{% if page.layout != "home" %}
 								<!-- Page Header -->
@@ -183,6 +172,11 @@
 									{% if page.title %}
 									<h1 class="page_title">{{page.title}}</h1>
 									{% endif %}
+
+									{% include "../partials/navigation/sub.twig" with {
+										title: sectionTitle,
+										links: subNavAlias
+									} %}
 								</div>
 								{% endblock %}
 								<!-- END: Page Header -->
@@ -207,17 +201,6 @@
 							</main>
 						</div>
 						<!-- END: Main Content -->
-
-						{% if page.layout == "default" or page.layout == "style-guide" %}
-						<!-- Sidebar Callouts -->
-						<div class="fs-cell-right fs-lg-4 aside_wrapper sidebar_wrapper">
-							<div class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-								{% block sidebar %}
-								{% endblock %}
-							</div>
-						</div>
-						<!-- END: Sidebar Callouts -->
-						{% endif %}
 					</div>
 
 					<!-- Full Width Callouts -->
