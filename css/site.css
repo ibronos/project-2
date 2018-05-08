@@ -3509,8 +3509,14 @@ strong {
       font-size: 1.5rem;
       line-height: 1.66667; } }
   .typography a {
-    -webkit-transition: color 0.25s, background 0.25s;
-    transition: color 0.25s, background 0.25s; }
+    border-bottom: 1px solid #1573DD;
+    color: #1573DD;
+    -webkit-transition: border .25s, color .25s, background .25s;
+    transition: border .25s, color .25s, background .25s; }
+    .typography a:focus, .typography a:hover {
+      background: #003473;
+      border-bottom-color: #003473;
+      color: #fff; }
   .typography p {
     margin: 40px 0; }
   .typography h1 + *, .typography h2 + *, .typography h3 + *, .typography h4 + *, .typography h5 + *, .typography h6 + * {

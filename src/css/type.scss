@@ -129,9 +129,19 @@ strong {
 	@include body_text;
 
 	a {
+		border-bottom: 1px solid $blue;
+		color: $blue;
 		transition:
-			color $base_speed,
-			background $base_speed;
+			border .25s,
+			color .25s,
+			background .25s;
+
+		&:focus,
+		&:hover {
+			background: $navy;
+			border-bottom-color: $navy;
+			color: #fff;
+		}
 	}
 
 	p {
