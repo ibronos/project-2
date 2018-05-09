@@ -23,7 +23,7 @@
 	@include u(700);
 
 	font-size: 32px;
-	line-height: (46 / 32);
+	line-height: (42 / 32);
 
 	@media #{$min_md} {
 		font-size: 34px;

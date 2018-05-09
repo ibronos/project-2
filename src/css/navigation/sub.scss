@@ -32,28 +32,21 @@
 // =============================================================================
 
 .sub_nav_handle {
+	@include button_block(false);
 
-	.no-js & {
-		display: none;
-	}
+	width: calc(100% - 10px);
 
-	.js & {
-		@include button_block(false);
+	position: relative;
 
-		width: calc(100% - 10px);
+	margin-bottom: 0;
+	padding-right: 40px;
+	text-align: left;
 
-		position: relative;
-
-		margin-bottom: 0;
-		padding-right: 40px;
-		text-align: left;
-	}
-
-	.js .page_theme_default & {
+	.page_theme_default & {
 		@include button_fill;
 	}
 
-	.js .page_theme_image & {
+	.page_theme_image & {
 		@include button_fill(
 			$b: #fff,
 			$b2: $blue,
@@ -106,11 +99,8 @@
 	top: 100%;
 	left: 0;
 
+	display: none;
 	padding: 18px 0;
-
-	&.fs-swap-enabled {
-		display: none;
-	}
 
 	&.fs-swap-active {
 		display: block;

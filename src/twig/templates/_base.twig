@@ -191,7 +191,7 @@
 					{% if page.image %}
 						{% include "../partials/background.twig" with {
 							class: "page",
-							image: image,
+							image: page.image,
 							sources: {
 								"0px": img.full.sml,
 								"500px": img.wide.med,

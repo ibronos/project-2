@@ -1,0 +1,166 @@
+.story {
+	position: relative;
+
+	background: #000;
+	padding: 30px 0;
+
+	@media #{$min_lg} {
+		padding: 70px;
+	}
+
+	@media #{$min_xl} {
+		padding: 100px 0;
+	}
+}
+
+.story_background {
+	@include cover;
+
+	&:before {
+		@include cover
+
+		z-index: 2;
+
+		background: rgba(#000, .5);
+		content: "";
+	}
+}
+
+.story_inner {
+	position: relative;
+	z-index: 4;
+
+	color: #fff;
+}
+
+
+/* ==========================================================================
+	Story Quote
+============================================================================= */
+
+.story_quote {}
+
+.story_quote_icon {}
+
+.story_quote_body {}
+
+.story_quote_cite {}
+
+.story_quote_cite_name {}
+
+.story_quote_cite_label {}
+
+
+/* ==========================================================================
+	Story Detail
+============================================================================= */
+
+.story_detail {
+	border-left: 10px solid $frog;
+	padding: 20px 0 20px 25px;
+
+	@media #{$min_lg} {
+		padding-left: 50px;
+	}
+}
+
+.story_detail_header {}
+
+.story_detail_label {
+	@include u(500);
+
+	display: inline-block;
+	font-size: 16px;
+	letter-spacing: 2px;
+	margin-bottom: 3px;
+	opacity: .85;
+	text-transform: uppercase;
+
+	@media #{$min_lg} {
+		font-size: 18px;
+	}
+}
+
+.story_detail_title {
+	@include h2;
+	@include m(700);
+
+	margin: 0 0 10px;
+
+	@media #{$min_lg} {
+		margin-bottom: 20px;
+	}
+}
+
+.story_detail_caption {
+	@include body_text;
+
+	p {
+		margin: 0;
+	}
+}
+
+.story_detail_footer {
+	margin-top: 20px;
+
+	@media #{$min_lg} {
+		margin-top: 37px;
+	}
+}
+
+.story_detail_link {
+	@include button_inline;
+	@include button_fill(
+		$b: #fff,
+		$b2: $frog,
+		$lc: $dark,
+		$ic: $dark
+	);
+}
+
+.story_detail_video {
+	display: block;
+	margin-top: 20px;
+
+	@media #{$min_md} {
+		display: inline-block;
+		margin-top: 0;
+		margin-left: 30px;
+		vertical-align: middle;
+	}
+}
+
+.story_detail_video_button {
+	height: 40px;
+	width: 40px;
+
+	position: relative;
+
+	background: $blue;
+	border-radius: 50%;
+	color: #fff;
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.story_detail_video_button_icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	margin-left: 1px;
+	transform: translate(-50%, -50%);
+}
+
+.story_detail_video_label {
+	@include u(500);
+
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	letter-spacing: 2.2px;
+	line-height: (20 / 14);
+	vertical-align: middle;
+	text-transform: uppercase;
+}
