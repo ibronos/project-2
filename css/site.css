@@ -5577,23 +5577,97 @@ button {
 /* ==========================================================================
 	Pagination
 ============================================================================= */
-@media print {
-  .pagination {
-    display: none; } }
+.pagination {
+  padding-bottom: 40px; }
+  @media screen and (min-width: 740px) {
+    .pagination {
+      padding-bottom: 60px; } }
+  @media screen and (min-width: 980px) {
+    .pagination {
+      padding-bottom: 80px; } }
+  @media screen and (min-width: 1220px) {
+    .pagination {
+      padding-bottom: 100px; } }
+  @media print {
+    .pagination {
+      display: none; } }
+
+.pagination_inner {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #F5F7F9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 .pagination_arrow {
-  position: relative; }
+  height: 50px;
+  width: 50px;
+  position: relative;
+  -webkit-box-shadow: inset 0 0 0 0 #1573DD;
+          box-shadow: inset 0 0 0 0 #1573DD;
+  color: transparent;
+  -webkit-transition: background .25s;
+  transition: background .25s; }
+  .pagination_arrow:focus:not(.pagination_arrow_disabled), .pagination_arrow:hover:not(.pagination_arrow_disabled) {
+    background: #e5eaef; }
+    .pagination_arrow:focus:not(.pagination_arrow_disabled):before, .pagination_arrow:hover:not(.pagination_arrow_disabled):before {
+      height: 100%; }
+  .pagination_arrow:before {
+    height: 35px;
+    width: 1px;
+    position: absolute;
+    top: 50%;
+    background: rgba(118, 111, 103, 0.25);
+    content: "";
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    -webkit-transition: height .25s;
+    transition: height .25s; }
+  .pagination_arrow_left:before {
+    right: 0; }
+  .pagination_arrow_right:before {
+    left: 0; }
+  .pagination_arrow_disabled .pagination_arrow_icon {
+    opacity: .25; }
   .pagination_arrow_icon {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 2;
+    color: #1573DD;
     -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+            transform: translate(-50%, -50%);
+    -webkit-transition: color .25s, -webkit-transform .25s;
+    transition: color .25s, -webkit-transform .25s;
+    transition: color .25s, transform .25s;
+    transition: color .25s, transform .25s, -webkit-transform .25s; }
 
 .pagination_link {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  color: #766F67;
   display: inline-block;
-  padding: 4px;
-  vertical-align: middle; }
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding: 5px 2px;
+  vertical-align: middle;
+  -webkit-transition: border .25s, color .25s;
+  transition: border .25s, color .25s; }
+  @media screen and (min-width: 500px) {
+    .pagination_link {
+      padding: 5px 7px; } }
+  .pagination_link:focus, .pagination_link:hover {
+    color: #0F0F11; }
+  .pagination_link.active {
+    border-bottom-color: #1573DD;
+    color: #0F0F11; }
 
 /* ==========================================================================
 	Component

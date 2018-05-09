@@ -1,0 +1,21 @@
+<div class="news">
+	<div class="fs-row">
+		<div class="fs-cell fs-xl-10 fs-all-justify-center">
+			<div class="news_inner">
+				<div class="news_items">
+					{% for item in items %}
+						<article class="news_item">
+							<figure class="news_item_figure">
+								{{site.image("news_item", img.full.sml, item.image)}}
+							</figure>
+							<div class="news_item_body">
+								<header class="news_item_header"></header>
+								<div class="news_item_caption"></div>
+							</div>
+						</article>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
