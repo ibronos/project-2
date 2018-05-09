@@ -65,23 +65,27 @@
 
 	{% include full ~ "now.twig" with {
 		label: "Important Now",
-		title: "Explore the Possibilities & Make Trinity a Part of Your Summer",
+		title: "Explore the Possibilities & Make Trinity a Part of Your <em>Summer</em>",
 		items: [
 			{
+				theme: "orange",
 				image: 1,
-				caption: "<p><a href>Study Away</a> to learn a new language or subject, experience a new culture, or all of the above.</p>"
+				caption: "<strong>Study Away</strong> to learn a new language or subject, experience a new culture, or all of the above."
 			},
 			{
+				theme: "sea",
 				image: 2,
-				caption: "<p><a href>Summer Housing</a> offers more than just a place to live, but a new community full of activity.</p>"
+				caption: "<strong>Summer Housing</strong> offers more than just a place to live, but a new community full of activity."
 			},
 			{
+				theme: "frog",
 				image: 1,
-				caption: "<p><a href>Summer Institutes</a> are small, focused courses that integrate time in the classroom within the field</p>"
+				caption: "<strong>Summer Institutes</strong> are small, focused courses that integrate time in the classroom within the field"
 			},
 			{
+				theme: "bee",
 				image: 2,
-				caption: "<p><a href>Summer Sessions</a> are for exploring new topics, and sharpening your skills quickly.</p>"
+				caption: "<strong>Summer Sessions</strong> are for exploring new topics, and sharpening your skills quickly."
 			}
 		]
 	} %}

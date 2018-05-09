@@ -64,29 +64,12 @@
 }
 
 
-/* Control Themes
-============================================================================= */
-
-.theme {
-
-	.fs-carousel-controls {}
-
-	.fs-carousel-control {
-
-		&.fs-carousel-visible {}
-
-		&.fs-carousel-control_previous {}
-
-		&.fs-carousel-control_next {}
-	}
-}
-
-
 /* ==========================================================================
 	 Pagination
 ============================================================================= */
 
 .fs-carousel-pagination {
+	margin-left: -5px;
 
 	@media print {
 		display: none !important;
@@ -94,27 +77,54 @@
 }
 
 .fs-carousel-page {
-	height: 15px;
-	width: 15px;
+	height: 22px;
+	width: 22px;
 
 	position: relative;
 
+	color: transparent;
 	display: inline-block;
+	overflow: hidden;
 
 	&:before {
-		height: 10px;
-		width: 10px;
+		height: 12px;
+		width: 12px;
 
 		position: absolute;
 		top: 50%;
 		left: 50%;
 
+		border: 1.5px solid rgba(#000, .2);
 		border-radius: 50%;
 		content: "";
 		transform: translate(-50%, -50%);
 	}
 
-	&.fs-carousel-active {}
+	&:after {
+		height: 6px;
+		width: 6px;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		background: $blue;
+		border-radius: 50%;
+		content: "";
+		transform: 
+			translate(-50%, -50%)
+			scale(0);
+		transition: transform .25s;
+	}
+
+	&.fs-carousel-active {
+
+		&:after {
+			transform: 
+				translate(-50%, -50%)
+				scale(1);
+		}
+	}
 }
 
 
