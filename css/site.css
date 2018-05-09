@@ -6058,6 +6058,7 @@ button {
       position: absolute;
       top: 50%;
       left: 50%;
+      pointer-events: none;
       -webkit-transform: translate(0, -50%);
               transform: translate(0, -50%); } }
   @media screen and (min-width: 980px) {
