@@ -67,4 +67,31 @@
 			video: "https://player.vimeo.com/video/15091562?title=0&byline=0&portrait=0&autoplay=1&badge=0"
 		}
 	} %}
+
+	{% include full ~ "now.twig" with {
+		label: "Important Now",
+		title: "Explore the Possibilities & Make Trinity a Part of Your <em>Summer</em>",
+		items: [
+			{
+				theme: "orange",
+				image: 1,
+				caption: "<strong>Study Away</strong> to learn a new language or subject, experience a new culture, or all of the above."
+			},
+			{
+				theme: "sea",
+				image: 2,
+				caption: "<strong>Summer Housing</strong> offers more than just a place to live, but a new community full of activity."
+			},
+			{
+				theme: "frog",
+				image: 1,
+				caption: "<strong>Summer Institutes</strong> are small, focused courses that integrate time in the classroom within the field"
+			},
+			{
+				theme: "bee",
+				image: 2,
+				caption: "<strong>Summer Sessions</strong> are for exploring new topics, and sharpening your skills quickly."
+			}
+		]
+	} %}
 {% endblock %}
