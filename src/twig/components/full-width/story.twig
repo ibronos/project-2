@@ -15,14 +15,16 @@
 			<div class="story_inner">
 				{% if quote %}
 					<blockquote class="story_quote">
-						<span class="story_quote_icon">{{site.icon("quote")}}</span>
-						<div class="story_quote_body">
-							<p>{{quote}}</p>
+						<div class="story_quote_inner">
+							<span class="story_quote_icon">{{site.icon("quote")}}</span>
+							<div class="story_quote_body">
+								<p>{{quote.content}}</p>
+							</div>
+							<cite class="story_quote_cite">
+								<span class="story_quote_cite_name">{{quote.name}}</span>
+								<span class="story_quote_cite_label">{{quote.label}}</span>
+							</cite>
 						</div>
-						<cite class="story_quote_cite">
-							<span class="story_quote_cite_name">{{name}}</span>
-							<span class="story_quote_cite_label">{{label}}</span>
-						</cite>
 					</blockquote>
 				{% endif %}
 				{% if detail %}

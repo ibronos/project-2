@@ -5757,10 +5757,10 @@ button {
 .story {
   position: relative;
   background: #000;
-  padding: 30px 0; }
-  @media screen and (min-width: 980px) {
+  padding: 30px 0 50px 0; }
+  @media screen and (min-width: 740px) {
     .story {
-      padding: 70px; } }
+      padding: 70px 0; } }
   @media screen and (min-width: 1220px) {
     .story {
       padding: 100px 0; } }
@@ -5785,19 +5785,109 @@ button {
   position: relative;
   z-index: 4;
   color: #fff; }
+  @media screen and (min-width: 740px) {
+    .story_inner {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
 
 /* ==========================================================================
 	Story Quote
 ============================================================================= */
+.story_quote {
+  margin: 20px 0 50px; }
+  @media screen and (min-width: 740px) {
+    .story_quote {
+      width: 40%;
+      padding-right: 40px; } }
+  @media screen and (min-width: 1220px) {
+    .story_quote {
+      width: 50%;
+      padding-right: 0; } }
+
+@media screen and (min-width: 1220px) {
+  .story_quote_inner {
+    max-width: 380px; } }
+
+.story_quote_icon {
+  color: #43FD71;
+  display: inline-block;
+  margin-bottom: 10px; }
+  @media screen and (min-width: 740px) {
+    .story_quote_icon {
+      margin-bottom: 22px;
+      -webkit-transform-origin: left top;
+              transform-origin: left top;
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5); } }
+
+.story_quote_body {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Bold", sans-serif;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.55556; }
+  @media screen and (min-width: 740px) {
+    .story_quote_body {
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 1.5; } }
+  @media screen and (min-width: 980px) {
+    .story_quote_body {
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 1.58333; } }
+  @media screen and (min-width: 1220px) {
+    .story_quote_body {
+      font-size: 28px;
+      font-size: 1.75rem;
+      line-height: 1.57143; } }
+  .story_quote_body p {
+    margin: 0; }
+
+.story_quote_cite {
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-style: normal;
+  letter-spacing: 1.5px;
+  letter-spacing: 0.09375rem;
+  margin-top: 23px;
+  text-transform: uppercase; }
+  @media screen and (min-width: 980px) {
+    .story_quote_cite {
+      font-size: 16px;
+      font-size: 1rem; } }
+
+.story_quote_cite_name {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Light", sans-serif; }
+  .story_quote_cite_name:before {
+    content: "—";
+    margin-right: 7px; }
+
+.story_quote_cite_label {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Bold", sans-serif; }
+
 /* ==========================================================================
 	Story Detail
 ============================================================================= */
 .story_detail {
   border-left: 10px solid #43FD71;
   padding: 20px 0 20px 25px; }
+  @media screen and (min-width: 740px) {
+    .story_detail {
+      width: 60%; } }
   @media screen and (min-width: 980px) {
     .story_detail {
       padding-left: 50px; } }
+  @media screen and (min-width: 1220px) {
+    .story_detail {
+      width: 50%; } }
 
 .story_detail_label {
   font-weight: 400;
@@ -5839,7 +5929,7 @@ button {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.6; }
-  @media screen and (min-width: 740px) {
+  @media screen and (min-width: 1220px) {
     .story_detail_caption {
       font-size: 24px;
       font-size: 1.5rem;
@@ -5902,7 +5992,7 @@ button {
 .story_detail_video {
   display: block;
   margin-top: 20px; }
-  @media screen and (min-width: 740px) {
+  @media screen and (min-width: 1220px) {
     .story_detail_video {
       display: inline-block;
       margin-top: 0;

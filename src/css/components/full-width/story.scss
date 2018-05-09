@@ -2,10 +2,10 @@
 	position: relative;
 
 	background: #000;
-	padding: 30px 0;
+	padding: 30px 0 50px 0;
 
-	@media #{$min_lg} {
-		padding: 70px;
+	@media #{$min_md} {
+		padding: 70px 0;
 	}
 
 	@media #{$min_xl} {
@@ -31,6 +31,11 @@
 	z-index: 4;
 
 	color: #fff;
+
+	@media #{$min_md} {
+		align-items: center;
+		display: flex;
+	}
 }
 
 
@@ -38,17 +43,92 @@
 	Story Quote
 ============================================================================= */
 
-.story_quote {}
+.story_quote {
+	margin: 20px 0 50px;
 
-.story_quote_icon {}
+	@media #{$min_md} {
+		width: 40%;
 
-.story_quote_body {}
+		padding-right: 40px;
+	}
 
-.story_quote_cite {}
+	@media #{$min_xl} {
+		width: 50%;
+		
+		padding-right: 0;
+	}
+}
 
-.story_quote_cite_name {}
+.story_quote_inner {
 
-.story_quote_cite_label {}
+	@media #{$min_xl} {
+		max-width: 380px;
+	}
+}
+
+.story_quote_icon {
+	color: $frog;
+	display: inline-block;
+	margin-bottom: 10px;
+
+	@media #{$min_md} {
+		margin-bottom: 22px;
+		transform-origin: left top;
+		transform: scale(1.5);
+	}
+}
+
+.story_quote_body {
+	@include u(700);
+
+	font-size: 18px;
+	line-height: (28 / 18);
+
+	@media #{$min_md} {
+		font-size: 20px;
+		line-height: (30 / 20);
+	}
+
+	@media #{$min_lg} {
+		font-size: 24px;
+		line-height: (38 / 24);
+	}
+
+	@media #{$min_xl} {
+		font-size: 28px;
+		line-height: (44 / 28);
+	}
+	
+	p {
+		margin: 0;
+	}
+}
+
+.story_quote_cite {
+	display: block;
+	font-size: 14px;
+	font-style: normal;
+	letter-spacing: 1.5px;
+	margin-top: 23px;
+	text-transform: uppercase;
+
+	@media #{$min_lg} {
+		font-size: 16px;
+	}
+}
+
+.story_quote_cite_name {
+	@include u(300);
+
+	&:before {
+		content: "—";
+		margin-right: 7px;
+	}
+}
+
+.story_quote_cite_label {
+	@include u(700);
+}
 
 
 /* ==========================================================================
@@ -59,8 +139,16 @@
 	border-left: 10px solid $frog;
 	padding: 20px 0 20px 25px;
 
+	@media #{$min_md} {
+		width: 60%;
+	}
+
 	@media #{$min_lg} {
 		padding-left: 50px;
+	}
+
+	@media #{$min_xl} {
+		width: 50%;
 	}
 }
 
@@ -93,7 +181,15 @@
 }
 
 .story_detail_caption {
-	@include body_text;
+	@include u(300);
+
+	font-size: 20px;
+	line-height: (32 / 20);
+
+	@media #{$min_xl} {
+		font-size: 24px;
+		line-height: (40 / 24);	
+	}
 
 	p {
 		margin: 0;
@@ -122,7 +218,7 @@
 	display: block;
 	margin-top: 20px;
 
-	@media #{$min_md} {
+	@media #{$min_xl} {
 		display: inline-block;
 		margin-top: 0;
 		margin-left: 30px;
