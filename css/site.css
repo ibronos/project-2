@@ -4633,7 +4633,7 @@ button {
   font-size: 40px;
   font-size: 2.5rem;
   line-height: 1.75;
-  margin: 0; }
+  margin: 0 0 20px; }
   @media screen and (min-width: 980px) {
     .page_title {
       font-size: 60px;
@@ -4646,6 +4646,7 @@ button {
       line-height: 1.25; } }
   @media screen and (min-width: 1220px) {
     .page_title {
+      margin-bottom: 0;
       padding-right: 150px; } }
   .page_theme_default .page_title {
     color: #0F0F11; }
@@ -5175,8 +5176,7 @@ button {
 	Sub Navigation
 ============================================================================= */
 .sub_nav {
-  position: relative;
-  margin-top: 20px; }
+  position: relative; }
   @media print {
     .sub_nav {
       display: none; } }
@@ -5753,6 +5753,48 @@ button {
 
 .contact_detail_link {
   color: inherit; }
+
+.now {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #F5F7F9; }
+  @media screen and (min-width: 740px) {
+    .now {
+      padding-top: 60px; } }
+  @media screen and (min-width: 980px) {
+    .now {
+      padding-top: 80px; } }
+  @media screen and (min-width: 1220px) {
+    .now {
+      padding-top: 100px; } }
+  @media screen and (min-width: 740px) {
+    .now {
+      padding-bottom: 60px; } }
+  @media screen and (min-width: 980px) {
+    .now {
+      padding-bottom: 80px; } }
+  @media screen and (min-width: 1220px) {
+    .now {
+      padding-bottom: 100px; } }
+
+.now_label {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  color: #003473;
+  font-size: 12px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase; }
+
+.now_title {
+  font-family: "Meta Serif W01 Bold";
+  font-weight: 400;
+  color: #0F0F11;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  margin: 0; }
 
 .story {
   position: relative;

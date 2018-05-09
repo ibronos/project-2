@@ -121,9 +121,10 @@
 .page_title {
 	@include h1;
 
-	margin: 0;
+	margin: 0 0 20px;
 
 	@media #{$min_xl} {
+		margin-bottom: 0;
 		padding-right: 150px;
 	}
 

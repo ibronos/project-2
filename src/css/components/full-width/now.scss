@@ -1,0 +1,39 @@
+.now {
+	@include padded_xl;
+
+	background: #F5F7F9;
+}
+
+.now_inner {}
+
+.now_header {}
+
+.now_label {
+	@include u(500);
+
+	color: $navy;
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.now_title {
+	@include m(700);
+
+	color: $dark;
+	font-size: 22px;
+	line-height: (33 / 22);
+	margin: 0;
+}
+
+.now_items {}
+
+.now_item {}
+
+.now_item_figure {}
+
+.now_item_image {}
+
+.now_body {}
+
+.now_caption {}

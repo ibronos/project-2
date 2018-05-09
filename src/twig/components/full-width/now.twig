@@ -1,0 +1,28 @@
+<div class="now">
+	<div class="fs-row">
+		<div class="fs-cell">
+			<div class="now_inner">
+				<header class="now_header">
+					<span class="now_label">{{label}}</span>
+					<h2 class="now_title">{{title}}</h2>
+				</header>
+				<div class="js-carousel now_items" data-carousel-options='{
+					"theme": "base_theme",
+					"controls": false
+				}'>
+					{% for item in items %}
+						<div class="now_item">
+							<figure class="now_item_figure">
+								{{site.image("now_item", img.wide.sml, item.image)}}
+							</figure>
+							<div class="now_body">
+								<div class="now_caption">{{item.caption}}</div>
+								<span>{{site.icon("arrow_right")}}</span>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
