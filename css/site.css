@@ -4590,6 +4590,8 @@ button {
 
 .page_header {
   position: relative; }
+  .page_theme_sky .page_header {
+    background: #F5F7F9; }
 
 .page_background {
   background: #003473;

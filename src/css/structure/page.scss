@@ -59,6 +59,10 @@
 
 .page_header {
 	position: relative;
+
+	.page_theme_sky & {
+		background: #F5F7F9;
+	}
 }
 
 .page_background {
