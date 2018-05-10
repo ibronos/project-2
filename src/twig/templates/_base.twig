@@ -228,30 +228,32 @@
 
 				<!-- Page Content -->
 				<div class="page_content">
-					<div class="fs-row">
-						<!-- Main Content -->
-						<div class="fs-cell{% if page.layout == "default" or page.layout == "style-guide" %} fs-lg-11 fs-xl-9 fs-xl-push-1{% endif %} content_wrapper">
-							<main class="main_content" id="main_content" itemprop="mainContentOfPage">
-								<!-- WYSIWYG - wrap all WYSIWYG text areas in `.typography` -->
-								<div class="typography">
-									{% block typography %}
-									{% endblock %}
-								</div>
-								<!-- END: WYSIWYG -->
+					{% if page.layout != "home" %}
+						<div class="fs-row">
+							<!-- Main Content -->
+							<div class="fs-cell{% if page.layout == "default" or page.layout == "style-guide" %} fs-lg-11 fs-xl-9 fs-xl-push-1{% endif %} content_wrapper">
+								<main class="main_content" id="main_content" itemprop="mainContentOfPage">
+									<!-- WYSIWYG - wrap all WYSIWYG text areas in `.typography` -->
+									<div class="typography">
+										{% block typography %}
+										{% endblock %}
+									</div>
+									<!-- END: WYSIWYG -->
 
-								{% block after_typography %}
-								{% endblock %}
-
-								<!-- In Content Callouts -->
-								<div class="in_content_callouts">
-									{% block in_content_callouts %}
+									{% block after_typography %}
 									{% endblock %}
-								</div>
-								<!-- END: In Content Callouts -->
-							</main>
+
+									<!-- In Content Callouts -->
+									<div class="in_content_callouts">
+										{% block in_content_callouts %}
+										{% endblock %}
+									</div>
+									<!-- END: In Content Callouts -->
+								</main>
+							</div>
+							<!-- END: Main Content -->
 						</div>
-						<!-- END: Main Content -->
-					</div>
+					{% endif %}
 
 					<!-- Full Width Callouts -->
 					<div class="full_width_callouts">

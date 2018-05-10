@@ -2,15 +2,63 @@
 
 {% block page %}
 	{% set page = {
-		metaImage: "/images/temp/social-wide.jpg",
-		metaImageWidth: "1220",
-		metaImageHeight: "686",
-		metaCard: "summary_large_image",
 		title: "Home",
-		intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		layout: "home"
 	} %}
 {% endblock %}
 
 {% block full_width_callouts %}
+	{% include full ~ "now.twig" with {
+		label: "Important Now",
+		title: "Explore the Possibilities & Make Trinity a Part of Your <em>Summer</em>",
+		items: [
+			{
+				theme: "orange",
+				image: 1,
+				caption: "<strong>Study Away</strong> to learn a new language or subject, experience a new culture, or all of the above."
+			},
+			{
+				theme: "sea",
+				image: 2,
+				caption: "<strong>Summer Housing</strong> offers more than just a place to live, but a new community full of activity."
+			},
+			{
+				theme: "frog",
+				image: 1,
+				caption: "<strong>Summer Institutes</strong> are small, focused courses that integrate time in the classroom within the field"
+			},
+			{
+				theme: "bee",
+				image: 2,
+				caption: "<strong>Summer Sessions</strong> are for exploring new topics, and sharpening your skills quickly."
+			}
+		]
+	} %}
+
+	{% include full ~ "mix.twig" with {
+		news: {
+			heading: "Catch up on the latest.",
+			title: "Trinity Offering New Mediterranean Summer Study Away Option",
+			caption: "The one-credit course, “Pathways of Mediterranean Cultural Commerce: Barcelona and Sardinia,” will be offered from May 23 to June 15, 2018."
+		},
+		eventsHeading: "What's happening next.",
+		events: [
+			{
+				day: "14",
+				month: "Mar",
+				year: "2018",
+				title: "Trinity’s International Hip-Hop Festival",
+				location: "Hartford, CT",
+				time: "8 p.m. - 12 a.m."
+			},
+			{
+				day: "7-8",
+				month: "Apr",
+				year: "2018",
+				title: "25th Annual Robotics Competition",
+				location: "Ferris Athletic Center, Oosting Gymnasium",
+				time: "9 p.m. - 2 p.m."
+			}
+		]
+	} %}
 {% endblock %}
