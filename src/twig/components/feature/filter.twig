@@ -1,6 +1,10 @@
 <div class="filter">
 	<div class="fs-row">
 		<div class="fs-cell fs-xl-10 fs-all-justify-center">
+			<div class="filter_inner">
+				{{site.input("text", "Search by keyword", "filter_search")}}
+				{{site.dropdown("Filter by Category", options, "filter_options")}}
+			</div>
 		</div>
 	</div>
 </div>

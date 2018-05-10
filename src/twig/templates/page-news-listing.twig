@@ -9,6 +9,15 @@
 {% endblock %}
 
 {% block page_header_append %}
+	{% include feat ~ "filter.twig" with {
+		options: [
+			"Filter by Category",
+			"Orcs",
+			"Fairies",
+			"Cordellias",
+			"Killer Squirrels"
+		]
+	} %}
 {% endblock %}
 
 {% block subNav_block %}
