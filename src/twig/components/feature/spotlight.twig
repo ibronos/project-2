@@ -1,0 +1,57 @@
+<div class="spotlight">
+	<div class="spotlight_body">
+		{% include par ~ "background-video.twig" with {
+			class: "spotlight_body",
+			autoPlay: "true",
+			loop: "true",
+			poster: img.wide.lrg,
+			image: poster,
+			sources: {
+				video: video,
+				webm: "http://example.com/video.webm",
+				mp4: "http://example.com/video.mp4",
+				ogg: "http://example.com/video.ogv"
+			}
+		} %}
+		<div class="spotlight_body_inner">
+			<div class="fs-row">
+				<div class="fs-cell">
+					<header class="spotlight_header">
+						<button class="spotlight_video_trigger" title="pause/play background video">
+							<span class="spotlight_video_icons">
+								<span class="spotlight_video_icon spotlight_video_icon_pause">{{site.icon("pause")}}</span>
+								<span class="spotlight_video_icon spotlight_video_icon_play">{{site.icon("play")}}</span>
+							</span>
+							<span class="spotlight_video_label">Pause Video</span>
+						</button>
+						<h1 class="spotlight_title">{{title}}</h1>
+					</header>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="js-equalize spotlight_items" data-equalize-options='{
+		"target": ".spotlight_item_title"
+	}'>
+		{% for item in items %}
+			<div class="spotlight_item theme_{{item.theme}}">
+				{% include par ~ "background.twig" with {
+					class: "spotlight_item",
+					image: item.image,
+					sources: {
+						"0px": img.wide.sml
+					}
+				} %}
+				<div class="spotlight_item_inner">
+					<span class="spotlight_item_trigger">
+						<span class="spotlight_item_trigger_icon">{{site.icon("stretcher")}}</span>
+					</span>
+					<header class="spotlight_item_header">
+						<span class="spotlight_item_label">{{item.label}}</span>
+						<h2 class="spotlight_item_title">{{item.title}}</h2>
+					</header>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

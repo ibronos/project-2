@@ -7,6 +7,40 @@
 	} %}
 {% endblock %}
 
+{% block page_feature %}
+	{% include feat ~ "spotlight.twig" with {
+		title: "Trinity is an incredible<br>place with amazing people.<br>Let us show you.",
+		poster: 1,
+		video: "https://youtu.be/0AkY9a7DQUE",
+		items: [
+			{
+				image: 1,
+				theme: "sea",
+				label: "Programs",
+				title: "See what you can learn at Trinity."
+			},
+			{
+				image: 2,
+				theme: "orange",
+				label: "People",
+				title: "Individually, Incredible.Together, Trinity."
+			},
+			{
+				image: 1,
+				theme: "frog",
+				label: "Places",
+				title: "Campus, Hartford & the World Beyond."
+			},
+			{
+				image: 2,
+				theme: "yellow",
+				label: "Pride",
+				title: "We have a lot to be proud of."
+			}
+		]
+	} %}
+{% endblock %}
+
 {% block full_width_callouts %}
 	{% include full ~ "now.twig" with {
 		label: "Important Now",
