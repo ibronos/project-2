@@ -5849,7 +5849,8 @@ button {
 	Spotlight
 ============================================================================= */
 .spotlight {
-  position: relative; }
+  position: relative;
+  background: #1573DD; }
 
 /* ==========================================================================
 	Spotlight Heading
