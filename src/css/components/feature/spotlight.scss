@@ -149,12 +149,30 @@
 	left: 50%;
 
 	transform: translate(-50%, -50%);
-	transition: opacity .25s;
+	transition: 
+		clip-path .15s,
+		opacity .25s;
 }
 
 .spotlight_video_icon_pause {
+	clip-path:
+		polygon(
+			0 0,
+			100% 0,
+			100% 50%,
+			100% 100%,
+			0 100%
+		);
 
 	.paused & {
+		clip-path:
+			polygon(
+				0 0,
+				100% 50%,
+				100% 50%,
+				100% 50%,
+				0 100%
+			);
 		opacity: 0;
 	}
 }

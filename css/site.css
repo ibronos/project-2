@@ -5953,11 +5953,18 @@ button {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: opacity .25s;
-  transition: opacity .25s; }
+  -webkit-transition: opacity .25s, -webkit-clip-path .15s;
+  transition: opacity .25s, -webkit-clip-path .15s;
+  transition: clip-path .15s, opacity .25s;
+  transition: clip-path .15s, opacity .25s, -webkit-clip-path .15s; }
 
-.paused .spotlight_video_icon_pause {
-  opacity: 0; }
+.spotlight_video_icon_pause {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%); }
+  .paused .spotlight_video_icon_pause {
+    -webkit-clip-path: polygon(0 0, 100% 50%, 100% 50%, 100% 50%, 0 100%);
+            clip-path: polygon(0 0, 100% 50%, 100% 50%, 100% 50%, 0 100%);
+    opacity: 0; }
 
 .spotlight_video_icon_play {
   opacity: 0; }
