@@ -8,6 +8,10 @@
 		@include h2;
 	}
 
+	h5 {
+		margin-bottom: 18px;
+	}
+
 	p {
 		@include body_text;
 	}
@@ -27,20 +31,37 @@
 ::-moz-placeholder,
 :-ms-input-placeholder {}
 
-@mixin label($theme: null) {}
+@mixin label($theme: null) {
+	@include u(300);
+
+	color: $dark;
+	font-size: 14px;
+	letter-spacing: 1px;
+	margin-top: 13px;
+	text-transform: uppercase;
+}
 
 @mixin input($theme: null) {
+	@include label_text;
+
 	appearance: none;
-	border: 1px solid #000;
+	border: 1px solid rgba(#766F67, .5);
 	border-radius: 0;
-	padding: 10px 20px;
+	box-shadow: 0 0 0 0 $yellow;
+	color: $dark;
+	padding: 11px 20px;
+	transition: box-shadow .25s;
+
+	@media #{$min_md} {
+		padding: 13px 25px;
+	}
 }
 
 .form-builder {
 		
 	label:not(.fs-checkbox-label):not(.form_builder_sublabel) {
 		@include label;
-
+		
 		display: block;
 	}
 
@@ -48,11 +69,16 @@
 		@include h6;
 	}
 
-	input,
+	input:not([type="checkbox"]):not([type="radio"]),
 	textarea {
 		@include input;
 
 		width: 100%;
+
+		&:focus,
+		&:hover {
+			box-shadow: -10px 10px 0 0 $yellow;
+		}
 	}
 
 	input {
@@ -72,14 +98,28 @@
 	}
 
 	select {
-		height: 40px;
-		width: 100%;
+		@include u(500);
+
+		height: 50px;
+		width: calc(100% - 10px);
 
 		appearance: none;
-		border: 1px solid #000;
+		background: $blue url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAQCAYAAAAS7Y8mAAAAAXNSR0IArs4c6QAAANtJREFUOBGtlM8KQUEUh10i2VhIFrLhSWQpW3aew1bZirdRdrK7eQ42FDsbxnfK6JppGtfMqV9nzp/fN7fb7SYFQinVJaWoIXVg3PFPi2+I5HogUNurXyyeeoZixAZIom+R15GgbSD5iL/5geoDzRY6/Ql/4OtrlpUZDpAs5Y25BTMbEBc5qTv2SybHqmUJ7X+En9lrWxBXg+UOunjgT+ZDF8PZxzTygJdOs28AeOWAp/TLPr9zjrmCDgb8Si2/gbAA0kO3DHwcRsy4gU6QfN/rTDvOEWgtDimA8gJAYCZMqIuFHQAAAABJRU5ErkJggg==') no-repeat calc(100% - 20px) 50% / 11px 7px;
+		border: 0;
 		border-radius: 0;
+		box-shadow: -10px 10px 0 0 $navy;
+		color: #fff;
 		cursor: pointer;
-		padding: 10px 40px 10px 20px;
+		font-size: 11px;
+		letter-spacing: 2.2px;
+		margin-left: 10px;
+		padding: 19px 20px;
+		text-transform: uppercase;
+
+		@media #{$min_md} {
+			font-size: 13px;
+			padding: 18px 20px;
+		}
 	}
 }
 

@@ -97,8 +97,9 @@
 .fs-checkbox-marker {
 	float: none;
 
+	border: 2px solid $navy;
 	display: inline-block;
-	margin-right: 10px;
+	margin-right: 20px;
 	vertical-align: middle;
 
 	.fs-checkbox-checked & {}
@@ -109,12 +110,23 @@
 	top: 0;
 	left: 0;
 
+	box-shadow: 
+		inset 0 0 0 0 #fff,
+		inset 0 0 0 0 $blue;
+	transition:
+		background .25s,
+		box-shadow .25s;
+
 	&:before {
+		height: 8px;
+		width: 5px;
+
 		position: absolute;
 		top: 50%;
 		left: 50%;
 
-		margin: 0;
+		border-color: #fff;
+		margin: -1px 0 0;
 		transform:
 			translate(-50%, -50%)
 			rotate(45deg)
@@ -128,7 +140,19 @@
 		}
 	}
 
-	.fs-checkbox-radio & {}
+	.fs-checkbox-checked & {
+		box-shadow: 
+			inset 0 0 0 2px #fff,
+			inset 0 0 0 10px $blue;
+	}
+
+	.fs-checkbox-radio & {
+		height: 8px;
+		width: 8px;
+
+		background: $blue;
+		box-shadow: none;
+	}
 }
 
 .fs-checkbox-label {
