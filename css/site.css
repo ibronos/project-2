@@ -3708,9 +3708,90 @@ strong {
     margin-left: auto; }
 
 .typography blockquote {
-  margin: 20px 0; }
+  font-weight: 400;
+  font-family: "Unit Offc W01 Bold", sans-serif;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-right: 0;
+  margin-left: 0; }
+  @media screen and (min-width: 740px) {
+    .typography blockquote {
+      font-size: 28px;
+      font-size: 1.75rem;
+      line-height: 1.64286; } }
+  .typography blockquote:not(.quote_content) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-left: 5px solid #43FD71;
+    padding: 30px 0 10px 10px; }
+    @media screen and (min-width: 740px) {
+      .typography blockquote:not(.quote_content) {
+        margin-top: 60px; } }
+    @media screen and (min-width: 740px) {
+      .typography blockquote:not(.quote_content) {
+        margin-bottom: 60px; } }
+    @media screen and (min-width: 500px) {
+      .typography blockquote:not(.quote_content) {
+        border-left-width: 10px;
+        padding: 50px 0 20px 20px; } }
+    @media screen and (min-width: 740px) {
+      .typography blockquote:not(.quote_content) {
+        padding: 78px 0 57px 40px; } }
   .typography blockquote p {
     margin: 0; }
+    .typography blockquote p:first-child {
+      position: relative; }
+      .typography blockquote p:first-child:before {
+        height: 15px;
+        width: 20px;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAeCAYAAABaKIzgAAAAAXNSR0IArs4c6QAABRBJREFUWAmlWH1oVWUYf55z7u7SUpcJIWUfFhVkllZQKoHu4zqN7ENCchQEJiJZ2ypz/+z+IbWMbdU0iChMQxjTAouW86rEGmQgQaOyWVgWLKP+2Ea7uu2+T7/3sPd4zrnnnPvh4O59nt/z8f7e7/c9TGX+PSIt147ThRQpWkMs9xMnV2b4jXNlpiMR4RS9tFSRqidBTuEzGbvjGZOPjVBsWSsv14lMNQtRLRK68cz81QqevSrNaVVsLu1XI9vnME1tVqKeR77rvbFs0cYMdx7QmFuR1yFMrpPm9UqkFS1fFGZ3MItbjnHH65F2j0ETJDXRKkybQPAqj8kV0fiRJPPdX3D77wWJOkMs2XdF6HE3Q5TANMlM96IXBqNcNI5G1+dE3sd4Xxfn59iYTxyzOlYl4hxrpal6XLLdIHlNnB9a/jd6ZR9zovso74okmZa09bUa3Z1TaktcPm1Dg0/i30cVVHlQ65FEQXKNEjoEAldox7A/EBzCb2cVzerusdITYT4GA8lEvxrbTyQbDJZXMmojOmSz1dbH7ae89tCh1yTRi59iPia9zq7MnLWYdyynWXuweKZcPELQK7pWmntQPhHholfLDwmmZ49w57dhPnlEU9IyPyfZwajhxpAMI2mq0Dz0VlYjTS+Kkk4v5pOZDib55oZe3nbRh3sUyyM7exlI7o0iiTlzoVSSKdl+J/JF7wRMx+fygxviSGqOPqJ11LweSeu85L0yC3eV0pM6dkomu9AD4fMccxLDvbmHn8x56wmTfURBsinMyWBiUY+Riykx5EtAcmWM73eYk7/E2F2TS7ROmpZhsj/gWkIEm+SvEDgSEhXfcCyQ4cjggMElqhRFbxvTQUz2TYH4SPU5ea+CWQocEnxjZIKAwSWKo+yhgC1PzeGMzwMjgF/pzH2YSjMjzA6MEVxULY2r43yMzSH6qKSrMAx3GTCqRMXralTj5zXy6sIoH4NbpAo23PEV/gR77Av18k6liQ0rHaLjNLYYrXN7N8zRYCC7luTiUHWuaT8uFjcYPFgqxfcEsVBdZIZS6q1JOXsWB81WfYKF+TnkhFTsWR4MBFkbR2GDyORpJG8I2rXOrOaF4VEYcs5XSnb3y8gpLOwFQb/pXrRKIuom0b0hsg/b0NMu5gpcZk5ajDvGQL284rubmh692s1fqqAvz0Kdzv3SH1vlV4vXMA0XTKgp32k2TZT+Kz5NvicSz8UZFLy6XVZOPG82pqTxVlPb9NDzvwYou1RqSSD28nJipBSxm9MhapH9c6CS0lWm23xBQkM+vQxFEd1hwhyiy+nK73F9GzVgeSX7Nne2uL+8PJeiWImb0yHqvByFey+5lC4JyZ/eqBlU2YdlNunFSpWxs/9hYqbnKJFt2XsMWE6JETnhjTvMr53HtdB573jxUmSbrOPG3yV6hN/sR2V9xlBSiZ5LUOXHwZgKi3fiTRX7lgrGGB1cBvBuOm10l6gDcHITEo8YY7Eleu7tL7ntt6B/L7f/iCOqNYgX1NFwm/1XRB9R55MM0+qSFhbz0RXW7B1RlWe4vY2Ju6LsQRwdpUByS/CR5yOqgzLc8Y3NyWUgezKYxKvDntMEbuHb1xZ6ieIb0jY8eraid8e8OYIycg7jurmujzs/yLMFAaPrjwUDNPowbulP4ZRYiv0XZ6/oV+I5DHUfWYkPM7zrJ+NfTKm/umQpi8sMPQb/hbi66PvAP/gNCsvhmTRn72ecHg/L9T9E9MwiSEsN/QAAAABJRU5ErkJggg==") no-repeat 0 0/contain;
+        content: ""; }
+        @media screen and (min-width: 500px) {
+          .typography blockquote p:first-child:before {
+            top: -35px; } }
+
+.typography .quote {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-left: 5px solid #43FD71;
+  padding: 30px 0 10px 10px; }
+  @media screen and (min-width: 740px) {
+    .typography .quote {
+      margin-top: 60px; } }
+  @media screen and (min-width: 740px) {
+    .typography .quote {
+      margin-bottom: 60px; } }
+  @media screen and (min-width: 500px) {
+    .typography .quote {
+      border-left-width: 10px;
+      padding: 50px 0 20px 20px; } }
+  @media screen and (min-width: 740px) {
+    .typography .quote {
+      padding: 78px 0 57px 40px; } }
+
+.typography .quote_content {
+  margin: 0; }
+  .typography .quote_content p {
+    margin: 0; }
+
+.typography .quote_caption {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  letter-spacing: 0.075rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #766F67;
+  margin-top: 20px; }
+  .typography .quote_caption:before {
+    content: "—";
+    margin-right: 2px; }
 
 .typography ol,
 .typography ul {
@@ -7877,49 +7958,49 @@ button {
 /* ==========================================================================
 	Quote
 ============================================================================= */
-.quote {
+.quote_card {
   margin-top: 40px;
   margin-bottom: 40px;
   position: relative;
   margin: 0; }
-  .quote.theme_yellow:before {
+  .quote_card.theme_yellow:before {
     background: #FFFD00; }
-  .quote.theme_yellow:after {
+  .quote_card.theme_yellow:after {
     border-bottom-color: #FFD600;
     border-left-color: #FFD600; }
-  .quote.theme_yellow .quote_icon {
+  .quote_card.theme_yellow .quote_card_icon {
     color: #FFD600; }
-  .quote.theme_yellow .quote_body {
+  .quote_card.theme_yellow .quote_card_body {
     color: #0F0F11; }
-  .quote.theme_yellow .quote_cite {
+  .quote_card.theme_yellow .quote_card_cite {
     color: #0F0F11; }
-  .quote.theme_green:before {
+  .quote_card.theme_green:before {
     background: #43FD71; }
-  .quote.theme_green:after {
+  .quote_card.theme_green:after {
     border-bottom-color: #35C85A;
     border-left-color: #35C85A; }
-  .quote.theme_green .quote_icon {
+  .quote_card.theme_green .quote_card_icon {
     color: #35C85A; }
-  .quote.theme_green .quote_body {
+  .quote_card.theme_green .quote_card_body {
     color: #0F0F11; }
-  .quote.theme_green .quote_cite {
+  .quote_card.theme_green .quote_card_cite {
     color: #0F0F11; }
   @media screen and (min-width: 740px) {
-    .quote {
+    .quote_card {
       margin-top: 60px; } }
   @media screen and (min-width: 980px) {
-    .quote {
+    .quote_card {
       margin-top: 80px; } }
   @media screen and (min-width: 740px) {
-    .quote {
+    .quote_card {
       margin-bottom: 60px; } }
   @media screen and (min-width: 980px) {
-    .quote {
+    .quote_card {
       margin-bottom: 80px; } }
   @media screen and (min-width: 1220px) {
-    .quote {
+    .quote_card {
       margin-bottom: 100px; } }
-  .quote:before {
+  .quote_card:before {
     height: calc(100% + 10px);
     width: calc(100% - 10px);
     position: absolute;
@@ -7927,11 +8008,11 @@ button {
     left: 10px;
     content: ""; }
     @media screen and (min-width: 740px) {
-      .quote:before {
+      .quote_card:before {
         height: calc(100% + 20px);
         width: calc(100% - 20px);
         left: 20px; } }
-  .quote:after {
+  .quote_card:after {
     height: 100%;
     width: calc(100% - 10px);
     position: absolute;
@@ -7942,17 +8023,17 @@ button {
     content: "";
     pointer-events: none; }
     @media screen and (min-width: 740px) {
-      .quote:after {
+      .quote_card:after {
         width: calc(100% - 20px);
         top: 40px;
         border-bottom-width: 20px;
         border-left-width: 20px; } }
-  .quote.theme_image:before {
+  .quote_card.theme_image:before {
     display: none; }
-  .quote.theme_image:after {
+  .quote_card.theme_image:after {
     border-color: #FFE300; }
 
-.quote_background {
+.quote_card_background {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -7960,9 +8041,9 @@ button {
   left: 0;
   height: calc(100% + 10px); }
   @media screen and (min-width: 740px) {
-    .quote_background {
+    .quote_card_background {
       height: calc(100% + 20px); } }
-  .quote_background:before {
+  .quote_card_background:before {
     height: calc(100% - 10px);
     width: calc(100% - 20px);
     position: absolute;
@@ -7972,66 +8053,66 @@ button {
     background: rgba(0, 0, 0, 0.6);
     content: ""; }
     @media screen and (min-width: 740px) {
-      .quote_background:before {
+      .quote_card_background:before {
         height: calc(100% - 20px);
         width: calc(100% - 40px);
         top: 20px;
         left: 20px; } }
 
-.quote_inner {
+.quote_card_inner {
   position: relative;
   z-index: 4;
   padding: 20px; }
 
-.quote_content {
+.quote_card_content {
   padding: 20px 20px 0; }
   @media screen and (min-width: 740px) {
-    .quote_content {
+    .quote_card_content {
       padding: 40px 30px 20px; } }
   @media screen and (min-width: 980px) {
-    .quote_content {
+    .quote_card_content {
       padding: 90px 70px 60px; } }
 
-.quote_icon {
+.quote_card_icon {
   display: inline-block;
   margin-bottom: 10px; }
   @media screen and (min-width: 740px) {
-    .quote_icon {
+    .quote_card_icon {
       margin-bottom: 20px;
       -webkit-transform-origin: left top;
               transform-origin: left top;
       -webkit-transform: scale(2);
               transform: scale(2); } }
   @media screen and (min-width: 980px) {
-    .quote_icon {
+    .quote_card_icon {
       margin-bottom: 33px;
       -webkit-transform: scale(2.85);
               transform: scale(2.85); } }
-  .theme_image .quote_icon {
+  .theme_image .quote_card_icon {
     color: #FFE300; }
 
-.quote_body {
+.quote_card_body {
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.55556; }
   @media screen and (min-width: 740px) {
-    .quote_body {
+    .quote_card_body {
       font-size: 24px;
       font-size: 1.5rem;
       line-height: 1.58333; } }
   @media screen and (min-width: 980px) {
-    .quote_body {
+    .quote_card_body {
       font-size: 28px;
       font-size: 1.75rem;
       line-height: 1.57143; } }
-  .theme_image .quote_body {
+  .theme_image .quote_card_body {
     color: #fff; }
-  .quote_body p {
+  .quote_card_body p {
     margin: 0; }
 
-.quote_cite {
+.quote_card_cite {
   display: block;
   font-size: 16px;
   font-size: 1rem;
@@ -8041,27 +8122,27 @@ button {
   margin-top: 20px;
   text-transform: uppercase; }
   @media screen and (min-width: 740px) {
-    .quote_cite {
+    .quote_card_cite {
       font-size: 18px;
       font-size: 1.125rem; } }
   @media screen and (min-width: 980px) {
-    .quote_cite {
+    .quote_card_cite {
       font-size: 20px;
       font-size: 1.25rem;
       letter-spacing: 2px;
       letter-spacing: 0.125rem;
       margin-top: 48px; } }
-  .theme_image .quote_cite {
+  .theme_image .quote_card_cite {
     color: #fff; }
 
-.quote_cite_name {
+.quote_card_cite_name {
   font-weight: 400;
   font-family: "Unit Offc W01 Light", sans-serif; }
-  .quote_cite_name:before {
+  .quote_card_cite_name:before {
     content: "—";
     margin-right: 7px; }
 
-.quote_cite_label {
+.quote_card_cite_label {
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif; }
 

@@ -17,22 +17,22 @@
 				border-left-color: $c1;
 			}
 
-			.quote_icon {
+			.quote_card_icon {
 				color: $c1;
 			}
 
-			.quote_body {
+			.quote_card_body {
 				color: $t;
 			}
 
-			.quote_cite {
+			.quote_card_cite {
 				color: $t;
 			}
 		}
 	}
 }
 
-.quote {
+.quote_card {
 	@include pair_theme_quote;
 	@include margined_lg_top;
 	@include margined_xl_bottom;
@@ -91,7 +91,7 @@
 	}
 }
 
-.quote_background {
+.quote_card_background {
 	@include cover;
 
 	height: calc(100% + 10px);
@@ -122,14 +122,14 @@
 	}
 }
 
-.quote_inner {
+.quote_card_inner {
 	position: relative;
 	z-index: 4;
 
 	padding: 20px;
 }
 
-.quote_content {
+.quote_card_content {
 	padding: 20px 20px 0;
 
 	@media #{$min_md} {
@@ -141,7 +141,7 @@
 	}
 }
 
-.quote_icon {
+.quote_card_icon {
 	display: inline-block;
 	margin-bottom: 10px;
 
@@ -161,7 +161,7 @@
 	}
 }
 
-.quote_body {
+.quote_card_body {
 	@include u(700);
 
 	font-size: 18px;
@@ -186,7 +186,7 @@
 	}
 }
 
-.quote_cite {
+.quote_card_cite {
 	display: block;
 	font-size: 16px;
 	font-style: normal;
@@ -209,7 +209,7 @@
 	}
 }
 
-.quote_cite_name {
+.quote_card_cite_name {
 	@include u(300);
 
 	&:before {
@@ -218,6 +218,6 @@
 	}
 }
 
-.quote_cite_label {
+.quote_card_cite_label {
 	@include u(700);
 }
