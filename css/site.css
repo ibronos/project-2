@@ -3818,6 +3818,9 @@ strong {
 .typography ol {
   counter-reset: li; }
   .typography ol > li:before {
+    font-weight: 400;
+    font-family: "Unit Offc W01 Bold", sans-serif;
+    color: #1573DD;
     content: counter(li) ". ";
     counter-increment: li; }
     ol[type="A"] li:before {
@@ -3826,14 +3829,19 @@ strong {
       content: counter(li, lower-latin) ". "; }
 
 .typography ul li:before {
-  width: 5px;
-  height: 5px;
-  background: #444;
+  width: 6px;
+  height: 6px;
+  background: #1573DD;
   border-radius: 50%;
   content: "";
   display: block;
   float: left;
-  margin: 10px 0 0 -15px; }
+  margin: 11px 0 0 -15px; }
+  @media screen and (min-width: 740px) {
+    .typography ul li:before {
+      height: 8px;
+      width: 8px;
+      margin: 15px 0 0 -25px; } }
 
 .typography table {
   width: 100%;
