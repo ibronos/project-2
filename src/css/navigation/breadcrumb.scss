@@ -88,13 +88,13 @@
 
 .breadcrumb_name_switch {
 	position: relative;
-	z-index: 4;
 
 	cursor: pointer;
 	transition: color .25s;
 
 	.breadcrumb_item:hover &,
 	.breadcrumb_item:focus & {
+		z-index: 4;
 		
 		.page_theme_default & {
 			color: #fff;
@@ -133,11 +133,11 @@
 	.breadcrumb_item:focus & {
 		
 		.page_theme_default & {
-			color: #fff;
+			color: $navy;
 		}
 	
 		.page_theme_image & {
-			color: $navy;
+			color: #fff;
 		}
 	}
 }
