@@ -43,8 +43,8 @@
 	position: relative;
 
 	display: inline-block;
-	font-size: 14px;
-	letter-spacing: 2px;
+	font-size: 13px;
+	letter-spacing: 2.5px;
 	padding: 20px 0;
 	text-transform: uppercase;
 
@@ -87,7 +87,23 @@
 .breadcrumb_name {}
 
 .breadcrumb_name_switch {
+	position: relative;
+	z-index: 4;
+
 	cursor: pointer;
+	transition: color .25s;
+
+	.breadcrumb_item:hover &,
+	.breadcrumb_item:focus & {
+		
+		.page_theme_default & {
+			color: #fff;
+		}
+	
+		.page_theme_image & {
+			color: $dark;
+		}
+	}
 }
 
 .breadcrumb_name_label {
@@ -103,6 +119,7 @@
 	display: inline-block;
 	margin-left: 2px;
 	vertical-align: middle;
+	transition: color .25s;
 
 	.page_theme_default & {
 		color: $blue;
@@ -111,42 +128,68 @@
 	.page_theme_image & {
 		color: $yellow;
 	}
+
+	.breadcrumb_item:hover &,
+	.breadcrumb_item:focus & {
+		
+		.page_theme_default & {
+			color: #fff;
+		}
+	
+		.page_theme_image & {
+			color: $navy;
+		}
+	}
 }
 
 .breadcrumb_dropdown {
 	width: 230px;
 
 	position: absolute;
-	top: 100%;
+	top: 0;
 	left: -20px;
+	z-index: 2;
 
 	background: $navy;
-	border-radius: 3px;
 	opacity: 0;
-	padding: 10px 20px;
+	padding: 48px 20px 20px;
 	visibility: hidden;
 	transition:
 		opacity .25s,
 		visibility .25s;
 
-	.page_theme_default & {}
+	.page_theme_image & {
+		background: $yellow;
+	}
 
-	.breadcrumb_item:hover & {
+	.page_theme_default & {
+		background: $blue;
+	}
+
+	.breadcrumb_item:hover &,
+	.breadcrumb_item:focus & {
 		opacity: 1;
 		visibility: visible;
 	}
 }
 
 .breadcrumb_dropdown_item {
-	box-shadow: inset 0 -1px 0 0 rgba(#fff, .2);
 	color: #fff;
 	display: block;
-	font-size: 12px;
-	letter-spacing: 2px;
-	padding: 10px 0 9px;
+	font-size: 13px;
+	letter-spacing: 2.5px;
+	padding: 8px 0 9px;
 	transition:
 		box-shadow .25s,
 		color .25s;
+
+	.page_theme_image & {
+		color: $dark;
+	}
+
+	.page_theme_default & {
+		color: #fff;
+	}
 		
 	&:focus,
 	&:hover {
