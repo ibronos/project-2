@@ -48,24 +48,28 @@
 	padding: 20px 0;
 	text-transform: uppercase;
 
-	&:not(:last-child) {
+	&:after {
+		@include u(300);
+
+		content: "/";
+		display: inline-block;
+		font-size: 18px;
+		margin: 0 17px;
+		vertical-align: middle;
+
+		.page_theme_default & {
+			color: $dark;
+		}
+
+		.page_theme_image & {
+			color: rgba(#fff, .7);
+		}
+	}
+
+	&:last-child {
 
 		&:after {
-			@include u(300);
-
-			content: "/";
-			display: inline-block;
-			font-size: 18px;
-			margin: 0 17px;
-			vertical-align: middle;
-
-			.page_theme_default & {
-				color: $dark;
-			}
-
-			.page_theme_image & {
-				color: rgba(#fff, .7);
-			}
+			color: transparent;
 		}
 	}
 
@@ -198,6 +202,13 @@
 		
 	&:focus,
 	&:hover {
-		color: rgba(#fff, .6);	
+
+		.page_theme_image & {
+			color: rgba($dark, .6);
+		}
+	
+		.page_theme_default & {
+			color: rgba(#fff, .6);
+		}
 	}
 }

@@ -3500,15 +3500,15 @@ strong {
 .typography {
   font-weight: 400;
   font-family: "Unit Offc W01 Light", sans-serif;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.66667;
   color: #0F0F11; }
   @media screen and (min-width: 740px) {
     .typography {
-      font-size: 24px;
-      font-size: 1.5rem;
-      line-height: 1.66667; } }
+      font-size: 22px;
+      font-size: 1.375rem;
+      line-height: 1.72727; } }
   .typography a {
     border-bottom: 1px solid #1573DD;
     color: #1573DD;
@@ -3525,9 +3525,9 @@ strong {
   .typography h1 {
     font-weight: 400;
     font-family: "Unit Offc W01 Light", sans-serif;
-    font-size: 40px;
-    font-size: 2.5rem;
-    line-height: 1.75;
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 1.5625;
     margin: 47px 0 28px; }
     @media screen and (min-width: 980px) {
       .typography h1 {
@@ -3540,11 +3540,11 @@ strong {
         font-size: 5rem;
         line-height: 1.25; } }
   .typography h2 {
+    font-family: "Meta Serif W01 Bold";
     font-weight: 400;
-    font-family: "Unit Offc W01 Bold", sans-serif;
-    font-size: 32px;
-    font-size: 2rem;
-    line-height: 1.3125;
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1.5;
     margin: 47px 0 20px; }
     @media screen and (min-width: 740px) {
       .typography h2 {
@@ -3554,9 +3554,9 @@ strong {
   .typography h3 {
     font-weight: 400;
     font-family: "Unit Offc W01 Bold", sans-serif;
-    font-size: 28px;
-    font-size: 1.75rem;
-    line-height: 1.57143;
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1.5;
     margin: 47px 0 20px; }
     @media screen and (min-width: 740px) {
       .typography h3 {
@@ -3566,38 +3566,48 @@ strong {
   .typography h4 {
     font-weight: 400;
     font-family: "Unit Offc W01 Bold", sans-serif;
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.58333;
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.4;
     margin: 38px 0 10px; }
     @media screen and (min-width: 740px) {
       .typography h4 {
         font-size: 28px;
         font-size: 1.75rem;
-        line-height: 1.42857; } }
+        line-height: 1.35714; } }
   .typography h5 {
     font-family: "Meta Serif W01 Bold";
     font-weight: 400;
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.41667;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.44444;
     margin: 41px 0 13px; }
+    @media screen and (min-width: 740px) {
+      .typography h5 {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 1.41667; } }
   .typography h6 {
     font-weight: 400;
     font-family: "Unit Offc W01 Medium", sans-serif;
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
     letter-spacing: 1.2px;
     letter-spacing: 0.075rem;
-    line-height: 1.5;
+    line-height: 1.66667;
     text-transform: uppercase;
     margin: 43px 0 10px; }
+    @media screen and (min-width: 740px) {
+      .typography h6 {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5; } }
   .typography .intro {
     font-weight: 400;
     font-family: "Unit Offc W01 Light", sans-serif;
-    font-size: 24px;
-    font-size: 1.5rem;
-    line-height: 1.66667; }
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1.72727; }
     @media screen and (min-width: 740px) {
       .typography .intro {
         font-size: 32px;
@@ -3606,14 +3616,14 @@ strong {
   .typography .copy {
     font-weight: 400;
     font-family: "Unit Offc W01 Light", sans-serif;
-    font-size: 20px;
-    font-size: 1.25rem;
-    line-height: 1.6; }
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.66667; }
     @media screen and (min-width: 740px) {
       .typography .copy {
-        font-size: 24px;
-        font-size: 1.5rem;
-        line-height: 1.66667; } }
+        font-size: 22px;
+        font-size: 1.375rem;
+        line-height: 1.72727; } }
   .typography .label {
     font-weight: 400;
     font-family: "Unit Offc W01 Light", sans-serif;
@@ -3781,14 +3791,19 @@ strong {
 .typography .quote_caption {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 1.2px;
   letter-spacing: 0.075rem;
-  line-height: 1.5;
+  line-height: 1.66667;
   text-transform: uppercase;
   color: #766F67;
   margin-top: 20px; }
+  @media screen and (min-width: 740px) {
+    .typography .quote_caption {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5; } }
   .typography .quote_caption:before {
     content: "—";
     margin-right: 2px; }
@@ -3836,16 +3851,21 @@ strong {
   .typography table th {
     font-weight: 400;
     font-family: "Unit Offc W01 Medium", sans-serif;
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
     letter-spacing: 1.2px;
     letter-spacing: 0.075rem;
-    line-height: 1.5;
+    line-height: 1.66667;
     text-transform: uppercase;
     background: #003473;
     color: #fff;
     padding: 18px 25px;
     text-align: left; }
+    @media screen and (min-width: 740px) {
+      .typography table th {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5; } }
   .typography table td {
     font-weight: 400;
     font-family: "Unit Offc W01 Light", sans-serif;
@@ -3971,11 +3991,11 @@ button {
 	Forms
 ============================================================================= */
 .form-builder h2 {
+  font-family: "Meta Serif W01 Bold";
   font-weight: 400;
-  font-family: "Unit Offc W01 Bold", sans-serif;
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 1.3125; }
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.5; }
   @media screen and (min-width: 740px) {
     .form-builder h2 {
       font-size: 34px;
@@ -3985,14 +4005,14 @@ button {
 .form-builder p {
   font-weight: 400;
   font-family: "Unit Offc W01 Light", sans-serif;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.6; }
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.66667; }
   @media screen and (min-width: 740px) {
     .form-builder p {
-      font-size: 24px;
-      font-size: 1.5rem;
-      line-height: 1.66667; } }
+      font-size: 22px;
+      font-size: 1.375rem;
+      line-height: 1.72727; } }
 
 .form-builder fieldset {
   border: 0;
@@ -4005,12 +4025,17 @@ button {
 .form-builder .form_builder_sublabel {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 1.2px;
   letter-spacing: 0.075rem;
-  line-height: 1.5;
+  line-height: 1.66667;
   text-transform: uppercase; }
+  @media screen and (min-width: 740px) {
+    .form-builder .form_builder_sublabel {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5; } }
 
 .form-builder input,
 .form-builder textarea {
@@ -4384,11 +4409,11 @@ button {
 .search_result_link {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 1.2px;
   letter-spacing: 0.075rem;
-  line-height: 1.5;
+  line-height: 1.66667;
   text-transform: uppercase;
   color: #1573DD;
   display: inline-block;
@@ -4396,6 +4421,11 @@ button {
   word-break: break-all;
   -webkit-transition: background .25s;
   transition: background .25s; }
+  @media screen and (min-width: 740px) {
+    .search_result_link {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5; } }
   @media screen and (max-width: 739px) {
     .search_result_link {
       font-size: 14px;
@@ -4880,9 +4910,9 @@ button {
 .page_title {
   font-weight: 400;
   font-family: "Unit Offc W01 Light", sans-serif;
-  font-size: 40px;
-  font-size: 2.5rem;
-  line-height: 1.75;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.5625;
   margin: 0 0 20px; }
   @media screen and (min-width: 980px) {
     .page_title {
@@ -4944,7 +4974,7 @@ button {
   letter-spacing: 0.15625rem;
   padding: 20px 0;
   text-transform: uppercase; }
-  .breadcrumb_item:not(:last-child):after {
+  .breadcrumb_item:after {
     font-weight: 400;
     font-family: "Unit Offc W01 Light", sans-serif;
     content: "/";
@@ -4953,10 +4983,12 @@ button {
     font-size: 1.125rem;
     margin: 0 17px;
     vertical-align: middle; }
-    .page_theme_default .breadcrumb_item:not(:last-child):after {
+    .page_theme_default .breadcrumb_item:after {
       color: #0F0F11; }
-    .page_theme_image .breadcrumb_item:not(:last-child):after {
+    .page_theme_image .breadcrumb_item:after {
       color: rgba(255, 255, 255, 0.7); }
+  .breadcrumb_item:last-child:after {
+    color: transparent; }
   .page_theme_image .breadcrumb_item {
     color: #fff; }
 
@@ -5057,7 +5089,9 @@ button {
     color: #0F0F11; }
   .page_theme_default .breadcrumb_dropdown_item {
     color: #fff; }
-  .breadcrumb_dropdown_item:focus, .breadcrumb_dropdown_item:hover {
+  .page_theme_image .breadcrumb_dropdown_item:focus, .page_theme_image .breadcrumb_dropdown_item:hover {
+    color: rgba(15, 15, 17, 0.6); }
+  .page_theme_default .breadcrumb_dropdown_item:focus, .page_theme_default .breadcrumb_dropdown_item:hover {
     color: rgba(255, 255, 255, 0.6); }
 
 /* ==========================================================================
@@ -6657,11 +6691,11 @@ button {
   text-transform: uppercase; }
 
 .contact_name {
+  font-family: "Meta Serif W01 Bold";
   font-weight: 400;
-  font-family: "Unit Offc W01 Bold", sans-serif;
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 1.3125;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.5;
   font-family: "Meta Serif W01 Bold";
   font-weight: 400;
   margin: 0; }
@@ -7206,9 +7240,9 @@ button {
 .news_item_title {
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif;
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.58333;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
   font-family: "Meta Serif W01 Bold";
   font-weight: 400;
   color: #0F0F11;
@@ -7217,7 +7251,7 @@ button {
     .news_item_title {
       font-size: 28px;
       font-size: 1.75rem;
-      line-height: 1.42857; } }
+      line-height: 1.35714; } }
   @media screen and (min-width: 740px) {
     .news_item_title {
       margin-bottom: 23px; } }
@@ -7790,11 +7824,11 @@ button {
       font-size: 1.125rem; } }
 
 .story_detail_title {
+  font-family: "Meta Serif W01 Bold";
   font-weight: 400;
-  font-family: "Unit Offc W01 Bold", sans-serif;
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 1.3125;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.5;
   font-family: "Meta Serif W01 Bold";
   font-weight: 400;
   margin: 0 0 10px; }
@@ -8321,9 +8355,9 @@ button {
 .stat_label {
   font-weight: 400;
   font-family: "Unit Offc W01 Light", sans-serif;
-  font-size: 40px;
-  font-size: 2.5rem;
-  line-height: 1.75;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.5625;
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif;
   display: inline-block; }
@@ -8350,9 +8384,9 @@ button {
 .stat_body {
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif;
-  font-size: 28px;
-  font-size: 1.75rem;
-  line-height: 1.57143;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.5;
   font-weight: 400;
   font-family: "Unit Offc W01 Light", sans-serif; }
   @media screen and (min-width: 740px) {
@@ -8455,16 +8489,16 @@ button {
 .topic_title {
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif;
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.58333;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
   color: #0F0F11;
   margin: 0 0 14px; }
   @media screen and (min-width: 740px) {
     .topic_title {
       font-size: 28px;
       font-size: 1.75rem;
-      line-height: 1.42857; } }
+      line-height: 1.35714; } }
 
 .topic_title_link {
   color: inherit; }
