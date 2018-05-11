@@ -5001,13 +5001,14 @@ button {
       overflow: visible; }
 
 .breadcrumb_name_icon {
-  position: relative;
-  top: 2px;
   display: inline-block;
   margin-left: 2px;
   vertical-align: middle;
   -webkit-transition: color .25s;
   transition: color .25s; }
+  .breadcrumb_name_label + .breadcrumb_name_icon {
+    position: relative;
+    top: 2px; }
   .page_theme_default .breadcrumb_name_icon {
     color: #1573DD; }
   .page_theme_image .breadcrumb_name_icon {

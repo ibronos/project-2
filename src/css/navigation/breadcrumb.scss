@@ -116,13 +116,15 @@
 }
 
 .breadcrumb_name_icon {
-	position: relative;
-	top: 2px;
-
 	display: inline-block;
 	margin-left: 2px;
 	vertical-align: middle;
 	transition: color .25s;
+
+	.breadcrumb_name_label + & {
+		position: relative;
+		top: 2px;
+	}
 
 	.page_theme_default & {
 		color: $blue;
