@@ -463,10 +463,25 @@ strong {
 
 		border-collapse: collapse;
 
+		tbody {
+
+			tr {
+				border-bottom: 1px solid #BAB7B3;
+			}
+
+			td:first-child {
+				box-shadow: inset 1px 0 0 0 #BAB7B3;
+			}
+
+			td:last-child {
+				box-shadow: inset -1px 0 0 0 #BAB7B3;
+			}
+		}
+
 		tr {
 
 			&:nth-child(odd) {
-				background: $gray_10;
+				background: #F5F7F9;
 			}
 		}
 
@@ -476,14 +491,16 @@ strong {
 		th {
 			@include h6;
 
-			background: $gray_60;
+			background: $navy;
 			color: #fff;
-			padding: 10px 20px;
+			padding: 18px 25px;
 			text-align: left;
 		}
 
 		td {
-			padding: 10px 20px;
+			@include label_text;
+
+			padding: 9px 25px;
 		}
 	}
 }
@@ -491,7 +508,7 @@ strong {
 // 1. Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
 
 .table_wrapper {
-	@include margined;
+	@include margined_md;
 
 	min-height: 0.01%; // 1
 }
