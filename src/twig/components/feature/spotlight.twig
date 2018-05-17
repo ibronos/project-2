@@ -56,16 +56,30 @@
 	</div>
 	{% for item in items %}
 		<div class="spotlight_takeover_item spotlight_takeover_item_{{loop.index}} theme_{{item.theme}}{% if item.takeover.links or item.takeover.filters %} layout_pair{% else %} layout_fill{% endif %}">
+			<button class="js-swap spotlight_takeover_item_close" data-swap-target="spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover">
+				<span class="spotlight_takeover_item_close_icon">{{site.icon("close")}}</span>
+			</button>
 			<div class="spotlight_takeover_intro">
 				<div class="spotlight_takeover_intro_inner">
-					{% include par ~ "background.twig" with {
-						class: "spotlight_takeover_intro",
-						image: item.takeover.image,
-						sources: {
-							"740px": img.classic.med,
-							"980px": img.wide.lrg,
-						}
-					} %}
+					{% if item.takeover.links or item.takeover.filters %} 
+						{% include par ~ "background.twig" with {
+							class: "spotlight_takeover_intro",
+							image: item.takeover.image,
+							sources: {
+								"740px": img.classic.med,
+								"980px": img.wide.lrg,
+							}
+						} %}
+					{% else %}
+						{% include par ~ "background.twig" with {
+							class: "spotlight_takeover_intro",
+							image: item.takeover.image,
+							sources: {
+								"740px": img.portraitFull.med,
+								"980px": img.portraitFull.lrg,
+							}
+						} %}
+					{% endif %}
 					<header class="spotlight_takeover_intro_header">
 						<h3 class="spotlight_takeover_intro_label">{{item.label}}</h3>
 						<h4 class="spotlight_takeover_intro_title">{{item.title}}</h4>

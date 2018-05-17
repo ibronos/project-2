@@ -6710,7 +6710,7 @@ button {
   position: fixed;
   top: 60px;
   left: 0;
-  z-index: 220;
+  z-index: 500;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity .25s, visibility .25s;
@@ -6762,11 +6762,61 @@ button {
       display: flex; } }
   @media screen and (min-width: 980px) {
     .spotlight_takeover_item {
+      z-index: 200;
       border-bottom: 10px solid #003473;
       border-left: 10px solid #003473; } }
+  @media screen and (min-width: 1220px) {
+    .spotlight_takeover_item {
+      border-bottom-width: 20px;
+      border-left-width: 20px; } }
   .spotlight_takeover_item.fs-swap-active {
     opacity: 1;
     visibility: visible; }
+
+.spotlight_takeover_item_close {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background: #003473;
+  color: #fff; }
+  @media screen and (min-width: 740px) {
+    .spotlight_takeover_item_close {
+      height: 82px;
+      width: 82px; } }
+  @media screen and (min-width: 980px) {
+    .spotlight_takeover_item_close {
+      height: 40px;
+      width: 40px;
+      top: 0;
+      bottom: auto;
+      left: -10px;
+      z-index: 8; } }
+  @media screen and (min-width: 1220px) {
+    .spotlight_takeover_item_close {
+      height: 60px;
+      width: 60px;
+      left: -20px; } }
+
+.spotlight_takeover_item_close_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+  @media screen and (min-width: 740px) {
+    .spotlight_takeover_item_close_icon {
+      -webkit-transform: translate(-50%, -50%) scale(1.5);
+              transform: translate(-50%, -50%) scale(1.5); } }
+  @media screen and (min-width: 980px) {
+    .spotlight_takeover_item_close_icon {
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); } }
+  @media screen and (min-width: 1220px) {
+    .spotlight_takeover_item_close_icon {
+      -webkit-transform: translate(-50%, -50%) scale(1.5);
+              transform: translate(-50%, -50%) scale(1.5); } }
 
 .spotlight_takeover_intro {
   overflow-y: auto;
@@ -6784,11 +6834,11 @@ button {
     .spotlight_takeover_intro {
       width: 50%; } }
 
-.spotlight_takeover_intro_inner {
+.layout_pair .spotlight_takeover_intro_inner {
   position: relative;
   padding-bottom: 66%; }
   @media screen and (min-width: 980px) {
-    .spotlight_takeover_intro_inner {
+    .layout_pair .spotlight_takeover_intro_inner {
       padding-bottom: 56%; } }
 
 .spotlight_takeover_intro_background {
@@ -6813,28 +6863,41 @@ button {
       background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15) 50% rgba(0, 0, 0, 0.15) 100%); }
 
 .spotlight_takeover_intro_header {
-  padding: 20px;
   width: 100%;
   position: absolute;
   left: 0;
   z-index: 4;
   color: #fff; }
-  @media screen and (min-width: 500px) {
-    .spotlight_takeover_intro_header {
-      padding: 40px; } }
-  @media screen and (min-width: 740px) {
-    .spotlight_takeover_intro_header {
-      padding: 20px; } }
-  @media screen and (min-width: 980px) {
-    .spotlight_takeover_intro_header {
-      padding: 40px; } }
-  @media screen and (min-width: 1220px) {
-    .spotlight_takeover_intro_header {
-      padding: 60px 80px; } }
   .layout_fill .spotlight_takeover_intro_header {
+    padding: 20px;
     top: 0; }
+    @media screen and (min-width: 500px) {
+      .layout_fill .spotlight_takeover_intro_header {
+        padding: 40px; } }
+    @media screen and (min-width: 740px) {
+      .layout_fill .spotlight_takeover_intro_header {
+        padding: 20px; } }
+    @media screen and (min-width: 980px) {
+      .layout_fill .spotlight_takeover_intro_header {
+        padding: 40px; } }
+    @media screen and (min-width: 1220px) {
+      .layout_fill .spotlight_takeover_intro_header {
+        padding: 80px; } }
   .layout_pair .spotlight_takeover_intro_header {
+    padding: 20px;
     bottom: 0; }
+    @media screen and (min-width: 500px) {
+      .layout_pair .spotlight_takeover_intro_header {
+        padding: 40px; } }
+    @media screen and (min-width: 740px) {
+      .layout_pair .spotlight_takeover_intro_header {
+        padding: 20px; } }
+    @media screen and (min-width: 980px) {
+      .layout_pair .spotlight_takeover_intro_header {
+        padding: 40px; } }
+    @media screen and (min-width: 1220px) {
+      .layout_pair .spotlight_takeover_intro_header {
+        padding: 60px 80px; } }
 
 .spotlight_takeover_intro_label {
   font-weight: 400;
@@ -6851,7 +6914,7 @@ button {
       font-size: 16px;
       font-size: 1rem;
       line-height: 1.5; } }
-  @media screen and (min-width: 980px) {
+  @media screen and (min-width: 1220px) {
     .spotlight_takeover_intro_label {
       font-size: 20px;
       font-size: 1.25rem;
@@ -6870,7 +6933,7 @@ button {
       font-size: 26px;
       font-size: 1.625rem;
       line-height: 1.53846; } }
-  @media screen and (min-width: 980px) {
+  @media screen and (min-width: 1220px) {
     .spotlight_takeover_intro_title {
       font-size: 34px;
       font-size: 2.125rem;
