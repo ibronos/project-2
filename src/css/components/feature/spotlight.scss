@@ -6,6 +6,7 @@
 	position: relative;
 
 	background: $blue;
+	overflow: hidden;
 }
 
 
@@ -438,5 +439,236 @@
 	@media #{$min_xxl} {
 		font-size: 24px;
 		line-height: (34 / 24);
+	}
+}
+
+
+/* ==========================================================================
+	Spotlight Takeover
+============================================================================= */
+
+@mixin spotlight_takeover_theme() {
+
+	@each $l, $c in $theme_colors {
+		
+		&.theme_#{$l} {
+
+			.spotlight_takeover_intro_link {
+			
+				&:before {
+					background: $c;
+				}
+			}
+		}
+	}
+}
+
+@mixin spotlight_space($ta: false) {
+	padding: 20px;
+
+	@media #{$min_sm} {
+		padding: 40px;
+	}
+
+	@media #{$min_md} {
+		padding: 20px;
+	}
+
+	@media #{$min_lg} {
+		padding: 40px;
+	}
+
+	@media #{$min_xl} {
+		
+		@if $ta {
+			padding: 60px 80px;
+		} @else {
+			padding: 80px;
+		}
+	}
+}
+
+.spotlight_takeover_item {
+	@include spotlight_takeover_theme;
+
+	height: calc(100% - 60px);
+	width: 100%;
+
+	position: fixed;
+	top: 60px;
+	left: 0;
+	z-index: 220;
+
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity .25s,
+		visibility .25s;
+
+	@media #{$min_md} {
+		height: calc(100% - 82px);
+
+		top: 82px;
+
+		display: flex;
+	}
+
+	@media #{$min_lg} {
+		border-bottom: 10px solid $navy;
+		border-left: 10px solid $navy;
+	}
+
+	&.fs-swap-active {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.spotlight_takeover_intro {
+	@include fake_scroll;
+
+	height: 100%;
+
+	position: relative;
+	z-index: 4;
+	
+	background: $navy;
+	display: none;
+
+	@media #{$min_md} {
+		width: 40%;
+
+		display: block;
+	}
+
+	@media #{$min_xl} {
+		width: 50%;
+	}
+}
+
+.spotlight_takeover_intro_inner {
+	position: relative;
+
+	padding-bottom: 66%;
+
+	@media #{$min_lg} {
+		padding-bottom: 56%;
+	}
+}
+
+.spotlight_takeover_intro_background {
+	@include cover;
+
+	&:before {
+		@include cover;
+
+		z-index: 2;
+		
+		content: "";
+
+		.layout_fill & {
+			background:
+				linear-gradient(
+					to bottom,
+						rgba(#000, .65),
+						rgba(#000, .15) 50%
+						rgba(#000, .15) 100%
+				);
+		}
+	
+		.layout_pair & {
+			background:
+				linear-gradient(
+					to top,
+						rgba(#000, .65),
+						rgba(#000, .15) 50%
+						rgba(#000, .15) 100%
+				);
+		}
+	}
+}
+
+.spotlight_takeover_intro_header {
+	@include spotlight_space(true);
+
+	width: 100%;
+
+	position: absolute;
+	left: 0;
+	z-index: 4;
+
+	color: #fff;
+
+	.layout_fill & {
+		top: 0;
+	}
+
+	.layout_pair & {
+		bottom: 0;
+	}
+}
+
+.spotlight_takeover_intro_label {
+	@include h6;
+
+	margin: 0;
+
+	@media #{$min_lg} {
+		font-size: 20px;
+		letter-spacing: 3px;
+	}
+}
+
+.spotlight_takeover_intro_title {
+	@include m(700);
+
+	font-size: 22px;
+	line-height: (33 / 22);
+	margin: 0;
+
+	@media #{$min_md} {
+		font-size: 26px;
+		line-height: (40 / 26);
+	}
+
+	@media #{$min_lg} {
+		font-size: 34px;
+		line-height: (48 / 34);
+	}
+}
+
+.spotlight_takeover_intro_body {
+	@include spotlight_space;
+}
+
+.spotlight_takeover_intro_link {
+	@include button_block;
+	@include button_fill(
+		$b: #fff,
+		$b2: transparent,
+		$lc: $dark,
+		$ic: $dark
+	);
+}
+
+
+/* ==========================================================================
+	Spotlight Takeover Content
+============================================================================= */
+
+.spotlight_takeover_content {
+	@include fake_scroll;
+	@include spotlight_space;
+
+	height: 100%;
+
+	background: #fff;
+	
+	@media #{$min_md} {
+		width: 60%;
+	}
+
+	@media #{$min_xl} {
+		width: 50%;
 	}
 }

@@ -23,6 +23,7 @@
 .topic_item_inner {
 
 	@media #{$min_md} {
+		align-items: flex-start;
 		display: flex;
 	}
 

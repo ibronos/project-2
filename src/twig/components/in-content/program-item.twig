@@ -1,0 +1,20 @@
+<article class="program">
+	{{site.image("program", img.wide.sml, image)}}
+	<div class="program_body">
+		<header class="program_header">
+			<h3 class="program_title">
+				{{site.button("program_title", title, "#", "arrow_right")}}
+			</h3>
+			<div class="program_details">
+				<span class="program_label">Degree(s) Offered</span>
+				<span class="program_degrees">
+					{% for degree in degrees %}
+						<span class="program_degree">{{degree}}{% if not loop.last %}, {% endif %}</span>
+					{% endfor %}
+				</span>
+			</div>
+		</header>
+		<div class="program_caption">{{caption}}</div>
+		{{site.button("program", "Learn More", "#", "arrow_right")}}
+	</div>
+</article>

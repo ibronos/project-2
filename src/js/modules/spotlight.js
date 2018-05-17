@@ -17,6 +17,10 @@ Site.modules.Spotlight = (function($, Site) {
 			$(".spotlight").removeClass("interested");
 		});
 
+		$(".spotlight_item").on("click", function() {
+			$("body").addClass("fs-navigation-lock");
+		});
+
 		$(".spotlight_video_trigger").on("click", updateVideo);
 	}
 
