@@ -104,6 +104,14 @@
 				{% endif %}
 			</div>
 			<div class="spotlight_takeover_content">
+				{% if item.takeover.filters %}
+					<div class="spotlight_takeover_details">
+						<div class="spotlight_takeover_detail">
+							<span class="spotlight_takeover_detail_label">Viewing/<strong class="spotlight_takeover_detail_title">All Programs</strong></span>
+						</div>
+						<div class="spotlight_takeover_result">39</div>
+					</div>
+				{% endif %}
 				{% for program in item.takeover.programs %}
 					{% include "../in-content/program-item.twig" with {
 						image: program.image,
