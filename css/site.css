@@ -6711,6 +6711,7 @@ button {
   top: 60px;
   left: 0;
   z-index: 500;
+  background: #fff;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity .25s, visibility .25s;
@@ -6868,6 +6869,9 @@ button {
   left: 0;
   z-index: 4;
   color: #fff; }
+  @media screen and (min-width: 740px) {
+    .layout_filters .spotlight_takeover_intro_header {
+      margin-bottom: 30px; } }
   .layout_fill .spotlight_takeover_intro_header {
     padding: 20px;
     top: 0; }
@@ -6928,19 +6932,24 @@ button {
   font-size: 1.375rem;
   line-height: 1.5;
   margin: 0; }
-  @media screen and (min-width: 740px) {
+  @media screen and (min-width: 980px) {
     .spotlight_takeover_intro_title {
       font-size: 26px;
       font-size: 1.625rem;
-      line-height: 1.53846; } }
+      line-height: 1.38462; } }
   @media screen and (min-width: 1220px) {
     .spotlight_takeover_intro_title {
       font-size: 34px;
       font-size: 2.125rem;
       line-height: 1.41176; } }
 
+/* ==========================================================================
+	Spotlight Intro Body
+============================================================================= */
 .spotlight_takeover_intro_body {
-  padding: 20px; }
+  padding: 20px;
+  position: relative;
+  z-index: 8; }
   @media screen and (min-width: 500px) {
     .spotlight_takeover_intro_body {
       padding: 40px; } }
@@ -6953,6 +6962,107 @@ button {
   @media screen and (min-width: 1220px) {
     .spotlight_takeover_intro_body {
       padding: 80px; } }
+
+.spotlight_takeover_input_wrapper {
+  margin-top: -45px;
+  margin-bottom: 20px; }
+  @media screen and (min-width: 980px) {
+    .spotlight_takeover_input_wrapper {
+      margin-top: -65px;
+      margin-bottom: 35px; } }
+  @media screen and (min-width: 1220px) {
+    .spotlight_takeover_input_wrapper {
+      margin-top: -120px;
+      margin-bottom: 53px; } }
+
+.spotlight_takeover_input_field {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Light", sans-serif;
+  width: 100%;
+  border: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.625;
+  padding: 12px 20px; }
+  @media screen and (min-width: 1220px) {
+    .spotlight_takeover_input_field {
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 1.2;
+      padding: 28px 20px; } }
+
+.spotlight_takeover_input_label {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0; }
+  .spotlight_takeover_input_label.focusable:active, .spotlight_takeover_input_label.focusable:focus {
+    width: auto;
+    height: auto;
+    position: static;
+    clip: auto;
+    margin: 0;
+    overflow: visible; }
+
+.spotlight_takeover_filter_label {
+  color: #EAE5DF; }
+  @media screen and (min-width: 740px) {
+    .spotlight_takeover_filter_label {
+      font-weight: 400;
+      font-family: "Unit Offc W01 Medium", sans-serif;
+      display: block;
+      font-size: 12px;
+      font-size: 0.75rem;
+      letter-spacing: 1.2px;
+      letter-spacing: 0.075rem;
+      line-height: 1.66667;
+      margin-bottom: 20px;
+      text-transform: uppercase; } }
+  @media screen and (min-width: 1360px) {
+    .spotlight_takeover_filter_label {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5; } }
+  @media screen and (min-width: 740px) {
+    .spotlight_takeover_filter_label {
+      letter-spacing: 2px;
+      letter-spacing: 0.125rem; } }
+
+@media screen and (min-width: 1220px) {
+  .spotlight_takeover_options .choices_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+
+@media screen and (min-width: 1220px) {
+  .spotlight_takeover_options .fs-checkbox {
+    width: 50%; } }
+
+.spotlight_takeover_options .fs-checkbox-marker {
+  border-color: #2AC6CA;
+  margin-right: 10px; }
+
+.spotlight_takeover_options .fs-checkbox-flag {
+  background: #FFFD00; }
+
+.spotlight_takeover_options .choices_name {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.625; }
+  @media screen and (min-width: 1360px) {
+    .spotlight_takeover_options .choices_name {
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 1.6; } }
 
 .spotlight_takeover_intro_link {
   font-weight: 400;

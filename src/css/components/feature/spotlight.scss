@@ -499,6 +499,7 @@
 	left: 0;
 	z-index: 500;
 
+	background: #fff;
 	opacity: 0;
 	visibility: hidden;
 	transition:
@@ -515,7 +516,7 @@
 
 	@media #{$min_lg} {
 		z-index: 200;
-		
+
 		border-bottom: 10px solid $navy;
 		border-left: 10px solid $navy;
 	}
@@ -665,6 +666,13 @@
 
 	color: #fff;
 
+	.layout_filters & {
+		
+		@media #{$min_md} {
+			margin-bottom: 30px;
+		}
+	}
+
 	.layout_fill & {
 		@include spotlight_space;
 
@@ -696,9 +704,9 @@
 	line-height: (33 / 22);
 	margin: 0;
 
-	@media #{$min_md} {
+	@media #{$min_lg} {
 		font-size: 26px;
-		line-height: (40 / 26);
+		line-height: (36 / 26);
 	}
 
 	@media #{$min_xl} {
@@ -707,8 +715,119 @@
 	}
 }
 
+
+/* ==========================================================================
+	Spotlight Intro Body
+============================================================================= */
+
 .spotlight_takeover_intro_body {
 	@include spotlight_space;
+
+	position: relative;
+	z-index: 8;
+}
+
+.spotlight_takeover_input_wrapper {
+	margin-top: -45px;
+	margin-bottom: 20px;
+
+	@media #{$min_lg} {
+		margin-top: -65px;
+		margin-bottom: 35px;
+	}
+
+	@media #{$min_xl} {
+		margin-top: -120px;
+		margin-bottom: 53px;
+	}
+}
+
+.spotlight_takeover_input_field {
+	@include u(300);
+
+	width: 100%;
+
+	border: 0;
+	font-size: 16px;
+	line-height: (26 / 16);
+	padding: 12px 20px;
+
+	@media #{$min_xl} {
+		font-size: 20px;
+		line-height: (24 / 20);
+		padding: 28px 20px;
+	}
+}
+
+.spotlight_takeover_input_label {
+	@include visually_hide;
+}
+
+.spotlight_takeover_filter {}
+
+.spotlight_takeover_filter_label {
+
+	@media #{$min_md} {
+		@include u(500);
+
+		display: block;
+		font-size: 12px;
+		letter-spacing: 1.2px;
+		line-height: (20 / 12);
+		margin-bottom: 20px;
+		text-transform: uppercase;
+	}
+
+	@media #{$min_xxl} {
+		font-size: 16px;
+		line-height: (24 / 16);
+	}
+
+	color: #EAE5DF;
+
+	@media #{$min_md} {
+		letter-spacing: 2px;
+	}
+}
+
+.spotlight_takeover_options {
+
+	.choices_wrapper {
+		
+		@media #{$min_xl} {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	.fs-checkbox {
+
+		@media #{$min_xl} {
+			width: 50%;
+		}
+	}
+
+	.fs-checkbox-marker {
+		border-color: #2AC6CA;
+		margin-right: 10px;
+	}
+
+	.fs-checkbox-flag {
+		background: #FFFD00;
+	}
+
+	.choices_name {
+		@include u(500);
+
+		color: #fff;
+		font-size: 16px;
+		line-height: (26 / 16);
+
+		@media #{$min_xxl} {
+			font-size: 20px;
+			line-height: (32 / 20);	
+		}
+	}
 }
 
 .spotlight_takeover_intro_link {

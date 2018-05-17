@@ -964,6 +964,7 @@ Site.modules.Spotlight = (function($, Site) {
 
 	function init() {
 		if ($(".spotlight").length) {
+			$(".spotlight_takeover_option").checkbox();
 			bindUI();
 		}
 	}
@@ -977,6 +978,10 @@ Site.modules.Spotlight = (function($, Site) {
 
 		$(".spotlight_item").on("click", function() {
 			$("body").addClass("fs-navigation-lock");
+		});
+
+		$(".spotlight_takeover_item_close").on("click", function() {
+			$("body").removeClass("fs-navigation-lock");
 		});
 
 		$(".spotlight_video_trigger").on("click", updateVideo);
