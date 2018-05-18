@@ -965,7 +965,9 @@ Site.modules.Spotlight = (function($, Site) {
 	function init() {
 		if ($(".spotlight").length) {
 			$(".spotlight_takeover_option").checkbox();
+			$("body").addClass("spotlight-takeover-slow");
 			bindUI();
+			resizeSpotlight();
 		}
 	}
 
@@ -977,14 +979,44 @@ Site.modules.Spotlight = (function($, Site) {
 		});
 
 		$(".spotlight_item").on("click", function() {
-			$("body").addClass("fs-navigation-lock");
+			$("body").addClass("fs-navigation-lock spotlight-lock");
+
+			$.mediaquery("bind", "mq-key", "(min-width: " + Site.minLG + "px)", {
+				enter: function() {
+					$("html, body").animate({
+						scrollTop: $(".spotlight").innerHeight()
+					}, 500);
+
+					var takeoverDelay = setTimeout(function() {
+						$("body").removeClass("spotlight-takeover-slow");
+					}, 500);
+				},
+				leave: function() {}
+			});
 		});
 
 		$(".spotlight_takeover_item_close").on("click", function() {
-			$("body").removeClass("fs-navigation-lock");
+			$("body").removeClass("fs-navigation-lock spotlight-lock");
+			
+			var takeoverDelay = setTimeout(function() {
+				$("body").addClass("spotlight-takeover-slow");
+			}, 500);
 		});
 
 		$(".spotlight_video_trigger").on("click", updateVideo);
+
+		Site.onResize.push(resizeSpotlight);
+	}
+
+	function resizeSpotlight() {
+		$.mediaquery("bind", "mq-key", "(min-width: " + Site.minLG + "px)", {
+			enter: function() {
+				$(".spotlight_body").css("margin-bottom", $(".spotlight_items").innerHeight());
+			},
+			leave: function() {
+				$(".spotlight_body").css("margin-bottom", "");
+			}
+		});
 	}
 
 	function updateVideo() {

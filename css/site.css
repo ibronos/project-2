@@ -4709,6 +4709,14 @@ button {
   @media screen and (min-width: 740px) {
     .header {
       padding: 19px 0 15px; } }
+  @media screen and (min-width: 980px) {
+    .header {
+      -webkit-transition: opacity .25s, visibility .25s;
+      transition: opacity .25s, visibility .25s; } }
+  @media screen and (min-width: 980px) {
+    .spotlight-lock .header {
+      opacity: 0;
+      visibility: hidden; } }
 
 .header_group {
   height: 100%;
@@ -6242,6 +6250,31 @@ button {
   position: relative;
   background: #1573DD;
   overflow: hidden; }
+  @media screen and (min-width: 980px) {
+    .spotlight:before, .spotlight:after {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      content: "";
+      -webkit-transition: opacity .25s;
+      transition: opacity .25s; } }
+  @media screen and (min-width: 980px) {
+    .spotlight:before {
+      background: -webkit-gradient(linear, left top, right top, from(rgba(15, 15, 17, 0.5)), color-stop(75%, rgba(15, 15, 17, 0)));
+      background: linear-gradient(to right, rgba(15, 15, 17, 0.5), rgba(15, 15, 17, 0) 75%); } }
+  @media screen and (min-width: 980px) {
+    .spotlight:after {
+      background: rgba(15, 15, 17, 0.6);
+      opacity: 0; } }
+  @media screen and (min-width: 980px) {
+    .spotlight.interested:before {
+      opacity: 0; } }
+  @media screen and (min-width: 980px) {
+    .spotlight.interested:after {
+      opacity: 1; } }
 
 /* ==========================================================================
 	Spotlight Heading
@@ -6258,31 +6291,6 @@ button {
   @media screen and (min-width: 980px) {
     .spotlight_body {
       position: static; } }
-  @media screen and (min-width: 980px) {
-    .spotlight_body:before, .spotlight_body:after {
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      content: "";
-      padding-bottom: 43%;
-      -webkit-transition: opacity .25s;
-      transition: opacity .25s; } }
-  @media screen and (min-width: 980px) {
-    .spotlight_body:before {
-      background: -webkit-gradient(linear, left top, right top, from(rgba(15, 15, 17, 0.5)), color-stop(75%, rgba(15, 15, 17, 0)));
-      background: linear-gradient(to right, rgba(15, 15, 17, 0.5), rgba(15, 15, 17, 0) 75%); } }
-  @media screen and (min-width: 980px) {
-    .interested .spotlight_body:before {
-      opacity: 0; } }
-  @media screen and (min-width: 980px) {
-    .spotlight_body:after {
-      background: rgba(15, 15, 17, 0.6);
-      opacity: 0; } }
-  @media screen and (min-width: 980px) {
-    .interested .spotlight_body:after {
-      opacity: 1; } }
 
 .spotlight_body_background {
   height: 100%;
@@ -6557,8 +6565,11 @@ button {
           flex-wrap: wrap; } }
   @media screen and (min-width: 980px) {
     .spotlight_items {
-      border-top: 1px solid rgba(255, 255, 255, 0.5);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5); } }
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.5); } }
 
 .spotlight_item {
   position: relative;
@@ -6593,9 +6604,15 @@ button {
       width: calc(100% - 20px);
       -webkit-transform: translate(10px, 10px);
               transform: translate(10px, 10px); } }
-  @media screen and (min-width: 980px) {
-    .spotlight_item:not(:last-child) {
-      border-right: 1px solid rgba(255, 255, 255, 0.5); } }
+  .spotlight_item:not(:last-child):after {
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.5);
+    content: ""; }
 
 .spotlight_item_background {
   height: 100%;
@@ -6618,6 +6635,11 @@ button {
       opacity: 1;
       -webkit-transform: scale(1);
               transform: scale(1); } }
+  @media screen and (min-width: 980px) {
+    .spotlight-lock .spotlight_item_background {
+      opacity: 1;
+      -webkit-transform: scale(1);
+              transform: scale(1); } }
 
 .spotlight_item_inner {
   position: relative;
@@ -6628,7 +6650,14 @@ button {
   @media screen and (min-width: 980px) {
     .spotlight_item_inner {
       background: none;
-      padding: 64px 20px; } }
+      padding: 64px 20px;
+      -webkit-transition: padding .125s .5s;
+      transition: padding .125s .5s; } }
+  @media screen and (min-width: 980px) {
+    .spotlight-lock .spotlight_item_inner {
+      padding: 21px 20px 15px;
+      -webkit-transition: padding .125s;
+      transition: padding .125s; } }
 
 .spotlight_item_trigger {
   height: 30px;
@@ -6660,6 +6689,12 @@ button {
     .spotlight_item:hover .spotlight_item_trigger {
       -webkit-transform: translate(0, 0) scale(1);
               transform: translate(0, 0) scale(1); } }
+  @media screen and (min-width: 980px) {
+    .spotlight-lock .spotlight_item_trigger {
+      bottom: -1px;
+      top: auto;
+      -webkit-transform-origin: center bottom;
+              transform-origin: center bottom; } }
 
 .spotlight_item_trigger_icon {
   position: absolute;
@@ -6680,6 +6715,10 @@ button {
   margin-bottom: 5px;
   padding: 4px 5px;
   text-transform: uppercase; }
+  @media screen and (min-width: 980px) {
+    .spotlight_item_label {
+      -webkit-transition: background .125s;
+      transition: background .125s; } }
   @media screen and (min-width: 1360px) {
     .spotlight_item_label {
       font-size: 16px;
@@ -6687,6 +6726,14 @@ button {
       letter-spacing: 2px;
       letter-spacing: 0.125rem;
       padding: 7px 13px; } }
+  @media screen and (min-width: 980px) {
+    .spotlight-lock .spotlight_item_label {
+      background: none;
+      -webkit-transition: background .125s .5s;
+      transition: background .125s .5s; } }
+  @media screen and (min-width: 980px) {
+    .fs-swap-active .spotlight_item_label {
+      background: #003473; } }
 
 .spotlight_item_title {
   font-family: "Meta Serif W01 Bold";
@@ -6695,11 +6742,22 @@ button {
   font-size: 1.125rem;
   line-height: 1.44444;
   margin: 0; }
+  @media screen and (min-width: 980px) {
+    .spotlight_item_title {
+      overflow: hidden;
+      -webkit-transition: height .125s .5s, opacity .125s .5s;
+      transition: height .125s .5s, opacity .125s .5s; } }
   @media screen and (min-width: 1360px) {
     .spotlight_item_title {
       font-size: 24px;
       font-size: 1.5rem;
       line-height: 1.41667; } }
+  @media screen and (min-width: 980px) {
+    .spotlight-lock .spotlight_item_title {
+      height: 0 !important;
+      opacity: 0;
+      -webkit-transition: height .125s, opacity .125s;
+      transition: height .125s, opacity .125s; } }
 
 /* ==========================================================================
 	Spotlight Takeover
@@ -6787,6 +6845,10 @@ button {
   .spotlight_takeover_item.fs-swap-active {
     opacity: 1;
     visibility: visible; }
+  @media screen and (min-width: 980px) {
+    .spotlight-takeover-slow .spotlight_takeover_item {
+      -webkit-transition-delay: .5s;
+              transition-delay: .5s; } }
 
 .spotlight_takeover_item_close {
   height: 60px;
@@ -6795,7 +6857,9 @@ button {
   bottom: 100%;
   right: 0;
   background: #003473;
-  color: #fff; }
+  color: #fff;
+  -webkit-transition: background .25s;
+  transition: background .25s; }
   @media screen and (min-width: 740px) {
     .spotlight_takeover_item_close {
       height: 82px;
@@ -6813,6 +6877,8 @@ button {
       height: 60px;
       width: 60px;
       left: -20px; } }
+  .spotlight_takeover_item_close:focus, .spotlight_takeover_item_close:hover {
+    background: #1573DD; }
 
 .spotlight_takeover_item_close_icon {
   position: absolute;
@@ -6847,7 +6913,7 @@ button {
       display: block; } }
   @media screen and (min-width: 1220px) {
     .spotlight_takeover_intro {
-      width: 50%; } }
+      width: calc(50% - 11px); } }
 
 .layout_pair .spotlight_takeover_intro_inner {
   position: relative;
@@ -7152,7 +7218,7 @@ button {
       width: 60%; } }
   @media screen and (min-width: 1220px) {
     .spotlight_takeover_content {
-      width: 50%; } }
+      width: calc(50% + 11px); } }
 
 .spotlight_takeover_details {
   -webkit-box-align: center;
