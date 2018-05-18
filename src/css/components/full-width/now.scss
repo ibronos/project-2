@@ -27,6 +27,14 @@
 					}
 				}
 			}
+
+			.now_item_figure {
+
+				&:before,
+				&:after {
+					background: $color;
+				}
+			}
 		}
 	}
 }
@@ -155,23 +163,71 @@
 		transform: translate(0, -50%);
 	}
 
-	&:before {
+	&:before,
+	&:after {
 
 		@media #{$min_lg} {
 			height: 100%;
-			width: 15px;
+			width: 16px;
 
 			position: absolute;
 			top: 50%;
 			left: 0;
-			z-index: 2;
+			z-index: 8;
 
 			background: $navy;
 			content: "";
+			margin-left: -8px;
 			transform:
-				translate(-50%, -50%)
+				translate(0, -50%)
+				scaleY(0);
+			transform-origin: left center;
+			transition: transform .5s;
+		}
+	}
+
+	.active & {
+
+		@media #{$min_lg} {
+			z-index: 8;
+		}
+
+		&:before {
+			transform:
+				translate(0, -50%)
 				scaleY(.85);
 		}
+
+		&:after {
+			animation: wipe-right 1s forwards;
+		}
+	}
+}
+
+@keyframes wipe-right {
+
+	25% {
+		width: 15px;
+
+		transform:
+			translate(0, -50%)
+			scaleY(1);
+	}
+
+	50% {
+		width: calc(100% - 8px);
+
+		transform:
+			translate(0, -50%)
+			scaleY(1);
+	}
+
+	100% {
+		width: calc(100% - 8px);
+
+		transform:
+			translate(calc(100% + 16px), -50%)
+			scaleY(1);
 	}
 }
 
@@ -182,7 +238,7 @@
 
 	@media #{$min_lg} {
 		opacity: 0;
-		transition: opacity .25s;
+		transition: opacity .25s .5s;
 	}
 
 	.active & {
