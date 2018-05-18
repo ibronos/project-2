@@ -12,17 +12,10 @@
 						border-bottom-color: $color;
 					}
 
-					@at-root .now_item.theme_#{$label}:hover .now_caption strong {
+					&:after {
 
 						@media #{$min_lg} {
-							border-bottom-color: $color;
-						}
-					}
-
-					@at-root .now_item.theme_#{$label}:focus .now_caption strong {
-
-						@media #{$min_lg} {
-							border-bottom-color: $color;
+							background: $color;
 						}
 					}
 				}
@@ -290,6 +283,8 @@
 	strong {
 		@include u(700);
 
+		position: relative;
+
 		border-bottom: 2px solid transparent;
 		transition:
 			border .25s,
@@ -299,11 +294,35 @@
 			color: $blue;
 		}
 
+		&:after {
+			
+			@media #{$min_lg} {
+				height: 2px;
+				width: 100%;
+
+				position: absolute;
+				bottom: 0;
+				left: 0;
+
+				content: "";
+				transform: scaleX(0);
+				transform-origin: left center;
+				transition: transform .25s;
+			}
+		}
+
 		.now_item:focus &,
 		.now_item:hover & {
 			
 			@media #{$min_lg} {
 				color: $blue;
+			}
+
+			&:after {
+
+				@media #{$min_lg} {
+					transform: scaleX(1);
+				}
 			}
 		}
 	}
