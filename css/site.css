@@ -4709,14 +4709,6 @@ button {
   @media screen and (min-width: 740px) {
     .header {
       padding: 19px 0 15px; } }
-  @media screen and (min-width: 980px) {
-    .header {
-      -webkit-transition: opacity .25s, visibility .25s;
-      transition: opacity .25s, visibility .25s; } }
-  @media screen and (min-width: 980px) {
-    .spotlight-lock .header {
-      opacity: 0;
-      visibility: hidden; } }
 
 .header_group {
   height: 100%;
@@ -6565,11 +6557,24 @@ button {
           flex-wrap: wrap; } }
   @media screen and (min-width: 980px) {
     .spotlight_items {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
       border-top: 1px solid rgba(255, 255, 255, 0.5); } }
+  .spotlight_items_clone {
+    display: none; }
+    @media screen and (min-width: 980px) {
+      .spotlight_items_clone {
+        border-top: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: auto;
+        -webkit-transition: opacity .25s, visibility .25s;
+        transition: opacity .25s, visibility .25s; } }
+  @media screen and (min-width: 980px) {
+    .spotlight-lock .spotlight_items {
+      opacity: 1;
+      visibility: visible; } }
 
 .spotlight_item {
   position: relative;
@@ -6636,7 +6641,7 @@ button {
       -webkit-transform: scale(1);
               transform: scale(1); } }
   @media screen and (min-width: 980px) {
-    .spotlight-lock .spotlight_item_background {
+    .spotlight_items_clone .spotlight_item_background {
       opacity: 1;
       -webkit-transform: scale(1);
               transform: scale(1); } }
@@ -6653,11 +6658,8 @@ button {
       padding: 64px 20px;
       -webkit-transition: padding .125s .5s;
       transition: padding .125s .5s; } }
-  @media screen and (min-width: 980px) {
-    .spotlight-lock .spotlight_item_inner {
-      padding: 21px 20px 15px;
-      -webkit-transition: padding .125s;
-      transition: padding .125s; } }
+  .spotlight_items_clone .spotlight_item_inner {
+    padding: 21px 20px 15px; }
 
 .spotlight_item_trigger {
   height: 30px;
@@ -6689,12 +6691,6 @@ button {
     .spotlight_item:hover .spotlight_item_trigger {
       -webkit-transform: translate(0, 0) scale(1);
               transform: translate(0, 0) scale(1); } }
-  @media screen and (min-width: 980px) {
-    .spotlight-lock .spotlight_item_trigger {
-      bottom: -1px;
-      top: auto;
-      -webkit-transform-origin: center bottom;
-              transform-origin: center bottom; } }
 
 .spotlight_item_trigger_icon {
   position: absolute;
@@ -6727,7 +6723,7 @@ button {
       letter-spacing: 0.125rem;
       padding: 7px 13px; } }
   @media screen and (min-width: 980px) {
-    .spotlight-lock .spotlight_item_label {
+    .spotlight_items_clone .spotlight_item_label {
       background: none;
       -webkit-transition: background .125s .5s;
       transition: background .125s .5s; } }
@@ -6752,26 +6748,37 @@ button {
       font-size: 24px;
       font-size: 1.5rem;
       line-height: 1.41667; } }
-  @media screen and (min-width: 980px) {
-    .spotlight-lock .spotlight_item_title {
-      height: 0 !important;
-      opacity: 0;
-      -webkit-transition: height .125s, opacity .125s;
-      transition: height .125s, opacity .125s; } }
 
 /* ==========================================================================
 	Spotlight Takeover
 ============================================================================= */
-.spotlight_takeover_item {
+.spotlight_takeover_items {
   height: calc(100% - 60px);
   width: 100%;
   position: fixed;
   top: 60px;
   left: 0;
   z-index: 500;
+  pointer-events: none; }
+  @media screen and (min-width: 740px) {
+    .spotlight_takeover_items {
+      height: calc(100% - 82px);
+      top: 82px; } }
+  @media screen and (min-width: 980px) {
+    .spotlight_takeover_items {
+      height: 100%;
+      top: 0; } }
+
+.spotlight_takeover_item {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   background: #fff;
   opacity: 0;
   visibility: hidden;
+  pointer-events: auto;
   -webkit-transition: opacity .25s, visibility .25s;
   transition: opacity .25s, visibility .25s; }
   .spotlight_takeover_item.theme_navy .spotlight_takeover_intro_link:before {
@@ -6814,13 +6821,13 @@ button {
     background: #F5F7F9; }
   @media screen and (min-width: 740px) {
     .spotlight_takeover_item {
-      height: calc(100% - 82px);
-      top: 82px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; } }
   @media screen and (min-width: 980px) {
     .spotlight_takeover_item {
+      height: calc(100% - 82px);
+      top: 82px;
       z-index: 200;
       border-bottom: 10px solid #003473;
       border-left: 10px solid #003473; } }

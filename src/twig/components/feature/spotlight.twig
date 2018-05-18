@@ -54,91 +54,111 @@
 			</div>
 		{% endfor %}
 	</div>
-	{% for item in items %}
-		<div class="spotlight_takeover_item spotlight_takeover_item_{{loop.index}} theme_{{item.theme}}{% if item.takeover.links or item.takeover.filters %} layout_pair{% else %} layout_fill{% endif %}{% if item.takeover.filters %} layout_filters{% endif %}">
-			<button class="js-swap spotlight_takeover_item_close" data-swap-target="spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover">
-				<span class="spotlight_takeover_item_close_icon">{{site.icon("close")}}</span>
-			</button>
-			<div class="spotlight_takeover_intro">
-				<div class="spotlight_takeover_intro_inner">
-					{% if item.takeover.links or item.takeover.filters %} 
-						{% include par ~ "background.twig" with {
-							class: "spotlight_takeover_intro",
-							image: item.takeover.image,
-							sources: {
-								"740px": img.classic.med,
-								"980px": img.wide.lrg,
-							}
-						} %}
-					{% else %}
-						{% include par ~ "background.twig" with {
-							class: "spotlight_takeover_intro",
-							image: item.takeover.image,
-							sources: {
-								"740px": img.portraitFull.med,
-								"980px": img.portraitFull.lrg,
-							}
-						} %}
-					{% endif %}
-					<header class="spotlight_takeover_intro_header">
-						<h3 class="spotlight_takeover_intro_label">{{item.label}}</h3>
-						<h4 class="spotlight_takeover_intro_title">{{item.title}}</h4>
-					</header>
+	<div class="spotlight_takeover_items">
+		<div class="spotlight_items spotlight_items_clone">
+			{% for item in items %}
+				<div class="js-swap spotlight_item theme_{{item.theme}}" data-swap-target=".spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover">
+					{% include par ~ "background.twig" with { 
+						class: "spotlight_item", 
+						image: item.image, 
+						sources: { 
+							"0px": img.wide.sml 
+						} 
+					} %}
+					<div class="spotlight_item_inner">
+						<header class="spotlight_item_header">
+							<span class="spotlight_item_label">{{item.label}}</span>
+						</header>
+					</div>
 				</div>
-				{% if item.takeover.links or item.takeover.filters %}
-					<div class="spotlight_takeover_intro_body">
-						{% if item.takeover.links %}
-							{% for link in item.takeover.links %}
-								{{site.button("spotlight_takeover_intro", link, "#", "arrow_right")}}
-							{% endfor %}
-						{% elseif item.takeover.filters %}
-							{{site.input("search", "Search by keyword", "spotlight_takeover")}}
-							<div class="spotlight_takeover_filter">
-								<span class="spotlight_takeover_filter_label">Filter By Area of Study</span>
-								<div class="spotlight_takeover_options">
-									{{site.choices("radio", item.takeover.filters)}}
-								</div>
-							</div>
-						{% endif %}
-					</div>
-				{% endif %}
-			</div>
-			<div class="spotlight_takeover_content">
-				{% if item.takeover.filters %}
-					<div class="spotlight_takeover_details">
-						<div class="spotlight_takeover_detail">
-							<span class="spotlight_takeover_detail_label">Viewing/<strong class="spotlight_takeover_detail_title">All Programs</strong></span>
-						</div>
-						<div class="spotlight_takeover_result">39</div>
-					</div>
-				{% endif %}
-				{% for program in item.takeover.programs %}
-					{% include "../in-content/program-item.twig" with {
-						image: program.image,
-						title: program.title,
-						degrees: program.degrees,
-						caption: program.caption
-					} %}
-				{% endfor %}
-				{% for video in item.takeover.videos %}
-					{% include "../in-content/video-item.twig" with {
-						image: video.image,
-						url: video.url,
-						title: video.title
-					} %}
-				{% endfor %}
-				{% for quote in item.takeover.quotes %}
-					{% include "../in-content/quote-item.twig" with {
-						image: quote.image,
-						video: quote.video,
-						title: quote.title,
-						content: quote.content,
-						cite: quote.cite,
-						year: quote.year,
-						caption: quote.caption
-					} %}
-				{% endfor %}
-			</div>
+			{% endfor %}
 		</div>
-	{% endfor %}
+		{% for item in items %}
+			<div class="spotlight_takeover_item spotlight_takeover_item_{{loop.index}} theme_{{item.theme}}{% if item.takeover.links or item.takeover.filters %} layout_pair{% else %} layout_fill{% endif %}{% if item.takeover.filters %} layout_filters{% endif %}">
+				<button class="js-swap spotlight_takeover_item_close" data-swap-target="spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover">
+					<span class="spotlight_takeover_item_close_icon">{{site.icon("close")}}</span>
+				</button>
+				<div class="spotlight_takeover_intro">
+					<div class="spotlight_takeover_intro_inner">
+						{% if item.takeover.links or item.takeover.filters %} 
+							{% include par ~ "background.twig" with {
+								class: "spotlight_takeover_intro",
+								image: item.takeover.image,
+								sources: {
+									"740px": img.classic.med,
+									"980px": img.wide.lrg,
+								}
+							} %}
+						{% else %}
+							{% include par ~ "background.twig" with {
+								class: "spotlight_takeover_intro",
+								image: item.takeover.image,
+								sources: {
+									"740px": img.portraitFull.med,
+									"980px": img.portraitFull.lrg,
+								}
+							} %}
+						{% endif %}
+						<header class="spotlight_takeover_intro_header">
+							<h3 class="spotlight_takeover_intro_label">{{item.label}}</h3>
+							<h4 class="spotlight_takeover_intro_title">{{item.title}}</h4>
+						</header>
+					</div>
+					{% if item.takeover.links or item.takeover.filters %}
+						<div class="spotlight_takeover_intro_body">
+							{% if item.takeover.links %}
+								{% for link in item.takeover.links %}
+									{{site.button("spotlight_takeover_intro", link, "#", "arrow_right")}}
+								{% endfor %}
+							{% elseif item.takeover.filters %}
+								{{site.input("search", "Search by keyword", "spotlight_takeover")}}
+								<div class="spotlight_takeover_filter">
+									<span class="spotlight_takeover_filter_label">Filter By Area of Study</span>
+									<div class="spotlight_takeover_options">
+										{{site.choices("radio", item.takeover.filters)}}
+									</div>
+								</div>
+							{% endif %}
+						</div>
+					{% endif %}
+				</div>
+				<div class="spotlight_takeover_content">
+					{% if item.takeover.filters %}
+						<div class="spotlight_takeover_details">
+							<div class="spotlight_takeover_detail">
+								<span class="spotlight_takeover_detail_label">Viewing/<strong class="spotlight_takeover_detail_title">All Programs</strong></span>
+							</div>
+							<div class="spotlight_takeover_result">39</div>
+						</div>
+					{% endif %}
+					{% for program in item.takeover.programs %}
+						{% include "../in-content/program-item.twig" with {
+							image: program.image,
+							title: program.title,
+							degrees: program.degrees,
+							caption: program.caption
+						} %}
+					{% endfor %}
+					{% for video in item.takeover.videos %}
+						{% include "../in-content/video-item.twig" with {
+							image: video.image,
+							url: video.url,
+							title: video.title
+						} %}
+					{% endfor %}
+					{% for quote in item.takeover.quotes %}
+						{% include "../in-content/quote-item.twig" with {
+							image: quote.image,
+							video: quote.video,
+							title: quote.title,
+							content: quote.content,
+							cite: quote.cite,
+							year: quote.year,
+							caption: quote.caption
+						} %}
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
 </div>

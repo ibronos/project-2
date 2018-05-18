@@ -271,13 +271,30 @@
 	}
 
 	@media #{$min_lg} {
-		width: 100%;
-
-		position: absolute;
-		bottom: 0;
-		left: 0;
-
 		border-top: 1px solid rgba(#fff, .5);
+	}
+
+	&_clone {
+		display: none;
+
+		@media #{$min_lg} {
+			border-top: 0;
+			display: flex;
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: auto;
+			transition: 
+				opacity .25s,
+				visibility .25s;
+		}
+	}
+
+	.spotlight-lock & {
+
+		@media #{$min_lg} {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 }
 
@@ -365,7 +382,7 @@
 		}
 	}
 
-	.spotlight-lock & {
+	.spotlight_items_clone & {
 
 		@media #{$min_lg} {
 			opacity: 1;
@@ -387,13 +404,9 @@
 		padding: 64px 20px;
 		transition: padding .125s .5s;
 	}
-
-	.spotlight-lock & {
-
-		@media #{$min_lg} {
-			padding: 21px 20px 15px;
-			transition: padding .125s;
-		}
+	
+	.spotlight_items_clone & {
+		padding: 21px 20px 15px;
 	}
 }
 
@@ -435,16 +448,6 @@
 				scale(1);
 		}
 	}
-
-	.spotlight-lock & {
-
-		@media #{$min_lg} {
-			bottom: -1px;
-			top: auto;
-
-			transform-origin: center bottom;
-		}
-	}
 }
 
 .spotlight_item_trigger_icon {
@@ -478,7 +481,7 @@
 		padding: 7px 13px;
 	}
 
-	.spotlight-lock & {
+	.spotlight_items_clone & {
 
 		@media #{$min_lg} {
 			background: none;
@@ -511,18 +514,6 @@
 	@media #{$min_xxl} {
 		font-size: 24px;
 		line-height: (34 / 24);
-	}
-
-	.spotlight-lock & {
-
-		@media #{$min_lg} {
-			height: 0 !important;
-
-			opacity: 0;
-			transition: 
-				height .125s,
-				opacity .125s;
-		}
 	}
 }
 
@@ -572,9 +563,7 @@
 	}
 }
 
-.spotlight_takeover_item {
-	@include spotlight_takeover_theme;
-
+.spotlight_takeover_items {
 	height: calc(100% - 60px);
 	width: 100%;
 
@@ -583,22 +572,47 @@
 	left: 0;
 	z-index: 500;
 
-	background: #fff;
-	opacity: 0;
-	visibility: hidden;
-	transition:
-		opacity .25s,
-		visibility .25s;
+	pointer-events: none;
 
 	@media #{$min_md} {
 		height: calc(100% - 82px);
 
 		top: 82px;
+	}
 
+	@media #{$min_lg} {
+		height: 100%;
+
+		top: 0;
+	}
+}
+
+.spotlight_takeover_item {
+	@include spotlight_takeover_theme;
+
+	height: 100%;
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background: #fff;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: auto;
+	transition:
+		opacity .25s,
+		visibility .25s;
+
+	@media #{$min_md} {
 		display: flex;
 	}
 
 	@media #{$min_lg} {
+		height: calc(100% - 82px);
+
+		top: 82px;
 		z-index: 200;
 
 		border-bottom: 10px solid $navy;

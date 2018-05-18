@@ -21,20 +21,6 @@
 	@media #{$min_md} {
 		padding: 19px 0 15px;
 	}
-	
-	@media #{$min_lg} {
-		transition:
-			opacity .25s,
-			visibility .25s;
-	}
-
-	.spotlight-lock & {
-
-		@media #{$min_lg} {
-			opacity: 0;
-			visibility: hidden;
-		}
-	}
 }
 
 .header_ribbon {}
