@@ -329,7 +329,8 @@
 	}
 
 	&:focus,
-	&:hover {
+	&:hover,
+	&.fs-swap-active {
 		
 		&:before {
 

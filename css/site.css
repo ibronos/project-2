@@ -6854,7 +6854,7 @@ button {
       transition: height .25s, width .25s, transform .25s;
       transition: height .25s, width .25s, transform .25s, -webkit-transform .25s; } }
   @media screen and (min-width: 980px) {
-    .spotlight_item:focus:before, .spotlight_item:hover:before {
+    .spotlight_item:focus:before, .spotlight_item:hover:before, .spotlight_item.fs-swap-active:before {
       height: calc(100% - 20px);
       width: calc(100% - 20px);
       -webkit-transform: translate(10px, 10px);
