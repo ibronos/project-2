@@ -8835,6 +8835,7 @@ button {
     width: calc(33.33% - 28px); } }
 
 .linked_list_link {
+  position: relative;
   border-bottom: 1px solid rgba(118, 111, 103, 0.5);
   color: #1573DD;
   display: block;
@@ -8842,6 +8843,25 @@ button {
   @media screen and (min-width: 740px) {
     .linked_list_link {
       padding: 24px 0 23px; } }
+  .linked_list_link:after {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1573DD;
+    content: "";
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s; }
+  .linked_list_link:focus:after, .linked_list_link:hover:after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); }
 
 .linked_list_link_inner {
   -webkit-box-align: center;
@@ -8862,6 +8882,43 @@ button {
   letter-spacing: 1.4px;
   letter-spacing: 0.0875rem;
   text-transform: uppercase; }
+
+.linked_list_icon {
+  display: inline-block;
+  -webkit-transform-origin: center -100%;
+          transform-origin: center -100%; }
+  .linked_list_link:focus .linked_list_icon,
+  .linked_list_link:hover .linked_list_icon {
+    -webkit-animation: whistle 1s .375s infinite;
+            animation: whistle 1s .375s infinite; }
+
+@-webkit-keyframes whistle {
+  40% {
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: center -100%;
+            transform-origin: center -100%; }
+  70% {
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: center 200%;
+            transform-origin: center 200%; } }
+
+@keyframes whistle {
+  40% {
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: center -100%;
+            transform-origin: center -100%; }
+  70% {
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: center 200%;
+            transform-origin: center 200%; } }
 
 .program {
   margin-bottom: 25px; }
