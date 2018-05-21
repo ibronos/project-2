@@ -6814,18 +6814,18 @@ button {
         pointer-events: auto;
         -webkit-transform: translate(0, -100%);
                 transform: translate(0, -100%);
-        -webkit-transition: -webkit-transform .35s .35s;
-        transition: -webkit-transform .35s .35s;
-        transition: transform .35s .35s;
-        transition: transform .35s .35s, -webkit-transform .35s .35s; } }
+        -webkit-transition: -webkit-transform .25s .25s;
+        transition: -webkit-transform .25s .25s;
+        transition: transform .25s .25s;
+        transition: transform .25s .25s, -webkit-transform .25s .25s; } }
   @media screen and (min-width: 980px) {
     .spotlight-lock .spotlight_items {
       -webkit-transform: translate(0, 0);
               transform: translate(0, 0);
-      -webkit-transition: -webkit-transform .35s;
-      transition: -webkit-transform .35s;
-      transition: transform .35s;
-      transition: transform .35s, -webkit-transform .35s; } }
+      -webkit-transition: -webkit-transform .25s;
+      transition: -webkit-transform .25s;
+      transition: transform .25s;
+      transition: transform .25s, -webkit-transform .25s; } }
 
 .spotlight_item {
   position: relative;
@@ -7040,8 +7040,8 @@ button {
   opacity: 0;
   visibility: hidden;
   pointer-events: auto;
-  -webkit-transition: opacity .35s, visibility .35s;
-  transition: opacity .35s, visibility .35s; }
+  -webkit-transition: opacity .25s, visibility .25s;
+  transition: opacity .25s, visibility .25s; }
   .spotlight_takeover_item.theme_navy:after {
     background: #003473; }
   .spotlight_takeover_item.theme_navy .spotlight_takeover_intro_link:before {
@@ -7156,10 +7156,10 @@ button {
     left: -10px;
     z-index: 12;
     content: "";
-    -webkit-transition: -webkit-transform 1s .7s;
-    transition: -webkit-transform 1s .7s;
-    transition: transform 1s .7s;
-    transition: transform 1s .7s, -webkit-transform 1s .7s; }
+    -webkit-transition: -webkit-transform 1s .5s;
+    transition: -webkit-transform 1s .5s;
+    transition: transform 1s .5s;
+    transition: transform 1s .5s, -webkit-transform 1s .5s; }
     @media screen and (min-width: 1220px) {
       .spotlight_takeover_item:after {
         height: calc(100% + 20px);
@@ -7173,8 +7173,8 @@ button {
               transform: translate(0, 100%); }
   @media screen and (min-width: 980px) {
     .spotlight-lock .spotlight_takeover_item {
-      -webkit-transition: opacity .35s .35s, visibility .35s .35s;
-      transition: opacity .35s .35s, visibility .35s .35s; } }
+      -webkit-transition: opacity .25s .25s, visibility .25s .25s;
+      transition: opacity .25s .25s, visibility .25s .25s; } }
 
 .spotlight_takeover_item_close {
   height: 60px;
@@ -7240,16 +7240,16 @@ button {
   @media screen and (min-width: 980px) {
     .spotlight_takeover_intro {
       opacity: 0;
-      -webkit-transition: opacity 0s .35s;
-      transition: opacity 0s .35s; } }
+      -webkit-transition: opacity 0s .25s;
+      transition: opacity 0s .25s; } }
   @media screen and (min-width: 1220px) {
     .spotlight_takeover_intro {
       width: calc(50% - 11px); } }
   @media screen and (min-width: 980px) {
     .spotlight-lock .spotlight_takeover_intro {
       opacity: 1;
-      -webkit-transition: opacity 0s .7s;
-      transition: opacity 0s .7s; } }
+      -webkit-transition: opacity 0s .5s;
+      transition: opacity 0s .5s; } }
 
 .layout_pair .spotlight_takeover_intro_inner {
   position: relative;
@@ -7581,16 +7581,16 @@ button {
   @media screen and (min-width: 980px) {
     .spotlight_takeover_content {
       opacity: 0;
-      -webkit-transition: opacity 0s .35s;
-      transition: opacity 0s .35s; } }
+      -webkit-transition: opacity 0s .25s;
+      transition: opacity 0s .25s; } }
   @media screen and (min-width: 1220px) {
     .spotlight_takeover_content {
       width: calc(50% + 11px); } }
   @media screen and (min-width: 980px) {
     .spotlight-lock .spotlight_takeover_content {
       opacity: 1;
-      -webkit-transition: opacity 0s .7s;
-      transition: opacity 0s .7s; } }
+      -webkit-transition: opacity 0s .5s;
+      transition: opacity 0s .5s; } }
 
 .spotlight_takeover_details {
   -webkit-box-align: center;
