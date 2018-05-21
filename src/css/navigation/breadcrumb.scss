@@ -188,9 +188,7 @@
 	font-size: 13px;
 	letter-spacing: 2.5px;
 	padding: 8px 0 9px;
-	transition:
-		box-shadow .25s,
-		color .25s;
+	transition: color .25s;
 
 	.page_theme_image & {
 		color: $dark;

@@ -139,6 +139,15 @@
 
 	border-bottom: 1px solid $blue;
 	color: $dark;
+	transition:
+		border .25s,
+		color .25s;
+
+	&:focus,
+	&:hover {
+		border-color: $yellow;
+		color: $blue;
+	}
 }
 
 .news_item_title {

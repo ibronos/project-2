@@ -165,6 +165,11 @@
 .stat_body {
 	@include h3;
 	@include u(300);
+
+	@media #{$max_sm} {
+		font-size: 18px;
+		line-height: (26 / 18);
+	}
 	
 	.theme_image & {
 		color: #fff;

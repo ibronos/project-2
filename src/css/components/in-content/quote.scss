@@ -130,8 +130,12 @@
 }
 
 .quote_card_content {
-	padding: 20px 20px 0;
+	padding: 20px 10px 0;
 
+	@media #{$min_sm} {
+		padding: 20px 20px 0;
+	}
+	
 	@media #{$min_md} {
 		padding: 40px 30px 20px;
 	}

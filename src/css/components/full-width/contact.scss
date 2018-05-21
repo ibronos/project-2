@@ -93,13 +93,11 @@
 }
 
 .contact_detail {
-	@include u(300);
+	@include label_text;
 
 	position: relative;
 
 	color: $dark;
-	font-size: 20px;
-	line-height: (32 / 20);
 	margin-bottom: 23px;
 
 	&_location {
@@ -116,10 +114,14 @@
 
 .contact_detail_icon {
 	position: absolute;
-	top: 10px;
+	top: 6px;
 	left: 0;
 
 	color: #766F67;
+
+	@media #{$min_md} {
+		top: 10px;
+	}
 }
 
 .contact_detail_label {

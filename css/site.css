@@ -5171,10 +5171,8 @@ button {
   letter-spacing: 2.5px;
   letter-spacing: 0.15625rem;
   padding: 8px 0 9px;
-  -webkit-transition: color .25s, -webkit-box-shadow .25s;
-  transition: color .25s, -webkit-box-shadow .25s;
-  transition: box-shadow .25s, color .25s;
-  transition: box-shadow .25s, color .25s, -webkit-box-shadow .25s; }
+  -webkit-transition: color .25s;
+  transition: color .25s; }
   .page_theme_image .breadcrumb_dropdown_item {
     color: #0F0F11; }
   .page_theme_default .breadcrumb_dropdown_item {
@@ -6189,7 +6187,7 @@ button {
 	Lightbox
 ============================================================================= */
 .fs-lightbox-overlay {
-  display: none; }
+  z-index: 400; }
 
 .fs-lightbox {
   z-index: 800;
@@ -6349,13 +6347,18 @@ button {
   font-size: 1.125rem;
   padding: 5px 2px;
   vertical-align: middle;
-  -webkit-transition: border .25s, color .25s;
-  transition: border .25s, color .25s; }
+  -webkit-transition: border .25s, color .25s, -webkit-transform .25s;
+  transition: border .25s, color .25s, -webkit-transform .25s;
+  transition: border .25s, color .25s, transform .25s;
+  transition: border .25s, color .25s, transform .25s, -webkit-transform .25s; }
   @media screen and (min-width: 500px) {
     .pagination_link {
       padding: 5px 7px; } }
   .pagination_link:focus, .pagination_link:hover {
     color: #0F0F11; }
+  .pagination_link:focus:not(.active), .pagination_link:hover:not(.active) {
+    -webkit-transform: scale(1.35);
+            transform: scale(1.35); }
   .pagination_link.active {
     border-bottom-color: #1573DD;
     color: #0F0F11; }
@@ -7804,12 +7807,17 @@ button {
 .contact_detail {
   font-weight: 400;
   font-family: "Unit Offc W01 Light", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.625;
   position: relative;
   color: #0F0F11;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.6;
   margin-bottom: 23px; }
+  @media screen and (min-width: 740px) {
+    .contact_detail {
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 1.6; } }
   @media screen and (min-width: 740px) {
     .contact_detail_location {
       margin-bottom: 14px; } }
@@ -7818,9 +7826,12 @@ button {
 
 .contact_detail_icon {
   position: absolute;
-  top: 10px;
+  top: 6px;
   left: 0;
   color: #766F67; }
+  @media screen and (min-width: 740px) {
+    .contact_detail_icon {
+      top: 10px; } }
 
 .contact_detail_label {
   display: block;
@@ -8275,7 +8286,12 @@ button {
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif;
   border-bottom: 1px solid #1573DD;
-  color: #0F0F11; }
+  color: #0F0F11;
+  -webkit-transition: border .25s, color .25s;
+  transition: border .25s, color .25s; }
+  .news_item_source:focus, .news_item_source:hover {
+    border-color: #FFD600;
+    color: #1573DD; }
 
 .news_item_title {
   font-weight: 400;
@@ -9132,7 +9148,7 @@ button {
   border-bottom: 1px solid rgba(118, 111, 103, 0.5);
   color: #1573DD;
   display: block;
-  padding: 16px 0 15px; }
+  padding: 17px 0 16px; }
   @media screen and (min-width: 740px) {
     .linked_list_link {
       padding: 24px 0 23px; } }
@@ -9170,11 +9186,15 @@ button {
 .linked_list_label {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: 1.4px;
   letter-spacing: 0.0875rem;
   text-transform: uppercase; }
+  @media screen and (min-width: 740px) {
+    .linked_list_label {
+      font-size: 16px;
+      font-size: 1rem; } }
 
 .linked_list_icon {
   display: inline-block;
@@ -10003,7 +10023,10 @@ button {
   padding: 20px; }
 
 .quote_card_content {
-  padding: 20px 20px 0; }
+  padding: 20px 10px 0; }
+  @media screen and (min-width: 500px) {
+    .quote_card_content {
+      padding: 20px 20px 0; } }
   @media screen and (min-width: 740px) {
     .quote_card_content {
       padding: 40px 30px 20px; } }
@@ -10244,6 +10267,11 @@ button {
       font-size: 32px;
       font-size: 2rem;
       line-height: 1.4375; } }
+  @media screen and (max-width: 499px) {
+    .stat_body {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 1.44444; } }
   .theme_image .stat_body {
     color: #fff; }
   .stat_body p {

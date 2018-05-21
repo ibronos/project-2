@@ -100,7 +100,8 @@
 	vertical-align: middle;
 	transition:
 		border .25s,
-		color .25s;
+		color .25s,
+		transform .25s;
 
 	@media #{$min_sm} {
 		padding: 5px 7px;
@@ -109,6 +110,11 @@
 	&:focus,
 	&:hover {
 		color: $dark;
+	}
+
+	&:focus:not(.active),
+	&:hover:not(.active) {
+		transform: scale(1.35);
 	}
 
 	&.active {
