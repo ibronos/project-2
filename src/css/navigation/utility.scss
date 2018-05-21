@@ -33,15 +33,54 @@
 .utility_nav_link {
 	@include u(500);
 
+	position: relative;
+
 	color: $navy;
 	display: block;
 	font-size: 16px;
 	letter-spacing: 2px;
 	padding: 16px 24px;
 	text-transform: uppercase;
+	transition: color .25s;
+
+	&:before {
+		@include cover;
+
+		z-index: -2;
+
+		background: $blue;
+		clip-path:
+			polygon(
+				0 0,
+				100% 0,
+				0 0,
+				0 100%
+			);
+		transition: clip-path .25s;
+
+		.svgclippaths & {
+			content: "";
+		}
+	}
 
 	&:focus,
-	&:hover {}
+	&:hover {
+		color: #fff;
+
+		&:before {
+			clip-path:
+				polygon(
+					0 0,
+					100% 0,
+					100% 100%,
+					0 100%
+				);
+		}
+
+		.no-svgclippaths & {
+			background: $blue;
+		}
+	}
 }
 
 .utility_nav_link_label {}

@@ -5270,7 +5270,27 @@ button {
       display: none; } }
 
 .main_nav_item {
+  position: relative;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+  .main_nav_item:after {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #FFD600;
+    content: "";
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s; }
+  .main_nav_item:focus:after, .main_nav_item:hover:after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); }
   .main_nav_sm .main_nav_item.fs-swap-enabled .main_nav_children {
     display: none; }
   .main_nav_sm .main_nav_item.fs-swap-active .main_nav_children {
@@ -5285,7 +5305,7 @@ button {
 .main_nav_link {
   font-family: "Meta Serif W01 Bold";
   font-weight: 400;
-  width: calc(100% - 50px);
+  width: calc(100% - 70px);
   color: #fff;
   display: block;
   font-size: 22px;
@@ -5302,11 +5322,11 @@ button {
   display: none; }
 
 .js .main_nav_toggle {
-  width: 50px;
+  width: 70px;
   height: 100%;
   position: absolute;
   top: 0;
-  right: 0;
+  right: -20px;
   cursor: pointer; }
 
 .main_nav_lg .main_nav_toggle {
@@ -5332,20 +5352,23 @@ button {
 .main_nav_toggle_icon {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 20px;
   color: #FFD600;
   -webkit-transform: translate(0, -50%) rotateX(0);
           transform: translate(0, -50%) rotateX(0);
-  -webkit-transition: -webkit-transform .25s;
-  transition: -webkit-transform .25s;
-  transition: transform .25s;
-  transition: transform .25s, -webkit-transform .25s; }
+  -webkit-transition: color .25s,	 -webkit-transform .25s;
+  transition: color .25s,	 -webkit-transform .25s;
+  transition: color .25s,	 transform .25s;
+  transition: color .25s,	 transform .25s,	 -webkit-transform .25s; }
   @media screen and (min-width: 740px) {
     .main_nav_toggle_icon {
       -webkit-transform-origin: right center;
               transform-origin: right center;
       -webkit-transform: translate(0, -50%) scale(1.5) rotateX(0);
               transform: translate(0, -50%) scale(1.5) rotateX(0); } }
+  .main_nav_item:focus .main_nav_toggle_icon,
+  .main_nav_item:hover .main_nav_toggle_icon {
+    color: #fff; }
   .main_nav_item.fs-swap-active .main_nav_toggle_icon {
     -webkit-transform: translate(0, -50%) rotateX(180deg);
             transform: translate(0, -50%) rotateX(180deg); }
@@ -5487,21 +5510,43 @@ button {
 .secondary_nav_link {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;
+  position: relative;
   color: #FFD600;
-  display: block;
+  display: inline-block;
   font-size: 14px;
   font-size: 0.875rem;
   letter-spacing: 1.6px;
   letter-spacing: 0.1rem;
-  padding: 10px 0;
-  text-transform: uppercase; }
+  padding: 10px 20px 10px 0;
+  text-transform: uppercase;
+  -webkit-transition: color .25s;
+  transition: color .25s; }
   @media screen and (min-width: 740px) {
     .secondary_nav_link {
       font-size: 16px;
       font-size: 1rem;
       letter-spacing: 2.6px;
       letter-spacing: 0.1625rem;
-      padding: 15px 0; } }
+      padding: 15px 20px 15px 0; } }
+  .secondary_nav_link:focus, .secondary_nav_link:hover {
+    color: rgba(255, 214, 0, 0.75); }
+
+.secondary_nav_link_icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  opacity: 0;
+  -webkit-transform: translate(-5px, -50%);
+          transform: translate(-5px, -50%);
+  -webkit-transition: opacity .25s, -webkit-transform .25s;
+  transition: opacity .25s, -webkit-transform .25s;
+  transition: opacity .25s, transform .25s;
+  transition: opacity .25s, transform .25s, -webkit-transform .25s; }
+  .secondary_nav_link:focus .secondary_nav_link_icon,
+  .secondary_nav_link:hover .secondary_nav_link_icon {
+    opacity: 1;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%); }
 
 /* ==========================================================================
 	Social Navigation
@@ -5902,6 +5947,7 @@ button {
 .utility_nav_link {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;
+  position: relative;
   color: #003473;
   display: block;
   font-size: 16px;
@@ -5909,7 +5955,32 @@ button {
   letter-spacing: 2px;
   letter-spacing: 0.125rem;
   padding: 16px 24px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  -webkit-transition: color .25s;
+  transition: color .25s; }
+  .utility_nav_link:before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background: #1573DD;
+    -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
+    -webkit-transition: -webkit-clip-path .25s;
+    transition: -webkit-clip-path .25s;
+    transition: clip-path .25s;
+    transition: clip-path .25s, -webkit-clip-path .25s; }
+    .svgclippaths .utility_nav_link:before {
+      content: ""; }
+  .utility_nav_link:focus, .utility_nav_link:hover {
+    color: #fff; }
+    .utility_nav_link:focus:before, .utility_nav_link:hover:before {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    .no-svgclippaths .utility_nav_link:focus, .no-svgclippaths .utility_nav_link:hover {
+      background: #1573DD; }
 
 /* ==========================================================================
 	Carousel

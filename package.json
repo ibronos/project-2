@@ -204,12 +204,14 @@
     ],
     "secondaryNav": [
       {
-        "modifier": "",
+				"modifier": "",
+				"icon": "arrow_right",
         "name": "News",
         "children": ""
       },
       {
-        "modifier": "",
+				"modifier": "",
+				"icon": "arrow_right",
         "name": "Events",
         "children": ""
       }

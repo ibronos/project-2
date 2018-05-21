@@ -24,7 +24,32 @@
 .main_nav_list {}
 
 .main_nav_item {
+	position: relative;
+
 	border-bottom: 1px solid rgba(#fff, .3);
+
+	&:after {
+		height: 2px;
+		width: 100%;
+
+		position: absolute;
+		top: 100%;
+		left: 0;
+
+		background: $yellow;
+		content: "";
+		transform-origin: left center;
+		transform: scaleX(0);
+		transition: transform .5s;
+	}
+
+	&:focus,
+	&:hover {
+		
+		&:after {
+			transform: scaleX(1);
+		}
+	}
 
 	.main_nav_sm & {
 
@@ -64,7 +89,7 @@
 .main_nav_link {
 	@include m(700);
 
-	width: calc(100% - 50px);
+	width: calc(100% - 70px);
 
 	color: #fff;
 	display: block;
@@ -89,12 +114,12 @@
 	}
 
 	.js & {
-		width: 50px;
+		width: 70px;
 		height: 100%;
 
 		position: absolute;
 		top: 0;
-		right: 0;
+		right: -20px;
 
 		cursor: pointer;
 	}
@@ -111,13 +136,15 @@
 .main_nav_toggle_icon {
 	position: absolute;
 	top: 50%;
-	right: 0;
+	right: 20px;
 
 	color: $yellow;
 	transform: 
 		translate(0, -50%)
 		rotateX(0);
-	transition: transform .25s;
+	transition: 
+		color .25s,	
+		transform .25s;
 
 	@media #{$min_md} {
 		transform-origin: right center;
@@ -125,6 +152,11 @@
 			translate(0, -50%)
 			scale(1.5)
 			rotateX(0);
+	}
+
+	.main_nav_item:focus &,
+	.main_nav_item:hover & {
+		color: #fff;
 	}
 
 	.main_nav_item.fs-swap-active & {

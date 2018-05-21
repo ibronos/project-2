@@ -29,21 +29,44 @@
 .secondary_nav_link {
 	@include u(500);
 
+	position: relative;
+
 	color: $yellow;
-	display: block;
+	display: inline-block;
 	font-size: 14px;
 	letter-spacing: 1.6px;
-	padding: 10px 0;
+	padding: 10px 20px 10px 0;
 	text-transform: uppercase;
+	transition: color .25s;
 
 	@media #{$min_md} {
 		font-size: 16px;
 		letter-spacing: 2.6px;
-		padding: 15px 0;
+		padding: 15px 20px 15px 0;
 	}
 
 	&:focus,
-	&:hover {}
+	&:hover {
+		color: rgba($yellow, .75);
+	}
 }
 
 .secondary_nav_link_label {}
+
+.secondary_nav_link_icon {
+	position: absolute;
+	top: 50%;
+	right: 0;
+
+	opacity: 0;
+	transform: translate(-5px, -50%);
+	transition: 
+		opacity .25s,
+		transform .25s;
+
+	.secondary_nav_link:focus &,
+	.secondary_nav_link:hover & {
+		opacity: 1;
+		transform: translate(0, -50%);
+	}
+}
