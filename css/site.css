@@ -5330,7 +5330,7 @@ button {
   padding-bottom: 25px; }
   @media screen and (min-width: 740px) {
     .main_nav_children {
-      padding-bottom: 33px; } }
+      padding-bottom: 35px; } }
   .main_nav_lg .main_nav_children {
     position: absolute;
     display: block;
@@ -5530,8 +5530,10 @@ button {
 .social_nav_icon {
   position: relative;
   display: block;
-  -webkit-transition: opacity .25s;
-  transition: opacity .25s; }
+  -webkit-transition: opacity .25s, -webkit-transform .25s;
+  transition: opacity .25s, -webkit-transform .25s;
+  transition: opacity .25s, transform .25s;
+  transition: opacity .25s, transform .25s, -webkit-transform .25s; }
   @media screen and (min-width: 980px) {
     .social_nav_icon {
       -webkit-transform: scale(1.25);
@@ -5570,17 +5572,26 @@ button {
     background: #F8485E; }
   .social_nav_item:nth-child(6) .social_nav_icon:before, .social_nav_item:nth-child(6) .social_nav_icon:after {
     background: #FF7E54; }
-  .social_nav_item:focus .social_nav_icon:before,
-  .social_nav_item:hover .social_nav_icon:before {
-    -webkit-animation: clip-through .5s forwards linear;
-            animation: clip-through .5s forwards linear; }
-  .social_nav_item:focus .social_nav_icon:after,
-  .social_nav_item:hover .social_nav_icon:after {
-    -webkit-animation: bubble-pop .5s .15s forwards linear;
-            animation: bubble-pop .5s .15s forwards linear; }
-  .no-svgclippaths .social_nav_item:focus .social_nav_icon, .no-svgclippaths
+  .social_nav_item:focus .social_nav_icon,
   .social_nav_item:hover .social_nav_icon {
-    opacity: .6; }
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+    @media screen and (min-width: 980px) {
+      .social_nav_item:focus .social_nav_icon,
+      .social_nav_item:hover .social_nav_icon {
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5); } }
+    .social_nav_item:focus .social_nav_icon:before,
+    .social_nav_item:hover .social_nav_icon:before {
+      -webkit-animation: clip-through .5s forwards linear;
+              animation: clip-through .5s forwards linear; }
+    .social_nav_item:focus .social_nav_icon:after,
+    .social_nav_item:hover .social_nav_icon:after {
+      -webkit-animation: bubble-pop .5s .15s forwards linear;
+              animation: bubble-pop .5s .15s forwards linear; }
+    .no-svgclippaths .social_nav_item:focus .social_nav_icon, .no-svgclippaths
+    .social_nav_item:hover .social_nav_icon {
+      opacity: .6; }
 
 @-webkit-keyframes clip-through {
   50% {

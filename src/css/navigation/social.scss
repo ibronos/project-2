@@ -63,7 +63,9 @@
 	position: relative;
 
 	display: block;
-	transition: opacity .25s;
+	transition: 
+		opacity .25s,
+		transform .25s;
 
 	@media #{$min_lg} {
 		transform: scale(1.25);
@@ -129,7 +131,12 @@
 
 	.social_nav_item:focus &,
 	.social_nav_item:hover & {
+		transform: scale(1.15);
 		
+		@media #{$min_lg} {
+			transform: scale(1.5);
+		}
+
 		&:before {
 			animation: clip-through .5s forwards linear;
 		}
