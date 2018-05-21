@@ -80,32 +80,76 @@ button {
 	$b: $blue,
 	$b2: $navy,
 	$lc: #fff,
-	$ic: #fff
+	$ic: #fff,
+	$hc: #fff,
+	$hic: #fff
 ) {
-	background: $b;
-	color: $lc;
 
 	&:focus,
 	&:hover {}
 
-	&:before {
+	&:before,
+	&:after {
 		height: 100%;
 		width: 100%;
 
 		position: absolute;
-		top: 10px;
-		right: 10px;
 
-		z-index: -2;
-
-		background: $b2;
 		content: "";
+		transition:
+			background .25s,
+			z-index .25s,
+			transform .25s;
 	}
 
-	[class*="label"] {}
+	&:before {
+		top: 10px;
+		right: 10px;
+		z-index: -4;
+
+		background: $b2;
+	}
+
+	&:after {
+		top: 0;
+		left: 0;
+		z-index: -2;
+
+		background: $b;
+	}
+
+	[class*="label"] {
+		color: $lc;
+		transition: color .25s;
+	}
 
 	[class*="icon"] {
 		color: $ic;
+		transition: color .25s;
+	}
+
+	&:focus,
+	&:hover {
+		
+		&:before {
+			z-index: -2;
+
+			transform: translate(10px, -10px);
+		}
+
+		&:after {
+			z-index: -4;
+
+			transform: translate(-10px, 10px);
+		}
+
+		[class*="label"] {
+			color: $hc;
+		}
+
+		[class*="icon"] {
+			color: $hic;
+		}
 	}
 }
 
