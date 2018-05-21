@@ -129,41 +129,4 @@
 	@include button_plain;
 }
 
-.topic_link_icon {
-	z-index: 2;
-
-	transition: color .25s;
-
-	&:before {
-		height: 26px;
-		width: 26px;
-
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: -2;
-
-		background: $blue;
-		border-radius: 50%;
-		content: "";
-		margin-top: 1px;
-		margin-left: 1px;
-		transform: 
-			translate(-50%, -50%)
-			scale(0);
-		transition: transform .25s;
-		transform-origin: left center;
-	}
-
-	.topic_link:focus &,
-	.topic_link:hover & {
-		color: #fff;
-		stroke-color: #fff;
-
-		&:before {
-			transform: 
-				translate(-50%, -50%)
-				scale(1);
-		}
-	}
-}
+.topic_link_icon {}

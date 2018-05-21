@@ -1031,6 +1031,29 @@
 		$hc: $dark,
 		$hic: $dark
 	);
+
+	text-align: right;
+
+	@media #{$min_xl} {
+		font-size: 20px;
+		letter-spacing: 3.15px;
+		padding: 11px 30px 13px 20px;
+	}
+
+	[class*="icon"] {
+
+		@media #{$min_xl} {
+			margin-left: 4px;
+		}
+	}
+}
+
+.spotlight_takeover_intro_link_icon {
+	
+	@media #{$min_xl} {
+		transform-origin: right center;
+		transform: scale(1.65);
+	}
 }
 
 
