@@ -39,6 +39,7 @@
 
 .social_nav_link {
 	display: block;
+	overflow: hidden;
 
 	.social_nav_base & {
 		color: #fff;
@@ -59,10 +60,122 @@
 }
 
 .social_nav_icon {
+	position: relative;
+
 	display: block;
+	transition: opacity .25s;
 
 	@media #{$min_lg} {
 		transform: scale(1.25);
+	}
+
+	&:before,
+	&:after {
+
+		.svgclippaths & {
+			content: "";
+		}
+	}
+
+	&:before {
+		height: 100%;
+		width: 100%;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		border-radius: 2px;
+		clip-path:
+			polygon(
+				0 0,
+				0 100%,
+				100% 100%,
+				0 100%
+			);
+	}
+
+	&:after {
+		height: 10px;
+		width: 10px;
+
+		position: absolute;
+		top: -5px;
+		right: -5px;
+
+		border-radius: 50%;
+		transform: scale(0);
+		transform-origin: left bottom;
+	}
+
+	$social_colors:
+		$frog,
+		$leaf,
+		$bee,
+		$sea,
+		$fire,
+		$orange;
+
+	@for $i from 1 through length($social_colors) {
+
+		.social_nav_item:nth-child(#{$i}) & {
+
+			&:before,
+			&:after {
+				background: nth($social_colors, $i);
+			}
+		}
+	}
+
+	.social_nav_item:focus &,
+	.social_nav_item:hover & {
+		
+		&:before {
+			animation: clip-through .5s forwards linear;
+		}
+
+		&:after {
+			animation: bubble-pop .5s .15s forwards linear;
+		}
+
+		.no-svgclippaths & {
+			opacity: .6;
+		}
+	}
+}
+
+@keyframes clip-through {
+
+	50% {
+		clip-path:
+			polygon(
+				0 0,
+				100% 0,
+				100% 100%,
+				0 100%
+			);
+	}
+
+	100% {
+		clip-path:
+			polygon(
+				0 0,
+				100% 0,
+				100% 100%,
+				100% 0
+			);
+	}
+}
+
+@keyframes bubble-pop {
+
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(1);
 	}
 }
 
