@@ -75,7 +75,8 @@
 	font-size: 14px;
 	line-height: (24 / 14);
 	padding: 13px 0;
-
+	transition: color .25s;
+	
 	@media #{$min_lg} {
 		padding: 18px 15px;
 	}
@@ -86,7 +87,9 @@
 	}
 
 	&:focus,
-	&:hover {}
+	&:hover {
+		color: rgba(#fff, .6);
+	}
 }
 
 .quick_nav_link_label {}

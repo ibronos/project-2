@@ -65,7 +65,9 @@
 	}
 
 	&:focus,
-	&:hover {}
+	&:hover {
+		color: $blue;
+	}
 }
 
 .footer_nav_link_label {}

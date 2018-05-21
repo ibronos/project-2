@@ -5228,6 +5228,8 @@ button {
       font-size: 16px;
       font-size: 1rem;
       padding: 18px 0; } }
+  .footer_nav_link:focus, .footer_nav_link:hover {
+    color: #1573DD; }
 
 /* ==========================================================================
 	Main Navigation
@@ -5418,7 +5420,9 @@ button {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.71429;
-  padding: 13px 0; }
+  padding: 13px 0;
+  -webkit-transition: color .25s;
+  transition: color .25s; }
   @media screen and (min-width: 980px) {
     .quick_nav_link {
       padding: 18px 15px; } }
@@ -5427,6 +5431,8 @@ button {
       font-size: 18px;
       font-size: 1.125rem;
       line-height: 1.33333; } }
+  .quick_nav_link:focus, .quick_nav_link:hover {
+    color: rgba(255, 255, 255, 0.6); }
 
 /* ==========================================================================
 	Secondary Navigation Common
@@ -5561,17 +5567,17 @@ button {
     -webkit-transform-origin: left bottom;
             transform-origin: left bottom; }
   .social_nav_item:nth-child(1) .social_nav_icon:before, .social_nav_item:nth-child(1) .social_nav_icon:after {
-    background: #43FD71; }
+    background: rgba(67, 253, 113, 0.8); }
   .social_nav_item:nth-child(2) .social_nav_icon:before, .social_nav_item:nth-child(2) .social_nav_icon:after {
-    background: #CAFF00; }
+    background: rgba(202, 255, 0, 0.8); }
   .social_nav_item:nth-child(3) .social_nav_icon:before, .social_nav_item:nth-child(3) .social_nav_icon:after {
-    background: #FFE300; }
+    background: rgba(255, 227, 0, 0.8); }
   .social_nav_item:nth-child(4) .social_nav_icon:before, .social_nav_item:nth-child(4) .social_nav_icon:after {
-    background: #2AC6CA; }
+    background: rgba(42, 198, 202, 0.8); }
   .social_nav_item:nth-child(5) .social_nav_icon:before, .social_nav_item:nth-child(5) .social_nav_icon:after {
-    background: #F8485E; }
+    background: rgba(248, 72, 94, 0.8); }
   .social_nav_item:nth-child(6) .social_nav_icon:before, .social_nav_item:nth-child(6) .social_nav_icon:after {
-    background: #FF7E54; }
+    background: rgba(255, 126, 84, 0.8); }
   .social_nav_item:focus .social_nav_icon,
   .social_nav_item:hover .social_nav_icon {
     -webkit-transform: scale(1.15);

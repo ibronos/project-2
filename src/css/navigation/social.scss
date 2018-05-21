@@ -124,7 +124,7 @@
 
 			&:before,
 			&:after {
-				background: nth($social_colors, $i);
+				background: rgba(nth($social_colors, $i), .8);
 			}
 		}
 	}
