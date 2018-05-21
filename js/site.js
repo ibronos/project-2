@@ -966,7 +966,6 @@ Site.modules.Spotlight = (function($, Site) {
 		if ($(".spotlight").length) {
 			$(".spotlight_takeover_option").checkbox();
 			bindUI();
-			resizeSpotlight();
 		}
 	}
 
@@ -998,6 +997,34 @@ Site.modules.Spotlight = (function($, Site) {
 			$(".spotlight_video_trigger").removeClass("paused");
 			$(".spotlight_video_label").html("Pause Video");
 		}
+	}
+
+	Site.onInit.push(init);
+
+	return {};
+
+})(jQuery, Site);
+
+/*-------------------------------------------
+	Module
+-------------------------------------------*/
+
+Site.modules.Video = (function($, Site) {
+
+	function init() {
+		if ($(".video_item").length) {
+			bindUI();
+		}
+	}
+
+	function bindUI() {
+		$(".video_item_video").on("click", insertVideo);
+	}
+
+	function insertVideo() {
+		var video = $(this).data("url");
+
+		$(this).after('<iframe class="video_item_iframe" src="' + video + '?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
 	}
 
 	Site.onInit.push(init);

@@ -91,6 +91,10 @@
 	}
 }
 
+.video_item_iframe {
+	@include cover;
+}
+
 .video_item_body {
 	background: #F5F7F9;
 	padding: 18px 20px 28px;

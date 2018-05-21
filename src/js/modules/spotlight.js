@@ -8,7 +8,6 @@ Site.modules.Spotlight = (function($, Site) {
 		if ($(".spotlight").length) {
 			$(".spotlight_takeover_option").checkbox();
 			bindUI();
-			resizeSpotlight();
 		}
 	}
 

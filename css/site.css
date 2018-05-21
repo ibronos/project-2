@@ -10546,6 +10546,13 @@ button {
       letter-spacing: 1.8px;
       letter-spacing: 0.1125rem; } }
 
+.video_item_iframe {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
 .video_item_body {
   background: #F5F7F9;
   padding: 18px 20px 28px; }
