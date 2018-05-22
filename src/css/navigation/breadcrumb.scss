@@ -152,7 +152,8 @@
 }
 
 .breadcrumb_dropdown {
-	width: 230px;
+	min-width: 230px;
+	width: 100%;
 
 	position: absolute;
 	top: 0;

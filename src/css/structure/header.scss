@@ -12,18 +12,21 @@
 
 	background: #fff;
 	box-shadow: 0 0 6px 0 rgba(#000, .2);
-	padding: 14px 0 12px;
 
 	@media print {
 		display: none;
 	}
+}
+
+.header_ribbon {
+	position: relative;
+	
+	padding: 14px 0 12px;
 
 	@media #{$min_md} {
 		padding: 19px 0 15px;
 	}
 }
-
-.header_ribbon {}
 
 .header_ribbon_inner {}
 

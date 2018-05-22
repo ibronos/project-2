@@ -55,16 +55,19 @@ button {
 
 @mixin button_text() {}
 
-@mixin button_plain($c: $blue) {
+@mixin button_plain(
+	$c: $blue,
+	$ic: $blue
+) {
 	@include button_layout(true);
 
-	color: $c;
 	display: inline-block;
 	padding: 10px 0;
 
 	[class*="label"] {
 		@include u(500);
 		
+		color: $c;
 		font-size: 12px;
 		letter-spacing: 1.8px;
 		text-transform: uppercase;
@@ -78,6 +81,7 @@ button {
 	[class*="icon"]:not(svg) {
 		z-index: 2;
 
+		color: $ic;
 		transition: color .25s;
 
 		&:before {
