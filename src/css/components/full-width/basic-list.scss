@@ -1,6 +1,8 @@
 .basic_list {
 	@include padded_xl_bottom;
 
+	position: relative;
+
 	margin-top: 50px;
 
 	@media #{$min_md} {
@@ -18,5 +20,19 @@
 	@media #{$min_sm} {
 		display: inline-block;
 		margin-right: 35px;	
+	}
+}
+
+.basic_list_link_label {
+
+	.page_layout_cover & {
+		color: #fff;
+	}
+}
+
+.basic_list_link_icon {
+
+	.page_layout_cover & {
+		color: $yellow;
 	}
 }

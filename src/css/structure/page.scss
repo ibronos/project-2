@@ -85,10 +85,22 @@
 		background:
 			linear-gradient(
 				to top,
-					rgba(#000, .65),
-					rgba(#000, 0) 50%
+					rgba($dark, .65),
+					rgba($dark, 0) 50%
 			);
 		content: "";
+
+		.page_layout_cover & {
+			background: rgba($dark, .55);
+		}
+	}
+
+	.page_layout_cover & {
+		@include cover;
+
+		position: fixed;
+
+		padding: 0;
 	}
 }
 
@@ -114,6 +126,20 @@
 
 		@media #{$min_xl} {
 			padding-bottom: 54px;
+		}
+	}
+
+	.page_layout_cover & {
+		position: relative;
+
+		padding-top: 30px;
+
+		@media #{$min_lg} {
+			padding-top: 90px;
+		}
+
+		@media #{$min_xl} {
+			padding-top: 110px;
 		}
 	}
 }
@@ -143,6 +169,31 @@
 
 .page_intro {
 	@include intro_text;
+
+	.page_theme_default & {
+		margin: 0 0 30px;
+
+		@media #{$min_lg} {
+			margin: 30px 0 54px;
+		}
+
+		@media #{$min_xl} {
+			margin-bottom: 34px;
+		}
+	}
+
+	.page_theme_image & {
+		color: #fff;
+		margin: 0 0 30px;
+
+		@media #{$min_lg} {
+			margin: 30px 0 54px;
+		}
+
+		@media #{$min_xl} {
+			margin-bottom: 0;
+		}
+	}
 }
 
 .sidebar_wrapper {

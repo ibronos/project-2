@@ -8,6 +8,11 @@
 	font-size: 32px;
 	line-height: (50 / 32);
 
+	@media #{$min_md} {
+		font-size: 45px;
+		line-height: (63 / 45);
+	}
+
 	@media #{$min_lg} {
 		font-size: 60px;
 		line-height: (80 / 60);
@@ -87,7 +92,7 @@
 	font-size: 22px;
 	line-height: (38 / 22);	
 
-	@media #{$min_md} {
+	@media #{$min_lg} {
 		font-size: 32px;
 		line-height: (48 / 32);
 	}

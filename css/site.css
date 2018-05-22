@@ -3529,6 +3529,11 @@ strong {
     font-size: 2rem;
     line-height: 1.5625;
     margin: 47px 0 28px; }
+    @media screen and (min-width: 740px) {
+      .typography h1 {
+        font-size: 45px;
+        font-size: 2.8125rem;
+        line-height: 1.4; } }
     @media screen and (min-width: 980px) {
       .typography h1 {
         font-size: 60px;
@@ -3608,7 +3613,7 @@ strong {
     font-size: 22px;
     font-size: 1.375rem;
     line-height: 1.72727; }
-    @media screen and (min-width: 740px) {
+    @media screen and (min-width: 980px) {
       .typography .intro {
         font-size: 32px;
         font-size: 2rem;
@@ -4437,6 +4442,7 @@ button {
 .search_field_block {
   position: relative;
   top: 25px;
+  z-index: 4;
   margin-top: -25px; }
   @media screen and (min-width: 740px) {
     .search_field_block {
@@ -4446,6 +4452,8 @@ button {
 /* Results
 ============================================================================= */
 .search_results_block {
+  position: relative;
+  background: #fff;
   padding-top: 35px; }
   @media screen and (min-width: 740px) {
     .search_results_block {
@@ -4606,6 +4614,7 @@ button {
 	Footer
 ============================================================================= */
 .footer {
+  position: relative;
   text-align: center; }
   @media print {
     .footer {
@@ -4972,9 +4981,19 @@ button {
     top: 0;
     left: 0;
     z-index: 2;
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.65)), color-stop(50%, rgba(0, 0, 0, 0)));
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0) 50%);
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(15, 15, 17, 0.65)), color-stop(50%, rgba(15, 15, 17, 0)));
+    background: linear-gradient(to top, rgba(15, 15, 17, 0.65), rgba(15, 15, 17, 0) 50%);
     content: ""; }
+    .page_layout_cover .page_background:before {
+      background: rgba(15, 15, 17, 0.55); }
+  .page_layout_cover .page_background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding: 0; }
 
 .page_header_inner {
   position: relative;
@@ -4993,6 +5012,15 @@ button {
     @media screen and (min-width: 1220px) {
       .page_theme_image .page_header_inner {
         padding-bottom: 54px; } }
+  .page_layout_cover .page_header_inner {
+    position: relative;
+    padding-top: 30px; }
+    @media screen and (min-width: 980px) {
+      .page_layout_cover .page_header_inner {
+        padding-top: 90px; } }
+    @media screen and (min-width: 1220px) {
+      .page_layout_cover .page_header_inner {
+        padding-top: 110px; } }
 
 .page_header_body {
   position: relative; }
@@ -5004,6 +5032,11 @@ button {
   font-size: 2rem;
   line-height: 1.5625;
   margin: 0 0 20px; }
+  @media screen and (min-width: 740px) {
+    .page_title {
+      font-size: 45px;
+      font-size: 2.8125rem;
+      line-height: 1.4; } }
   @media screen and (min-width: 980px) {
     .page_title {
       font-size: 60px;
@@ -5029,11 +5062,28 @@ button {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 1.72727; }
-  @media screen and (min-width: 740px) {
+  @media screen and (min-width: 980px) {
     .page_intro {
       font-size: 32px;
       font-size: 2rem;
       line-height: 1.5; } }
+  .page_theme_default .page_intro {
+    margin: 0 0 30px; }
+    @media screen and (min-width: 980px) {
+      .page_theme_default .page_intro {
+        margin: 30px 0 54px; } }
+    @media screen and (min-width: 1220px) {
+      .page_theme_default .page_intro {
+        margin-bottom: 34px; } }
+  .page_theme_image .page_intro {
+    color: #fff;
+    margin: 0 0 30px; }
+    @media screen and (min-width: 980px) {
+      .page_theme_image .page_intro {
+        margin: 30px 0 54px; } }
+    @media screen and (min-width: 1220px) {
+      .page_theme_image .page_intro {
+        margin-bottom: 0; } }
 
 .sidebar_wrapper {
   clear: right; }
@@ -7692,6 +7742,7 @@ button {
 
 .basic_list {
   padding-bottom: 40px;
+  position: relative;
   margin-top: 50px; }
   @media screen and (min-width: 740px) {
     .basic_list {
@@ -7771,6 +7822,12 @@ button {
     .basic_list_link {
       display: inline-block;
       margin-right: 35px; } }
+
+.page_layout_cover .basic_list_link_label {
+  color: #fff; }
+
+.page_layout_cover .basic_list_link_icon {
+  color: #FFD600; }
 
 /* ==========================================================================
 	Component
@@ -10466,6 +10523,11 @@ button {
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif;
   display: inline-block; }
+  @media screen and (min-width: 740px) {
+    .stat_label {
+      font-size: 45px;
+      font-size: 2.8125rem;
+      line-height: 1.4; } }
   @media screen and (min-width: 980px) {
     .stat_label {
       font-size: 60px;
