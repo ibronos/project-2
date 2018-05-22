@@ -8223,6 +8223,93 @@ button {
   color: inherit; }
 
 /* ==========================================================================
+	Component
+============================================================================= */
+.media_gallery {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.media_gallery_inner {
+  position: relative; }
+
+.media_gallery_background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.media_gallery_header {
+  position: relative;
+  background: rgba(15, 15, 17, 0.6); }
+
+.media_gallery_label {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  font-size: 12px;
+  font-size: 0.75rem;
+  letter-spacing: 1.2px;
+  letter-spacing: 0.075rem;
+  line-height: 1.66667;
+  text-transform: uppercase;
+  display: block; }
+  @media screen and (min-width: 740px) {
+    .media_gallery_label {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5; } }
+
+.media_gallery_title {
+  font-family: "Meta Serif W01 Bold";
+  font-weight: 400;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  margin: 0; }
+  @media screen and (min-width: 740px) {
+    .media_gallery_title {
+      font-size: 34px;
+      font-size: 2.125rem;
+      line-height: 1.41176; } }
+
+.media_gallery_count_icon {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle; }
+
+.media_gallery_count_label {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  display: inline-block;
+  font-size: 18px;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
+  vertical-align: middle; }
+
+/* ==========================================================================
+	Gallery Body
+============================================================================= */
+.media_gallery_body {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden; }
+
+.media_gallery_item_contents {
+  position: relative; }
+
+.media_gallery_item_content {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; }
+
+/* ==========================================================================
 	Mix
 ============================================================================= */
 .mix {
