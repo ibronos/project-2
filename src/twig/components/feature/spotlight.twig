@@ -34,7 +34,7 @@
 		"target": ".spotlight_item_title"
 	}'>
 		{% for item in items %}
-			<div class="js-swap spotlight_item theme_{{item.theme}}" data-swap-target=".spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover">
+			<div class="js-swap spotlight_item theme_{{item.theme}}" data-swap-target=".spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover" data-swap-linked="spotlight_takeover_{{loop.index}}">
 				{% include par ~ "background.twig" with { 
 					class: "spotlight_item", 
 					image: item.image, 
@@ -57,7 +57,7 @@
 	<div class="spotlight_takeover_items">
 		<div class="spotlight_items spotlight_items_clone">
 			{% for item in items %}
-				<div class="js-swap spotlight_item theme_{{item.theme}}" data-swap-target=".spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover">
+				<div class="js-swap spotlight_item theme_{{item.theme}}" data-swap-target=".spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover" data-swap-linked="spotlight_takeover_{{loop.index}}">
 					{% include par ~ "background.twig" with { 
 						class: "spotlight_item", 
 						image: item.image, 

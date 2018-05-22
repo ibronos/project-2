@@ -6817,10 +6817,10 @@ button {
         pointer-events: auto;
         -webkit-transform: translate(0, -100%);
                 transform: translate(0, -100%);
-        -webkit-transition: -webkit-transform .25s .25s;
-        transition: -webkit-transform .25s .25s;
-        transition: transform .25s .25s;
-        transition: transform .25s .25s, -webkit-transform .25s .25s; } }
+        -webkit-transition: -webkit-transform .25s;
+        transition: -webkit-transform .25s;
+        transition: transform .25s;
+        transition: transform .25s, -webkit-transform .25s; } }
   @media screen and (min-width: 980px) {
     .spotlight-lock .spotlight_items {
       -webkit-transform: translate(0, 0);
@@ -7176,8 +7176,8 @@ button {
               transform: translate(0, 100%); }
   @media screen and (min-width: 980px) {
     .spotlight-lock .spotlight_takeover_item {
-      -webkit-transition: opacity .25s .25s, visibility .25s .25s;
-      transition: opacity .25s .25s, visibility .25s .25s; } }
+      -webkit-transition: opacity .25s, visibility .25s;
+      transition: opacity .25s, visibility .25s; } }
 
 .spotlight_takeover_item_close {
   height: 60px;
