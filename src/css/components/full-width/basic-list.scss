@@ -1,0 +1,22 @@
+.basic_list {
+	@include padded_xl_bottom;
+
+	margin-top: 50px;
+
+	@media #{$min_md} {
+		margin-top: 75px;
+	}
+}
+
+.basic_list_nav {}
+
+.basic_list_link {
+	@include button_plain;
+
+	display: block;
+
+	@media #{$min_sm} {
+		display: inline-block;
+		margin-right: 35px;	
+	}
+}

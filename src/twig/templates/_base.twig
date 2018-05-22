@@ -207,6 +207,10 @@
 									<h1 class="page_title">{{page.title}}</h1>
 									{% endif %}
 
+									{% if page.intro %}
+									<p class="page_intro">{{page.intro}}</p>
+									{% endif %}
+
 									{% block subNav_block %}
 										{% include "../partials/navigation/sub.twig" with {
 											title: sectionTitle,

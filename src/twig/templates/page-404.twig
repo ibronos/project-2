@@ -2,13 +2,27 @@
 
 {% block page %}
 	{% set page = {
-		metaCard: "summary",
 		title: "Page Not Found",
-		intro: "",
-		layout: "full"
+		intro: "We’re sorry, but the page that you are looking for has moved or no longer exists. Let us help you find what you need though.",
+		layout: "default",
+		theme: "default"
+	} %}
+{% endblock %}
+
+{% block subNav_block %}
+{% endblock %}
+
+{% block page_header_append %}
+	{% include "../partials/google-search.twig" %}
+	{% include full ~ "basic-list.twig" with {
+		items: [
+			"Find Departments",
+			"Find People",
+			"News Listing",
+			"Events Listing"
+		]
 	} %}
 {% endblock %}
 
 {% block full_width_callouts %}
-	{% include "../partials/google-cse.twig" %}
 {% endblock %}

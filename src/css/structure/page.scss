@@ -141,6 +141,10 @@
 	}
 }
 
+.page_intro {
+	@include intro_text;
+}
+
 .sidebar_wrapper {
 	clear: right;
 }
