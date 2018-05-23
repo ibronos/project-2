@@ -106,7 +106,8 @@
       "src/js/modules/now.js",
       "src/js/modules/spotlight.js",
       "src/js/modules/video.js",
-      "src/js/modules/alert.js"
+      "src/js/modules/alert.js",
+      "src/js/modules/gallery.js"
     ]
   },
   "img": {

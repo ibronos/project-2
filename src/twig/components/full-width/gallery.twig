@@ -23,18 +23,20 @@
 <div class="media_gallery">
 	<div class="fs-row">
 		<div class="fs-cell">
-			<div class="media_gallery_inner">
+			<div class="js-swap media_gallery_inner" data-swap-target=".media_gallery_body" data-swap-group="media_gallery" data-swap-linked="media_gallery">
 				{% include par ~ "background.twig" with {
 					class: "media_gallery",
 					image: image,
 					sources: {
 						"0px": img.square.sml,
-						"740px": img.wide.med,
-						"980px": img.wide.lrg
+						"500px": img.wide.sml,
+						"740px": img.classic.med,
+						"980px": img.wide.lrg,
+						"1220px": img.ultrawide.lrg
 					}
 				} %}
 				<header class="media_gallery_header">
-					<button class="js-swap media_gallery_trigger" title="open gallery" data-swap-target=".media_gallery_body" data-swap-group="media_gallery">
+					<button class="js-swap media_gallery_trigger" title="open gallery" data-swap-target=".media_gallery_body" data-swap-group="media_gallery" data-swap-linked="media_gallery">
 						<span class="media_gallery_trigger_icon">{{site.icon("stretcher")}}</span>
 					</button>
 					<div class="media_gallery_details">
@@ -46,35 +48,48 @@
 						<span class="media_gallery_count_label">{{items|length}}</span>
 					</div>
 				</header>
-				<div class="media_gallery_body">
-					<div class="media_gallery_body_header">
-						<div class="media_gallery_body_details">
-							<span class="media_gallery_body_label">{{item.label}}</span>
-							<h3 class="media_gallery_body_title">{{item.title}}</h3>
+			</div>
+			<div class="media_gallery_body">
+				<button class="js-swap media_gallery_close" title="open gallery" data-swap-target=".media_gallery_body" data-swap-group="media_gallery" data-swap-linked="media_gallery">
+					<span class="media_gallery_close_icon">{{site.icon("close")}}</span>
+				</button>
+				<div class="media_gallery_body_inner">
+					<div class="media_gallery_body_contents">
+						<div class="media_gallery_body_header">
+							<div class="media_gallery_body_details">
+								<span class="media_gallery_body_label">{{label}}</span>
+								<h3 class="media_gallery_body_title">{{title}}</h3>
+							</div>
+							<div class="media_gallery_item_stickers" aria-hidden="true">
+								{% for item in items %}
+									<div class="media_gallery_item_sticker">
+										<span class="media_gallery_item_count">{{loop.index}} / {{loop.length}}</span>
+										<div class="media_gallery_item_caption">
+											<p>{{item.caption}}</p>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
 						</div>
-						<div class="media_gallery_item_contents">
+						<div class="media_gallery_items">
 							{% for item in items %}
-								<div class="media_gallery_item_content">
-									<span class="media_gallery_item_count">{{loop.index}} / {{loop.length}}</span>
-									<div class="media_gallery_item_caption">
-										<p>{{item.caption}}</p>
+								<div class="media_gallery_item">
+									<figure class="media_gallery_item_figure">
+										{% if item.portrait %}
+											{{site.image("media_gallery_item", img.portraitFull.sml, item.image)}}
+										{% else %}
+											{{site.image("media_gallery_item", img.classic.sml, item.image)}}
+										{% endif %}
+									</figure>
+									<div class="media_gallery_item_details">
+										<span class="media_gallery_item_count">{{loop.index}} / {{loop.length}}</span>
+										<div class="media_gallery_item_caption">
+											<p>{{item.caption}}</p>
+										</div>
 									</div>
 								</div>
 							{% endfor %}
 						</div>
-					</div>
-					<div class="media_gallery_items">
-						{% for item in items %}
-							<div class="media_gallery_item">
-								<figure class="media_gallery_item_figure">
-									{% if item.portrait %}
-										{{site.image("media_gallery_item", img.portraitFull.med, item.image)}}
-									{% else %}
-										{{site.image("media_gallery_item", img.wide.med, item.image)}}
-									{% endif %}
-								</figure>
-							</div>
-						{% endfor %}
 					</div>
 				</div>
 			</div>
