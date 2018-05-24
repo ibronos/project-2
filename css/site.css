@@ -3530,7 +3530,7 @@ strong {
     font-family: "Unit Offc W01 Light", sans-serif;
     font-size: 32px;
     font-size: 2rem;
-    line-height: 1.5625;
+    line-height: 1.3125;
     margin: 47px 0 28px; }
     @media screen and (min-width: 740px) {
       .typography h1 {
@@ -3577,6 +3577,7 @@ strong {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1.4;
+    color: #003473;
     margin: 38px 0 10px; }
     @media screen and (min-width: 740px) {
       .typography h4 {
@@ -3663,8 +3664,18 @@ strong {
 .typography .alignnone {
   width: auto;
   display: table;
+  margin-top: 30px;
   margin-bottom: 30px;
   table-layout: fixed; }
+  @media screen and (min-width: 500px) {
+    .typography .block_left,
+    .typography .block_right,
+    .typography .block_center,
+    .typography .alignleft,
+    .typography .alignright,
+    .typography .aligncenter,
+    .typography .alignnone {
+      margin-top: 10px; } }
   .typography .block_left img,
   .typography .block_right img,
   .typography .block_center img,
@@ -3686,9 +3697,19 @@ strong {
     font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.57143;
+    border-bottom: 1px solid #003473;
     caption-side: bottom;
     display: table-caption;
-    margin-top: 10px; }
+    padding: 16px 0; }
+  @media screen and (min-width: 500px) {
+    .typography .block_left + *,
+    .typography .block_right + *,
+    .typography .block_center + *,
+    .typography .alignleft + *,
+    .typography .alignright + *,
+    .typography .aligncenter + *,
+    .typography .alignnone + * {
+      margin-top: 0; } }
 
 .typography .block_left,
 .typography .block_right,
@@ -3709,13 +3730,13 @@ strong {
   .typography .block_left,
   .typography .alignleft {
     float: left;
-    margin-right: 30px; } }
+    margin-right: 40px; } }
 
 @media screen and (min-width: 500px) {
   .typography .block_right,
   .typography .alignright {
     float: right;
-    margin-left: 30px; } }
+    margin-left: 40px; } }
 
 .typography .block_center,
 .typography .aligncenter {
@@ -4941,12 +4962,14 @@ button {
     .page_inner {
       padding-top: 82px; } }
 
-.page_content > .fs-row {
-  display: block; }
-  .page_content > .fs-row:after {
-    clear: both;
-    content: "";
-    display: table; }
+.page_content {
+  padding-top: 30px; }
+  .page_content > .fs-row {
+    display: block; }
+    .page_content > .fs-row:after {
+      clear: both;
+      content: "";
+      display: table; }
 
 @media screen and (min-width: 980px) {
   .aside_wrapper {
@@ -4987,8 +5010,8 @@ button {
     top: 0;
     left: 0;
     z-index: 2;
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(15, 15, 17, 0.65)), color-stop(50%, rgba(15, 15, 17, 0)));
-    background: linear-gradient(to top, rgba(15, 15, 17, 0.65), rgba(15, 15, 17, 0) 50%);
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(15, 15, 17, 0.65)), color-stop(50%, rgba(15, 15, 17, 0.2)), to(rgba(15, 15, 17, 0.2)));
+    background: linear-gradient(to top, rgba(15, 15, 17, 0.65), rgba(15, 15, 17, 0.2) 50%, rgba(15, 15, 17, 0.2) 100%);
     content: ""; }
     .page_layout_cover .page_background:before {
       background: rgba(15, 15, 17, 0.55); }
@@ -5036,7 +5059,7 @@ button {
   font-family: "Unit Offc W01 Light", sans-serif;
   font-size: 32px;
   font-size: 2rem;
-  line-height: 1.5625;
+  line-height: 1.3125;
   margin: 0 0 20px; }
   @media screen and (min-width: 740px) {
     .page_title {
@@ -5055,8 +5078,7 @@ button {
       line-height: 1.25; } }
   @media screen and (min-width: 1220px) {
     .page_title {
-      margin-bottom: 0;
-      padding-right: 150px; } }
+      margin-bottom: 0; } }
   .page_theme_default .page_title {
     color: #0F0F11; }
   .page_theme_image .page_title {
@@ -5799,7 +5821,7 @@ button {
       min-width: 280px;
       position: absolute;
       bottom: 30px;
-      right: -150px;
+      right: 0;
       margin-top: 0; } }
 
 .sub_nav_title {
@@ -6751,6 +6773,23 @@ button {
     clip: auto;
     margin: 0;
     overflow: visible; }
+
+.news_item_details_block {
+  margin-top: 20px;
+  -webkit-transform: translate(0, 50%);
+          transform: translate(0, 50%); }
+  @media screen and (min-width: 1220px) {
+    .news_item_details_block {
+      margin-top: 28px; } }
+  @media screen and (min-width: 1220px) {
+    .page_theme_image .news_item_details_block {
+      margin-bottom: -54px; } }
+
+.news_item_details_inner {
+  background: #F5F7F9;
+  padding: 14px 30px; }
+  .news_item_details_inner .news_item_details {
+    margin-bottom: 0; }
 
 /* ==========================================================================
 	Spotlight
@@ -11232,7 +11271,7 @@ button {
   font-family: "Unit Offc W01 Light", sans-serif;
   font-size: 32px;
   font-size: 2rem;
-  line-height: 1.5625;
+  line-height: 1.3125;
   font-weight: 400;
   font-family: "Unit Offc W01 Bold", sans-serif;
   display: inline-block; }

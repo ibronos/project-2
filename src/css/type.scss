@@ -6,7 +6,7 @@
 	@include u(300);
 
 	font-size: 32px;
-	line-height: (50 / 32);
+	line-height: (42 / 32);
 
 	@media #{$min_md} {
 		font-size: 45px;
@@ -198,6 +198,7 @@ strong {
 	h4 {
 		@include h4;
 
+		color: $navy;
 		margin: 38px 0 10px;
 	}
 
@@ -251,8 +252,13 @@ strong {
 		width: auto;
 
 		display: table;
+		margin-top: 30px;
 		margin-bottom: 30px;
 		table-layout: fixed;
+
+		@media #{$min_sm} {
+			margin-top: 10px;
+		}
 
 		img {
 			display: block;
@@ -262,9 +268,17 @@ strong {
 		figcaption {
 			@include caption_text;
 
+			border-bottom: 1px solid $navy;
 			caption-side: bottom;
 			display: table-caption;
-			margin-top: 10px;
+			padding: 16px 0;
+		}
+
+		+ * {
+
+			@media #{$min_sm} {
+				margin-top: 0;
+			}
 		}
 	}
 
@@ -288,7 +302,7 @@ strong {
 
 		@media #{$min_sm} {
 			float: left;
-			margin-right: 30px;
+			margin-right: 40px;
 		}
 	}
 
@@ -297,7 +311,7 @@ strong {
 
 		@media #{$min_sm} {
 			float: right;
-			margin-left: 30px;
+			margin-left: 40px;
 		}
 	}
 

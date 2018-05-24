@@ -22,7 +22,8 @@
 .page_feature {}
 
 .page_content {
-
+	padding-top: 30px;
+	
 	> .fs-row {
 		@include clearfix;
 
@@ -86,7 +87,8 @@
 			linear-gradient(
 				to top,
 					rgba($dark, .65),
-					rgba($dark, 0) 50%
+					rgba($dark, .2) 50%,
+					rgba($dark, .2) 100%
 			);
 		content: "";
 
@@ -155,7 +157,6 @@
 
 	@media #{$min_xl} {
 		margin-bottom: 0;
-		padding-right: 150px;
 	}
 
 	.page_theme_default & {

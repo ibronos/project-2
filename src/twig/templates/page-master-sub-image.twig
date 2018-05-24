@@ -64,5 +64,24 @@
 	} %}
 {% endblock %}
 
-{% block sidebar %}
+{% block full_width_callouts %}
+	{% include full ~ "gallery.twig" with {
+		label: "Explore the Gallery",
+		title: "A Community & Life as Vibrant as You Are",
+		items: [
+			{
+				image: 1,
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus. Pellentesque vitae ultrices orci. Ut lobortis faucibus turpis quis."
+			},
+			{
+				image: 2,
+				portrait: true,
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus."
+			},
+			{
+				image: 1,
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus. Pellentesque vitae ultrices orci. Ut lobortis faucibus turpis quis."
+			}
+		]
+	} %}
 {% endblock %}
