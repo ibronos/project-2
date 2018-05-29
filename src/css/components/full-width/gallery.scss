@@ -152,6 +152,11 @@
 	z-index: 500;
 
 	background: #fff;
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity .25s,
+		visibility .25s;
 
 	@media #{$min_md} {
 		height: calc(100% - 82px);
@@ -168,53 +173,9 @@
 		border-left: 16px solid $leaf;
 	}
 
-	.svgclippaths & {
-		clip-path: 
-			polygon(
-				0 100%,
-				50% 50%,
-				100% 0,
-				50% 50%
-			);
-		pointer-events: none;
-		transition: clip-path 1s;
-	}
-
-	.no-svgclippaths & {
-		opacity: 0;
-		visibility: hidden;
-		transition:
-			opacity .25s,
-			visibility .25s;
-	}
-
 	&.fs-swap-active {
-
-		.svgclippaths & {
-			clip-path: 
-				polygon(
-					0 100%,
-					0 -82px,
-					100% -82px,
-					100% 100%
-				);
-			pointer-events: auto;
-
-			@media #{$min_lg} {
-				clip-path: 
-					polygon(
-						0 100%,
-						0 0,
-						100% 0,
-						100% 100%
-					);
-			}
-		}
-
-		.no-svgclippaths & {
-			opacity: 1;
-			visibility: visible;
-		}
+		opacity: 1;
+		visibility: visible;
 	}
 }
 
@@ -358,6 +319,8 @@
 	
 	@media #{$min_lg} {
 		position: relative;
+
+		transform: translateZ(0);
 	}
 }
 
@@ -376,13 +339,12 @@
 		opacity: 0;	
 		padding-top: 24px;
 		transition: opacity .5s;
+		transform: translateZ(0);
 	}
 
 	&.current {
 
 		@media #{$min_lg} {
-			position: relative;
-
 			opacity: 1;
 		}
 	}
@@ -430,34 +392,6 @@
 
 	@media #{$min_lg} {
 		margin-bottom: 0;
-	}
-
-	&:before {
-		
-		@media #{$min_lg} {
-			height: 75%;
-			width: 16px;
-
-			position: absolute;
-			top: 50%;
-			left: 0;
-
-			background: $leaf;
-			content: "";
-			transform: 
-				translate(-50%, -50%)
-				scaleY(0);
-		}
-	}
-
-	.in-view & {
-
-		&:before {
-
-			@media #{$min_lg} {
-				animation: panel-burst .6s forwards;	
-			}
-		}
 	}
 }
 

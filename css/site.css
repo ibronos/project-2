@@ -8407,7 +8407,11 @@ button {
   top: 60px;
   left: 0;
   z-index: 500;
-  background: #fff; }
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .25s, visibility .25s;
+  transition: opacity .25s, visibility .25s; }
   @media screen and (min-width: 740px) {
     .media_gallery_body {
       height: calc(100% - 82px);
@@ -8418,28 +8422,7 @@ button {
       top: 0;
       border-top: 16px solid #CAFF00;
       border-left: 16px solid #CAFF00; } }
-  .svgclippaths .media_gallery_body {
-    -webkit-clip-path: polygon(0 100%, 50% 50%, 100% 0, 50% 50%);
-            clip-path: polygon(0 100%, 50% 50%, 100% 0, 50% 50%);
-    pointer-events: none;
-    -webkit-transition: -webkit-clip-path 1s;
-    transition: -webkit-clip-path 1s;
-    transition: clip-path 1s;
-    transition: clip-path 1s, -webkit-clip-path 1s; }
-  .no-svgclippaths .media_gallery_body {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: opacity .25s, visibility .25s;
-    transition: opacity .25s, visibility .25s; }
-  .svgclippaths .media_gallery_body.fs-swap-active {
-    -webkit-clip-path: polygon(0 100%, 0 -82px, 100% -82px, 100% 100%);
-            clip-path: polygon(0 100%, 0 -82px, 100% -82px, 100% 100%);
-    pointer-events: auto; }
-    @media screen and (min-width: 980px) {
-      .svgclippaths .media_gallery_body.fs-swap-active {
-        -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
-                clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%); } }
-  .no-svgclippaths .media_gallery_body.fs-swap-active {
+  .media_gallery_body.fs-swap-active {
     opacity: 1;
     visibility: visible; }
 
@@ -8600,7 +8583,9 @@ button {
 
 @media screen and (min-width: 980px) {
   .media_gallery_item_stickers {
-    position: relative; } }
+    position: relative;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0); } }
 
 .media_gallery_item_sticker {
   display: none; }
@@ -8615,10 +8600,11 @@ button {
       opacity: 0;
       padding-top: 24px;
       -webkit-transition: opacity .5s;
-      transition: opacity .5s; } }
+      transition: opacity .5s;
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0); } }
   @media screen and (min-width: 980px) {
     .media_gallery_item_sticker.current {
-      position: relative;
       opacity: 1; } }
 
 .media_gallery_items {
@@ -8679,21 +8665,6 @@ button {
   @media screen and (min-width: 980px) {
     .media_gallery_item_figure {
       margin-bottom: 0; } }
-  @media screen and (min-width: 980px) {
-    .media_gallery_item_figure:before {
-      height: 75%;
-      width: 16px;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      background: #CAFF00;
-      content: "";
-      -webkit-transform: translate(-50%, -50%) scaleY(0);
-              transform: translate(-50%, -50%) scaleY(0); } }
-  @media screen and (min-width: 980px) {
-    .in-view .media_gallery_item_figure:before {
-      -webkit-animation: panel-burst .6s forwards;
-              animation: panel-burst .6s forwards; } }
 
 @-webkit-keyframes panel-burst {
   80% {
