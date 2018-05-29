@@ -32,11 +32,11 @@
 				{% endif %}
 				<meta itemprop="position" content="{{loop.index + 1}}">
 				{% if link.children %}
-					<div class="breadcrumb_dropdown">
+					<nav class="breadcrumb_dropdown">
 						{% for child in link.children %}
 							<a class="breadcrumb_dropdown_item" href="#">{{child}}</a>
 						{% endfor %}
-					</div>
+					</nav>
 				{% endif %}
 			</div>
 		{% endfor %}

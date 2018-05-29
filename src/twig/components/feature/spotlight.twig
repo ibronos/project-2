@@ -73,9 +73,20 @@
 				</div>
 			{% endfor %}
 		</div>
+		<div class="spotlight_takeover_mini_filter">
+			<div class="spotlight_takeover_mini_filter_inner">
+				{{site.input("search", "Search by keyword", "spotlight_takeover_mini")}}
+				<select class="spotlight_takeover_mini_select">
+					<option>Filter By...</option>
+					<option>You</option>
+					<option>Me</option>
+					<option>Okay</option>
+				</select>
+			</div>
+		</div>
 		{% for item in items %}
 			<div class="spotlight_takeover_item spotlight_takeover_item_{{loop.index}} theme_{{item.theme}}{% if item.takeover.links or item.takeover.filters %} layout_pair{% else %} layout_fill{% endif %}{% if item.takeover.filters %} layout_filters{% endif %}">
-				<button class="js-swap spotlight_takeover_item_close" data-swap-target="spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover">
+				<button class="js-swap spotlight_takeover_item_close" data-swap-target="spotlight_takeover_item_{{loop.index}}" data-swap-group="spotlight_takeover" title="close spotlight takeover">
 					<span class="spotlight_takeover_item_close_icon">{{site.icon("close")}}</span>
 				</button>
 				<div class="spotlight_takeover_intro">

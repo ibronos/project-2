@@ -20,10 +20,15 @@ Site.modules.Spotlight = (function($, Site) {
 
 		$(".spotlight_item").on("click", function() {
 			$("body").addClass("fs-navigation-lock spotlight-lock");
+			$("body").addClass("spotlight-active-" + ($(this).index() + 1));
 		});
 
 		$(".spotlight_takeover_item_close").on("click", function() {
 			$("body").removeClass("fs-navigation-lock spotlight-lock");
+			$("body").removeClass("spotlight-active-1");
+			$("body").removeClass("spotlight-active-2");
+			$("body").removeClass("spotlight-active-3");
+			$("body").removeClass("spotlight-active-4");
 		});
 
 		$(".spotlight_video_trigger").on("click", updateVideo);
