@@ -1,5 +1,12 @@
 <article class="program">
-	{{site.image("program", img.wide.sml, image)}}
+	{% include par ~ "picture.twig" with {
+			class: "program",
+			image: image,
+			sources: {
+				"740px": img.wide.med,
+				"0px": img.wide.sml
+			}
+		} %}
 	<div class="program_body">
 		<header class="program_header">
 			<h3 class="program_title">

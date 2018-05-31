@@ -1,6 +1,13 @@
 <div class="quote_item">
 	<figure class="quote_item_figure{% if video %} theme_video{% endif %}">
-		{{site.image("quote_item", img.wide.sml, 1)}}
+		{% include par ~ "picture.twig" with {
+			class: "quote_item",
+			image: 1,
+			sources: {
+				"740px": img.wide.med,
+				"0px": img.wide.sml
+			}
+		} %}
 		{% if content %}
 			<span class="quote_item_mark">
 				<span class="quote_item_mark_icon">{{site.icon("quote")}}</span>
