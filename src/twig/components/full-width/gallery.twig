@@ -80,6 +80,16 @@
 										{% else %}
 											{{site.image("media_gallery_item", img.classic.sml, item.image)}}
 										{% endif %}
+										{% if item.video %}
+											<button class="video_item_video" title="play video" data-url="https://www.youtube.com/embed/Oz3mm3tPKfg">
+												<span class="video_item_video_hint">
+													<span class="video_item_video_hint_icon_bubble">
+														<span class="video_item_video_hint_icon">{{site.icon("play")}}</span>
+													</span>
+													<span class="video_item_video_hint_label">Watch the Video</span>
+												</span>
+											</button>
+										{% endif %}
 									</figure>
 									<div class="media_gallery_item_details">
 										<span class="media_gallery_item_count">{{loop.index}} / {{loop.length}}</span>

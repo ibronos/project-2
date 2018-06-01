@@ -5,7 +5,7 @@
 Site.modules.Video = (function($, Site) {
 
 	function init() {
-		if ($(".video_item").length) {
+		if ($(".video_item_video").length) {
 			bindUI();
 		}
 	}
