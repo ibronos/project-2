@@ -76,6 +76,15 @@
 			background-position: calc(100% - 30px) 50%;
 			padding: 24px 30px;
 		}
+
+		&::-webkit-search-cancel-button {
+			position: relative;
+			right: 30px;
+		}
+
+		&::-ms-clear {
+			margin-right: 30px;	
+		}
 	}
 	
 	&::placeholder {
