@@ -12,6 +12,7 @@
 
 	background: #fff;
 	box-shadow: 0 0 6px 0 rgba(#000, .2);
+	transform: translateZ(0);
 
 	@media print {
 		display: none;

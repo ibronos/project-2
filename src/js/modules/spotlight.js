@@ -32,6 +32,8 @@ Site.modules.Spotlight = (function($, Site) {
 		});
 
 		$(".spotlight_video_trigger").on("click", updateVideo);
+
+		Site.onScroll.push(hideSpotlight);
 	}
 
 	function updateVideo() {
@@ -43,6 +45,14 @@ Site.modules.Spotlight = (function($, Site) {
 			$(".spotlight_body_background").background("play");
 			$(".spotlight_video_trigger").removeClass("paused");
 			$(".spotlight_video_label").html("Pause Video");
+		}
+	}
+
+	function hideSpotlight() {
+		if($(".spotlight")[0].getBoundingClientRect().bottom < 0) {
+			$(".spotlight").addClass("hide");
+		} else {
+			$(".spotlight").removeClass("hide");
 		}
 	}
 

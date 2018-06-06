@@ -102,6 +102,10 @@
 			display: none;
 		}
 	}
+
+	.hide & {
+		display: none;
+	}
 }
 
 .spotlight_body_inner {
@@ -673,6 +677,10 @@
 			background: #fff;
 			transition: background 0s .75s;
 		}
+	}
+
+	.hide & {
+		display: none;
 	}
 }
 

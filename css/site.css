@@ -4753,7 +4753,9 @@ button {
   z-index: 400;
   background: #fff;
   -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2); }
+          box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
   @media print {
     .header {
       display: none; } }
@@ -6827,6 +6829,8 @@ button {
     @media screen and (min-width: 980px) {
       .spotlight_body_background:before {
         display: none; } }
+  .hide .spotlight_body_background {
+    display: none; }
 
 .spotlight_body_inner {
   width: 100%;
@@ -7395,6 +7399,8 @@ button {
       background: #fff;
       -webkit-transition: background 0s .75s;
       transition: background 0s .75s; } }
+  .hide .spotlight_takeover_items {
+    display: none; }
 
 .spotlight_takeover_item {
   height: calc(100% - 60px);
