@@ -1124,6 +1124,29 @@
 	}
 }
 
+.spotlight_takeover_filter_input_wrapper {
+	margin-top: 20px;
+}
+
+.spotlight_takeover_filter_input_field {
+	@include button_inline;
+
+	appearance: none;
+	background: #fff;
+	box-shadow: -10px 10px 0 0 #2AC6CA;
+	border: 0;
+	color: $dark;
+
+	&:focus,
+	&:hover {
+		background: #FFFD00;
+	}
+}
+
+.spotlight_takeover_filter_input_label {
+	@include visually_hide;
+}
+
 .spotlight_takeover_intro_link {
 	@include button_block;
 	@include button_fill(

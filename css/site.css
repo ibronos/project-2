@@ -7878,6 +7878,69 @@ button {
       font-size: 1.25rem;
       line-height: 1.6; } }
 
+.spotlight_takeover_filter_input_wrapper {
+  margin-top: 20px; }
+
+.spotlight_takeover_filter_input_field {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  position: relative;
+  cursor: pointer;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
+  line-height: 1.42857;
+  margin-left: 10px;
+  padding: 16px 20px;
+  text-transform: uppercase;
+  -webkit-transition: background .25s, border .25s, color .25s, -webkit-box-shadow .25s, -webkit-transform .25s;
+  transition: background .25s, border .25s, color .25s, -webkit-box-shadow .25s, -webkit-transform .25s;
+  transition: background .25s, border .25s, box-shadow .25s, color .25s, transform .25s;
+  transition: background .25s, border .25s, box-shadow .25s, color .25s, transform .25s, -webkit-box-shadow .25s, -webkit-transform .25s;
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #fff;
+  -webkit-box-shadow: -10px 10px 0 0 #2AC6CA;
+          box-shadow: -10px 10px 0 0 #2AC6CA;
+  border: 0;
+  color: #0F0F11; }
+  .spotlight_takeover_filter_input_field [class*="icon"] {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle; }
+    @media print {
+      .spotlight_takeover_filter_input_field [class*="icon"] {
+        display: none; } }
+  .spotlight_takeover_filter_input_field [class*="label"] {
+    display: inline-block;
+    vertical-align: middle; }
+  .spotlight_takeover_filter_input_field:focus, .spotlight_takeover_filter_input_field:hover {
+    background: #FFFD00; }
+
+.spotlight_takeover_filter_input_label {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0; }
+  .spotlight_takeover_filter_input_label.focusable:active, .spotlight_takeover_filter_input_label.focusable:focus {
+    width: auto;
+    height: auto;
+    position: static;
+    clip: auto;
+    margin: 0;
+    overflow: visible; }
+
 .spotlight_takeover_intro_link {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;

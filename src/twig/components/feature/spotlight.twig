@@ -125,9 +125,10 @@
 								{{site.input("search", "Search by keyword", "spotlight_takeover")}}
 								<div class="spotlight_takeover_filter">
 									<span class="spotlight_takeover_filter_label">Filter By Area of Study</span>
-									<form class="spotlight_takeover_options">
+									<div class="spotlight_takeover_options">
 										{{site.choices("radio", item.takeover.filters, "spotlight_takeover")}}
-									</form>
+									</div>
+									{{site.input("submit", "Submit", "spotlight_takeover_filter")}}
 								</div>
 							{% endif %}
 						</div>
