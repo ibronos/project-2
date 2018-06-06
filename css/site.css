@@ -8944,6 +8944,9 @@ button {
       font-size: 2.125rem;
       line-height: 1.41176; } }
 
+.mix_news_item_figure_link {
+  display: block; }
+
 .mix_news_item_image {
   width: 100%;
   display: block; }
