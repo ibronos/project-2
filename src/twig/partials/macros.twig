@@ -124,7 +124,7 @@
 			" ": "_"
 		}) %}
 	<label class="choices_label{% if class %} {{class}}_choices_label{% endif %}" for="{{id}}">
-		<input class="{% if type == "radio" %}js-radio {% elseif type == "checkbox" %}js-checkbox {% endif %}choices_field{% if class %} {{class}}_choices_field{% endif %}" type="{{type}}" name="{{id}}" id="{{id}}" value="{{item}}">
+		<input class="{% if type == "radio" %}js-radio {% elseif type == "checkbox" %}js-checkbox {% endif %}choices_field{% if class %} {{class}}_choices_field{% endif %}" type="{{type}}" name="{{class}}" id="{{id}}" value="{{item}}">
 		<span class="choices_name{% if class %} {{class}}_choices_name{% endif %}">{{item}}</span>
 		</label>
 	{% endfor %}
