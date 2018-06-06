@@ -177,17 +177,17 @@ button {
 	&:focus,
 	&:hover {
 		
-		&:before {
-			z-index: -2;
+		// &:before {
+		// 	z-index: -2;
 
-			transform: translate(10px, -10px);
-		}
+		// 	transform: translate(10px, -10px);
+		// }
 
-		&:after {
-			z-index: -4;
+		// &:after {
+		// 	z-index: -4;
 
-			transform: translate(-10px, 10px);
-		}
+		// 	transform: translate(-10px, 10px);
+		// }
 
 		[class*="label"] {
 			color: $hc;
