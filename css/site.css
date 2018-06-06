@@ -4030,10 +4030,6 @@ button {
     color: #fff;
     -webkit-transition: color .25s;
     transition: color .25s; }
-  .skip_link:focus [class*="label"], .skip_link:hover [class*="label"] {
-    color: #fff; }
-  .skip_link:focus [class*="icon"], .skip_link:hover [class*="icon"] {
-    color: #fff; }
   .skip_link:focus, .skip_link:active {
     -webkit-transform: translate(-50%, 40px);
             transform: translate(-50%, 40px); }
@@ -5890,10 +5886,6 @@ button {
     color: #fff;
     -webkit-transition: color .25s;
     transition: color .25s; }
-  .page_theme_default .sub_nav_handle:focus [class*="label"], .page_theme_default .sub_nav_handle:hover [class*="label"] {
-    color: #fff; }
-  .page_theme_default .sub_nav_handle:focus [class*="icon"], .page_theme_default .sub_nav_handle:hover [class*="icon"] {
-    color: #fff; }
   .page_theme_image .sub_nav_handle:before, .page_theme_image .sub_nav_handle:after {
     height: 100%;
     width: 100%;
@@ -5921,10 +5913,6 @@ button {
     color: #1573DD;
     -webkit-transition: color .25s;
     transition: color .25s; }
-  .page_theme_image .sub_nav_handle:focus [class*="label"], .page_theme_image .sub_nav_handle:hover [class*="label"] {
-    color: #fff; }
-  .page_theme_image .sub_nav_handle:focus [class*="icon"], .page_theme_image .sub_nav_handle:hover [class*="icon"] {
-    color: #fff; }
   @media print {
     .sub_nav_handle {
       display: none; } }
@@ -7929,10 +7917,6 @@ button {
     color: #0F0F11;
     -webkit-transition: color .25s;
     transition: color .25s; }
-  .spotlight_takeover_intro_link:focus [class*="label"], .spotlight_takeover_intro_link:hover [class*="label"] {
-    color: #0F0F11; }
-  .spotlight_takeover_intro_link:focus [class*="icon"], .spotlight_takeover_intro_link:hover [class*="icon"] {
-    color: #0F0F11; }
   @media screen and (min-width: 1220px) {
     .spotlight_takeover_intro_link {
       font-size: 20px;
@@ -10045,10 +10029,6 @@ button {
     color: #0F0F11;
     -webkit-transition: color .25s;
     transition: color .25s; }
-  .story_detail_link:focus [class*="label"], .story_detail_link:hover [class*="label"] {
-    color: #0F0F11; }
-  .story_detail_link:focus [class*="icon"], .story_detail_link:hover [class*="icon"] {
-    color: #0F0F11; }
 
 .story_detail_video {
   display: block;
