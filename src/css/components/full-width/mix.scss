@@ -107,6 +107,12 @@
 .mix_news_item_title_link {
 	color: inherit;
 	display: block;
+	transition: color .25s;
+
+	&:focus,
+	&:hover {
+		color: $blue;
+	}
 }
 
 .mix_news_item_title_link_label {
@@ -265,6 +271,12 @@
 .mix_event_title_link {
 	color: inherit;
 	display: block;
+	transition: color .25s;
+
+	&:focus,
+	&:hover {
+		color: $blue;
+	}
 }
 
 .mix_event_title_link_label {

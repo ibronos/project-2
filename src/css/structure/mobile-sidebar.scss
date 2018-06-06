@@ -11,6 +11,7 @@
 	right: 0;
 
 	background: $navy;
+	transition: background .25s;
 
 	@media #{$min_md} {
 		height: 82px;
@@ -30,6 +31,11 @@
 
 	@media print {
 		display: none;
+	}
+
+	&:focus,
+	&:hover {
+		background: $blue;
 	}
 }
 
