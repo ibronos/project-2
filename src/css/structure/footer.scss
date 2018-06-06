@@ -91,6 +91,16 @@
 	}
 }
 
+.footer_address_link {
+	color: inherit;
+	transition: color .25s;
+
+	&:focus,
+	&:hover {
+		color: rgba(#fff, .6);
+	}
+}
+
 .footer_address_name {
 	@include visually_hide;
 }
