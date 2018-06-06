@@ -21,6 +21,7 @@ Site.modules.Spotlight = (function($, Site) {
 		$(".spotlight_item").on("click", function() {
 			$("body").addClass("fs-navigation-lock spotlight-lock");
 			$("body").addClass("spotlight-active-" + ($(this).index() + 1));
+			$(".video_item_iframe").remove();
 		});
 
 		$(".spotlight_takeover_item_close").on("click", function() {

@@ -11696,12 +11696,17 @@ button {
   color: #fff;
   display: inline-block;
   margin-right: 5px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  -webkit-transition: background .25s;
+  transition: background .25s; }
   @media screen and (min-width: 740px) {
     .video_item_video_hint_icon_bubble {
       height: 40px;
       width: 40px;
       margin-right: 10px; } }
+  .video_item_video:focus .video_item_video_hint_icon_bubble,
+  .video_item_video:hover .video_item_video_hint_icon_bubble {
+    background: #1573DD; }
 
 .video_item_video_hint_icon {
   position: absolute;

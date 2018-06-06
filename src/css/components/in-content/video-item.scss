@@ -51,12 +51,18 @@
 	display: inline-block;
 	margin-right: 5px;
 	vertical-align: middle;
+	transition: background .25s;
 
 	@media #{$min_md} {
 		height: 40px;
 		width: 40px;
 
 		margin-right: 10px;
+	}
+
+	.video_item_video:focus &,
+	.video_item_video:hover & {
+		background: $blue;
 	}
 }
 
