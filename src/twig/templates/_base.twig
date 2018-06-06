@@ -165,6 +165,18 @@
 							</div>
 						</div>
 					</div>
+					<div class="breadcrumb_nav_wrapper">
+						<div class="fs-row">
+							<div class="fs-cell fs-xl-10 fs-xl-push-1">
+								<div class="breadcrumb_nav_inner">
+									{% include "../partials/navigation/breadcrumb.twig" with {
+										icon: "home",
+										links: breadcrumbNav
+									} %}
+								</div>
+							</div>
+						</div>
+					</div>
 				</header>
 				<!-- END: Header -->
 			{% endif %}
@@ -182,18 +194,6 @@
 				<!-- Page Header -->
 				{% block page_header %}
 				<div class="page_header">
-					<div class="breadcrumb_nav_wrapper">
-						<div class="fs-row">
-							<div class="fs-cell fs-xl-10 fs-xl-push-1">
-								<div class="breadcrumb_nav_inner">
-									{% include "../partials/navigation/breadcrumb.twig" with {
-										icon: "home",
-										links: breadcrumbNav
-									} %}
-								</div>
-							</div>
-						</div>
-					</div>
 					{% if page.image %}
 						{% include "../partials/background.twig" with {
 							class: "page",

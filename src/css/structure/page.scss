@@ -17,6 +17,13 @@
 	@media #{$min_md} {
 		padding-top: 82px;
 	}
+
+	.page_theme_default & {
+		
+		@media #{$min_lg} {
+			padding-top: 142px;
+		}
+	}
 }
 
 .page_feature {}

@@ -12,7 +12,8 @@
 		display: block;
 	}
 
-	.page_theme_default & {
+	.page_theme_default &,
+	.page_theme_image.switch-breadcrumb & {
 		background: #F5F7F9;
 	}
 
@@ -20,10 +21,18 @@
 		width: 100%;
 		
 		position: absolute;
-		top: 0;
+		top: 82px;
 		left: 0;
 
 		background: rgba($dark, .5);
+		box-shadow: 0 2px 2px 0 transparent;
+		transition: 
+			background .25s,
+			box-shadow .25s;
+	}
+
+	.page_theme_image.switch-breadcrumb & {
+		box-shadow: 0 2px 2px 0 rgba(#000, .085);
 	}
 }
 
@@ -56,8 +65,10 @@
 		font-size: 18px;
 		margin: 0 17px;
 		vertical-align: middle;
+		transition: color .25s;
 
-		.page_theme_default & {
+		.page_theme_default &,
+		.page_theme_image.switch-breadcrumb & {
 			color: $dark;
 		}
 
@@ -69,7 +80,7 @@
 	&:last-child {
 
 		&:after {
-			color: transparent;
+			opacity: 0;
 		}
 	}
 
@@ -77,6 +88,10 @@
 
 	.page_theme_image & {
 		color: #fff;
+	}
+
+	.page_theme_image.switch-breadcrumb & {
+		color: inherit;	
 	}
 }
 
@@ -100,7 +115,8 @@
 	.breadcrumb_item:focus & {
 		z-index: 4;
 		
-		.page_theme_default & {
+		.page_theme_default &,
+		.page_theme_image.switch-breadcrumb & {
 			color: #fff;
 		}
 	
@@ -130,7 +146,8 @@
 		top: 2px;
 	}
 
-	.page_theme_default & {
+	.page_theme_default &,
+	.page_theme_image.switch-breadcrumb & {
 		color: $blue;
 	}
 
@@ -141,7 +158,8 @@
 	.breadcrumb_item:hover &,
 	.breadcrumb_item:focus & {
 		
-		.page_theme_default & {
+		.page_theme_default &,
+		.page_theme_image.switch-breadcrumb & {
 			color: $navy;
 		}
 	
@@ -168,12 +186,13 @@
 		opacity .25s,
 		visibility .25s;
 
-	.page_theme_image & {
-		background: $yellow;
+	.page_theme_default &,
+	.page_theme_image.switch-breadcrumb & {
+		background: $blue;
 	}
 
-	.page_theme_default & {
-		background: $blue;
+	.page_theme_image & {
+		background: $yellow;
 	}
 
 	.breadcrumb_item:hover &,
@@ -191,23 +210,25 @@
 	padding: 8px 0 9px;
 	transition: color .25s;
 
-	.page_theme_image & {
-		color: $dark;
+	.page_theme_default &,
+	.page_theme_image.switch-breadcrumb & {
+		color: #fff;
 	}
 
-	.page_theme_default & {
-		color: #fff;
+	.page_theme_image & {
+		color: $dark;
 	}
 		
 	&:focus,
 	&:hover {
 
+		.page_theme_default &,
+		.page_theme_image.switch-breadcrumb & {
+			color: rgba(#fff, .6);
+		}
+
 		.page_theme_image & {
 			color: rgba($dark, .6);
-		}
-	
-		.page_theme_default & {
-			color: rgba(#fff, .6);
 		}
 	}
 }

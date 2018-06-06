@@ -724,7 +724,9 @@ Site.modules.Page = (function($, Site) {
 		}
 	}
 
-	function scroll() {}
+	function scroll() {
+		testBreadcrumb();
+	}
 
 	function resize() {
 		tableOverflow();
@@ -741,6 +743,16 @@ Site.modules.Page = (function($, Site) {
 		if ($("body").hasClass("fs-mobile-lock")) {
 			if (!$(event.target).closest(".js-mobile-sidebar, .js-mobile-sidebar-handle").length) {
 				$(".js-mobile-sidebar-handle").swap("deactivate");
+			}
+		}
+	}
+
+	function testBreadcrumb() {
+		if($(".page_theme_image").length) {
+			if($(".page_header_inner")[0].getBoundingClientRect().top < $(".header").innerHeight() + $(".breadcrumb_nav_wrapper").innerHeight()) {
+				$("body").addClass("switch-breadcrumb");
+			} else {
+				$("body").removeClass("switch-breadcrumb");
 			}
 		}
 	}
