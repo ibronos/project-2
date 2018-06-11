@@ -691,6 +691,12 @@ Site.modules.Page = (function($, Site) {
 			$("body").removeClass("fs-navigation-lock fs-mobile-lock");
 		});
 
+		if(window.navigator.userAgent.indexOf("Edge") > 0) {
+			$("html").addClass("edge");
+		} else {
+			$("html").addClass("no-edge");
+		}
+
 		fixIEsvg();
 		bindGenericUI();
 		responsiveVideo();

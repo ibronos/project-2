@@ -5739,7 +5739,7 @@ button {
     .social_nav_icon {
       -webkit-transform: scale(1.25);
               transform: scale(1.25); } }
-  .svgclippaths .social_nav_icon:before, .svgclippaths .social_nav_icon:after {
+  .svgclippaths.no-edge .social_nav_icon:before, .svgclippaths.no-edge .social_nav_icon:after {
     content: ""; }
   .social_nav_icon:before {
     height: 100%;
@@ -6072,15 +6072,15 @@ button {
     transition: -webkit-clip-path .25s;
     transition: clip-path .25s;
     transition: clip-path .25s, -webkit-clip-path .25s; }
-    .svgclippaths .utility_nav_link:before {
+    .svgclippaths.no-edge .utility_nav_link:before {
       content: ""; }
   .utility_nav_link:focus, .utility_nav_link:hover {
-    color: #fff; }
+    color: #1573DD; }
     .utility_nav_link:focus:before, .utility_nav_link:hover:before {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
               clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-    .no-svgclippaths .utility_nav_link:focus, .no-svgclippaths .utility_nav_link:hover {
-      background: #1573DD; }
+    .svgclippaths.no-edge .utility_nav_link:focus, .svgclippaths.no-edge .utility_nav_link:hover {
+      color: #fff; }
 
 /* ==========================================================================
 	Carousel

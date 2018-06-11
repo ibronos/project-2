@@ -58,14 +58,14 @@
 			);
 		transition: clip-path .25s;
 
-		.svgclippaths & {
+		.svgclippaths.no-edge & {
 			content: "";
 		}
 	}
 
 	&:focus,
 	&:hover {
-		color: #fff;
+		color: $blue;
 
 		&:before {
 			clip-path:
@@ -77,8 +77,8 @@
 				);
 		}
 
-		.no-svgclippaths & {
-			background: $blue;
+		.svgclippaths.no-edge & {
+			color: #fff;
 		}
 	}
 }
