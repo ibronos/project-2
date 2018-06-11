@@ -125,19 +125,20 @@
 		<!-- Skip-to-Content Link -->
 		<a class="skip_link" id="skip_to_content" href="#main_content">Skip to Main Content</a>
 
+		{% if page.alert %}
+			{% include "../components/feature/alert.twig" with {
+				theme: page.alert.theme,
+				time: page.alert.time,
+				title: page.alert.title,
+				description: page.alert.description
+			} %}
+		{% endif %}
+
 		<!-- Page Wrapper -->
 		<div class="page_wrapper">
 			{% if page.layout != "style-guide" %}
 				<!-- Header -->
 				<header class="header" id="header" itemscope itemtype="http://schema.org/WPHeader">
-					{% if page.alert %}
-						{% include "../components/feature/alert.twig" with {
-							theme: page.alert.theme,
-							time: page.alert.time,
-							title: page.alert.title,
-							description: page.alert.description
-						} %}
-					{% endif %}
 					<div class="header_ribbon">
 						<div class="fs-row">
 							<div class="fs-cell">
