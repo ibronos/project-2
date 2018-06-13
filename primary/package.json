@@ -182,7 +182,7 @@
           "One Child",
           "Two Child"
         ]
-			},
+      },
       {
         "name": "Student Life",
         "children": [
@@ -207,36 +207,36 @@
     ],
     "secondaryNav": [
       {
-				"modifier": "",
-				"icon": "arrow_right",
+        "modifier": "",
+        "icon": "arrow_right",
         "name": "News",
         "children": ""
       },
       {
-				"modifier": "",
-				"icon": "arrow_right",
+        "modifier": "",
+        "icon": "arrow_right",
         "name": "Events",
         "children": ""
       }
     ],
     "utilityNav": [
-			"Apply",
-			"Visit",
-			"Contact",
-			"Give"
-		],
+      "Apply",
+      "Visit",
+      "Contact",
+      "Give"
+    ],
     "quickNav": [
-			"Current Student",
-			"Alumni",
-			"Faculty",
-			"Staff"
-		],
+      "Current Student",
+      "Alumni",
+      "Faculty",
+      "Staff"
+    ],
     "footerNav": [
       "Inclusion",
-			"Campus Map",
-			"Employment",
-			"People Directory",
-			"Department Directory"
+      "Campus Map",
+      "Employment",
+      "People Directory",
+      "Department Directory"
     ],
     "socialNav": [
       {
@@ -332,30 +332,30 @@
   "colors": {
     "brand": {
       "navy": "#003473",
-			"yellow": "#FFD600"
+      "yellow": "#FFD600"
     },
     "primary": {
       "blue": "#1573DD",
-			"frog": "#43FD71",
-			"leaf": "#CAFF00",
-			"bee": "#FFE300"
+      "frog": "#43FD71",
+      "leaf": "#CAFF00",
+      "bee": "#FFE300"
     },
     "secondary": {
       "sea": "#2AC6CA",
-			"forest": "#35C85A",
-			"mute": "#33545C",
-			"toad": "#4F775F",
-			"fog": "#844D5A",
-			"plum": "#44164E",
-			"jazz": "#AD2880",
-			"fire": "#F8485E"
-		},
-		"neutral": {
-			"dark": "#0F0F11",
-			"mist": "#766F67",
-			"beige": "#EAE5DF",
-			"gray": "#F5F7F9"
-		}
+      "forest": "#35C85A",
+      "mute": "#33545C",
+      "toad": "#4F775F",
+      "fog": "#844D5A",
+      "plum": "#44164E",
+      "jazz": "#AD2880",
+      "fire": "#F8485E"
+    },
+    "neutral": {
+      "dark": "#0F0F11",
+      "mist": "#766F67",
+      "beige": "#EAE5DF",
+      "gray": "#F5F7F9"
+    }
   },
   "fontsService": "fonts.com",
   "fonts": [
