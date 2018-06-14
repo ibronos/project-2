@@ -876,8 +876,8 @@
 			var WWW_ROOT = "";
 			var STATIC_ROOT = "../../";
 
-			if (window.location.href.indexOf("wp-content")) {
-				var STATIC_ROOT = "";
+			if (window.location.href.indexOf("wp-content").length > -1) {
+				var STATIC_ROOT = "../";
 			}
 		</script>
 		<script src="../../js/site.js"></script>
