@@ -5577,11 +5577,14 @@ button {
 .quick_nav_link {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;
+  position: relative;
+  z-index: 2;
   color: #fff;
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.71429;
+  overflow: hidden;
   padding: 13px 0;
   -webkit-transition: color .25s;
   transition: color .25s; }
@@ -5593,8 +5596,35 @@ button {
       font-size: 18px;
       font-size: 1.125rem;
       line-height: 1.33333; } }
+  @media screen and (min-width: 980px) {
+    .quick_nav_link:before {
+      height: calc(100% - 20px);
+      width: 100%;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      z-index: -2;
+      background: #1573DD;
+      -webkit-box-shadow: 20px 0 0 0 #43FD71, 40px 0 0 0 #FFD600, 80px 0 0 0 #F8485E;
+              box-shadow: 20px 0 0 0 #43FD71, 40px 0 0 0 #FFD600, 80px 0 0 0 #F8485E;
+      content: "";
+      -webkit-transform: translate(calc(-100% - 90px), 0);
+              transform: translate(calc(-100% - 90px), 0);
+      -webkit-transition: -webkit-box-shadow .5s, -webkit-transform .5s;
+      transition: -webkit-box-shadow .5s, -webkit-transform .5s;
+      transition: box-shadow .5s, transform .5s;
+      transition: box-shadow .5s, transform .5s, -webkit-box-shadow .5s, -webkit-transform .5s; } }
   .quick_nav_link:focus, .quick_nav_link:hover {
     color: rgba(255, 255, 255, 0.6); }
+    @media screen and (min-width: 980px) {
+      .quick_nav_link:focus, .quick_nav_link:hover {
+        color: #fff; } }
+    @media screen and (min-width: 980px) {
+      .quick_nav_link:focus:before, .quick_nav_link:hover:before {
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+        -webkit-box-shadow: 0 0 0 0 #43FD71, 0 0 0 0 #FFD600, 0 0 0 0 #F8485E;
+                box-shadow: 0 0 0 0 #43FD71, 0 0 0 0 #FFD600, 0 0 0 0 #F8485E; } }
 
 /* ==========================================================================
 	Secondary Navigation Common
@@ -5728,8 +5758,10 @@ button {
     .social_nav_icon {
       -webkit-transform: scale(1.25);
               transform: scale(1.25); } }
-  .svgclippaths.no-edge .social_nav_icon:before, .svgclippaths.no-edge .social_nav_icon:after {
+  .svgclippaths .social_nav_icon:before, .svgclippaths .social_nav_icon:after {
     content: ""; }
+  .is-ie .social_nav_icon:before, .is-ie .social_nav_icon:after {
+    display: none; }
   .social_nav_icon:before {
     height: 100%;
     width: 100%;
@@ -6055,21 +6087,29 @@ button {
     left: 0;
     z-index: -2;
     background: #1573DD;
+    -webkit-box-shadow: inset 10px 10px 0 0 #43FD71, inset 20px 20px 0 0 #FFD600, inset 40px 40px 0 0 #F8485E;
+            box-shadow: inset 10px 10px 0 0 #43FD71, inset 20px 20px 0 0 #FFD600, inset 40px 40px 0 0 #F8485E;
     -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
             clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
-    -webkit-transition: -webkit-clip-path .25s;
-    transition: -webkit-clip-path .25s;
-    transition: clip-path .25s;
-    transition: clip-path .25s, -webkit-clip-path .25s; }
-    .svgclippaths.no-edge .utility_nav_link:before {
+    -webkit-transition: -webkit-box-shadow .25s, -webkit-clip-path .25s;
+    transition: -webkit-box-shadow .25s, -webkit-clip-path .25s;
+    transition: box-shadow .25s, clip-path .25s;
+    transition: box-shadow .25s, clip-path .25s, -webkit-box-shadow .25s, -webkit-clip-path .25s; }
+    .svgclippaths .utility_nav_link:before {
       content: ""; }
+    .is-ie .utility_nav_link:before {
+      display: none; }
   .utility_nav_link:focus, .utility_nav_link:hover {
     color: #1573DD; }
     .utility_nav_link:focus:before, .utility_nav_link:hover:before {
+      -webkit-box-shadow: inset 0 0 0 0 #43FD71, inset 0 0 0 0 #FFD600, inset 0 0 0 0 #F8485E;
+              box-shadow: inset 0 0 0 0 #43FD71, inset 0 0 0 0 #FFD600, inset 0 0 0 0 #F8485E;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
               clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-    .svgclippaths.no-edge .utility_nav_link:focus, .svgclippaths.no-edge .utility_nav_link:hover {
+    .svgclippaths .utility_nav_link:focus, .svgclippaths .utility_nav_link:hover {
       color: #fff; }
+    .is-ie .utility_nav_link:focus, .is-ie .utility_nav_link:hover {
+      color: #1573DD; }
 
 /* ==========================================================================
 	Carousel

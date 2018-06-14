@@ -74,8 +74,12 @@
 	&:before,
 	&:after {
 
-		.svgclippaths.no-edge & {
+		.svgclippaths & {
 			content: "";
+		}
+
+		.is-ie & {
+			display: none;
 		}
 	}
 
