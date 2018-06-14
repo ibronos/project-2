@@ -5805,12 +5805,12 @@ button {
                 transform: scale(1.5); } }
     .social_nav_item:focus .social_nav_icon:before,
     .social_nav_item:hover .social_nav_icon:before {
-      -webkit-animation: clip-through .5s forwards linear;
-              animation: clip-through .5s forwards linear; }
+      -webkit-animation: clip-through .25s forwards linear;
+              animation: clip-through .25s forwards linear; }
     .social_nav_item:focus .social_nav_icon:after,
     .social_nav_item:hover .social_nav_icon:after {
-      -webkit-animation: bubble-pop .5s .15s forwards linear;
-              animation: bubble-pop .5s .15s forwards linear; }
+      -webkit-animation: bubble-pop .5s forwards linear;
+              animation: bubble-pop .5s forwards linear; }
     .no-svgclippaths .social_nav_item:focus .social_nav_icon, .no-svgclippaths
     .social_nav_item:hover .social_nav_icon {
       opacity: .6; }

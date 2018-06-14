@@ -142,11 +142,11 @@
 		}
 
 		&:before {
-			animation: clip-through .5s forwards linear;
+			animation: clip-through .25s forwards linear;
 		}
 
 		&:after {
-			animation: bubble-pop .5s .15s forwards linear;
+			animation: bubble-pop .5s forwards linear;
 		}
 
 		.no-svgclippaths & {
