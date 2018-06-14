@@ -108,22 +108,11 @@
 .breadcrumb_name_switch {
 	position: relative;
 
+	color: inherit;
 	cursor: pointer;
-	transition: color .25s;
-
-	.breadcrumb_item:hover &,
-	.breadcrumb_item:focus & {
-		z-index: 4;
-		
-		.page_theme_default &,
-		.page_theme_image.switch-breadcrumb & {
-			color: #fff;
-		}
-	
-		.page_theme_image & {
-			color: $dark;
-		}
-	}
+	font: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
 }
 
 .breadcrumb_name_label {
@@ -176,11 +165,11 @@
 	position: absolute;
 	top: 0;
 	left: -20px;
-	z-index: 2;
+	z-index: 4;
 
 	background: $navy;
 	opacity: 0;
-	padding: 48px 20px 20px;
+	padding: 15px 20px 20px;
 	visibility: hidden;
 	transition:
 		opacity .25s,
@@ -195,8 +184,7 @@
 		background: $yellow;
 	}
 
-	.breadcrumb_item:hover &,
-	.breadcrumb_item:focus & {
+	&.fs-swap-active {
 		opacity: 1;
 		visibility: visible;
 	}

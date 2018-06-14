@@ -5203,21 +5203,11 @@ button {
 
 .breadcrumb_name_switch {
   position: relative;
+  color: inherit;
   cursor: pointer;
-  -webkit-transition: color .25s;
-  transition: color .25s; }
-  .breadcrumb_item:hover .breadcrumb_name_switch,
-  .breadcrumb_item:focus .breadcrumb_name_switch {
-    z-index: 4; }
-    .page_theme_default .breadcrumb_item:hover .breadcrumb_name_switch,
-    .page_theme_image.switch-breadcrumb .breadcrumb_item:hover .breadcrumb_name_switch, .page_theme_default
-    .breadcrumb_item:focus .breadcrumb_name_switch,
-    .page_theme_image.switch-breadcrumb
-    .breadcrumb_item:focus .breadcrumb_name_switch {
-      color: #fff; }
-    .page_theme_image .breadcrumb_item:hover .breadcrumb_name_switch, .page_theme_image
-    .breadcrumb_item:focus .breadcrumb_name_switch {
-      color: #0F0F11; }
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit; }
 
 .breadcrumb_name_label {
   display: inline-block;
@@ -5269,10 +5259,10 @@ button {
   position: absolute;
   top: 0;
   left: -20px;
-  z-index: 2;
+  z-index: 4;
   background: #003473;
   opacity: 0;
-  padding: 48px 20px 20px;
+  padding: 15px 20px 20px;
   visibility: hidden;
   -webkit-transition: opacity .25s, visibility .25s;
   transition: opacity .25s, visibility .25s; }
@@ -5281,8 +5271,7 @@ button {
     background: #1573DD; }
   .page_theme_image .breadcrumb_dropdown {
     background: #FFD600; }
-  .breadcrumb_item:hover .breadcrumb_dropdown,
-  .breadcrumb_item:focus .breadcrumb_dropdown {
+  .breadcrumb_dropdown.fs-swap-active {
     opacity: 1;
     visibility: visible; }
 

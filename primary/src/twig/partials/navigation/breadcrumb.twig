@@ -18,21 +18,15 @@
 		</div>
 		{% for link in links %}
 			<div class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-				{% if link.children %}
-					<span class="breadcrumb_name{% if link.children %} breadcrumb_name_switch{% endif %}" itemprop="item">
-						<span class="breadcrumb_name_label" itemprop="name">{% if link.name %}{{link.name}}{% elseif link %}{{link}}{% endif %}</span>
+				<{% if link.children %}button{% else %}a{% endif %} class="{% if link.children %}js-swap breadcrumb_name_switch{% endif %} breadcrumb_name" itemprop="name" {% if link.children %}data-swap-target=".breadcrumb_dropdown_{{loop.index}}"{% endif %}>
+					<span class="breadcrumb_name_label">{% if link.name %}{{link.name}}{% elseif link %}{{link}}{% endif %}</span>
+					{% if link.children %}
 						<span class="breadcrumb_name_icon">{{site.icon("expand")}}</span>
-					</span>
-				{% else %}
-					<a class="breadcrumb_link{% if link.children %} breadcrumb_name_switch{% endif %}" href="{% if link.href %}{{link.href}}{% else %}#{% endif %}" itemprop="item">
-						<span class="breadcrumb_name" itemprop="name">
-							<span class="breadcrumb_name_label">{% if link.name %}{{link.name}}{% elseif link %}{{link}}{% endif %}</span>
-						</span>
-					</a>
-				{% endif %}
+					{% endif %}
+				</{% if link.children %}button{% else %}a{% endif %}>
 				<meta itemprop="position" content="{{loop.index + 1}}">
 				{% if link.children %}
-					<nav class="breadcrumb_dropdown">
+					<nav class="breadcrumb_dropdown breadcrumb_dropdown_{{loop.index}}">
 						{% for child in link.children %}
 							<a class="breadcrumb_dropdown_item" href="#">{{child}}</a>
 						{% endfor %}

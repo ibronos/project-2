@@ -691,10 +691,16 @@ Site.modules.Page = (function($, Site) {
 			$("body").removeClass("fs-navigation-lock fs-mobile-lock");
 		});
 
-		if(window.navigator.userAgent.indexOf("Edge") > 0) {
-			$("html").addClass("edge");
-		} else {
-			$("html").addClass("no-edge");
+		if (/MSIE 10/i.test(navigator.userAgent)) {
+			$("html").addClass("is-ie");
+		}
+		
+		if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent)) {
+			$("html").addClass("is-ie");
+		}
+		
+		if (/Edge\/\d./i.test(navigator.userAgent)) {
+			$("html").addClass("is-ie");
 		}
 
 		fixIEsvg();
@@ -750,6 +756,10 @@ Site.modules.Page = (function($, Site) {
 			if (!$(event.target).closest(".js-mobile-sidebar, .js-mobile-sidebar-handle").length) {
 				$(".js-mobile-sidebar-handle").swap("deactivate");
 			}
+		}
+
+		if (!$(event.target).closest(".breadcrumb_name_switch, .breadcrumb_dropdown").length) {
+			$(".breadcrumb_name_switch").swap("deactivate");
 		}
 	}
 
