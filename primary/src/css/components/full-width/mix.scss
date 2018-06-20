@@ -73,7 +73,16 @@
 .mix_news_item_figure {}
 
 .mix_news_item_figure_link {
+	position: relative;
+	z-index: 2;
+	
 	display: block;
+	transition: box-shadow .25s;
+
+	&:focus,
+	&:hover {
+		box-shadow: -10px 10px 0 0 $blue;
+	}
 }
 
 .mix_news_item_image {

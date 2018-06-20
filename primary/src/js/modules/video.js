@@ -5,13 +5,13 @@
 Site.modules.Video = (function($, Site) {
 
 	function init() {
-		if ($(".video_item_video").length) {
+		if ($(".video_item_video, .quote_item_video").length) {
 			bindUI();
 		}
 	}
 
 	function bindUI() {
-		$(".video_item_video").on("click", insertVideo);
+		$(".video_item_video, .quote_item_video").on("click", insertVideo);
 	}
 
 	function insertVideo() {

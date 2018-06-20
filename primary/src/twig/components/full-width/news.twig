@@ -7,7 +7,9 @@
 						<article class="news_item{% if item.image %} layout_image{% else %} layout_no_image{% endif %}">
 							{% if item.image %}
 								<figure class="news_item_figure">
-									{{site.image("news_item", img.full.xsml, item.image)}}
+									<a class="news_item_figure_link" href="#">
+										{{site.image("news_item", img.full.xsml, item.image)}}
+									</a>
 								</figure>
 							{% endif %}
 							<div class="news_item_body">

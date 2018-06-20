@@ -32,7 +32,7 @@
 
 .basic_list_link_icon {
 
-	.page_layout_cover & {
+	.page_layout_cover &:not(svg) {
 		color: $yellow;
 	}
 }

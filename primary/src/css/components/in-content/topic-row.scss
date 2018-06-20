@@ -72,6 +72,15 @@
 	background: rgba($leaf, .7);
 	border-radius: 50%;
 	color: #fff;
+	transition: 
+		background .25s,
+		transform .25s;
+
+	.topic_figure_link:focus &,
+	.topic_figure_link:hover & {
+		background: $blue;
+		transform: scale(1.25);
+	}
 }
 
 .topic_video_button_icon {

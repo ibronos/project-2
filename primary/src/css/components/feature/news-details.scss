@@ -16,7 +16,11 @@
 
 .news_item_details_inner {
 	background: $gray;
-	padding: 14px 30px;
+	padding: 14px 20px;
+
+	@media #{$min_sm} {
+		padding: 14px 30px;
+	}
 
 	.news_item_details {
 		margin-bottom: 0;

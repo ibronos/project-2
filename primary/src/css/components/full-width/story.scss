@@ -240,6 +240,12 @@
 	display: inline-block;
 	margin-right: 10px;
 	vertical-align: middle;
+	transition: transform .25s;
+
+	.story_detail_video:focus &,
+	.story_detail_video:hover & {
+		transform: scale(1.25);
+	}
 }
 
 .story_detail_video_button_icon {
@@ -261,4 +267,10 @@
 	line-height: (20 / 14);
 	vertical-align: middle;
 	text-transform: uppercase;
+	transition: transform .25s;
+
+	.story_detail_video:focus &,
+	.story_detail_video:hover & {
+		transform: translate(5px, 0);
+	}
 }

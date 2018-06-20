@@ -82,7 +82,9 @@ button {
 		z-index: 2;
 
 		color: $ic;
-		transition: color .25s;
+		transition: 
+			color .25s,
+			transform .25s;
 
 		&:before {
 			height: 26px;
@@ -112,6 +114,7 @@ button {
 		[class*="icon"]:not(svg) {
 			color: #fff;
 			stroke-color: #fff;
+			transform: translate(5px, 0);
 	
 			&:before {
 				transform: 

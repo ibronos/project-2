@@ -49,10 +49,6 @@
 		z-index: -2;
 
 		background: $blue;
-		box-shadow:
-			inset 10px 10px 0 0 $frog,
-			inset 20px 20px 0 0 $yellow,
-			inset 40px 40px 0 0 $fire;
 		clip-path:
 			polygon(
 				0 0,
@@ -78,10 +74,6 @@
 		color: $blue;
 
 		&:before {
-			box-shadow:
-				inset 0 0 0 0 $frog,
-				inset 0 0 0 0 $yellow,
-				inset 0 0 0 0 $fire;
 			clip-path:
 				polygon(
 					0 0,

@@ -229,12 +229,21 @@
 	display: inline-block;
 	margin-right: 5px;
 	vertical-align: middle;
+	transition: 
+		background .25s,
+		transform .25s;
 
 	@media #{$min_md} {
 		height: 40px;
 		width: 40px;
 
 		margin-right: 10px;
+	}
+
+	.quote_item_video:focus &,
+	.quote_item_video:hover & {
+		background: $blue;
+		transform: scale(1.25);
 	}
 }
 
@@ -262,10 +271,16 @@
 	letter-spacing: 1px;
 	vertical-align: middle;
 	text-transform: uppercase;
-
+	transition: transform .25s;
+	
 	@media #{$min_md} {
 		font-size: 15px;
 		letter-spacing: 1.8px;
+	}
+
+	.quote_item_video:focus &,
+	.quote_item_video:hover & {
+		transform: translate(5px, 0);
 	}
 }
 
