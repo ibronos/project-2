@@ -5237,7 +5237,7 @@ button {
   transition: color .25s; }
   .breadcrumb_name_label + .breadcrumb_name_icon {
     position: relative;
-    top: 2px; }
+    top: 1px; }
   .page_theme_default .breadcrumb_name_icon,
   .page_theme_image.switch-breadcrumb .breadcrumb_name_icon {
     color: #1573DD; }
