@@ -384,8 +384,11 @@
 }
 
 .media_gallery_item_figure {
+	width: 100%;
+
 	position: relative;
 
+	background: $leaf;
 	display: inline-block;
 	margin-bottom: 15px;
 	vertical-align: top;

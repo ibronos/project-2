@@ -8875,7 +8875,9 @@ button {
       padding-bottom: 115px; } }
 
 .media_gallery_item_figure {
+  width: 100%;
   position: relative;
+  background: #CAFF00;
   display: inline-block;
   margin-bottom: 15px;
   vertical-align: top; }
