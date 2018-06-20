@@ -9855,6 +9855,8 @@ button {
       transition: -webkit-transform .5s;
       transition: transform .5s;
       transition: transform .5s, -webkit-transform .5s; } }
+  .is-ie .now_item_figure:after {
+    display: none; }
   @media screen and (min-width: 980px) {
     .active .now_item_figure {
       z-index: 8; } }

@@ -179,6 +179,13 @@
 		}
 	}
 
+	&:after {
+
+		.is-ie & {
+			display: none;
+		}
+	}
+
 	.active & {
 
 		@media #{$min_lg} {
