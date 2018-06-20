@@ -112,6 +112,13 @@
 				box-shadow .5s,
 				transform .5s;
 		}
+
+		.is-ie & {
+
+			@media #{$min_lg} {
+				display: none;
+			}
+		}
 	}
 
 	&:focus,
@@ -120,6 +127,13 @@
 
 		@media #{$min_lg} {
 			color: #fff;
+		}
+
+		.is-ie & {
+
+			@media #{$min_lg} {
+				color: rgba(#fff, .6);
+			}
 		}
 
 		&:before {

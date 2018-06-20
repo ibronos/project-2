@@ -5614,11 +5614,17 @@ button {
       transition: -webkit-box-shadow .5s, -webkit-transform .5s;
       transition: box-shadow .5s, transform .5s;
       transition: box-shadow .5s, transform .5s, -webkit-box-shadow .5s, -webkit-transform .5s; } }
+  @media screen and (min-width: 980px) {
+    .is-ie .quick_nav_link:before {
+      display: none; } }
   .quick_nav_link:focus, .quick_nav_link:hover {
     color: rgba(255, 255, 255, 0.6); }
     @media screen and (min-width: 980px) {
       .quick_nav_link:focus, .quick_nav_link:hover {
         color: #fff; } }
+    @media screen and (min-width: 980px) {
+      .is-ie .quick_nav_link:focus, .is-ie .quick_nav_link:hover {
+        color: rgba(255, 255, 255, 0.6); } }
     @media screen and (min-width: 980px) {
       .quick_nav_link:focus:before, .quick_nav_link:hover:before {
         -webkit-transform: translate(0, 0);
