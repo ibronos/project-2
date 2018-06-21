@@ -325,26 +325,21 @@
 
 			background: rgba($dark, .6);
 			content: "";
-			transition:
-				height .25s,
-				width .25s,
-				transform .25s;
+			transition: opacity .25s;
 		}
 	}
 
 	&:focus,
 	&:hover,
 	&.fs-swap-active {
-		
-		&:before {
 
-			@media #{$min_lg} {
-				height: calc(100% - 20px);
-				width: calc(100% - 20px);
-	
-				transform: translate(10px, 10px);	
-			}
+		&:before {
+			opacity: 0;
 		}
+	}
+
+	&.fs-swap-active {
+		pointer-events: none;
 	}
 
 	&:not(:last-child) {
@@ -404,7 +399,18 @@
 	@media #{$min_lg} {
 		background: none;
 		padding: 64px 20px;
-		transition: padding .125s .5s;
+		transition: 
+			background .25s,
+			padding .125s .5s;
+	}
+
+	.spotlight_item:focus &,
+	.spotlight_item:hover &,
+	.fs-swap-active & {
+		
+		@media #{$min_lg} {
+			background: rgba(#000, .4);
+		}
 	}
 	
 	.spotlight_items_clone & {
