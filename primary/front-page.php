@@ -1,0 +1,64 @@
+<?php get_header(); ?>
+
+<div class="page_feature">
+	<div class="spotlight">
+		<!-- spotlight_body -->
+		<div class="spotlight_body">
+			<div class="js-background spotlight_body_background" data-background-options='{"source": {
+				"poster": "<?php the_field('image') ?>",
+				"mp4": "<?php the_field('video_url') ?>"
+			}}'></div>
+			<div class="spotlight_body_inner">
+			    <div class="fs-row">
+			        <div class="fs-cell">
+			            <header class="spotlight_header">
+			                <button class="spotlight_video_trigger" title="pause/play background video">
+			                    <span class="spotlight_video_icons">
+			                        <span class="spotlight_video_icon spotlight_video_icon_pause">
+			                            <svg class="icon icon_pause">
+			                                <use xlink:href="<?php echo get_template_directory_uri() ?>/images/icons.svg#pause"></use>
+			                            </svg>
+			                        </span>
+			                        <span class="spotlight_video_icon spotlight_video_icon_play">
+			                            <svg class="icon icon_play">
+			                                <use xlink:href="<?php echo get_template_directory_uri() ?>/images/icons.svg#play"></use>
+			                            </svg>
+			                        </span>
+			                    </span>
+			                    <span class="spotlight_video_label">Pause Video</span>
+			                </button>
+			                <h1 class="spotlight_title"><?php the_field('title') ?></h1>
+			            </header>
+			        </div>
+			    </div>
+			</div>
+		</div><!-- end spotlight_body -->
+
+
+		<!-- spotlight_items -->
+		<div class="js-equalize spotlight_items" data-equalize-options='{"target": ".spotlight_item_title"}'>
+			<?php $spotlight_item = ['programs', 'people', 'places', 'pride'] ?>
+			<?php foreach ($spotlight_item as $item): ?>
+			<div class="js-swap spotlight_item theme_sea" data-swap-target=".spotlight_takeover_item_1" data-swap-group="spotlight_takeover" data-swap-linked="spotlight_takeover_1">
+				<div class="js-background spotlight_item_background" data-background-options='{"source": {"0px": "<?php echo get_field($item)['button_image'] ?>"
+			}}'></div>
+				<div class="spotlight_item_inner">
+					<span class="spotlight_item_trigger">
+						<span class="spotlight_item_trigger_icon">
+							<svg class="icon icon_stretcher"><use xlink:href="<?php echo get_template_directory_uri() ?>/images/icons.svg#stretcher"></use></svg>
+						</span>
+					</span>
+					<header class="spotlight_item_header">
+						<span class="spotlight_item_label"><?php echo $item ?></span>
+						<h2 class="spotlight_item_title"><?php echo get_field($item)['title'] ?></h2>
+					</header>
+				</div>
+			</div>
+			<?php endforeach ?>
+		</div><!--end spotlight_items -->
+
+		<div class="spotlight_items"></div>
+	</div>
+</div>
+
+<?php get_footer(); ?>
