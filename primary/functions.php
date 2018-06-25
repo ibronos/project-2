@@ -149,3 +149,8 @@ add_action( 'wp_enqueue_scripts', 'tric_scripts' );
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Functions to craft primary navigation
+ */
+require get_template_directory() . '/inc/tric_walker_nav_menu.php';
