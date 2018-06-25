@@ -16,12 +16,12 @@
 			                    <span class="spotlight_video_icons">
 			                        <span class="spotlight_video_icon spotlight_video_icon_pause">
 			                            <svg class="icon icon_pause">
-			                                <use xlink:href="<?php echo get_template_directory_uri() ?>/images/icons.svg#pause"></use>
+			                                <use xlink:href="<?php tric_icon('pause') ?>"></use>
 			                            </svg>
 			                        </span>
 			                        <span class="spotlight_video_icon spotlight_video_icon_play">
 			                            <svg class="icon icon_play">
-			                                <use xlink:href="<?php echo get_template_directory_uri() ?>/images/icons.svg#play"></use>
+			                                <use xlink:href="<?php tric_icon('play') ?>"></use>
 			                            </svg>
 			                        </span>
 			                    </span>
@@ -34,7 +34,6 @@
 			</div>
 		</div><!-- end spotlight_body -->
 
-
 		<!-- spotlight_items -->
 		<div class="js-equalize spotlight_items" data-equalize-options='{"target": ".spotlight_item_title"}'>
 			<?php $spotlight_item = ['programs', 'people', 'places', 'pride'] ?>
@@ -45,7 +44,7 @@
 				<div class="spotlight_item_inner">
 					<span class="spotlight_item_trigger">
 						<span class="spotlight_item_trigger_icon">
-							<svg class="icon icon_stretcher"><use xlink:href="<?php echo get_template_directory_uri() ?>/images/icons.svg#stretcher"></use></svg>
+							<svg class="icon icon_stretcher"><use xlink:href="<?php tric_icon('stretcher') ?>"></use></svg>
 						</span>
 					</span>
 					<header class="spotlight_item_header">

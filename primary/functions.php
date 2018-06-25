@@ -44,7 +44,11 @@ if ( ! function_exists( 'tric_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'tric' ),
+			'secondary' 		=> esc_html__( 'Secondary', 'tric' ),
+			'exposed' 			=> esc_html__( 'Exposed', 'tric' ),
+			'footer-primary' 	=> esc_html__( 'Footer - Primary ', 'tric' ),
+			'footer-info' 		=> esc_html__( 'Footer - Information For ', 'tric' ),
+			'footer-social' 	=> esc_html__( 'Footer - Social', 'tric' ),
 		) );
 
 		/*
@@ -124,18 +128,14 @@ function tric_scripts() {
 
 	wp_enqueue_style( 'tric-site', get_template_directory_uri() . '/css/site.css' );
 
-	wp_enqueue_script( 'tric-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	//wp_enqueue_script( 'tric-jquery.3.3.1', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', array(), '20151215', true );
+	wp_enqueue_style( 'tric-wpfix', get_template_directory_uri() . '/css/wpfix.css' );
 
 	wp_enqueue_script( 'tric-site', get_template_directory_uri() . '/js/site.js', array('jquery'), '20151215', true );
-
-	wp_enqueue_script( 'tric-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	?>
 	<script>
 		var WWW_ROOT = "";
-		var STATIC_ROOT = get_template_directory_uri();
+		var STATIC_ROOT = "<?php echo get_template_directory_uri() ?>";
 	</script>
 	<?php
 
