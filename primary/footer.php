@@ -136,7 +136,7 @@
 
 	<nav class="js-main-nav js-main-nav-sm main_nav main_nav_sm" aria-label="Mobile Site Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
    		<?php $args = array(
-			'menu' 			=> 'nestedpages',
+			'menu' 			=> 'nested-pages',
 			'items_wrap' 	=> '<div id="%1$s" class="main_nav_list" role="navigation">%3$s</div>',
 			'container'		=> false,
 			'menu_class' 	=> 'nav navbar-nav',
