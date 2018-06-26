@@ -154,3 +154,14 @@ require get_template_directory() . '/inc/template-functions.php';
  * Functions to craft primary navigation
  */
 require get_template_directory() . '/inc/tric_walker_nav_menu.php';
+
+ /**
+  * Custom Post Type
+  *
+  * alerts, events, news, programs, stories
+  */
+ require get_template_directory() . '/inc/post-types/alerts-post.php';
+ require get_template_directory() . '/inc/post-types/events-post.php';
+ require get_template_directory() . '/inc/post-types/news-post.php';
+ require get_template_directory() . '/inc/post-types/programs-post.php';
+ require get_template_directory() . '/inc/post-types/stories-post.php';
