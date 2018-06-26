@@ -776,6 +776,9 @@
       font-size: 1.25rem;
       line-height: 1.7; } }
 
+.gb_trello_section_body {
+  margin-top: 50px; }
+
 .gb_trello_detail {
   height: 100%;
   width: 100%;
