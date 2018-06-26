@@ -66,6 +66,19 @@
 
 		<div class="spotlight_items"></div>
 	</div>
-</div>
+</div><!--.page_feature -->
+
+<div class="page_content">
+	<div class="full_width_callouts">
+	<?php
+		$flex_components = get_field('full-width_components');
+		if ($flex_components) {
+			foreach ($flex_components as $acf_fc) {
+				tric_get_template_part($acf_fc['acf_fc_layout']);
+			}
+		}
+	?>
+	</div><!--.full_width_callouts -->
+</div><!--.page_content-->
 
 <?php get_footer(); ?>

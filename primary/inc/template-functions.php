@@ -71,3 +71,27 @@ function tric_icon($icon_id, $echoed = TRUE) {
 	}
 
 }
+
+/**
+ * Get Template from acf fc
+ *
+ * @param acf fc
+ * important_now, news_events
+ */
+function tric_get_template_part($acf_fc) {
+	switch ($acf_fc) {
+		case 'important_now':
+
+			get_template_part( 'inc/full-width-components/template', 'now' );
+			break;
+
+		case 'news_events':
+
+			//get_template_part( 'inc/full-width-components/template', 'mix' );
+			break;
+
+		default:
+			# code...
+			break;
+	}
+}
