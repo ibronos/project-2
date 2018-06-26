@@ -2,39 +2,47 @@
 
 <div class="page_feature">
 	<div class="spotlight">
-		<!-- spotlight_body -->
+
 		<div class="spotlight_body">
-			<div class="js-background spotlight_body_background" data-background-options='{"source": {
+			<div class="js-background spotlight_body_background" data-background-options='{
+			"source": {
+			<?php if (get_field('video_url')): ?>
 				"poster": "<?php the_field('image') ?>",
 				"mp4": "<?php the_field('video_url') ?>"
+			<?php else: ?>
+				"740px": "<?php the_field('image') ?>",
+				"0px": "<?php the_field('square_image') ?>"
+			<?php endif ?>
 			}}'></div>
 			<div class="spotlight_body_inner">
 			    <div class="fs-row">
 			        <div class="fs-cell">
 			            <header class="spotlight_header">
-			                <button class="spotlight_video_trigger" title="pause/play background video">
-			                    <span class="spotlight_video_icons">
-			                        <span class="spotlight_video_icon spotlight_video_icon_pause">
-			                            <svg class="icon icon_pause">
-			                                <use xlink:href="<?php tric_icon('pause') ?>"></use>
-			                            </svg>
-			                        </span>
-			                        <span class="spotlight_video_icon spotlight_video_icon_play">
-			                            <svg class="icon icon_play">
-			                                <use xlink:href="<?php tric_icon('play') ?>"></use>
-			                            </svg>
-			                        </span>
-			                    </span>
-			                    <span class="spotlight_video_label">Pause Video</span>
-			                </button>
+			            	<!-- Only show pause/play button when using background video -->
+			            	<?php if (get_field('video_url')): ?>
+				                <button class="spotlight_video_trigger" title="pause/play background video">
+				                    <span class="spotlight_video_icons">
+				                        <span class="spotlight_video_icon spotlight_video_icon_pause">
+				                            <svg class="icon icon_pause">
+				                                <use xlink:href="<?php tric_icon('pause') ?>"></use>
+				                            </svg>
+				                        </span>
+				                        <span class="spotlight_video_icon spotlight_video_icon_play">
+				                            <svg class="icon icon_play">
+				                                <use xlink:href="<?php tric_icon('play') ?>"></use>
+				                            </svg>
+				                        </span>
+				                    </span>
+				                    <span class="spotlight_video_label">Pause Video</span>
+				                </button>
+			            	<?php endif ?>
 			                <h1 class="spotlight_title"><?php the_field('title') ?></h1>
 			            </header>
 			        </div>
 			    </div>
 			</div>
-		</div><!-- end spotlight_body -->
+		</div><!--.spotlight_body -->
 
-		<!-- spotlight_items -->
 		<div class="js-equalize spotlight_items" data-equalize-options='{"target": ".spotlight_item_title"}'>
 			<?php $spotlight_item = ['programs', 'people', 'places', 'pride'] ?>
 			<?php foreach ($spotlight_item as $item): ?>
@@ -54,7 +62,7 @@
 				</div>
 			</div>
 			<?php endforeach ?>
-		</div><!--end spotlight_items -->
+		</div><!--.spotlight_items -->
 
 		<div class="spotlight_items"></div>
 	</div>
