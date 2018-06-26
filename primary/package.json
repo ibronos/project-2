@@ -326,6 +326,10 @@
       {
         "name": "components",
         "href": "fs-components.html"
+      },
+      {
+        "name": "templates",
+        "href": "fs-templates.html"
       }
     ]
   },
