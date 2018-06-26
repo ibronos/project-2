@@ -56,7 +56,7 @@
 							    	<?php foreach (tric_navigation('footer-social') as $object): ?>
 							    		<?php if (tric_social_filter($object->post_title)): ?>
 									        <div class="social_nav_item">
-									            <a class="social_nav_link" href="<?php echo esc_url($object->guid) ?>" target="_blank" itemprop="sameAs">
+									            <a class="social_nav_link" href="<?php echo esc_url($object->url) ?>" target="_blank" itemprop="sameAs">
 									                <span class="social_nav_icon">
 									                    <svg class="icon icon_<?php echo $object->post_title ?>">
 									                        <use xlink:href="<?php tric_icon($object->post_title) ?>"></use>
@@ -78,7 +78,7 @@
 								    <div class="quick_nav_list" role="navigation">
 								    	<?php foreach (tric_navigation('footer-info') as $object): ?>
 									        <div class="quick_nav_item">
-									            <a class="quick_nav_link" href="<?php echo esc_url($object->guid) ?>" itemprop="url">
+									            <a class="quick_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
 									                <span class="quick_nav_link_label" itemprop="name"><?php echo $object->post_title ?></span>
 									            </a>
 									        </div>
@@ -102,7 +102,7 @@
 					    <div class="footer_nav_list" role="navigation">
 					    	<?php foreach (tric_navigation('footer-primary') as $object): ?>
 						        <div class="footer_nav_item">
-						            <a class="footer_nav_link" href="<?php echo esc_url($object->guid) ?>" itemprop="url">
+						            <a class="footer_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
 						                <span class="footer_nav_link_label" itemprop="name"><?php echo $object->post_title ?></span>
 						            </a>
 						        </div>
@@ -152,7 +152,7 @@
 	    <div class="secondary_nav_list" role="navigation">
 	        <?php foreach (tric_navigation('secondary') as $object): ?>
 	        	<div class="secondary_nav_item">
-	        	    <a class="secondary_nav_link arrow_right" href="<?php echo esc_url($object->guid) ?>" itemprop="url">
+	        	    <a class="secondary_nav_link arrow_right" href="<?php echo esc_url($object->url) ?>" itemprop="url">
 	        	        <span class="secondary_nav_link_icon">
 	        	            <svg class="icon icon_arrow_right">
 	        	                <use xlink:href="<?php tric_icon('arrow_right') ?>"></use>
