@@ -18,7 +18,7 @@
 		</div>
 		{% for link in links %}
 			<div class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-				<{% if link.children %}button{% else %}a{% endif %} class="{% if link.children %}js-swap breadcrumb_name_switch{% endif %} breadcrumb_name" itemprop="name" {% if link.children %}data-swap-target=".breadcrumb_dropdown_{{loop.index}}"{% endif %}>
+				<{% if link.children %}button{% else %}a{% endif %} class="{% if link.children %}js-swap breadcrumb_name_switch{% endif %} breadcrumb_name" itemprop="name" {% if link.children %}data-swap-target=".breadcrumb_dropdown_{{loop.index}}" data-swap-group="breadcrumb_dropdown"{% endif %}>
 					<span class="breadcrumb_name_label">{% if link.name %}{{link.name}}{% elseif link %}{{link}}{% endif %}</span>
 					{% if link.children %}
 						<span class="breadcrumb_name_icon">{{site.icon("expand")}}</span>
