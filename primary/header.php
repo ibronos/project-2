@@ -21,6 +21,10 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+	<!-- Alert -->
+	<?php get_template_part( 'inc/partials/feature', 'alert' ); ?>
+
 	<div id="page" class="page_wrapper">
 		<header class="header" id="header" itemscope itemtype="http://schema.org/WPHeader">
 			<div class="header_ribbon">
