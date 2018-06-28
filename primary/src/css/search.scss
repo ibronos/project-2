@@ -23,9 +23,23 @@
 
 	&_sm {
 		border-bottom: 3px solid $yellow;
+		opacity: 0;
+		transform: 
+			translate(0, -30px)
+			scale(.85);
+		transition:
+			opacity .5s,
+			transform .5s;
 
 		@media #{$min_md} {
 			border-bottom-width: 5px;
+		}
+
+		.fs-swap-active & {
+			opacity: 1;
+			transform: 
+				translate(0, 0)
+				scale(1);
 		}
 	}
 

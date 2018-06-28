@@ -864,12 +864,20 @@ Site.modules.Page = (function($, Site) {
 		$("body").addClass("fs-navigation-lock fs-mobile-lock");
 		ariaShow($(".js-mobile-sidebar"));
 		$(".js-mobile-sidebar").focus();
+
+		$(".header, .page_inner, .footer").css("padding-right", getScrollbarWidth());
+		$(".mobile_sidebar").css("width", "");
+		$(".mobile_sidebar").css("right", "");
 	}
 
 	function onSidebarSwapDeactivate() {
 		$("body").removeClass("fs-navigation-lock fs-mobile-lock");
 		ariaHide($(".js-mobile-sidebar"));
 		$(".js-mobile-sidebar-handle").focus();
+
+		$(".header, .page_inner, .footer").css("padding-right", "");
+		$(".mobile_sidebar").css("width", "calc(100% + " + getScrollbarWidth() + "px)");
+		$(".mobile_sidebar").css("right", getScrollbarWidth() * -1);
 	}
 
 	function onMainSwapActivate() {
@@ -922,6 +930,31 @@ Site.modules.Page = (function($, Site) {
 			$previous_button.html("<span class='fs-carousel-control-icon'>" + Site.icon(prev_icon) + "</span><span class='fs-carousel-control-label'>" + previous_text + "</span>");
 			$next_button.html("<span class='fs-carousel-control-icon'>" + Site.icon(next_icon) + "</span><span class='fs-carousel-control-label'>" + next_text + "</span>");
 		});
+	}
+
+	function getScrollbarWidth() {
+    var outer = document.createElement("div");
+    outer.style.visibility = "hidden";
+    outer.style.width = "100px";
+    outer.style.msOverflowStyle = "scrollbar";
+
+    document.body.appendChild(outer);
+
+    var widthNoScroll = outer.offsetWidth;
+    // force scrollbars
+    outer.style.overflow = "scroll";
+
+    // add innerdiv
+    var inner = document.createElement("div");
+    inner.style.width = "100%";
+    outer.appendChild(inner);
+
+    var widthWithScroll = inner.offsetWidth;
+
+    // remove divs
+    outer.parentNode.removeChild(outer);
+
+    return widthNoScroll - widthWithScroll;
 	}
 
 	Site.onInit.push(init);

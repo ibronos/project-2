@@ -26,27 +26,53 @@
 .main_nav_item {
 	position: relative;
 
-	border-bottom: 1px solid rgba(#fff, .3);
-
+	&:before,
 	&:after {
-		height: 2px;
 		width: 100%;
 
 		position: absolute;
 		top: 100%;
 		left: 0;
 
-		background: $yellow;
 		content: "";
 		transform-origin: left center;
 		transform: scaleX(0);
 		transition: transform .5s;
 	}
 
+	&:before {
+		height: 1px;
+
+		background: rgba(#fff, .3);
+	}
+
+	&:after {
+		height: 2px;
+
+		background: $yellow;
+	}
+
 	&:focus,
 	&:hover {
 		
 		&:after {
+			transform: scaleX(1);
+		}
+	}
+
+	@for $i from 1 through 7 {
+
+		.mobile_sidebar.fs-swap-active &:nth-child(#{$i}) {
+			
+			&:before {
+				transition: transform .75s .05s * $i + .05s;
+			}
+		}
+	}
+
+	.mobile_sidebar.fs-swap-active & {
+
+		&:before {
 			transform: scaleX(1);
 		}
 	}
@@ -94,6 +120,7 @@
 	color: #fff;
 	display: block;
 	font-size: 22px;
+	overflow: hidden;
 	padding: 20px 0 25px;
 	vertical-align: top;
 
@@ -105,6 +132,23 @@
 	.main_nav_item.focused &,
 	.main_nav_item:focus &,
 	.main_nav_item:hover & {}
+}
+
+.main_nav_link_label {
+	display: block;
+	transform: translate(-100%, 0);
+	transition: transform .5s;
+
+	@for $i from 1 through 7 {
+
+		.mobile_sidebar.fs-swap-active .main_nav_item:nth-child(#{$i}) & {
+			transition: transform .75s .05s * $i;
+		}	
+	}
+
+	.mobile_sidebar.fs-swap-active & {
+		transform: translate(0, 0);
+	}
 }
 
 .main_nav_toggle {
@@ -122,10 +166,24 @@
 		right: -20px;
 
 		cursor: pointer;
+		transform: scale(0);
+		transform-origin: calc(100% - 25px) 35%;
+		transition: transform .5s;
 	}
 
 	.main_nav_lg & {
 		display: none;
+	}
+
+	@for $i from 1 through 7 {
+		
+		.mobile_sidebar.fs-swap-active .main_nav_item:nth-child(#{$i}) & {
+			transition: transform .75s .085s * $i;
+		}	
+	}
+
+	.mobile_sidebar.fs-swap-active & {
+		transform: scale(1);
 	}
 }
 

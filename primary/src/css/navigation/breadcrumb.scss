@@ -171,8 +171,11 @@
 	opacity: 0;
 	padding: 15px 20px 20px;
 	visibility: hidden;
+	transform: scale(.85);
+	transform-origin: 25% top;
 	transition:
 		opacity .25s,
+		transform .25s,
 		visibility .25s;
 
 	.page_theme_default &,
@@ -186,6 +189,7 @@
 
 	&.fs-swap-active {
 		opacity: 1;
+		transform: scale(1);
 		visibility: visible;
 	}
 }

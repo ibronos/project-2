@@ -3,7 +3,7 @@
 ============================================================================= */
 
 .secondary_nav {
-
+	
 	&.secondary_nav_lg {
 
 		@media #{$max_lg} {
@@ -35,6 +35,7 @@
 	display: inline-block;
 	font-size: 14px;
 	letter-spacing: 1.6px;
+	overflow: hidden;
 	padding: 10px 20px 10px 0;
 	text-transform: uppercase;
 	transition: color .25s;
@@ -51,7 +52,22 @@
 	}
 }
 
-.secondary_nav_link_label {}
+.secondary_nav_link_label {
+	display: inline-block;
+	transform: translate(-100%, 0);
+	transition: transform .5s;
+
+	@for $i from 1 through 7 {
+
+		.fs-swap-active .secondary_nav_item:nth-child(#{$i}) & {
+			transition: transform .75s .05s * $i + .5s;
+		}
+	}
+
+	.fs-swap-active & {
+		transform: translate(0, 0);
+	}
+}
 
 .secondary_nav_link_icon {
 	position: absolute;
