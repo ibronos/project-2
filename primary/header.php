@@ -79,5 +79,9 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- Breadcrump -->
+			<?php get_template_part( 'inc/partials/navigation', 'breadcrumb' ); ?>
+
 		</header><!-- #header -->
 	<div id="content" class="page_inner">
