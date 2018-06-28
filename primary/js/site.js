@@ -751,14 +751,15 @@ Site.modules.Page = (function($, Site) {
 		$(window).trigger("resize");
 	}
 
-	function onDocumentClick() {
+	function onDocumentClick(e) {
 		if ($("body").hasClass("fs-mobile-lock")) {
-			if (!$(event.target).closest(".js-mobile-sidebar, .js-mobile-sidebar-handle").length) {
+			if (!$(e.target).closest(".js-mobile-sidebar, .js-mobile-sidebar-handle").length) {
 				$(".js-mobile-sidebar-handle").swap("deactivate");
 			}
 		}
 
-		if (!$(event.target).closest(".breadcrumb_name_switch, .breadcrumb_dropdown").length) {
+		console.log(e);
+		if (!$(e.target).closest(".breadcrumb_name_switch, .breadcrumb_dropdown").length) {
 			$(".breadcrumb_name_switch").swap("deactivate");
 		}
 	}

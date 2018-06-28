@@ -321,4 +321,15 @@
 	</script>
 </body>
 
+</html>dow.addEventListener('scroll', function() {
+				if(window.pageYOffset >= pageRibbon.clientHeight) {
+					header.classList.add('pinned');
+					header.style.paddingBottom = jumpRibbon.clientHeight + 'px';
+				} else {
+					header.classList.remove('pinned');
+					header.style.paddingBottom = 0;
+				}
+			});
+		</script>
+	</body>
 </html>
