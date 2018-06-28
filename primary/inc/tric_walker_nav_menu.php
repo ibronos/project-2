@@ -6,12 +6,16 @@ class tric_walker_nav_menu extends Walker {
 
 	function start_lvl(&$output, $depth = 0, $args = array()) {
 		$indent = str_repeat("\t", $depth+1);
-		$output .= "\t\n$indent\t<div class=\"js-main-nav-children main_nav_children\">\n";
-		$output .= "<!--tes-->";
+		if ($depth == 0) {
+			$output .= "\t\n$indent\t<div class=\"js-main-nav-children main_nav_children\">\n";
+			$output .= "<!--$depth-->";
+		}
 	}
 	function end_lvl(&$output, $depth = 0, $args = array()) {
 		$indent = str_repeat("\t", $depth+1);
-		$output .= "$indent\t</div>\n";
+		if ($depth == 0) {
+			$output .= "$indent\t</div>\n";
+		}
 	}
 	function start_el(&$output, $object, $depth = 0, $args = array(), $current_object_id = 0) {
 		global $wp_query;
@@ -27,7 +31,7 @@ class tric_walker_nav_menu extends Walker {
 			$jsmain = '.js-main-nav-item-'.$this->inc;
 			$this->inc++;
 		}
-		$classes = in_array( 'current-menu-item', $classes ) ? array( 'current-menu-item' ) : $classes;
+		$classes[] = in_array( 'current-menu-item', $classes ) ? 'current-menu-item' : '';
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $object, $args ) );
 
 		$class_names = strlen( trim( $class_names ) ) > 0 ? ' class="' . esc_attr( $class_names ) . '"' : '';
@@ -60,7 +64,7 @@ class tric_walker_nav_menu extends Walker {
 			    	</button>';
 			    }
 			$object_output .= '</div>';
-		} else {
+		} else if ($depth == 1) {
 		    $object_output .= '<div class="main_nav_child_item">
 			    <a class="main_nav_child_link" '. $attributes .' itemprop="url">
 			        <span class="main_nav_child_link_label" itemprop="name">

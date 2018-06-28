@@ -26,6 +26,16 @@ function tric_body_classes( $classes ) {
 		$classes[] = 'page_layout_home';
 	}
 
+	// Page Class
+	if (is_page()) {
+		$classes[] = 'page_layout_default';
+		if (has_post_thumbnail()) {
+			$classes[] = 'page_theme_image';
+		} else {
+			$classes[] = 'page_theme_default';
+		}
+	}
+
 	$classes[] = 'fs-grid';
 
 	return $classes;
