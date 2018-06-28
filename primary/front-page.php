@@ -71,11 +71,8 @@
 <div class="page_content">
 	<div class="full_width_callouts">
 	<?php
-		$flex_components = get_field('full-width_components');
-		if ($flex_components) {
-			foreach ($flex_components as $acf_fc) {
-				tric_get_template_part($acf_fc['acf_fc_layout']);
-			}
+		if (get_field('full-width_components')) {
+			tric_the_full_width_components(get_field('full-width_components'));
 		}
 	?>
 	</div><!--.full_width_callouts -->

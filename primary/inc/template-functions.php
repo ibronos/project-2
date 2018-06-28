@@ -87,11 +87,26 @@ function tric_get_template_part($acf_fc) {
 
 		case 'news_events':
 
-			//get_template_part( 'inc/full-width-components/template', 'mix' );
+			get_template_part( 'inc/full-width-components/template', 'mix' );
 			break;
 
 		default:
 			# code...
 			break;
 	}
+}
+
+/**
+ * Print Full-Width Components
+ *
+ * @param acf full-width_components
+ */
+function tric_the_full_width_components($acf_fwc) {
+
+	if ($acf_fwc) {
+		foreach ($acf_fwc as $acf_fc) {
+			tric_get_template_part($acf_fc['acf_fc_layout']);
+		}
+	}
+
 }
