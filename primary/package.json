@@ -352,7 +352,8 @@
       "fog": "#844D5A",
       "plum": "#44164E",
       "jazz": "#AD2880",
-      "fire": "#F8485E"
+			"fire": "#F8485E",
+			"orange": "#FF7E54"
     },
     "neutral": {
       "dark": "#0F0F11",
