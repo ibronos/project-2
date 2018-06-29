@@ -26,14 +26,20 @@ function tric_body_classes( $classes ) {
 		$classes[] = 'page_layout_home';
 	}
 
-	// Page Class
-	if (is_page()) {
+	// Page & Singular Class
+	if (is_page() || is_singular()) {
 		$classes[] = 'page_layout_default';
 		if (has_post_thumbnail()) {
 			$classes[] = 'page_theme_image';
 		} else {
 			$classes[] = 'page_theme_default';
 		}
+	}
+
+	if (is_archive()) {
+		$classes[] = 'page_layout_default';
+		$classes[] = 'page_theme_sky';
+		$classes[] = 'page_theme_default';
 	}
 
 	$classes[] = 'fs-grid';
@@ -119,4 +125,26 @@ function tric_the_full_width_components($acf_fwc) {
 		}
 	}
 
+}
+
+/**
+ * Get Current Taxonomy
+ *
+ * @param post_type
+ * @return string
+ */
+function tric_get_taxonomy($post) {
+	if (!$post)
+		return '';
+
+	$taxonomy = [
+		'post' 			=> 'category',
+		'alerts_post' 	=> '',
+		'events_post' 	=> '',
+		'news_post' 	=> 'news-category',
+		'programs_post' => 'areas-of-study',
+		'stories_post' 	=> '',
+	];
+
+	return $taxonomy[$post->post_type];
 }

@@ -8,15 +8,18 @@
  */
 ?>
 <?php
-function tric_breadcrumbs_part($label, $loop, $id, $parent) {
+function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '') {
 
 	$frontpage_id = get_option( 'page_on_front' );
+	$siblings = [];
 
-	$siblings = get_pages(array(
-		'exclude' 	=> [$id, $frontpage_id],
-		'parent' 	=> $parent,
-		'post_type' => 'page'
-	));
+	if ($id && $parent) {
+		$siblings = get_pages(array(
+			'exclude' 	=> [$id, $frontpage_id],
+			'parent' 	=> $parent,
+			'post_type' => 'page'
+		));
+	}
 
 	$br = '<div class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
 		    <button class="js-swap breadcrumb_name_switch breadcrumb_name" itemprop="name" data-swap-target=".breadcrumb_dropdown_'.$loop.'">
@@ -66,10 +69,17 @@ function tric_breadcrumbs_part($label, $loop, $id, $parent) {
 		            		</div>
 
 		            		<?php
+
+							/**
+							* Show different breadcrumb base on page type
+							*/
+
 		            		$loop = 1;
+		            		// on root page
 		            		if (is_page() && !$post->post_parent) {
 			            		echo tric_breadcrumbs_part($post->post_title, $loop, $post->ID, $post->post_parent);
 
+			            	// on child page
 		            		} elseif ((is_page() && $post->post_parent)) {
 		            			$loop = 1;
 	            				$parent_id = $post->post_parent;
@@ -88,7 +98,19 @@ function tric_breadcrumbs_part($label, $loop, $id, $parent) {
 	            				    echo $crumb;
 	            				}
 	            				echo tric_breadcrumbs_part(get_the_title(), $loop, $current_page->ID, $current_page->post_parent);
-		            		}  ?>
+
+	            			// on single custom post type news_post
+		            		} elseif (is_singular( 'news_post' )) {
+		            			echo tric_breadcrumbs_part('News', 1);
+		            			echo tric_breadcrumbs_part(get_the_title(), 2);
+
+		            		// on archive
+		            		} elseif (is_archive()) {
+		            			$cpt = get_queried_object();
+		            			echo tric_breadcrumbs_part($cpt->label, 1);
+		            		}
+
+		            		 ?>
 
 		            	</div>
 		            </div> <!-- .breadcrumb_nav -->

@@ -23,7 +23,7 @@ function events_init() {
 		'parent_item_colon'  => __( 'Parent Events:', 'your-plugin-textdomain' ),
 		'not_found'          => __( 'No Events found.', 'your-plugin-textdomain' ),
 		'not_found_in_trash' => __( 'No Events found in Trash.', 'your-plugin-textdomain' )
-		
+
 	);
 
 	$args = array(
@@ -44,47 +44,5 @@ function events_init() {
 
 	register_post_type( 'events_post', $args );
 }
-
-
-// ============================TAXONOMY====================================
-// ============================TAXONOMY====================================
-function events_type(){
-
-    //set the name of the taxonomy
-    $taxonomy = 'events-type';
-    //set the post types for the taxonomy
-    $object_type = 'events_post';
-    
-    //populate our array of names for our taxonomy
-    $labels = array(
-        'name'               => 'Type',
-        'singular_name'      => 'Type',
-        'search_items'       => 'Search Programs Type',
-        'all_items'          => 'All Type',
-        'parent_item'        => 'Parent Type',
-        'parent_item_colon'  => 'Parent Type:',
-        'update_item'        => 'Update Type',
-        'edit_item'          => 'Edit Type',
-        'add_new_item'       => 'Add New Type', 
-        'new_item_name'      => 'New Type Name',
-        'menu_name'          => 'Events Types'
-    );
-    
-    //define arguments to be used 
-    $args = array(
-        'labels'            => $labels,
-        'hierarchical'      => true,
-        'show_ui'           => true,
-        'how_in_nav_menus'  => true,
-        'public'            => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array('slug' => 'events-type')
-    );
-    
-    //call the register_taxonomy function
-    register_taxonomy($taxonomy, $object_type, $args); 
-}
-add_action('init','events_type');
 
 ?>

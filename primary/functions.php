@@ -120,6 +120,31 @@ function tric_widgets_init() {
 }
 add_action( 'widgets_init', 'tric_widgets_init' );
 
+function tric_search_filter($query) {
+
+	if ($query->is_archive() && $query->is_main_query()) {
+
+		$search_filter = isset($_GET['fsearch']) ? $_GET['fsearch'] : '';
+		if ($search_filter) {
+			$query->set('s', $search_filter);
+			//print_r($query);exit;
+		}
+
+		$term_filter = isset($_GET['fcat']) ? $_GET['fcat'] : '';
+		if ($term_filter) {
+			$query->set('tax_query', array(
+				array(
+					'taxonomy' => 'news-category',
+					'field'    => 'slug',
+					'terms'    => $term_filter,
+				),
+			));
+			//print_r($query); exit;
+		}
+	}
+}
+add_action('pre_get_posts', 'tric_search_filter');
+
 /**
  * Enqueue scripts and styles.
  */

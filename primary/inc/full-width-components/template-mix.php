@@ -35,7 +35,7 @@ foreach ($flex_components as $acf_fc) {
 								<?php setup_postdata($post); ?>
 								<figure class="mix_news_item_figure">
 									<a class="mix_news_item_figure_link" href="#">
-										<img class="mix_news_item_image" src="<?php the_field('list_image') ?>" alt="image">
+										<img class="mix_news_item_image" src="<?php the_field('header_image') ?>" alt="image">
 									</a>
 								</figure>
 								<div class="mix_news_item_body">
@@ -51,7 +51,7 @@ foreach ($flex_components as $acf_fc) {
 											</a>
 										</h3>
 									</header>
-									<div class="mix_news_item_caption"><?php the_content(); ?></div>
+									<div class="mix_news_item_caption"><?php the_field('blurb'); ?></div>
 								</div>
 							<?php endforeach ?>
 							<?php wp_reset_postdata(); ?>
