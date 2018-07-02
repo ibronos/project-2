@@ -106,6 +106,11 @@ function tric_get_template_part($acf_fc) {
 			get_template_part( 'inc/full-width-components/template', 'mix' );
 			break;
 
+		case 'media_gallery':
+
+			get_template_part( 'inc/full-width-components/template', 'gallery' );
+			break;
+
 		default:
 			# code...
 			break;
@@ -125,26 +130,4 @@ function tric_the_full_width_components($acf_fwc) {
 		}
 	}
 
-}
-
-/**
- * Get Current Taxonomy
- *
- * @param post_type
- * @return string
- */
-function tric_get_taxonomy($post) {
-	if (!$post)
-		return '';
-
-	$taxonomy = [
-		'post' 			=> 'category',
-		'alerts_post' 	=> '',
-		'events_post' 	=> '',
-		'news_post' 	=> 'news-category',
-		'programs_post' => 'areas-of-study',
-		'stories_post' 	=> '',
-	];
-
-	return $taxonomy[$post->post_type];
 }

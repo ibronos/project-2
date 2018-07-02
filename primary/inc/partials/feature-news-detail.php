@@ -7,7 +7,7 @@
  * @package Trinity_College
  */
 
-$taxonomy 	= tric_get_taxonomy($post);
+$taxonomy 	= 'news-category';
 $term_obj 	= get_the_terms($post, $taxonomy);
 $term 		= $term_obj[0]->name;
 ?>

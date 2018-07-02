@@ -2,7 +2,8 @@
 /**
  * Template For Full Width Components - News
  */
-$taxonomy 	 	= tric_get_taxonomy($post);
+
+$taxonomy 	 	= 'news-category';
 $paged 			= (get_query_var('paged')) ? get_query_var('paged') : 1;
 $pages 			= "";
 $range 			= get_option('posts_per_page');

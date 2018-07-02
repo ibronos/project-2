@@ -34,5 +34,15 @@
 	</div><!-- .page_header -->
 
 	<!-- .content -->
+	<div class="page_content">
+		<div class="fs-row"></div>
+		<div class="full_width_callouts">
+		<?php
+			if (get_field('full-width_components')) {
+				tric_the_full_width_components(get_field('full-width_components'));
+			}
+		?>
+		</div><!--.full_width_callouts -->
+	</div><!--.page_content-->
 
 </div><!-- #post-<?php the_ID(); ?> -->

@@ -3,8 +3,9 @@
 	wordpress fix css
 ============================================================================= */
 body.logged-in header,
-body.logged-in .alert{
-	top:31px;
+body.logged-in .alert,
+body.logged-in .media_gallery_body.fs-swap-active{
+	top:32px;
 }
 body.logged-in .mobile_sidebar {
 	top: 113px;

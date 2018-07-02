@@ -180,6 +180,11 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/tric_walker_nav_menu.php';
 
+/**
+ * Functions support video
+ */
+require get_template_directory() . '/inc/tric_video_support.php';
+
  /**
   * Custom Post Type
   *
