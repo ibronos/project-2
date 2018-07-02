@@ -111,6 +111,11 @@ function tric_get_template_part($acf_fc) {
 			get_template_part( 'inc/full-width-components/template', 'gallery' );
 			break;
 
+		case 'contact_information':
+
+			get_template_part( 'inc/full-width-components/template', 'contact-card' );
+			break;
+
 		default:
 			# code...
 			break;
