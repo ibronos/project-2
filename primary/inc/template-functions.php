@@ -106,6 +106,11 @@ function tric_get_template_part($acf_fc, $type) {
 			get_template_part( 'inc/'.$type.'/template', 'mix' );
 			break;
 
+		case 'related_news':
+
+			get_template_part( 'inc/'.$type.'/template', 'news' );
+			break;
+
 		case 'media_gallery':
 
 			get_template_part( 'inc/'.$type.'/template', 'gallery' );

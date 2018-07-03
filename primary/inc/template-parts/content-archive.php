@@ -28,7 +28,7 @@ $cpt = get_queried_object();
 
 	<div class="page_content">
 		<div class="full_width_callouts">
-			<?php get_template_part( 'inc/full-width-components/template', 'news' ); ?>
+			<?php get_template_part( 'inc/full-width-components/template', 'news-page' ); ?>
 		</div>
 	</div><!--.page_content-->
 
