@@ -94,26 +94,31 @@ function tric_icon($icon_id, $echoed = TRUE) {
  * @param acf fc
  * important_now, news_events
  */
-function tric_get_template_part($acf_fc) {
+function tric_get_template_part($acf_fc, $type) {
 	switch ($acf_fc) {
 		case 'important_now':
 
-			get_template_part( 'inc/full-width-components/template', 'now' );
+			get_template_part( 'inc/'.$type.'/template', 'now' );
 			break;
 
 		case 'news_events':
 
-			get_template_part( 'inc/full-width-components/template', 'mix' );
+			get_template_part( 'inc/'.$type.'/template', 'mix' );
 			break;
 
 		case 'media_gallery':
 
-			get_template_part( 'inc/full-width-components/template', 'gallery' );
+			get_template_part( 'inc/'.$type.'/template', 'gallery' );
 			break;
 
 		case 'contact_information':
 
-			get_template_part( 'inc/full-width-components/template', 'contact-card' );
+			get_template_part( 'inc/'.$type.'/template', 'contact-card' );
+			break;
+
+		case 'story':
+
+			get_template_part( 'inc/'.$type.'/template', 'story' );
 			break;
 
 		default:
@@ -131,7 +136,22 @@ function tric_the_full_width_components($acf_fwc) {
 
 	if ($acf_fwc) {
 		foreach ($acf_fwc as $acf_fc) {
-			tric_get_template_part($acf_fc['acf_fc_layout']);
+			tric_get_template_part($acf_fc['acf_fc_layout'], 'full-width-components');
+		}
+	}
+
+}
+
+/**
+ * Print In-Content Components
+ *
+ * @param acf in-content_components
+ */
+function tric_the_in_content_components($acf_fwc) {
+
+	if ($acf_fwc) {
+		foreach ($acf_fwc as $acf_fc) {
+			tric_get_template_part($acf_fc['acf_fc_layout'], 'in-content-components');
 		}
 	}
 

@@ -1,23 +1,6 @@
 {
     "key": "group_5b3094d0952e3",
     "title": "Stories",
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "stories_post"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
     "fields": [
         {
             "key": "field_5b3094d5ed575",
@@ -131,7 +114,7 @@
             "label": "Video URL",
             "name": "video_url",
             "type": "url",
-            "instructions": "",
+            "instructions": "YouTube or Vimeo URL",
             "required": 0,
             "conditional_logic": [
                 [
@@ -161,13 +144,8 @@
                 [
                     {
                         "field": "field_5b3094d5ed575",
-                        "operator": "==",
-                        "value": "story"
-                    },
-                    {
-                        "field": "field_5b3094d5ed575",
-                        "operator": "==",
-                        "value": "quote"
+                        "operator": "!=",
+                        "value": "video"
                     }
                 ]
             ],
@@ -189,7 +167,15 @@
             "type": "url",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b3094d5ed575",
+                        "operator": "!=",
+                        "value": "video"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -253,5 +239,22 @@
             "maxlength": ""
         }
     ],
-    "modified": 1530002467
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "stories_post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1530591392
 }

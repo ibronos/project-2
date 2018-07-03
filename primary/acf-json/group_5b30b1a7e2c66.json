@@ -643,6 +643,43 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "5b3adbfdf282a": {
+                    "key": "5b3adbfdf282a",
+                    "name": "story",
+                    "label": "Story",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b3adc76f282b",
+                            "label": "Stories Post Type",
+                            "name": "stories_post_type",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "stories_post"
+                            ],
+                            "taxonomy": [],
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": 1,
+                            "max": 1,
+                            "return_format": "object"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -667,5 +704,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530522401
+    "modified": 1530584347
 }
