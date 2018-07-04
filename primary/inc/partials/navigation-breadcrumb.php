@@ -13,7 +13,7 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '') {
 	$frontpage_id = get_option( 'page_on_front' );
 	$siblings = [];
 
-	if ($id && $parent) {
+	if ($id !== '' && $parent !== '') {
 		$siblings = get_pages(array(
 			'exclude' 	=> [$id, $frontpage_id],
 			'parent' 	=> $parent,
@@ -108,6 +108,16 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '') {
 		            		} elseif (is_archive()) {
 		            			$cpt = get_queried_object();
 		            			echo tric_breadcrumbs_part($cpt->label, 1);
+
+		            		// on 404
+		            		} elseif (is_404()) {
+		            			$cpt = get_queried_object();
+		            			echo tric_breadcrumbs_part('404', 1);
+
+		            		// on search
+		            		} elseif (is_search()) {
+		            			$cpt = get_queried_object();
+		            			echo tric_breadcrumbs_part('Search', 1);
 		            		}
 
 		            		 ?>

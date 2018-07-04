@@ -119,7 +119,7 @@
 
 	<div class="site_search site_search_sm" id="site_search_sm" itemscope itemtype="http://schema.org/WebSite" role="search">
 	    <meta itemprop="url" content="<?php echo home_url( '/' ) ?>">
-	    <form class="site_search_form" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+	    <form class="site_search_form" itemprop="potentialAction" method="get" action="<?php echo esc_url( home_url( '/' ) ) ?>">
 	        <meta itemprop="target" content="<?php echo home_url( '/' ) ?>?s=<?php the_search_query(); ?>">
 	        <label class="site_search_label" for="search_term_string_sm">Search</label>
 	        <input aria-live="polite" class="site_search_input" itemprop="query-input" type="search" id="search_term_string_sm" name="s" value="<?php the_search_query(); ?>" placeholder="Search by keyword">

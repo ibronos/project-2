@@ -12,6 +12,8 @@
  * @return array
  */
 function tric_body_classes( $classes ) {
+	global $post;
+
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -34,6 +36,26 @@ function tric_body_classes( $classes ) {
 		} else {
 			$classes[] = 'page_theme_default';
 		}
+	}
+
+	// 404
+	if (is_404()) {
+		$classes[] = 'page_layout_default';
+		$postslist = get_posts( array( 'post_type' => 'acf-field-group' ));
+		foreach ($postslist as $post404) {
+			if ($post404->post_title == '404') {
+				$pageIdarr 	= unserialize($post404->post_content);
+				$pageId 	= $pageIdarr['location'][0][0]['value'];
+		     	$meta 		= get_post_meta($pageId);
+				if ($meta['header_image'][0]) {
+					$classes[] = 'page_theme_image';
+					$classes[] = 'page_layout_cover';
+				} else {
+					$classes[] = 'page_theme_default';
+				}
+			}
+		}
+		wp_reset_postdata();
 	}
 
 	if (is_archive()) {
