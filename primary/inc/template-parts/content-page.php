@@ -35,7 +35,20 @@
 
 	<!-- .content -->
 	<div class="page_content">
-		<div class="fs-row"></div>
+		<div class="fs-row">
+			<div class="fs-cell fs-lg-11 fs-xl-9 fs-xl-push-1 content_wrapper">
+				<main class="main_content" id="main_content" itemprop="mainContentOfPage">
+					<div class="typography"><?php the_content() ?></div>
+					<div class="in_content_callouts">
+						<?php
+							if (get_field('in-content_components')) {
+								tric_the_in_content_components(get_field('in-content_components'));
+							}
+						?>
+					</div>
+				</main>
+			</div>
+		</div>
 		<div class="full_width_callouts">
 		<?php
 			if (get_field('full-width_components')) {

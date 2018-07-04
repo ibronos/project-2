@@ -12,8 +12,6 @@
  * @return array
  */
 function tric_body_classes( $classes ) {
-	global $post;
-
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -118,34 +116,51 @@ function tric_icon($icon_id, $echoed = TRUE) {
  */
 function tric_get_template_part($acf_fc, $type) {
 	switch ($acf_fc) {
-		case 'important_now':
 
+		// Full Width Component
+		case 'important_now':
 			get_template_part( 'inc/'.$type.'/template', 'now' );
 			break;
 
 		case 'news_events':
-
 			get_template_part( 'inc/'.$type.'/template', 'mix' );
 			break;
 
 		case 'related_news':
-
 			get_template_part( 'inc/'.$type.'/template', 'news' );
 			break;
 
 		case 'media_gallery':
-
 			get_template_part( 'inc/'.$type.'/template', 'gallery' );
 			break;
 
 		case 'contact_information':
-
 			get_template_part( 'inc/'.$type.'/template', 'contact-card' );
 			break;
 
 		case 'story':
-
 			get_template_part( 'inc/'.$type.'/template', 'story' );
+			break;
+
+		// In Content Component
+		case 'wysiwyg':
+			get_template_part( 'inc/'.$type.'/template', 'wysiwyg' );
+			break;
+
+		case 'topic_rows':
+			get_template_part( 'inc/'.$type.'/template', 'topic-row' );
+			break;
+
+		case 'link_list':
+			get_template_part( 'inc/'.$type.'/template', 'linked-list' );
+			break;
+
+		case 'facts_and_stats':
+			get_template_part( 'inc/'.$type.'/template', 'stat' );
+			break;
+
+		case 'testimonial':
+			get_template_part( 'inc/'.$type.'/template', 'quote' );
 			break;
 
 		default:
