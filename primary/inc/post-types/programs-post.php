@@ -95,6 +95,60 @@ function programs_type(){
 
     //call the register_taxonomy function
     register_taxonomy($taxonomy, $object_type, $args);
+
+    // Register Initial terms of "Areas of Study"
+    $terms = array (
+        '0' => array (
+            'name'          => 'Visual and Performing Arts',
+            'slug'          => 'visual-and-performing-arts',
+            'description'   => 'Visual and Performing Arts',
+        ),
+        '1' => array (
+            'name'          => 'Language and Culture',
+            'slug'          => 'language-and-culture',
+            'description'   => 'Language and Culture',
+        ),
+        '2' => array (
+            'name'          => 'Engineering',
+            'slug'          => 'engineering',
+            'description'   => 'Engineering',
+        ),
+        '3' => array (
+            'name'          => 'Social Sciences',
+            'slug'          => 'social-sciences',
+            'description'   => 'Social Sciences',
+        ),
+        '4' => array (
+            'name'          => 'Natural Sciences',
+            'slug'          => 'natural-sciences',
+            'description'   => 'Natural Sciences',
+        ),
+        '5' => array (
+            'name'          => 'Computer Science & Mathematics',
+            'slug'          => 'Computer-science-mathematics',
+            'description'   => 'Computer Science & Mathematics',
+        ),
+        '6' => array (
+            'name'          => 'Humanities',
+            'slug'          => 'humanities',
+            'description'   => 'Humanities',
+        ),
+    );
+
+    foreach ( $terms as $term)
+    {
+    	if( !term_exists( $term['name'], $taxonomy ) ) {
+            wp_insert_term(
+                $term['name'],
+                $taxonomy,
+                array(
+                    'description'   => $term['description'],
+                    'slug'          => $term['slug'],
+                )
+            );
+        unset( $term );
+        }
+    }
 }
 add_action('init','programs_type');
 
