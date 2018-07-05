@@ -1,23 +1,6 @@
 {
     "key": "group_5b3097b1588fa",
     "title": "Programs",
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "programs_post"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
     "fields": [
         {
             "key": "field_5b3097b7ed04e",
@@ -34,9 +17,11 @@
             },
             "choices": {
                 "bs": "BS",
+                "ba": "BA",
                 "ma": "MA",
-                "ms": "MS",
-                "minor": "Minor"
+                "minor": "Minor",
+                "ba-ma": "BA\/MA",
+                "bs-ma": "BS\/MA"
             },
             "allow_custom": 0,
             "save_custom": 0,
@@ -77,7 +62,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "url",
             "preview_size": "thumbnail",
             "library": "all",
             "min_width": 740,
@@ -124,5 +109,22 @@
             "new_lines": ""
         }
     ],
-    "modified": 1530002467
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "programs_post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1530775928
 }

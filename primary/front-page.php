@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+get_header();
+$theme = ['sea', 'orange', 'frog', 'yellow'];
+$spotlight_item = ['programs', 'people', 'places', 'pride'];
+$program_terms = get_terms( array(
+    'taxonomy' => 'areas-of-study',
+    'hide_empty' => false
+) );
+?>
 
 <div class="page_feature">
 	<div class="spotlight">
@@ -44,27 +52,74 @@
 		</div><!--.spotlight_body -->
 
 		<div class="js-equalize spotlight_items" data-equalize-options='{"target": ".spotlight_item_title"}'>
-			<?php $spotlight_item = ['programs', 'people', 'places', 'pride'] ?>
-			<?php foreach ($spotlight_item as $item): ?>
-			<div class="js-swap spotlight_item theme_sea" data-swap-target=".spotlight_takeover_item_1" data-swap-group="spotlight_takeover" data-swap-linked="spotlight_takeover_1">
-				<div class="js-background spotlight_item_background" data-background-options='{"source": {"0px": "<?php echo get_field($item)['button_image'] ?>"
-			}}'></div>
-				<div class="spotlight_item_inner">
-					<span class="spotlight_item_trigger">
-						<span class="spotlight_item_trigger_icon">
-							<svg class="icon icon_stretcher"><use xlink:href="<?php tric_icon('stretcher') ?>"></use></svg>
+			<?php foreach ($spotlight_item as $i => $item): ?>
+				<?php $count = $i + 1 ?>
+				<div class="js-swap spotlight_item theme_<?php echo $theme[$i] ?>" data-swap-target=".spotlight_takeover_item_<?php echo $count ?>" data-swap-group="spotlight_takeover" data-swap-linked="spotlight_takeover_<?php echo $count ?>">
+					<div class="js-background spotlight_item_background" data-background-options='{"source": {
+					"0px": "<?php echo get_field($item)['button_image'] ?>"}}'></div>
+					<div class="spotlight_item_inner">
+						<span class="spotlight_item_trigger">
+							<span class="spotlight_item_trigger_icon">
+								<svg class="icon icon_stretcher">
+									<use xlink:href="<?php tric_icon('stretcher') ?>"></use>
+								</svg>
+							</span>
 						</span>
-					</span>
-					<header class="spotlight_item_header">
-						<span class="spotlight_item_label"><?php echo $item ?></span>
-						<h2 class="spotlight_item_title"><?php echo get_field($item)['title'] ?></h2>
-					</header>
+						<header class="spotlight_item_header">
+							<span class="spotlight_item_label"><?php echo $item ?></span>
+							<h2 class="spotlight_item_title"><?php echo get_field($item)['title'] ?></h2>
+						</header>
+					</div>
 				</div>
-			</div>
 			<?php endforeach ?>
 		</div><!--.spotlight_items -->
 
-		<div class="spotlight_items"></div>
+		<div class="spotlight_takeover_items">
+
+			<!-- spotlight_items_clone -->
+			<div class="spotlight_items spotlight_items_clone">
+				<?php foreach ($spotlight_item as $i => $item): ?>
+					<?php $count = $i + 1 ?>
+					<div class="js-swap spotlight_item theme_<?php echo $theme[$i] ?>" data-swap-target=".spotlight_takeover_item_<?php echo $count ?>" data-swap-group="spotlight_takeover" data-swap-linked="spotlight_takeover_<?php echo $count ?>">
+						<div class="js-background spotlight_item_background" data-background-options='{"source": {
+						"0px": "<?php echo get_field($item)['button_image'] ?>"}}'></div>
+						<div class="spotlight_item_inner">
+							<header class="spotlight_item_header">
+								<span class="spotlight_item_label"><?php echo $item ?></span>
+							</header>
+						</div>
+					</div>
+				<?php endforeach ?>
+			</div>
+
+			<!-- spotlight_takeover_mini_filter -->
+			<div class="spotlight_takeover_mini_filter">
+				<div class="spotlight_takeover_mini_filter_inner">
+					<div class="input_wrapper spotlight_takeover_mini_input_wrapper">
+						<input class="input_field spotlight_takeover_mini_input_field" type="search" id="search_by_keyword" placeholder="Search by keyword" />
+						<label class="input_label spotlight_takeover_mini_input_label">Search by keyword</label>
+					</div>
+					<select class="spotlight_takeover_mini_select">
+						<option>View All Programs</option>
+						<?php foreach ($program_terms as $program_term): ?>
+							<option><?php echo $program_term->name ?></option>
+						<?php endforeach ?>
+					</select>
+				</div>
+			</div>
+
+			<?php include get_template_directory() . '/inc/partials/homepage-programs.php' ?>
+
+			<?php foreach ($spotlight_item as $i => $item): ?>
+				<?php if ($i): ?>
+					<?php $count = $i + 1 ?>
+					<?php $acf_item = get_field($item) ?>
+					<?php include get_template_directory() . '/inc/partials/homepage-profile.php' ?>
+				<?php endif ?>
+			<?php endforeach ?>
+
+		</div><!-- .spotlight_takeover_items -->
+
 	</div>
 </div><!--.page_feature -->
 
