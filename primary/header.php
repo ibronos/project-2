@@ -53,7 +53,7 @@
 								        <?php foreach (tric_navigation('exposed') as $object): ?>
 								        	<div class="utility_nav_item">
 								        	    <a class="utility_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
-								        	        <span class="utility_nav_link_label" itemprop="name"><?php echo $object->post_title ?></span>
+								        	        <span class="utility_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
 								        	    </a>
 								        	</div>
 								        <?php endforeach ?>

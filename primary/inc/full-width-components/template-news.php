@@ -73,7 +73,7 @@ if ($acf['news']['selected_posts']):
 													</a>
 												</h3>
 											</header>
-											<div class="news_item_caption"><?php the_field('blurb') ?></div>
+											<div class="news_item_caption"><?php tric_bulrb_autofill() ?></div>
 										</div>
 									</div>
 								</article>

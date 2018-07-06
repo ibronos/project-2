@@ -45,7 +45,6 @@
 							    </a>
 							</div><!--.footer_address-->
 						</div>
-
 						<div class="footer_ribbon_group">
 							<div class="social_nav social_nav_base" itemscope itemtype="http://schema.org/Organization">
 							    <link itemprop="url" href="//http://www.trincoll.edu/Pages/default.aspx">
@@ -54,15 +53,15 @@
 							    </div>
 							    <div class="social_nav_list">
 							    	<?php foreach (tric_navigation('footer-social') as $object): ?>
-							    		<?php if (tric_social_filter($object->post_title)): ?>
+							    		<?php if (tric_social_filter($object->title)): ?>
 									        <div class="social_nav_item">
 									            <a class="social_nav_link" href="<?php echo esc_url($object->url) ?>" target="_blank" itemprop="sameAs">
 									                <span class="social_nav_icon">
-									                    <svg class="icon icon_<?php echo $object->post_title ?>">
-									                        <use xlink:href="<?php tric_icon($object->post_title) ?>"></use>
+									                    <svg class="icon icon_<?php echo $object->title ?>">
+									                        <use xlink:href="<?php tric_icon($object->title) ?>"></use>
 									                    </svg>
 									                </span>
-									                <span class="social_nav_label"><?php echo $object->post_title ?></span>
+									                <span class="social_nav_label"><?php echo $object->title ?></span>
 									            </a>
 									        </div>
 										<?php endif ?>
@@ -79,7 +78,7 @@
 								    	<?php foreach (tric_navigation('footer-info') as $object): ?>
 									        <div class="quick_nav_item">
 									            <a class="quick_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
-									                <span class="quick_nav_link_label" itemprop="name"><?php echo $object->post_title ?></span>
+									                <span class="quick_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
 									            </a>
 									        </div>
 								        <?php endforeach ?>
@@ -103,7 +102,7 @@
 					    	<?php foreach (tric_navigation('footer-primary') as $object): ?>
 						        <div class="footer_nav_item">
 						            <a class="footer_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
-						                <span class="footer_nav_link_label" itemprop="name"><?php echo $object->post_title ?></span>
+						                <span class="footer_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
 						            </a>
 						        </div>
 					    	<?php endforeach ?>
@@ -114,6 +113,8 @@
 		</div>
 	</footer><!-- #footer -->
 </div><!-- #page -->
+
+<gcse:searchresults></gcse:searchresults>
 
 <div class="js-mobile-sidebar mobile_sidebar" id="mobile_sidebar" tabindex="-1">
 
@@ -158,7 +159,7 @@
 	        	                <use xlink:href="<?php tric_icon('arrow_right') ?>"></use>
 	        	            </svg>
 	        	        </span>
-	        	        <span class="secondary_nav_link_label" itemprop="name"><?php echo $object->post_title ?></span>
+	        	        <span class="secondary_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
 	        	    </a>
 	        	</div>
 	        <?php endforeach; ?>

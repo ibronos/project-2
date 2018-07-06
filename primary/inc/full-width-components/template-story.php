@@ -50,7 +50,7 @@ if ($acf['stories_post_type'][0]):
 							<h2 class="story_detail_title"><?php the_title() ?></h2>
 						</header>
 						<div class="story_detail_caption">
-							<p><?php the_field('blurb') ?></p>
+							<?php tric_bulrb_autofill() ?>
 						</div>
 						<footer class="story_detail_footer">
 

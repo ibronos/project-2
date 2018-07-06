@@ -64,10 +64,10 @@ if ($post):
 	                        						s.parentNode.insertBefore(gcse, s);
 	                        					})();
 	                        				</script>
-	                        				<div class="gcse-search"></div>
+	                        				<gcse:searchbox></gcse:searchbox>
 	                        				<noscript>
 	                        					<div class="typography">
-	                        						<p>The site search requires a JavaScript enabled browser. You can also search the site using <a href="//www.google.com/#q=site:{{vars.domain}}">Google</a>.</p>
+	                        						<p>The site search requires a JavaScript enabled browser. You can also search the site using <a href="//www.google.com/#q=site:<?php echo esc_url( home_url( '/' ) ) ?>">Google</a>.</p>
 	                        					</div>
 	                        				</noscript>
 	                        			</div>

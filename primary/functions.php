@@ -127,7 +127,6 @@ function tric_search_filter($query) {
 		$search_filter = isset($_GET['fsearch']) ? $_GET['fsearch'] : '';
 		if ($search_filter) {
 			$query->set('s', $search_filter);
-			//print_r($query);exit;
 		}
 
 		$term_filter = isset($_GET['fcat']) ? $_GET['fcat'] : '';
@@ -139,11 +138,30 @@ function tric_search_filter($query) {
 					'terms'    => $term_filter,
 				),
 			));
-			//print_r($query); exit;
 		}
 	}
 }
 add_action('pre_get_posts', 'tric_search_filter');
+
+function tric_bulrb_autofill() {
+	global $post;
+
+	$meta_blurb = get_post_meta($post->id, 'blurb', true);
+	$trim   = 30; //max length of words to display
+
+	if (!$meta_blurb || empty($meta_blurb))
+	{
+		$content = strip_tags($post->post_content);
+
+		$old_arr = array_map('trim', explode(' ', $content));
+		$new_arr = array_slice($old_arr, 0, $trim);
+
+		$content = implode(' ',$new_arr).' ...';
+		echo '<p>'.$content.'</p>';
+	} else {
+		echo '<p>'.$meta_blurb.'</p>';
+	}
+}
 
 /**
  * Enqueue scripts and styles.

@@ -51,7 +51,7 @@ foreach ($flex_components as $acf_fc) {
 											</a>
 										</h3>
 									</header>
-									<div class="mix_news_item_caption"><?php the_field('blurb'); ?></div>
+									<div class="mix_news_item_caption"><?php tric_bulrb_autofill() ?></div>
 								</div>
 							<?php endforeach ?>
 							<?php wp_reset_postdata(); ?>
