@@ -9393,14 +9393,11 @@ button {
   transition: color .25s; }
   .mix_news_item_title_link:focus, .mix_news_item_title_link:hover {
     color: #1573DD; }
-
-.mix_news_item_title_link_label {
-  display: inline; }
-
-.mix_news_item_title_link_icon {
-  color: #1573DD;
-  display: inline-block;
-  vertical-align: middle; }
+  .mix_news_item_title_link [class*="label"] {
+    display: inline; }
+  .mix_news_item_title_link [class*="icon"] {
+    color: #1573DD;
+    display: inline-block; }
 
 .mix_news_item_caption {
   font-weight: 400;
@@ -9525,6 +9522,23 @@ button {
       font-size: 2.125rem;
       line-height: 1.41176; } }
 
+@media screen and (min-width: 740px) {
+  .upcoming_events .mix_event {
+    width: 50%;
+    padding: 0 30px; } }
+
+@media screen and (min-width: 980px) {
+  .upcoming_events .mix_event {
+    padding: 0 60px; } }
+
+@media screen and (min-width: 1220px) {
+  .upcoming_events .mix_event {
+    padding: 0 90px; } }
+
+@media screen and (min-width: 740px) {
+  .upcoming_events .mix_event:first-child {
+    border-right: 1px solid rgba(118, 111, 103, 0.25); } }
+
 .mix_event:not(:last-child) {
   margin-bottom: 28px; }
   @media screen and (min-width: 1220px) {
@@ -9594,13 +9608,11 @@ button {
   transition: color .25s; }
   .mix_event_title_link:focus, .mix_event_title_link:hover {
     color: #1573DD; }
-
-.mix_event_title_link_label {
-  display: inline; }
-
-.mix_event_title_link_icon {
-  display: inline-block;
-  vertical-align: middle; }
+  .mix_event_title_link [class*="label"] {
+    display: inline; }
+  .mix_event_title_link [class*="icon"] {
+    color: #1573DD;
+    display: inline-block; }
 
 .mix_event_detail {
   position: relative;
@@ -10724,6 +10736,137 @@ button {
   .story_detail_video:hover .story_detail_video_label {
     -webkit-transform: translate(5px, 0);
             transform: translate(5px, 0); }
+
+.upcoming_events {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #F5F7F9; }
+  @media screen and (min-width: 740px) {
+    .upcoming_events {
+      padding-top: 60px; } }
+  @media screen and (min-width: 980px) {
+    .upcoming_events {
+      padding-top: 80px; } }
+  @media screen and (min-width: 1220px) {
+    .upcoming_events {
+      padding-top: 100px; } }
+  @media screen and (min-width: 740px) {
+    .upcoming_events {
+      padding-bottom: 60px; } }
+  @media screen and (min-width: 980px) {
+    .upcoming_events {
+      padding-bottom: 80px; } }
+  @media screen and (min-width: 1220px) {
+    .upcoming_events {
+      padding-bottom: 100px; } }
+
+.upcoming_events_header {
+  margin-bottom: 20px; }
+  @media screen and (min-width: 1220px) {
+    .upcoming_events_header {
+      margin-bottom: 44px; } }
+
+.upcoming_events_link {
+  display: inline-block;
+  padding: 10px 0; }
+  .upcoming_events_link [class*="icon"] {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle; }
+    @media print {
+      .upcoming_events_link [class*="icon"] {
+        display: none; } }
+  .upcoming_events_link [class*="label"] {
+    display: inline-block;
+    vertical-align: middle; }
+  .upcoming_events_link [class*="label"] {
+    font-weight: 400;
+    font-family: "Unit Offc W01 Medium", sans-serif;
+    color: #1573DD;
+    font-size: 12px;
+    font-size: 0.75rem;
+    letter-spacing: 1.8px;
+    letter-spacing: 0.1125rem;
+    text-transform: uppercase; }
+    @media screen and (min-width: 740px) {
+      .upcoming_events_link [class*="label"] {
+        font-size: 16px;
+        font-size: 1rem;
+        letter-spacing: 1.4px;
+        letter-spacing: 0.0875rem; } }
+  .upcoming_events_link [class*="icon"]:not(svg) {
+    z-index: 2;
+    color: #1573DD;
+    -webkit-transition: color .25s, -webkit-transform .25s;
+    transition: color .25s, -webkit-transform .25s;
+    transition: color .25s, transform .25s;
+    transition: color .25s, transform .25s, -webkit-transform .25s; }
+    .upcoming_events_link [class*="icon"]:not(svg):before {
+      height: 26px;
+      width: 26px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -2;
+      background: #1573DD;
+      border-radius: 50%;
+      content: "";
+      margin-top: 1px;
+      margin-left: 1px;
+      -webkit-transform: translate(-50%, -50%) scale(0);
+              transform: translate(-50%, -50%) scale(0);
+      -webkit-transition: -webkit-transform .25s;
+      transition: -webkit-transform .25s;
+      transition: transform .25s;
+      transition: transform .25s, -webkit-transform .25s;
+      -webkit-transform-origin: left center;
+              transform-origin: left center; }
+  .upcoming_events_link:focus [class*="icon"]:not(svg), .upcoming_events_link:hover [class*="icon"]:not(svg) {
+    color: #fff;
+    stroke-color: #fff;
+    -webkit-transform: translate(5px, 0);
+            transform: translate(5px, 0); }
+    .upcoming_events_link:focus [class*="icon"]:not(svg):before, .upcoming_events_link:hover [class*="icon"]:not(svg):before {
+      -webkit-transform: translate(-50%, -50%) scale(1);
+              transform: translate(-50%, -50%) scale(1); }
+  @media screen and (max-width: 739px) {
+    .upcoming_events_link {
+      padding: 3px 0; } }
+
+.upcoming_events_title {
+  font-family: "Meta Serif W01 Bold";
+  font-weight: 400;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.45455;
+  margin: 0; }
+  @media screen and (min-width: 740px) {
+    .upcoming_events_title {
+      font-size: 26px;
+      font-size: 1.625rem;
+      line-height: 1.46154; } }
+  @media screen and (min-width: 1220px) {
+    .upcoming_events_title {
+      font-size: 34px;
+      font-size: 2.125rem;
+      line-height: 1.41176; } }
+
+@media screen and (min-width: 740px) {
+  .upcoming_events_items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 -30px; } }
+
+@media screen and (min-width: 980px) {
+  .upcoming_events_items {
+    margin: 0 -60px; } }
+
+@media screen and (min-width: 1220px) {
+  .upcoming_events_items {
+    margin: 0 -90px; } }
 
 /* ==========================================================================
 	Component

@@ -259,4 +259,25 @@
 			}
 		]
 	} %}
+
+	{% include full ~ "upcoming-events.twig" with {
+		items: [
+			{
+				day: "14",
+				month: "Mar",
+				year: "2018",
+				title: "Trinity’s International Hip-Hop Festival",
+				location: "Hartford, CT",
+				time: "8 p.m. - 12 a.m."
+			},
+			{
+				day: "7-8",
+				month: "Apr",
+				year: "2018",
+				title: "25th Annual Robotics Competition",
+				location: "Ferris Athletic Center, Oosting Gymnasium",
+				time: "9 p.m. - 2 p.m."
+			}
+		]
+	} %}
 {% endblock %}
