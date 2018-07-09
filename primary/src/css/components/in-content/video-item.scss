@@ -26,6 +26,13 @@
 
 .video_item_video {
 	@include cover;
+
+	background:
+		linear-gradient(
+			to top,
+				rgba(#000, .75),
+				rgba(#000, 0) 50%
+		);
 }
 
 .video_item_video_hint {
