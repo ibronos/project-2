@@ -214,6 +214,10 @@
 		$hc: $dark,
 		$hic: $dark
 	);
+	
+	@media #{$min_xl} {
+		margin-right: 30px;
+	}
 }
 
 .story_detail_video {
@@ -223,7 +227,6 @@
 	@media #{$min_xl} {
 		display: inline-block;
 		margin-top: 0;
-		margin-left: 30px;
 		vertical-align: middle;
 	}
 }

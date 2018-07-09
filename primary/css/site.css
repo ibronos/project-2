@@ -10678,6 +10678,9 @@ button {
     color: #0F0F11;
     -webkit-transition: color .25s;
     transition: color .25s; }
+  @media screen and (min-width: 1220px) {
+    .story_detail_link {
+      margin-right: 30px; } }
 
 .story_detail_video {
   display: block;
@@ -10686,7 +10689,6 @@ button {
     .story_detail_video {
       display: inline-block;
       margin-top: 0;
-      margin-left: 30px;
       vertical-align: middle; } }
 
 .story_detail_video_button {
