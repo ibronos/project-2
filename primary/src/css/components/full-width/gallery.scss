@@ -355,6 +355,7 @@
 
 	margin-top: -30px;
 	padding-bottom: 30px;
+	text-align: center;
 
 	@media #{$min_lg} {
 		width: calc(100% - 360px);
@@ -372,6 +373,7 @@
 	position: relative;
 
 	border-bottom: 2px solid $leaf;
+	display: inline-block;
 	margin-bottom: 30px;
 	padding-bottom: 25px;
 	text-align: center;

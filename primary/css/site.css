@@ -9073,7 +9073,8 @@ button {
   padding-right: calc(20px + 1.04166667%);
   padding-left: calc(20px + 1.04166667%);
   margin-top: -30px;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  text-align: center; }
   @media screen and (min-width: 740px) {
     .media_gallery_items {
       padding-right: calc((100% - 720px) / 2 + 1.04166667%); } }
@@ -9110,6 +9111,7 @@ button {
 .media_gallery_item {
   position: relative;
   border-bottom: 2px solid #CAFF00;
+  display: inline-block;
   margin-bottom: 30px;
   padding-bottom: 25px;
   text-align: center; }
