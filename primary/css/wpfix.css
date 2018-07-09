@@ -258,3 +258,275 @@ body.logged-in .mobile_sidebar {
 	padding-bottom: 20px;
 	pointer-events: none;
 }
+
+/* ==========================================================================
+	Gravity From Styling
+============================================================================= */
+body .gform_wrapper ul li:before {
+	width: 0;
+    height: 0;
+    background: #1573DD;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    float: left;
+    margin: 0;
+}
+body .gform_wrapper ul {
+	padding: 0;
+}
+body .gform_wrapper ul.gform_fields > li {
+    margin-bottom: 70px;
+}
+
+/* Label */
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
+    font-family: "Meta Serif W01 Bold";
+    font-weight: 400;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.44444;
+    margin: 41px 0 13px;
+    text-transform: capitalize;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
+    margin-bottom: 18px;
+}
+@media screen and (min-width: 740px){
+    body .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 1.41667;
+    }
+}
+body .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label,
+body .gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container label,
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_description  {
+    font-weight: 400;
+    font-family: "Unit Offc W01 Light", sans-serif;
+    color: #0F0F11;
+    font-size: 14px;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
+    margin-top: 13px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 30px;
+}
+
+/* form */
+body .gform_wrapper .gform_body .gform_fields .gfield input.datepicker,
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_ampm select {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  height: 50px;
+  width: calc(100% - 10px);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid rgba(118, 111, 103, 0.5);
+  border-radius: 0;
+  background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAQCAYAAAAS7Y8mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAETSURBVHjatJK9SkNBEIW/bCU2KUQfYF5KiRqt8gIK2ogggggDMQ/gC6QNgiAiiJXiG5g0IuqIglai6Nhcw3Lx5m5+PLDFnpnzMcxuxd2ZW+8JcAnMML7egXrILgGoMhlNAdUAYCo3wNaEwMfAYYiMfeBkTOg9UDcV74NNxYFl4GFE6DewaCpPv7slgj8CS1nTsNo1lTOiRyMHPwX2hoSeAzuxEQoat4GLROgzUDOVr1Jw1lQDXkqgDqyYyl2+UDQxpnILrJaAm6Zy9FchDEqZSgc4KChfAZtF2ZCwww3gOue9Agum8jky2FQ+gHngLbIbptIblEuZGFPpAo3sf7dMpV0acvfkM7vWnU7trbg7/6GfAQAweY9PsYEU4wAAAABJRU5ErkJggg==")
+  				no-repeat calc(100% - 20px) 50%/11px 7px;
+  -webkit-box-shadow: -10px 10px 0 0 #003473;
+          box-shadow: -10px 10px 0 0 #003473;
+  color: #0F0F11;
+  cursor: pointer;
+  font-size: 11px;
+  font-size: 0.6875rem;
+  letter-spacing: 2.2px;
+  letter-spacing: 0.1375rem;
+  margin-left: 10px;
+  padding: 19px 20px;
+  text-transform: uppercase; }
+  @media screen and (min-width: 740px) {
+    .form-builder select {
+      font-size: 13px;
+      font-size: 0.8125rem;
+      padding: 18px 20px; } }
+
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_hour i {
+	display: none;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_ampm select {
+	width: calc(100% - 10px);
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .clear-multi {
+    display: block;
+}
+@media screen and (min-width: 740px){
+	body .gform_wrapper .gform_body .gform_fields .gfield .clear-multi {
+	    display: flex;
+	}
+	body .gform_wrapper .gform_body .gform_fields .gfield .gfield_time_ampm select {
+		width: calc(100% + 10px);
+	}
+}
+
+/*radio*/
+body .gform_wrapper input[type=radio],
+body .gform_wrapper input[type=checkbox] {
+	display: none;
+}
+body .gform_wrapper .ginput_container_radio label,
+body .gform_wrapper .ginput_container_checkbox label {
+  position: relative;
+  cursor: pointer;
+}
+body .gform_wrapper input[type=radio]:checked + label:before,
+body .gform_wrapper input[type=checkbox]:checked + label:before {
+	height: 8px;
+    width: 8px;
+    border: 0;
+    background: #1573DD;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-right: 20px;
+    position: relative;
+    left: 6px;
+    transition: all 100ms;
+}
+body .gform_wrapper input[type=radio]:checked + label:after,
+body .gform_wrapper input[type=checkbox]:checked + label:after {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 8px;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #003473;
+	border-radius: 50%;
+	display: inline-block;
+	cursor: pointer;
+}
+body .gform_wrapper input[type=radio] + label:before ,
+body .gform_wrapper input[type=checkbox] + label:before  {
+	content: '';
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 0px 8px 0 8px;
+	vertical-align: middle;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: #fff;
+	border: 2px solid #003473;
+}
+body .gform_wrapper input[type=checkbox]:checked + label:before {
+	height: 10px;
+    width: 10px;
+    margin-right: 18px;
+	left: 5px;
+}
+body .gform_wrapper input[type=checkbox]:checked + label:after {
+	border-radius: 0;
+}
+body .gform_wrapper input[type=checkbox] + label:before  {
+	border-radius: 0;
+}
+@media screen and (min-width: 740px){
+	body .gform_wrapper input[type=radio]:checked + label:after,
+	body .gform_wrapper input[type=checkbox]:checked + label:after {
+	    top: 4px;
+	}
+}
+
+/*DatePicker*/
+.ui-datepicker {
+	font-weight: 400;
+	font-family: "Unit Offc W01 Medium", sans-serif;
+    display: block;
+    border: 11px solid #003473;
+    background-color: #003473;
+}
+.ui-datepicker a {
+	color: #1573DD;
+}
+.ui-datepicker .ui-datepicker-calendar td {
+	padding: 8px 10px;
+}
+.ui-datepicker .ui-datepicker-calendar th span {
+	color:#868686;
+}
+.ui-datepicker .ui-datepicker-calendar thead tr {
+	padding: 20px;
+}
+.ui-datepicker table.ui-datepicker-calendar {
+    padding: 12px;
+    background-color: #fff;
+}
+.ui-datepicker .ui-datepicker-header select {
+  font-weight: 400;
+  font-family: "Unit Offc W01 Medium", sans-serif;
+  height: 50px;
+  width: calc(100%);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 2px;
+  background: #1573DD url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAQCAYAAAAS7Y8mAAAAAXNSR0IArs4c6QAAANtJREFUOBGtlM8KQUEUh10i2VhIFrLhSWQpW3aew1bZirdRdrK7eQ42FDsbxnfK6JppGtfMqV9nzp/fN7fb7SYFQinVJaWoIXVg3PFPi2+I5HogUNurXyyeeoZixAZIom+R15GgbSD5iL/5geoDzRY6/Ql/4OtrlpUZDpAs5Y25BTMbEBc5qTv2SybHqmUJ7X+En9lrWxBXg+UOunjgT+ZDF8PZxzTygJdOs28AeOWAp/TLPr9zjrmCDgb8Si2/gbAA0kO3DHwcRsy4gU6QfN/rTDvOEWgtDimA8gJAYCZMqIuFHQAAAABJRU5ErkJggg==") no-repeat calc(100% - 20px) 50%/11px 7px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  font-size: 0.9rem	;
+  letter-spacing: 2.2px;
+  letter-spacing: 0.1375rem;
+  padding: 19px 20px;
+  text-transform: uppercase; }
+
+.ui-datepicker .ui-datepicker-prev.ui-corner-all,
+.ui-datepicker .ui-datepicker-next.ui-corner-all {
+	display: none;
+}
+.ui-datepicker a.ui-state-default.ui-state-highlight {
+    background: #FFE300;
+    border-radius: 50%;
+    color: #000;
+    width: 20px;
+    height: 20px;
+    padding: 3px 9px;
+}
+
+
+@media only screen and (min-width: 641px) {
+	.gform_wrapper div.ginput_container_name span {
+		display: inline-block;
+	    vertical-align: top;
+	    padding-right: 16px;
+	    margin-right: -4px;
+	}
+	body .gform_wrapper .gform_body .gform_fields .gfield .clear-multi > * {
+	    margin-right: 16px;
+	    width: 100%;
+	}
+	.gform_wrapper div.ginput_container_name span.name_last {
+	    padding-right: 0px;
+	}
+	.gform_wrapper div.ginput_complex.ginput_container.gf_name_has_2 span {
+	    width: 50%;
+	}
+	.gform_wrapper .ginput_complex .ginput_left, .gform_wrapper .ginput_complex .ginput_right {
+	    width: 50%;
+	    display: -moz-inline-stack;
+	    display: inline-block;
+	    vertical-align: top;
+	    margin: 0 -4px 0 0;
+	}
+	.gform_wrapper .ginput_complex .ginput_left {
+	    padding-right: 8px;
+	}
+	.gform_wrapper .ginput_complex.ginput_container.ginput_container_email .ginput_left, .gform_wrapper .ginput_complex.ginput_container.ginput_container_email .ginput_right {
+	    padding-right: 16px;
+	}
+	.gform_wrapper .ginput_complex.ginput_container_address .ginput_left {
+	    margin-right: 8px;
+	}
+	.gform_wrapper .ginput_complex.ginput_container_address .ginput_right {
+	    margin-right: -8px;
+	    padding-right: 8px;
+	}
+
+}

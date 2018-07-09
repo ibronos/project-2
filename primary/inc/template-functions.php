@@ -39,20 +39,25 @@ function tric_body_classes( $classes ) {
 	// 404
 	if (is_404()) {
 		$classes[] = 'page_layout_default';
-		$postslist = get_posts( array( 'post_type' => 'acf-field-group' ));
-		foreach ($postslist as $post404) {
-			if ($post404->post_title == '404') {
-				$pageIdarr 	= unserialize($post404->post_content);
-				$pageId 	= $pageIdarr['location'][0][0]['value'];
-		     	$meta 		= get_post_meta($pageId);
-				if ($meta['header_image'][0]) {
-					$classes[] = 'page_theme_image';
-					$classes[] = 'page_layout_cover';
-				} else {
-					$classes[] = 'page_theme_default';
-				}
+		$args = [
+		    'post_type' => 'page',
+		    'meta_key' => '_wp_page_template',
+		    'meta_value' => '404.php'
+		];
+		$pages 	= get_posts( $args );
+		$post 	= $pages[0];
+
+		if ($post):
+			setup_postdata( $post );
+			$header_image = get_post_meta($post->ID, 'header_image', true);
+			if ($header_image) {
+				$classes[] = 'page_theme_image';
+				$classes[] = 'page_layout_cover';
+			} else {
+				$classes[] = 'page_theme_default';
 			}
-		}
+		endif;
+
 		wp_reset_postdata();
 	}
 
