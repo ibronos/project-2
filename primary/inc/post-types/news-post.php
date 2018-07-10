@@ -87,4 +87,41 @@ function news_category(){
 }
 add_action('init','news_category');
 
+function related_news_category(){
+
+    //set the name of the taxonomy
+    $taxonomy = 'related-news';
+    //set the post types for the taxonomy
+    $object_type = 'news_post';
+
+    //populate our array of names for our taxonomy
+    $labels = array(
+        'name'               => 'Related News Category',
+        'singular_name'      => 'Related News Category',
+        'search_items'       => 'Search Related News Category',
+        'all_items'          => 'All Related News Category',
+        'parent_item'        => 'Parent Related News Category',
+        'parent_item_colon'  => 'Parent Related News Category:',
+        'update_item'        => 'Update Related News Category',
+        'edit_item'          => 'Edit Related News Category',
+        'add_new_item'       => 'Add New Related News Category',
+        'new_item_name'      => 'New Type Related News Category',
+        'menu_name'          => 'Related News Category'
+    );
+
+    //define arguments to be used
+    $args = array(
+        'labels'            => $labels,
+        'hierarchical'      => true,
+        'show_ui'           => true,
+        'how_in_nav_menus'  => true,
+        'public'            => true,
+        'show_admin_column' => true,
+        'query_var'         => true
+    );
+
+    //call the register_taxonomy function
+    register_taxonomy($taxonomy, $object_type, $args);
+}
+add_action('init','related_news_category');
 ?>

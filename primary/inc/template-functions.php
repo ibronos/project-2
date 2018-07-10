@@ -133,7 +133,7 @@ function tric_get_template_part($acf_fc, $type) {
 			break;
 
 		case 'related_news':
-			get_template_part( 'inc/'.$type.'/template', 'news' );
+			get_template_part( 'inc/'.$type.'/template', 'related-news' );
 			break;
 
 		case 'media_gallery':

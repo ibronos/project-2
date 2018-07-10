@@ -272,31 +272,26 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5b3b05ad4f5c2",
-                            "label": "News",
-                            "name": "news",
-                            "type": "relationship_multisite",
+                            "key": "field_5b4461c7e3b29",
+                            "label": "Related News Category",
+                            "name": "related_news_category",
+                            "type": "taxonomy",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "site": 1,
-                            "post_type": [
-                                "news_post"
-                            ],
-                            "filters": [
-                                "search",
-                                "post_type",
-                                "taxonomy"
-                            ],
-                            "elements": "",
-                            "max": "",
+                            "taxonomy": "related-news",
+                            "field_type": "select",
+                            "allow_null": 0,
+                            "add_term": 0,
+                            "save_terms": 0,
+                            "load_terms": 0,
                             "return_format": "object",
-                            "taxonomy": []
+                            "multiple": 0
                         }
                     ],
                     "min": "",
@@ -741,5 +736,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530594915
+    "modified": 1531208895
 }
