@@ -68,6 +68,7 @@ function tric_body_classes( $classes ) {
 	}
 
 	$classes[] = 'fs-grid';
+	$classes[] = 'js';
 
 	return $classes;
 }

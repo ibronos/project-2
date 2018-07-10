@@ -633,7 +633,7 @@
                     "elements": "",
                     "min": 1,
                     "max": "",
-                    "return_format": ""
+                    "return_format": "object"
                 }
             ]
         },
@@ -889,5 +889,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530767289
+    "modified": 1531188478
 }

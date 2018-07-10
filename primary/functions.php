@@ -146,7 +146,7 @@ add_action('pre_get_posts', 'tric_search_filter');
 function tric_bulrb_autofill() {
 	global $post;
 
-	$meta_blurb = get_post_meta($post->id, 'blurb', true);
+	$meta_blurb = get_post_meta($post->ID, 'blurb', true);
 	$trim   = 30; //max length of words to display
 
 	if (!$meta_blurb || empty($meta_blurb))
