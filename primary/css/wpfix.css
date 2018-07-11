@@ -320,11 +320,12 @@ body .search_results .gs-title{
     color: black;
 }
 
-.search_results .search_result_caption, strong {
+.search_results .search_result_caption strong {
     background: rgba(42, 198, 202, 0.2);
 }
-b, strong {
-    font-weight: bolder;background: rgba(42, 198, 202, 0.2);
+.search_results b, .search_results strong {
+    font-weight: bolder;
+    background: rgba(42, 198, 202, 0.2);
 }
 
 /*nav*/

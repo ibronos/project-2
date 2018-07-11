@@ -28,7 +28,7 @@ $post_len 	= count($posts);
 			<div class="related_news_inner">
 
 				<header class="related_news_header">
-					<a class="related_news_link" href="<?php echo get_site_url() . '/news' ?>">
+					<a class="related_news_link" href="<?php echo get_post_type_archive_link( 'news_post' ) ?>">
 						<span class="related_news_link_label">View All News</span>
 						<span class="related_news_link_icon" aria-hidden="true">
 							<svg class="icon icon_arrow_right">

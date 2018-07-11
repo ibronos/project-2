@@ -35,7 +35,7 @@ if($pages == '') {
 
 								<?php if (get_field('list_image')): ?>
 									<figure class="news_item_figure">
-										<a class="news_item_figure_link" href="#">
+										<a class="news_item_figure_link" href="<?php the_permalink() ?>">
 											<img class="news_item_image" src="<?php the_field('list_image') ?>" alt="image">
 										</a>
 									</figure>

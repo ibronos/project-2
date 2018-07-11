@@ -14,7 +14,7 @@ if ($acf_fc['acf_fc_layout'] == 'news_events') {
 
 				<div class="mix_news">
 					<header class="mix_news_header">
-						<a class="mix_news_link" href="#">
+						<a class="mix_news_link" href="<?php echo get_post_type_archive_link( 'news_post' ) ?>">
 						    <span class="mix_news_link_label">View All News</span>
 						    <span class="mix_news_link_icon" aria-hidden="true">
 						        <svg class="icon icon_arrow_right">
@@ -30,7 +30,7 @@ if ($acf_fc['acf_fc_layout'] == 'news_events') {
 							<?php foreach( $posts as $post): ?>
 								<?php setup_postdata($post); ?>
 								<figure class="mix_news_item_figure">
-									<a class="mix_news_item_figure_link" href="#">
+									<a class="mix_news_item_figure_link" href="<?php the_permalink() ?>">
 										<img class="mix_news_item_image" src="<?php the_field('header_image') ?>" alt="image">
 									</a>
 								</figure>

@@ -15,9 +15,9 @@ if ($acf['stories_post_type'][0]):
 
 	<div class="story">
 		<div class="js-background story_background" data-background-options='{"source": {
-		"0px": "//images.fastspot.com/trinity-redesign/740x740/1",
-		"740px": "//images.fastspot.com/trinity-redesign/980x420/1",
-		"980px": "//images.fastspot.com/trinity-redesign/1220x523/1"
+		"0px": "<?php the_field('image') ?>",
+		"740px": "<?php the_field('image') ?>",
+		"980px": "<?php the_field('image') ?>"
 		}, "lazy": true, "lazyEdge": "100"}'></div>
 		<div class="fs-row">
 			<div class="fs-cell fs-xl-11 fs-xl-push-1">
