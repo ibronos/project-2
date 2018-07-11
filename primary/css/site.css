@@ -5801,15 +5801,13 @@ button {
       left: 0;
       z-index: -2;
       background: #1573DD;
-      -webkit-box-shadow: 20px 0 0 0 #43FD71, 40px 0 0 0 #FFD600, 80px 0 0 0 #F8485E;
-              box-shadow: 20px 0 0 0 #43FD71, 40px 0 0 0 #FFD600, 80px 0 0 0 #F8485E;
       content: "";
-      -webkit-transform: translate(calc(-100% - 90px), 0);
-              transform: translate(calc(-100% - 90px), 0);
-      -webkit-transition: -webkit-box-shadow .5s, -webkit-transform .5s;
-      transition: -webkit-box-shadow .5s, -webkit-transform .5s;
-      transition: box-shadow .5s, transform .5s;
-      transition: box-shadow .5s, transform .5s, -webkit-box-shadow .5s, -webkit-transform .5s; } }
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transition: -webkit-box-shadow .25s, -webkit-transform .25s;
+      transition: -webkit-box-shadow .25s, -webkit-transform .25s;
+      transition: box-shadow .25s, transform .25s;
+      transition: box-shadow .25s, transform .25s, -webkit-box-shadow .25s, -webkit-transform .25s; } }
   @media screen and (min-width: 980px) {
     .is-ie .quick_nav_link:before {
       display: none; } }
@@ -5823,10 +5821,8 @@ button {
         color: rgba(255, 255, 255, 0.6); } }
     @media screen and (min-width: 980px) {
       .quick_nav_link:focus:before, .quick_nav_link:hover:before {
-        -webkit-transform: translate(0, 0);
-                transform: translate(0, 0);
-        -webkit-box-shadow: 0 0 0 0 #43FD71, 0 0 0 0 #FFD600, 0 0 0 0 #F8485E;
-                box-shadow: 0 0 0 0 #43FD71, 0 0 0 0 #FFD600, 0 0 0 0 #F8485E; } }
+        -webkit-transform: scale(1);
+                transform: scale(1); } }
 
 /* ==========================================================================
 	Secondary Navigation Common

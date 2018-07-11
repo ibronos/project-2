@@ -102,15 +102,11 @@
 			z-index: -2;
 
 			background: $blue;
-			box-shadow:
-				20px 0 0 0 $frog,
-				40px 0 0 0 $yellow,
-				80px 0 0 0 $fire;
 			content: "";
-			transform: translate(calc(-100% - 90px), 0);
+			transform: scale(0);
 			transition:
-				box-shadow .5s,
-				transform .5s;
+				box-shadow .25s,
+				transform .25s;
 		}
 
 		.is-ie & {
@@ -139,11 +135,7 @@
 		&:before {
 
 			@media #{$min_lg} {
-				transform: translate(0, 0);
-				box-shadow:
-					0 0 0 0 $frog,
-					0 0 0 0 $yellow,
-					0 0 0 0 $fire;
+				transform: scale(1);
 			}
 		}
 	}
