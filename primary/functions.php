@@ -175,6 +175,8 @@ function tric_scripts() {
 
 	wp_enqueue_script( 'tric-site', get_template_directory_uri() . '/js/site.js', array('jquery'), '20151215', true );
 
+	wp_enqueue_script( 'tric-custom-script', get_template_directory_uri() . '/js/custom.js', array('jquery'), '20180709', true );
+
 	?>
 	<script>
 		var WWW_ROOT = "";

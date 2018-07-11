@@ -4,7 +4,9 @@
  */
 
 $item = 'programs';
-$programs_post = get_posts( array('post_type' => 'programs_post') );
+$programs_post = get_posts( array(
+	'post_type' => 'programs_post'
+) );
 ?>
 
 <!-- Programs -->
@@ -43,7 +45,7 @@ $programs_post = get_posts( array('post_type' => 'programs_post') );
 						</label>
 						<?php foreach ($program_terms as $program_term): ?>
 							<label class="choices_label spotlight_takeover_choices_label" for="<?php echo $program_term->slug ?>">
-								<input class="js-radio choices_field spotlight_takeover_choices_field" type="radio" name="spotlight_takeover" id="<?php echo $program_term->slug ?>" value="<?php echo $program_term->name ?>">
+								<input class="js-radio choices_field spotlight_takeover_choices_field" type="radio" name="spotlight_takeover" id="<?php echo $program_term->slug; ?>" value="<?php echo $program_term->name ?>">
 								<span class="choices_name spotlight_takeover_choices_name"><?php echo $program_term->name ?></span>
 							</label>
 						<?php endforeach ?>
@@ -67,7 +69,10 @@ $programs_post = get_posts( array('post_type' => 'programs_post') );
 
 		<?php foreach ($programs_post as $post): ?>
 			<?php setup_postdata( $post ) ?>
-			<article class="program">
+			<?php
+				$t_types = wp_get_post_terms($post->ID, 'areas-of-study', array("fields" => "all"));
+			?>
+			<article class="program <?php foreach($t_types as $key => $value){echo $value->slug.' ';} ?>">
 				<picture class="program_picture">
 					<source media="(min-width: 740px)" srcset="<?php the_field('image') ?>" />
 					<source media="(min-width: 0px)" srcset="<?php the_field('image') ?>" />
