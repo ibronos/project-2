@@ -189,6 +189,29 @@ function tric_scripts() {
 add_action( 'wp_enqueue_scripts', 'tric_scripts' );
 
 /**
+ * Sync ACF Json Folder
+ */
+add_filter('acf/settings/load_json', function($paths) {
+    $paths = array(get_template_directory() . '/acf-json');
+
+    if(is_child_theme()){
+        $paths = array(
+            get_stylesheet_directory() . '/acf-json',
+            get_template_directory() . '/acf-json'
+        );
+
+    }
+
+    return $paths;
+});
+add_filter('acf/settings/save_json', function() {
+	return get_stylesheet_directory() . '/acf-json';
+});
+
+
+
+
+/**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
