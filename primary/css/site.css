@@ -6323,35 +6323,11 @@ button {
   letter-spacing: 0.125rem;
   padding: 16px 24px;
   text-transform: uppercase;
-  -webkit-transition: color .25s;
-  transition: color .25s; }
-  .utility_nav_link:before {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -2;
-    background: #1573DD;
-    -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
-    -webkit-transition: -webkit-box-shadow .25s, -webkit-clip-path .25s;
-    transition: -webkit-box-shadow .25s, -webkit-clip-path .25s;
-    transition: box-shadow .25s, clip-path .25s;
-    transition: box-shadow .25s, clip-path .25s, -webkit-box-shadow .25s, -webkit-clip-path .25s; }
-    .svgclippaths .utility_nav_link:before {
-      content: ""; }
-    .is-ie .utility_nav_link:before {
-      display: none; }
+  -webkit-transition: background .25s,	 color .25s;
+  transition: background .25s,	 color .25s; }
   .utility_nav_link:focus, .utility_nav_link:hover {
-    color: #1573DD; }
-    .utility_nav_link:focus:before, .utility_nav_link:hover:before {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-    .svgclippaths .utility_nav_link:focus, .svgclippaths .utility_nav_link:hover {
-      color: #fff; }
-    .is-ie .utility_nav_link:focus, .is-ie .utility_nav_link:hover {
-      color: #1573DD; }
+    background: #1573DD;
+    color: #fff; }
 
 .fs-background-media {
   -webkit-transition: opacity .5s;

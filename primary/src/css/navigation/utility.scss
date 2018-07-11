@@ -41,55 +41,14 @@
 	letter-spacing: 2px;
 	padding: 16px 24px;
 	text-transform: uppercase;
-	transition: color .25s;
-
-	&:before {
-		@include cover;
-
-		z-index: -2;
-
-		background: $blue;
-		clip-path:
-			polygon(
-				0 0,
-				100% 0,
-				0 0,
-				0 100%
-			);
-		transition: 
-			box-shadow .25s,
-			clip-path .25s;
-
-		.svgclippaths & {
-			content: "";
-		}
-
-		.is-ie & {
-			display: none;
-		}
-	}
+	transition: 
+		background .25s,	
+		color .25s;
 
 	&:focus,
 	&:hover {
-		color: $blue;
-
-		&:before {
-			clip-path:
-				polygon(
-					0 0,
-					100% 0,
-					100% 100%,
-					0 100%
-				);
-		}
-
-		.svgclippaths & {
-			color: #fff;
-		}
-
-		.is-ie & {
-			color: $blue;
-		}
+		background: $blue;
+		color: #fff;
 	}
 }
 
