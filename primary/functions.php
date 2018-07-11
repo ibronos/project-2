@@ -211,7 +211,27 @@ add_filter('acf/settings/save_json', function() {
 });
 
 
-
+/**
+ * tinymce button
+ */
+function tric_tinymce_button() {
+    if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
+        return;
+    }
+    if ( 'true' == get_user_option( 'rich_editing' ) ) {
+        add_filter( 'mce_external_plugins', 'tric_tinymce_plugin' );
+        add_filter( 'mce_buttons', 'tric_register_tinymce_button' );
+    }
+}
+add_action( 'admin_head', 'tric_tinymce_button' );
+function tric_tinymce_plugin( $plugin_array ) {
+    $plugin_array['tric_tinymce_button'] = get_template_directory_uri() . '/js/custom.js';
+    return $plugin_array;
+}
+function tric_register_tinymce_button( $buttons ) {
+    array_push( $buttons, 'tric_tinymce_button' );
+    return $buttons;
+}
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
