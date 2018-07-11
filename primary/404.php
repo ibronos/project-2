@@ -44,58 +44,34 @@ if ($post):
                 </div>
             </div>
 
-            <div class="search_field_block">
-                <div class="fs-row">
-                    <div class="fs-cell fs-xl-10 fs-all-justify-center">
-                        <div class="search_field_inner">
-
-                        	<?php if (get_field('google_cse_id')): ?>
-	                		 	<div class="site_search site_search_results" id="site_search_results" itemscope itemtype="http://schema.org/WebSite" role="search">
-	                        		<div class="fs-row">
-	                        			<div class="fs-cell">
-	                        				<script>
-	                        					(function() {
-	                        						var cx = "<?php the_field('google_cse_id') ?>"
-	                        						var gcse = document.createElement('script');
-	                        						gcse.type = 'text/javascript';
-	                        						gcse.async = true;
-	                        						gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-	                        						var s = document.getElementsByTagName('script')[0];
-	                        						s.parentNode.insertBefore(gcse, s);
-	                        					})();
-	                        				</script>
-	                        				<gcse:searchbox></gcse:searchbox>
-	                        				<noscript>
-	                        					<div class="typography">
-	                        						<p>The site search requires a JavaScript enabled browser. You can also search the site using <a href="//www.google.com/#q=site:<?php echo esc_url( home_url( '/' ) ) ?>">Google</a>.</p>
-	                        					</div>
-	                        				</noscript>
-	                        			</div>
-	                        		</div>
-	                        	</div>
-                        	<?php else: ?>
-	                            <div class="site_search site_search_results" id="site_search_results" itemscope itemtype="http://schema.org/WebSite" role="search">
-	                                <meta itemprop="url" content="http://http://www.trincoll.edu/Pages/default.aspx">
-	                                <form class="site_search_form" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" method="get" action="<?php echo esc_url( home_url( '/' ) ) ?>">
-	                                    <meta itemprop="target" content="<?php echo esc_url( home_url( '/' )) ?>?s=<?php the_search_query() ?>">
-	                                    <label class="site_search_label" for="search_term_string_results">Search</label>
-	                                    <input aria-live="polite" class="site_search_input" itemprop="query-input" type="search" id="search_term_string_results" name="s" placeholder="Search">
-	                                    <button class="site_search_button" type="submit" title="submit" aria-label="submit">
-	                                        <span class="site_search_button_label">submit</span>
-	                                        <span class="site_search_button_icon">
-	                                            <svg class="icon icon_search">
-	                                                <use xlink:href="<?php tric_icon('search') ?>"></use>
-	                                            </svg>
-	                                        </span>
-	                                    </button>
-	                                </form>
-	                            </div><!-- .site_search -->
-                        	<?php endif ?>
-
+                <div class="search_field_block">
+                    <div class="fs-row">
+                        <div class="fs-cell fs-xl-10 fs-all-justify-center">
+                            <div class="search_field_inner">
+                                <div class="site_search site_search_results" id="site_search_results" itemscope="" itemtype="http://schema.org/WebSite" role="search">
+                                    <meta itemprop="url" content="http://http://www.trincoll.edu/Pages/default.aspx">
+                                    <meta itemprop="target" content="http://http://www.trincoll.edu/Pages/default.aspx/static/templates/page-search.html?q={search_term_string_results}">
+                                        <?php if (get_field('google_cse_id')): ?>
+                                            <gcse:searchbox gname="storesearch3"></gcse:searchbox>
+                                        <?php else: ?>
+                                            <form class="site_search_form" action="" id="cse-search-box" method="get">
+                                                <label class="site_search_label" for="search_term_string_results">Search</label>
+                                                <input aria-live="polite" class="site_search_input" itemprop="query-input" type="search" id="search_term_string_results"  placeholder="Search" name="search_input">
+                                                <button class="site_search_button" type="submit" title="submit" aria-label="submit">
+                                                    <span class="site_search_button_label">submit</span>
+                                                    <span class="site_search_button_icon">
+                                                        <svg class="icon icon_search">
+                                                            <use xlink:href="<?php tric_icon('search') ?>"></use>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </form>
+                                        <?php endif ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
             <div class="basic_list">
                 <div class="fs-row">
@@ -120,11 +96,27 @@ if ($post):
 
         <!-- .content -->
         <div class="page_content">
-            <div class="fs-row"></div>
-            <div class="full_width_callouts">
-
-            </div><!--.full_width_callouts -->
+                <div class="full_width_callouts">
+                    <?php //get_template_part( 'inc/full-width-components/template', 'search' ); ?>
+                    <section class="search_results_block">
+                        <div class="fs-row">
+                            <div class="fs-cell fs-xl-10 fs-all-justify-center">
+                                <div class="search_results_inner">
+                                    <div class="search_results_body">
+                                        <!-- <p class="search_results_count">About 73,400,000 results (0.60 seconds)</p> -->
+                                        <div class="search_results">
+                                            <?php if (get_field('google_cse_id')): ?>
+                                                <gcse:searchresults gname="storesearch3"></gcse:searchresults>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
         </div><!--.page_content-->
+
     </div><!-- #post-<?php the_ID(); ?> -->
 <?php endif ?>
 <?php wp_reset_postdata() ?>

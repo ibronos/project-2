@@ -259,6 +259,99 @@ body.logged-in .mobile_sidebar {
 	pointer-events: none;
 }
 
+body .search_results .gs-title{
+    font-family: "Meta Serif W01 Bold";
+    font-weight: 400;
+    margin: 10px 0 5px;
+    text-decoration: none;
+    height: 2em;
+  }
+
+.gs-webResult.gs-result a.gs-title:link, .gs-webResult.gs-result a.gs-title:link b, .gs-imageResult a.gs-title:link, .gs-imageResult a.gs-title:link b {
+    color: #00040c;
+    text-decoration: none;
+    font-size: 1.75rem;
+    padding-bottom: 15px;
+}
+
+.gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title * {
+    color: #00040c;
+    text-decoration: none;
+}
+
+.gsc-table-result .gs-snippet{
+    font-weight: 400;
+    font-family: "Unit Offc W01 Light", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.625;
+    margin-top: 15px;
+}
+
+.gs-visibleUrl {
+    font-family: "Unit Offc W01 Medium", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.075rem;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.gsc-resultsbox-visible .gs-webResult div.gs-visibleUrl, .gs-imageResult div.gs-visibleUrl {
+    color: #1573DD;
+}
+
+.gsc-table-result
+{
+    border-bottom: 1px solid;
+    border-bottom-color: #DDDBD9;
+    padding-top: 5px;
+    padding-bottom: 43px;
+}
+
+.gsc-above-wrapper-area .gsc-result-info {
+    font-weight: 400;
+    font-family: "Unit Offc W01 Light", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.57143;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.search_results .gs-webResult.gs-result a.gs-title:link {
+    color: black;
+}
+
+.search_results .search_result_caption, strong {
+    background: rgba(42, 198, 202, 0.2);
+}
+b, strong {
+    font-weight: bolder;background: rgba(42, 198, 202, 0.2);
+}
+
+/*nav*/
+.gsc-results .gsc-cursor-box {
+    margin: 14px;
+    text-align: center;
+    background-color: #F5F7F9;
+    font-weight: 400;
+    font-family: "Unit Offc W01 Medium", sans-serif;
+    font-size: 1.125rem;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+
+
+}
+.search_results .gsc-results .gsc-cursor-box .gsc-cursor-page {
+    /* border-color: #E9E9E9; */
+    background-color: transparent;
+    color: #766F67;
+    padding: 5px 8px;
+}
+.search_results .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+    color: black;
+    /*text-decoration: underline;*/
+    border-bottom: 9px solid;
+    border-bottom-color: #1573DD;
+
 /* ==========================================================================
 	Gravity From Styling
 ============================================================================= */

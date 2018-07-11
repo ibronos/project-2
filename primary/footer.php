@@ -114,8 +114,6 @@
 	</footer><!-- #footer -->
 </div><!-- #page -->
 
-<gcse:searchresults></gcse:searchresults>
-
 <div class="js-mobile-sidebar mobile_sidebar" id="mobile_sidebar" tabindex="-1">
 
 	<div class="site_search site_search_sm" id="site_search_sm" itemscope itemtype="http://schema.org/WebSite" role="search">
@@ -172,3 +170,16 @@
 
 </body>
 </html>
+
+<script>
+(function() {
+    // var cx = '001368822544131965319:33phyglvqd4';
+    var cx = "<?php the_field('google_cse_id') ?>";
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>

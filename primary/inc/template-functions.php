@@ -60,6 +60,10 @@ function tric_body_classes( $classes ) {
 
 		wp_reset_postdata();
 	}
+	if (is_search()) {
+		$classes[] = 'page_layout_default';
+		$classes[] = 'page_theme_default';
+	}
 
 	if (is_archive()) {
 		$classes[] = 'page_layout_default';
