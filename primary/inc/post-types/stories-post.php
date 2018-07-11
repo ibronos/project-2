@@ -39,7 +39,7 @@ function stories_init() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => 5,
-		'supports'           => array( 'title', 'editor', 'thumbnail' )
+		'supports'           => array( 'title', 'thumbnail' )
 	);
 
 	register_post_type( 'stories_post', $args );
