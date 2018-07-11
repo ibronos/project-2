@@ -2,17 +2,9 @@
 /**
  * Template For Full Width Components - Gallery
  */
-
-$flex_components = get_field('full-width_components');
-foreach ($flex_components as $acf_fc) {
-	if ($acf_fc['acf_fc_layout'] == 'media_gallery') {
-		$acf = $acf_fc;
-	}
+if ($acf_fc['acf_fc_layout'] == 'media_gallery') {
+	$acf = $acf_fc;
 }
-
-//print_r($acf);
-// var_dump(tric_video_support::get_thumb_url('https://www.youtube.com/embed/GsLMIKyD5eE'))
-
 ?>
 
 <div class="media_gallery">

@@ -2,12 +2,8 @@
 /**
  * Template For Full Width Components - News and Event
  */
-
-$flex_components = get_field('full-width_components');
-foreach ($flex_components as $acf_fc) {
-	if ($acf_fc['acf_fc_layout'] == 'news_events') {
-		$acf = $acf_fc;
-	}
+if ($acf_fc['acf_fc_layout'] == 'news_events') {
+	$acf = $acf_fc;
 }
 ?>
 
@@ -69,7 +65,7 @@ foreach ($flex_components as $acf_fc) {
 						        </svg>
 						    </span>
 						</a>
-						<h2 class="mix_events_title"><?php echo $acf['events_title'] ?>.</h2>
+						<h2 class="mix_events_title"><?php echo $acf['events_title'] ?></h2>
 					</header>
 					<div class="mix_events_items">
 						<?php $posts = $acf['events'] ?>

@@ -120,53 +120,55 @@ function tric_icon($icon_id, $echoed = TRUE) {
  * @param acf fc
  * important_now, news_events
  */
-function tric_get_template_part($acf_fc, $type) {
-	switch ($acf_fc) {
+function tric_get_template_part($acf_fc_layout, $type, $acf_fc) {
+	global $post;
+
+	switch ($acf_fc_layout) {
 
 		// Full Width Component
 		case 'important_now':
-			get_template_part( 'inc/'.$type.'/template', 'now' );
+			include get_template_directory() . '/inc/'.$type.'/template-now.php';
 			break;
 
 		case 'news_events':
-			get_template_part( 'inc/'.$type.'/template', 'mix' );
+			include get_template_directory() . '/inc/'.$type.'/template-mix.php';
 			break;
 
 		case 'related_news':
-			get_template_part( 'inc/'.$type.'/template', 'related-news' );
+			include get_template_directory() . '/inc/'.$type.'/template-related-news.php';
 			break;
 
 		case 'media_gallery':
-			get_template_part( 'inc/'.$type.'/template', 'gallery' );
+			include get_template_directory() . '/inc/'.$type.'/template-gallery.php';
 			break;
 
 		case 'contact_information':
-			get_template_part( 'inc/'.$type.'/template', 'contact-card' );
+			include get_template_directory() . '/inc/'.$type.'/template-contact-card.php';
 			break;
 
 		case 'story':
-			get_template_part( 'inc/'.$type.'/template', 'story' );
+			include get_template_directory() . '/inc/'.$type.'/template-story.php';
 			break;
 
 		// In Content Component
 		case 'wysiwyg':
-			get_template_part( 'inc/'.$type.'/template', 'wysiwyg' );
+			include get_template_directory() . '/inc/'.$type.'/template-wysiwyg.php';
 			break;
 
 		case 'topic_rows':
-			get_template_part( 'inc/'.$type.'/template', 'topic-row' );
+			include get_template_directory() . '/inc/'.$type.'/template-topic-row.php';
 			break;
 
 		case 'link_list':
-			get_template_part( 'inc/'.$type.'/template', 'linked-list' );
+			include get_template_directory() . '/inc/'.$type.'/template-linked-list.php';
 			break;
 
 		case 'facts_and_stats':
-			get_template_part( 'inc/'.$type.'/template', 'stat' );
+			include get_template_directory() . '/inc/'.$type.'/template-stat.php';
 			break;
 
 		case 'testimonial':
-			get_template_part( 'inc/'.$type.'/template', 'quote' );
+			include get_template_directory() . '/inc/'.$type.'/template-quote.php';
 			break;
 
 		default:
@@ -184,7 +186,7 @@ function tric_the_full_width_components($acf_fwc) {
 
 	if ($acf_fwc) {
 		foreach ($acf_fwc as $acf_fc) {
-			tric_get_template_part($acf_fc['acf_fc_layout'], 'full-width-components');
+			tric_get_template_part($acf_fc['acf_fc_layout'], 'full-width-components', $acf_fc);
 		}
 	}
 
@@ -199,7 +201,7 @@ function tric_the_in_content_components($acf_fwc) {
 
 	if ($acf_fwc) {
 		foreach ($acf_fwc as $acf_fc) {
-			tric_get_template_part($acf_fc['acf_fc_layout'], 'in-content-components');
+			tric_get_template_part($acf_fc['acf_fc_layout'], 'in-content-components', $acf_fc);
 		}
 	}
 

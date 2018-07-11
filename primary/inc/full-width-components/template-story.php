@@ -4,11 +4,9 @@
  *
  */
 
-$flex_components = get_field('full-width_components');
-foreach ($flex_components as $acf_fc) {
-	if ($acf_fc['acf_fc_layout'] == 'story') {
-		$acf = $acf_fc;
-	}
+
+if ($acf_fc['acf_fc_layout'] == 'story') {
+	$acf = $acf_fc;
 }
 
 if ($acf['stories_post_type'][0]):

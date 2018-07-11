@@ -2,12 +2,8 @@
 /**
  * Template For Full Width Components - News
  */
-
-$flex_components = get_field('full-width_components');
-foreach ($flex_components as $acf_fc) {
-	if ($acf_fc['acf_fc_layout'] == 'related_news') {
-		$acf = $acf_fc;
-	}
+if ($acf_fc['acf_fc_layout'] == 'related_news') {
+	$acf = $acf_fc;
 }
 
 if ($acf['news']['selected_posts']):

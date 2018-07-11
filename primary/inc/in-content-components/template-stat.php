@@ -2,12 +2,8 @@
 /**
  * Template For in content component  - topic row
  */
-
-$flex_components = get_field('in-content_components');
-foreach ($flex_components as $acf_fc) {
-	if ($acf_fc['acf_fc_layout'] == 'facts_and_stats') {
-		$acf = $acf_fc;
-	}
+if ($acf_fc['acf_fc_layout'] == 'facts_and_stats') {
+	$acf = $acf_fc;
 }
 ?>
 
