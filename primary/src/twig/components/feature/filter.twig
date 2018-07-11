@@ -3,7 +3,23 @@
 		<div class="fs-cell fs-xl-10 fs-all-justify-center">
 			<div class="filter_inner">
 				{{site.input("text", "Search by keyword", "filter_search")}}
-				{{site.dropdown("Filter by Category", options, "filter_options")}}
+				<div class="filter_options_wrapper">
+					<button class="js-swap filter_options_swap" data-swap-target=".filter_options">
+						<span class="filter_options_swap_label">Filter By Category</span>
+						<span class="filter_options_swap_icon">{{site.icon("caret_down")}}</span>
+					</button>
+					{% set options = [
+						"View All",
+						"Orcs",
+						"Cannons",
+						"Pokemans"
+					] %}
+					<div class="filter_options">
+						{% for option in options %}
+							<a class="filter_option" href="#" tabindex="0">{{option}}</a>
+						{% endfor %}
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

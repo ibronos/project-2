@@ -70,45 +70,101 @@
 	Filter Dropdown
 ============================================================================= */
 
-.filter_options_dropdown_wrapper {
+.filter_options_wrapper {
+	position: relative;
 
 	@media #{$min_sm} {
 		width: 50%;
 	}
+}
 
-	@media #{$min_lg} {
-		width: 30%;
-	}
+.filter_options_swap {
+	width: 100%;
 
-	.fs-dropdown-selected {
+	position: relative;
 
-		@media #{$min_md} {
-			font-size: 16px;
-			padding: 31px 30px;
-		}
-	}
+	background: $navy;
+	color: #fff;
+	padding: 16px 50px 16px 20px;
+	text-align: left;
 
-	.fs-dropdown-options {
-
-		@media #{$min_sm} {
-			width: calc(100% - 10px);
-
-			left: 0;
-		}
-	}
-
-	.fs-dropdown-item {
-
-		@media #{$min_sm} {
-			padding-left: 20px;
-		}
-
-		@media #{$min_md} {
-			padding-left: 30px;
-		}
+	@media #{$min_md} {
+		padding: 31px 50px 30px 30px;
 	}
 }
 
-.filter_options_dropdown_label {
-	@include visually_hide;
+.filter_options_swap_label {
+	@include u(500);
+
+	font-size: 11px;
+	letter-spacing: 2.2px;
+	text-transform: uppercase;
+
+	@media #{$min_md} {
+		font-size: 16px;
+	}
+}
+
+.filter_options_swap_icon {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+
+	transform: 
+		translate(0, -50%)
+		rotateX(0);
+	transition: transform .25s;
+
+	@media #{$min_md} {
+		right: 30px;
+	}
+
+	.fs-swap-active & {
+		transform: 
+			translate(0, -50%)
+			rotateX(180deg);
+	}
+}
+
+.filter_options {
+	width: calc(100% - 10px);
+
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 20;
+
+	background: $blue;
+	opacity: 0;
+	padding: 18px 0;
+	visibility: hidden;
+	transition:
+		opacity .15s,
+		visibility .15s;
+
+	&.fs-swap-active {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.filter_option {
+	@include u(500);
+
+	color: #fff;
+	display: block;
+	font-size: 11px;
+	letter-spacing: 2.2px;
+	padding: 10px 20px 10px 30px;
+	text-transform: uppercase;
+	transition: color .25s;
+	
+	@media #{$min_md} {
+		font-size: 13px;
+	}
+
+	&:focus,
+	&:hover {
+		color: rgba(#fff, .6);
+	}
 }
