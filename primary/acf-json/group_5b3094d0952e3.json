@@ -54,7 +54,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b3094d5ed575",
+                        "operator": "!=",
+                        "value": "video"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -256,5 +264,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530787460
+    "modified": 1531276368
 }
