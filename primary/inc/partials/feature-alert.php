@@ -11,6 +11,7 @@ $alerts = get_posts(array(
 	'posts_per_page ' 	=> 1,
 	'post_type' 		=> 'alerts_post'
 ));
+if(!empty($alerts)):
 $alert = $alerts[0];
 $alert_meta = get_post_meta($alert->ID);
 //print_r($alert_meta);
@@ -65,4 +66,4 @@ $now 		= current_time( 'timestamp' );
 	        </div>
 	    </div>
 	</section>
-<?php endif ?>
+<?php endif; endif; ?>
