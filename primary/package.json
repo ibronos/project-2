@@ -24,7 +24,7 @@
   "vars": {
     "namespace": "trinity",
     "name": "Trinity College",
-    "domain": "http://www.trincoll.edu/Pages/default.aspx",
+    "domain": "www.trincoll.edu",
     "description": "",
     "schemaType": "Organization",
     "twitter": "TwitterName",
