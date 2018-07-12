@@ -35,10 +35,12 @@ Site.modules.Spotlight = (function($, Site) {
 		$(".spotlight_video_trigger").on("click", updateVideo);
 
 		Site.onScroll.push(hideSpotlight);
+		
+		$(".spotlight_takeover_content").on("scroll", closeSpotlight);
 	}
 
 	function updateVideo() {
-		if(!($(".spotlight_video_trigger").hasClass("paused"))) {
+		if (!($(".spotlight_video_trigger").hasClass("paused"))) {
 			$(".spotlight_body_background").background("pause");
 			$(".spotlight_video_trigger").addClass("paused");
 			$(".spotlight_video_label").html("Play Video");
@@ -50,10 +52,24 @@ Site.modules.Spotlight = (function($, Site) {
 	}
 
 	function hideSpotlight() {
-		if($(".spotlight")[0].getBoundingClientRect().bottom < 0) {
+		if ($(".spotlight")[0].getBoundingClientRect().bottom < 0) {
 			$(".spotlight").addClass("hide");
 		} else {
 			$(".spotlight").removeClass("hide");
+		}
+	}
+
+	function closeSpotlight() {
+		var item = $(this);
+
+		if ($(item).closest(".spotlight_takeover_item").hasClass("fs-swap-active")) {
+			if ($(item)[0].scrollHeight - $(item).innerHeight() <= $(item).scrollTop()) {
+				$(item).closest(".spotlight_takeover_item").find(".spotlight_takeover_item_close").trigger("click");
+
+				setTimeout(function() {
+					$(item).scrollTop(0);
+				}, 150);
+			}
 		}
 	}
 
