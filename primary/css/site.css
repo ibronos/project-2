@@ -7108,6 +7108,9 @@ button {
   position: relative;
   background: #1573DD;
   overflow: hidden; }
+  @media screen and (min-width: 980px) and (min-height: 600px) {
+    .spotlight {
+      height: calc(100vh - 82px); } }
   @media screen and (min-width: 980px) {
     .spotlight:before, .spotlight:after {
       height: 100%;
@@ -7149,6 +7152,9 @@ button {
   @media screen and (min-width: 980px) {
     .spotlight_body {
       position: static; } }
+  @media screen and (min-width: 980px) and (min-height: 600px) {
+    .spotlight_body {
+      paddiing-bottom: 0; } }
 
 .spotlight_body_background {
   height: 100%;
@@ -7182,7 +7188,8 @@ button {
           transform: translate(0, -50%); }
   @media screen and (min-width: 980px) {
     .spotlight_body_inner {
-      top: 45px;
+      top: 0;
+      padding-top: 45px;
       -webkit-transform: none;
               transform: none; } }
   @media screen and (min-width: 1360px) {
@@ -7271,7 +7278,7 @@ button {
       font-size: 50px;
       font-size: 3.125rem;
       line-height: 1.2; } }
-  @media screen and (min-width: 1220px) {
+  @media screen and (min-width: 1220px) and (min-height: 740px) {
     .spotlight_title {
       font-size: 80px;
       font-size: 5rem;
@@ -7425,11 +7432,17 @@ button {
           flex-wrap: wrap; } }
   @media screen and (min-width: 980px) {
     .spotlight_items {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
       border-top: 1px solid rgba(255, 255, 255, 0.5); } }
   .spotlight_items_clone {
     display: none; }
     @media screen and (min-width: 980px) {
       .spotlight_items_clone {
+        top: 0;
+        bottom: auto;
         border-top: 0;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -7524,9 +7537,12 @@ button {
   @media screen and (min-width: 980px) {
     .spotlight_item_inner {
       background: none;
-      padding: 64px 20px;
+      padding: 34px 20px;
       -webkit-transition: background .25s, padding .125s .5s;
       transition: background .25s, padding .125s .5s; } }
+  @media screen and (min-width: 1220px) and (min-height: 740px) {
+    .spotlight_item_inner {
+      padding: 54px 20px; } }
   @media screen and (min-width: 980px) {
     .spotlight_item:focus .spotlight_item_inner,
     .spotlight_item:hover .spotlight_item_inner,

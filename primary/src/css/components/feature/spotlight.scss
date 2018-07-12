@@ -8,6 +8,10 @@
 	background: $blue;
 	overflow: hidden;
 
+	@media #{$min_lg} and (min-height: 600px) {
+		height: calc(100vh - 82px);
+	}
+
 	&:before,
 	&:after {
 
@@ -84,7 +88,9 @@
 		position: static;
 	}
 
-	
+	@media #{$min_lg} and (min-height: 600px) {
+		paddiing-bottom: 0;
+	}
 }
 
 .spotlight_body_background {
@@ -120,8 +126,9 @@
 	transform: translate(0, -50%);
 
 	@media #{$min_lg} {
-		top: 45px;
+		top: 0;
 
+		padding-top: 45px;
 		transform: none;
 	}
 
@@ -235,7 +242,7 @@
 		line-height: (60 / 50);
 	}
 
-	@media #{$min_xl} {
+	@media #{$min_xl} and (min-height: 740px) {
 		font-size: 80px;
 		line-height: (100 / 80);
 	}
@@ -275,6 +282,12 @@
 	}
 
 	@media #{$min_lg} {
+		width: 100%;
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
 		border-top: 1px solid rgba(#fff, .5);
 	}
 
@@ -282,6 +295,9 @@
 		display: none;
 
 		@media #{$min_lg} {
+			top: 0;
+			bottom: auto;
+			
 			border-top: 0;
 			display: flex;
 			pointer-events: auto;
@@ -398,10 +414,14 @@
 
 	@media #{$min_lg} {
 		background: none;
-		padding: 64px 20px;
+		padding: 34px 20px;
 		transition: 
 			background .25s,
 			padding .125s .5s;
+	}
+
+	@media #{$min_xl} and (min-height: 740px) {
+		padding: 54px 20px;
 	}
 
 	.spotlight_item:focus &,
