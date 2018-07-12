@@ -12,12 +12,12 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="page_header">
-		<?php if (has_post_thumbnail()): ?>
+		<?php if (get_field('header_image')): ?>
 			<div class="js-background page_background" data-background-options='{"source": {
-				"0px": "<?php the_post_thumbnail_url() ?>",
-				"500px": "<?php the_post_thumbnail_url() ?>",
-				"980px": "<?php the_post_thumbnail_url() ?>",
-				"1220px": "<?php the_post_thumbnail_url() ?>"
+				"0px": "<?php the_field('header_image') ?>",
+				"500px": "<?php the_field('header_image') ?>",
+				"980px": "<?php the_field('header_image') ?>",
+				"1220px": "<?php the_field('header_image') ?>"
 			}}'></div>
 		<?php endif ?>
 		<div class="page_header_inner">

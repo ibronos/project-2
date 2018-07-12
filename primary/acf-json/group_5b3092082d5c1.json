@@ -15,8 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "d\/m\/Y",
-            "return_format": "d\/m\/Y",
+            "display_format": "m\/d\/Y",
+            "return_format": "m\/d\/Y",
             "first_day": 1
         },
         {
@@ -78,7 +78,7 @@
             "label": "List Image",
             "name": "list_image",
             "type": "image",
-            "instructions": "",
+            "instructions": "minimum dimensions 416 x 740px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -102,7 +102,7 @@
             "label": "Header Image",
             "name": "header_image",
             "type": "image",
-            "instructions": "",
+            "instructions": "minimum dimensions 617 x 1440px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -139,5 +139,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531306055
+    "modified": 1531370254
 }

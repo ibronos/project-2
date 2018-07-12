@@ -29,7 +29,7 @@ function tric_body_classes( $classes ) {
 	// Page & Singular Class
 	if (is_page() || is_singular()) {
 		$classes[] = 'page_layout_default';
-		if (has_post_thumbnail()) {
+		if (get_field('header_image')) {
 			$classes[] = 'page_theme_image';
 		} else {
 			$classes[] = 'page_theme_default';

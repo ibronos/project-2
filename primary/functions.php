@@ -258,3 +258,9 @@ require get_template_directory() . '/inc/tric_video_support.php';
  require get_template_directory() . '/inc/post-types/news-post.php';
  require get_template_directory() . '/inc/post-types/programs-post.php';
  require get_template_directory() . '/inc/post-types/stories-post.php';
+
+ //REMOVE 'POSTS' MENU
+function remove_posts_menus() {
+  remove_menu_page( 'edit.php' );
+}
+add_action( 'admin_menu', 'remove_posts_menus' );

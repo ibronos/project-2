@@ -158,8 +158,8 @@
                             "collapsed": "",
                             "min": 0,
                             "max": 0,
-                            "layout": "table",
-                            "button_label": "",
+                            "layout": "block",
+                            "button_label": "Add Topic",
                             "sub_fields": [
                                 {
                                     "key": "field_5b3b1fcdf6e73",
@@ -239,7 +239,7 @@
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
-                                    "instructions": "",
+                                    "instructions": "minimum dimensions 334 x 500px",
                                     "required": 1,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -306,11 +306,11 @@
                             "min": 0,
                             "max": 0,
                             "layout": "table",
-                            "button_label": "",
+                            "button_label": "Add Link",
                             "sub_fields": [
                                 {
                                     "key": "field_5b3b205c24b21",
-                                    "label": "Title_Links",
+                                    "label": "Title",
                                     "name": "title_links",
                                     "type": "text",
                                     "instructions": "",
@@ -329,7 +329,7 @@
                                 },
                                 {
                                     "key": "field_5b3b208f24b22",
-                                    "label": "URL_Links",
+                                    "label": "URL",
                                     "name": "url_links",
                                     "type": "url",
                                     "instructions": "",
@@ -369,7 +369,7 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "e.g. 70% or 70,000",
+                            "placeholder": "",
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
@@ -398,7 +398,7 @@
                             "label": "Image",
                             "name": "image",
                             "type": "image",
-                            "instructions": "",
+                            "instructions": "minimum dimensions 740 x 980px",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -422,7 +422,7 @@
                     "max": ""
                 }
             },
-            "button_label": "Add Row",
+            "button_label": "Add Component",
             "min": "",
             "max": ""
         }
@@ -444,5 +444,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531305931
+    "modified": 1531371135
 }

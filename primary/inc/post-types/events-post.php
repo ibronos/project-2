@@ -29,7 +29,7 @@ function events_init() {
 	$args = array(
 		'labels'             => $labels,
         'description'        => __( 'Description.', 'your-plugin-textdomain' ),
-		'public'             => true,
+		'public'             => false,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
@@ -39,7 +39,7 @@ function events_init() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => 5,
-		'supports'           => array( 'title', 'editor', 'thumbnail' )
+		'supports'           => array( 'title', 'editor')
 	);
 
 	register_post_type( 'events_post', $args );
