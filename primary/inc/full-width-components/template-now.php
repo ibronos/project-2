@@ -39,7 +39,7 @@ if ($acf_fc['acf_fc_layout'] == 'important_now') {
 									<img class="now_item_image" src="<?php get_template_directory_uri() ?>images/placeholder.png" alt="">
 								</picture>
 							</figure>
-							<a class="now_body" href="<?php echo esc_url($section['link']) ?>">
+							<a class="now_body" target="_blank" href="<?php echo esc_url($section['link']) ?>">
 								<div class="now_caption">
 									<strong><?php echo $section['title'] ?></strong>
 									<?php echo $section['description'] ?>
