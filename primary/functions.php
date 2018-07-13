@@ -233,6 +233,34 @@ function tric_register_tinymce_button( $buttons ) {
     return $buttons;
 }
 
+add_action('admin_init','sync_all_custom_taxonomy');
+function sync_all_custom_taxonomy(){
+	global $blog_id;
+	if($blog_id > 1){
+		switch_to_blog(1);
+		$news_cat_terms = get_terms( array(
+		    'taxonomy' => 'news-category',
+		    'hide_empty' => false
+		) );
+		$news_related_terms = get_terms( array(
+		    'taxonomy' => 'related-news',
+		    'hide_empty' => false
+		) );
+		restore_current_blog();
+
+		foreach ($news_cat_terms as $value) {
+			if(!term_exists( $value->name, 'news-category', null )){
+				wp_insert_term( $value->name, 'news-category', array( '' ) );
+			}
+		}
+
+		foreach ($news_related_terms as $value) {
+			if(!term_exists( $value->name, 'related-news', null )){
+				wp_insert_term( $value->name, 'related-news', array( '' ) );
+			}
+		}
+	}
+}
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
