@@ -192,7 +192,7 @@
                             "key": "field_5b31f0c972756",
                             "label": "News Article",
                             "name": "news_article",
-                            "type": "relationship_multisite",
+                            "type": "relationship",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -201,19 +201,19 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "site": 1,
                             "post_type": [
                                 "news_post"
                             ],
+                            "taxonomy": [],
                             "filters": [
                                 "search",
                                 "post_type",
                                 "taxonomy"
                             ],
                             "elements": "",
+                            "min": 1,
                             "max": 1,
-                            "return_format": "object",
-                            "taxonomy": []
+                            "return_format": "object"
                         },
                         {
                             "key": "field_5b31f11472757",
@@ -238,7 +238,7 @@
                             "key": "field_5b31f1cb72758",
                             "label": "Events",
                             "name": "events",
-                            "type": "relationship_multisite",
+                            "type": "relationship",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -247,19 +247,19 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "site": 1,
                             "post_type": [
                                 "events_post"
                             ],
+                            "taxonomy": [],
                             "filters": [
                                 "search",
                                 "post_type",
                                 "taxonomy"
                             ],
                             "elements": "",
-                            "max": 1,
-                            "return_format": "object",
-                            "taxonomy": []
+                            "min": 1,
+                            "max": 2,
+                            "return_format": "object"
                         }
                     ],
                     "min": "",
@@ -686,7 +686,7 @@
                             "key": "field_5b3adc76f282b",
                             "label": "Stories Post Type",
                             "name": "stories_post_type",
-                            "type": "relationship_multisite",
+                            "type": "relationship",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -695,19 +695,19 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "site": 1,
                             "post_type": [
                                 "stories_post"
                             ],
+                            "taxonomy": [],
                             "filters": [
                                 "search",
                                 "post_type",
                                 "taxonomy"
                             ],
                             "elements": "",
+                            "min": 1,
                             "max": 1,
-                            "return_format": "object",
-                            "taxonomy": []
+                            "return_format": "object"
                         }
                     ],
                     "min": "",
@@ -726,6 +726,13 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news_post"
+            }
         ]
     ],
     "menu_order": 0,
@@ -736,5 +743,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531448525
+    "modified": 1531468242
 }

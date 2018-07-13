@@ -29,7 +29,7 @@ function news_init() {
 	$args = array(
 		'labels'             => $labels,
 		'description'        => __( 'Description.', 'your-plugin-textdomain' ),
-		'public'             => false,
+		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,

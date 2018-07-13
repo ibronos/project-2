@@ -292,3 +292,9 @@ function remove_posts_menus() {
   remove_menu_page( 'edit.php' );
 }
 add_action( 'admin_menu', 'remove_posts_menus' );
+
+//remove featured image on 'page'
+function remove_thumbnail_box() {
+    remove_meta_box( 'postimagediv','page','side' );
+}
+add_action('do_meta_boxes', 'remove_thumbnail_box');

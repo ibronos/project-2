@@ -44,14 +44,26 @@
 					</div>
 					<!-- END: WYSIWYG -->
 					<!-- In Content Callouts -->
-					<div class="in_content_callouts"> </div>
+					<div class="in_content_callouts">
+						<?php
+							if (get_field('in-content_components')) {
+							tric_the_in_content_components(get_field('in-content_components'));
+						}
+					?>
+					</div>
 					<!-- END: In Content Callouts -->
 				</main>
 			</div>
 			<!-- END: Main Content -->
 		</div>
 		<!-- Full Width Callouts -->
-		<div class="full_width_callouts"> </div>
+		<div class="full_width_callouts">
+			<?php
+				if (get_field('full-width_components')) {
+					tric_the_full_width_components(get_field('full-width_components'));
+				}
+			?>
+		</div>
 		<!-- END: Full Width Callouts -->
 	</div><!-- .page_content -->
 

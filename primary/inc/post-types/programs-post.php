@@ -29,7 +29,7 @@ function programs_init() {
 	$args = array(
 		'labels'             => $labels,
 		'description'        => __( 'Description.', 'your-plugin-textdomain' ),
-		'public'             => true,
+		'public'             => false,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
