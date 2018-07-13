@@ -15,12 +15,12 @@ class tric_video_support{
 		$buffy = '';
 		switch (self::detect_video_service($videoUrl)) {
 			case 'youtube':
-				$buffy = (is_ssl() ? "https" : "http") . '://www.youtube.com/embed/' . self::get_youtube_id($videoUrl) . '"';
+				$buffy = (is_ssl() ? "https" : "http") . '://www.youtube.com/embed/' . self::get_youtube_id($videoUrl) . '?autoplay=1"';
 
 				break;
 
 			case 'vimeo':
-				$buffy = (is_ssl() ? "https" : "http") . '://player.vimeo.com/video/' . self::get_vimeo_id($videoUrl) . '"';
+				$buffy = (is_ssl() ? "https" : "http") . '://player.vimeo.com/video/' . self::get_vimeo_id($videoUrl) . '?autoplay=1"';
 
 				break;
 		}
