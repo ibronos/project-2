@@ -9,7 +9,7 @@
 
 $taxonomy 	= 'news-category';
 $term_obj 	= get_the_terms($post, $taxonomy);
-$term 		= $term_obj[0]->name;
+$term 		= $term_obj[0]? $term_obj[0]->name : '';
 ?>
 
 <div class="news_item_details_block">
