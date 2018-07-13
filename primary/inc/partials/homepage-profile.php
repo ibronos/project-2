@@ -28,7 +28,7 @@
         <?php if ($acf_item['has_links']): ?>
         	<div class="spotlight_takeover_intro_body">
         	    <?php foreach ($acf_item['links'] as $links): ?>
-        	    	<a class="spotlight_takeover_intro_link" href="<?php echo esc_url($links['url']) ?>">
+        	    	<a class="spotlight_takeover_intro_link" target="_blank" href="<?php echo esc_url($links['url']) ?>">
         	    	    <span class="spotlight_takeover_intro_link_label"><?php echo $links['title'] ?></span>
         	    	    <span class="spotlight_takeover_intro_link_icon" aria-hidden="true">
         	    	        <svg class="icon icon_arrow_right">
@@ -89,7 +89,7 @@
     					</header>
     					<?php //var_dump($post) ?>
     					<div class="quote_item_caption"><?php tric_bulrb_autofill() ?></div>
-    					<a class="quote_item_link" href="<?php the_field('link_url') ?>">
+    					<a class="quote_item_link" target="_blank" href="<?php the_field('link_url') ?>">
     						<span class="quote_item_link_label"><?php the_field('link_title') ?></span>
     						<span class="quote_item_link_icon" aria-hidden="true">
     							<svg class="icon icon_arrow_right">

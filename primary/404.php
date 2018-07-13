@@ -133,7 +133,7 @@ if ($post):
                             <?php if(get_current_blog_id() > 1): ?>
                                 <?php switch_to_blog(1); ?>
                                 <?php foreach (get_field('links') as $link): ?>
-                                    <a class="basic_list_link" href="<?php echo $link['url'] ?>">
+                                    <a class="basic_list_link" target="_blank" href="<?php echo $link['url'] ?>">
                                         <span class="basic_list_link_label"><?php echo $link['title'] ?></span>
                                         <span class="basic_list_link_icon" aria-hidden="true">
                                             <svg class="icon icon_arrow_right">
@@ -145,7 +145,7 @@ if ($post):
                                 <?php restore_current_blog(); ?>
                             <?php else: ?>
                                 <?php foreach (get_field('links') as $link): ?>
-                                    <a class="basic_list_link" href="<?php echo $link['url'] ?>">
+                                    <a class="basic_list_link" target="_blank" href="<?php echo $link['url'] ?>">
                                         <span class="basic_list_link_label"><?php echo $link['title'] ?></span>
                                         <span class="basic_list_link_icon" aria-hidden="true">
                                             <svg class="icon icon_arrow_right">

@@ -52,7 +52,7 @@ $now 		= current_time( 'timestamp' );
 	                      	<?php echo $alert->post_content; ?>
 	                    </div>
 	                    <footer class="alert_footer">
-	                        <a class="alert_link" href="<?php echo $alert_meta['link_url'][0] ?>">
+	                        <a class="alert_link" target="_blank" href="<?php echo $alert_meta['link_url'][0] ?>">
 	                            <span class="alert_link_label"><?php echo $alert_meta['link_title'][0] ?></span>
 	                            <span class="alert_link_icon" aria-hidden="true">
 	                                <svg class="icon icon_arrow_right">

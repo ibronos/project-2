@@ -23,7 +23,7 @@ if ($acf_fc['acf_fc_layout'] == 'link_list') {
 		<ul class="linked_list_group">
 			<?php foreach($acf['links'] as $row) : ?>
 			<li class="linked_list_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-				<a class="linked_list_link" href="<?php echo $row['url_links'] ?>" itemprop="url">
+				<a class="linked_list_link" target="_blank" href="<?php echo $row['url_links'] ?>" itemprop="url">
 					<span class="linked_list_link_inner">
 						<span class="linked_list_label" itemprop="name"><?php echo $row['title_links'] ?></span>
 						<span class="linked_list_icon">

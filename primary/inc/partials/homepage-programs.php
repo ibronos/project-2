@@ -81,7 +81,7 @@ $programs_post = get_posts( array(
 				<div class="program_body">
 					<header class="program_header">
 						<h3 class="program_title">
-							<a class="program_title_link" href="<?php the_field('link') ?>">
+							<a class="program_title_link" target="_blank" href="<?php the_field('link') ?>">
 								<span class="program_title_link_label"><?php the_title() ?></span>
 								<span class="program_title_link_icon" aria-hidden="true">
 									<svg class="icon icon_arrow_right">
@@ -103,7 +103,7 @@ $programs_post = get_posts( array(
 						</div>
 					</header>
 					<div class="program_caption"><?php the_field('blurb') ?></div>
-					<a class="program_link" href="<?php the_field('link') ?>">
+					<a class="program_link" target="_blank" href="<?php the_field('link') ?>">
 						<span class="program_link_label">Learn More</span>
 						<span class="program_link_icon" aria-hidden="true">
 							<svg class="icon icon_arrow_right">

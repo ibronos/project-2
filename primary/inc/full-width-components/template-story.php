@@ -54,7 +54,7 @@ if ($acf['stories_post_type']):
 						<footer class="story_detail_footer">
 
 							<?php if (get_field('link_url')): ?>
-								<a class="story_detail_link" href="<?php the_field('link_url'); ?>">
+								<a class="story_detail_link" target="_blank" href="<?php the_field('link_url'); ?>">
 									<span class="story_detail_link_label"><?php the_field('link_title'); ?></span>
 									<span class="story_detail_link_icon" aria-hidden="true">
 										<svg class="icon icon_arrow_right">
