@@ -53,12 +53,20 @@ Site.modules.Alert = (function($, Site) {
 	function showAlert() {
 		$alert.addClass("show_alert");
 		$(".header").css("top", $(".alert").innerHeight());
+		$(".mobile_sidebar").css({
+			"height": 'calc(100% - ' + $(".header_ribbon").innerHeight() + 'px - ' + $(".alert").innerHeight() + 'px)',
+			"top": $(".header_ribbon").innerHeight() + $(".alert").innerHeight() + 'px'
+		});
 		$(".page_feature").css("padding-top", $(".alert").innerHeight());
 	}
 
 	function hideAlert() {
 		$alert.removeClass("show_alert");
 		$(".header").css("top", "");
+		$(".mobile_sidebar").css({
+			"height": "",
+			"top": ""
+		});
 		$(".page_feature").css("padding-top", "");
 	}
 
