@@ -726,6 +726,13 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news_post"
+            }
         ]
     ],
     "menu_order": 0,
@@ -736,5 +743,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531448525
+    "modified": 1531472645
 }
