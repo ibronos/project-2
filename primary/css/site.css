@@ -5434,19 +5434,19 @@ button {
     color: #1573DD; }
   .page_theme_image .breadcrumb_name_icon {
     color: #FFD600; }
-  .breadcrumb_item:hover .breadcrumb_name_icon,
+  .page_theme_default .breadcrumb_item:hover .breadcrumb_name_icon,
+  .page_theme_image.switch-breadcrumb .breadcrumb_item:hover .breadcrumb_name_icon, .page_theme_default
+  .breadcrumb_item:focus .breadcrumb_name_icon,
+  .page_theme_image.switch-breadcrumb
   .breadcrumb_item:focus .breadcrumb_name_icon {
+    color: #003473; }
+  .page_theme_image .breadcrumb_item:hover .breadcrumb_name_icon, .page_theme_image
+  .breadcrumb_item:focus .breadcrumb_name_icon {
+    color: #fff; }
+  .breadcrumb_item:not(:first-child):hover .breadcrumb_name_icon,
+  .breadcrumb_item:not(:first-child):focus .breadcrumb_name_icon {
     -webkit-animation: pinchy 1s infinite;
             animation: pinchy 1s infinite; }
-    .page_theme_default .breadcrumb_item:hover .breadcrumb_name_icon,
-    .page_theme_image.switch-breadcrumb .breadcrumb_item:hover .breadcrumb_name_icon, .page_theme_default
-    .breadcrumb_item:focus .breadcrumb_name_icon,
-    .page_theme_image.switch-breadcrumb
-    .breadcrumb_item:focus .breadcrumb_name_icon {
-      color: #003473; }
-    .page_theme_image .breadcrumb_item:hover .breadcrumb_name_icon, .page_theme_image
-    .breadcrumb_item:focus .breadcrumb_name_icon {
-      color: #fff; }
 
 @-webkit-keyframes pinchy {
   50% {

@@ -148,7 +148,6 @@
 
 	.breadcrumb_item:hover &,
 	.breadcrumb_item:focus & {
-		animation: pinchy 1s infinite;
 		
 		.page_theme_default &,
 		.page_theme_image.switch-breadcrumb & {
@@ -158,6 +157,11 @@
 		.page_theme_image & {
 			color: #fff;
 		}
+	}
+	
+	.breadcrumb_item:not(:first-child):hover &,
+	.breadcrumb_item:not(:first-child):focus & {
+		animation: pinchy 1s infinite;
 	}
 }
 
