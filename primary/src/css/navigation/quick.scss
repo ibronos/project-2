@@ -156,6 +156,10 @@
 		content: "";
 		transform: scaleX(0);
 		transition: transform .25s;
+
+		@media #{$min_lg} {
+			display: none;
+		}
 	}
 
 	.quick_nav_link:focus &,

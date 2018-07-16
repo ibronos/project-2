@@ -45,10 +45,28 @@
 		background .25s,	
 		color .25s;
 
+	&:after {
+		height: 100%;
+		width: 100%;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -2;
+
+		background: $blue;
+		content: "";
+		transition: transform .25s;
+		transform: scale(0);
+	}
+
 	&:focus,
 	&:hover {
-		background: $blue;
 		color: #fff;
+
+		&:after {
+			transform: scale(1);
+		}
 	}
 }
 

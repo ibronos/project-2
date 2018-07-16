@@ -6000,6 +6000,9 @@ button {
     transition: -webkit-transform .25s;
     transition: transform .25s;
     transition: transform .25s, -webkit-transform .25s; }
+    @media screen and (min-width: 980px) {
+      .quick_nav_link_label:after {
+        display: none; } }
   .quick_nav_link:focus .quick_nav_link_label:after,
   .quick_nav_link:hover .quick_nav_link_label:after {
     -webkit-transform: scaleX(1);
@@ -6506,9 +6509,26 @@ button {
   text-transform: uppercase;
   -webkit-transition: background .25s,	 color .25s;
   transition: background .25s,	 color .25s; }
-  .utility_nav_link:focus, .utility_nav_link:hover {
+  .utility_nav_link:after {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
     background: #1573DD;
+    content: "";
+    -webkit-transition: -webkit-transform .25s;
+    transition: -webkit-transform .25s;
+    transition: transform .25s;
+    transition: transform .25s, -webkit-transform .25s;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  .utility_nav_link:focus, .utility_nav_link:hover {
     color: #fff; }
+    .utility_nav_link:focus:after, .utility_nav_link:hover:after {
+      -webkit-transform: scale(1);
+              transform: scale(1); }
 
 .fs-background-media {
   -webkit-transition: opacity .5s;
