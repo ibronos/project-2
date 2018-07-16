@@ -128,7 +128,9 @@
 	display: inline-block;
 	margin-left: 2px;
 	vertical-align: middle;
-	transition: color .25s;
+	transition: 
+		color .25s,
+		transform .25s;
 
 	.breadcrumb_name_label + & {
 		position: relative;
@@ -146,6 +148,7 @@
 
 	.breadcrumb_item:hover &,
 	.breadcrumb_item:focus & {
+		animation: pinchy 1s infinite;
 		
 		.page_theme_default &,
 		.page_theme_image.switch-breadcrumb & {
@@ -155,6 +158,13 @@
 		.page_theme_image & {
 			color: #fff;
 		}
+	}
+}
+
+@keyframes pinchy {
+
+	50% {
+		transform: scale(.75, 1.5);
 	}
 }
 

@@ -175,7 +175,9 @@ button {
 
 	[class*="icon"] {
 		color: $ic;
-		transition: color .25s;
+		transition: 
+			color .25s,
+			transform .25s;
 	}
 
 	@if $h {
