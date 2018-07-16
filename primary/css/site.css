@@ -6518,6 +6518,7 @@ button {
     z-index: -2;
     background: #1573DD;
     content: "";
+    pointer-events: none;
     -webkit-transition: -webkit-transform .25s;
     transition: -webkit-transform .25s;
     transition: transform .25s;
