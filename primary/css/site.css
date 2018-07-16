@@ -8917,11 +8917,12 @@ button {
 
 .media_gallery_close {
   height: 60px;
-  width: 60px;
+  width: 62px;
   position: absolute;
   bottom: 100%;
   right: 0;
   background: #CAFF00;
+  border: 0;
   color: #0F0F11;
   stroke: #0F0F11; }
   @media screen and (min-width: 740px) {
@@ -9188,7 +9189,7 @@ button {
   font-weight: 400;
   font-family: "Unit Offc W01 Medium", sans-serif;
   color: #766F67;
-  display: block;
+  display: none;
   font-size: 12px;
   font-size: 0.75rem;
   letter-spacing: .75px;
@@ -9198,6 +9199,9 @@ button {
       font-size: 17px;
       font-size: 1.0625rem;
       margin-bottom: 17px; } }
+  @media screen and (min-width: 980px) {
+    .media_gallery_item_count {
+      display: block; } }
 
 .media_gallery_item_caption {
   font-weight: 400;

@@ -181,13 +181,14 @@
 
 .media_gallery_close {
 	height: 60px;
-	width: 60px;
+	width: 62px;
 
 	position: absolute;
 	bottom: 100%;
 	right: 0;
 
 	background: $leaf;
+	border: 0;
 	color: $dark;
 	stroke: $dark;
 
@@ -430,13 +431,17 @@
 	@include u(500);
 
 	color: #766F67;
-	display: block;
+	display: none;
 	font-size: 12px;
 	letter-spacing: .75px;
 
 	@media #{$min_md} {
 		font-size: 17px;
 		margin-bottom: 17px;
+	}
+
+	@media #{$min_lg} {
+		display: block;
 	}
 }
 
