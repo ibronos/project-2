@@ -131,7 +131,8 @@ button {
 	$lc: #fff,
 	$ic: #fff,
 	$hc: #fff,
-	$hic: #fff
+	$hic: #fff,
+	$h: false
 ) {
 
 	&:focus,
@@ -177,28 +178,31 @@ button {
 		transition: color .25s;
 	}
 
-	&:focus,
-	&:hover {
-		
-		// &:before {
-		// 	z-index: -2;
+	@if $h {
 
-		// 	transform: translate(10px, -10px);
-		// }
+		&:focus,
+		&:hover {
+			
+			&:before {
+				z-index: -2;
 
-		// &:after {
-		// 	z-index: -4;
+				transform: translate(10px, -10px);
+			}
 
-		// 	transform: translate(-10px, 10px);
-		// }
+			&:after {
+				z-index: -4;
 
-		// [class*="label"] {
-		// 	color: $hc;
-		// }
+				transform: translate(-10px, 10px);
+			}
 
-		// [class*="icon"] {
-		// 	color: $hic;
-		// }
+			[class*="label"] {
+				color: $hc;
+			}
+
+			[class*="icon"] {
+				color: $hic;
+			}
+		}
 	}
 }
 
