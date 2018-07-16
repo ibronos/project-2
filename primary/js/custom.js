@@ -17,8 +17,10 @@
 	})(window.location.search.substr(1).split('&'));
 
 	var query = {
-	    fcat: qs['fcat'] ? qs['fcat'] : '',
-	    fsearch: qs['fsearch'] ? qs['fsearch'] : ''
+	    // fcat: qs['fcat'] ? qs['fcat'] : '',
+	    // fsearch: qs['fsearch'] ? qs['fsearch'] : ''
+	    fcat: '',
+	    fsearch: ''
 	};
 	var settingQuery = function(queryName, value) {
 		query[queryName] = typeof value === 'undefined' ? '' : value;
