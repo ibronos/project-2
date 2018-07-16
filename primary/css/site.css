@@ -3762,6 +3762,8 @@ strong {
         font-size: 32px;
         font-size: 2rem;
         line-height: 1.5; } }
+  body:not(.theme_news) .typography .intro {
+    margin-top: 0; }
   .typography .copy {
     font-weight: 400;
     font-family: "Unit Offc W01 Light", sans-serif;

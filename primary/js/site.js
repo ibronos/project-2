@@ -730,6 +730,10 @@ Site.modules.Page = (function($, Site) {
 			$("html").addClass("is-ie");
 		}
 
+		if($(".news_item_details_block").length) {
+			$("body").addClass("theme_news");
+		}
+
 		fixIEsvg();
 		bindGenericUI();
 		responsiveVideo();
@@ -785,7 +789,6 @@ Site.modules.Page = (function($, Site) {
 			}
 		}
 
-		console.log(e);
 		if (!$(e.target).closest(".breadcrumb_name_switch, .breadcrumb_dropdown").length) {
 			$(".breadcrumb_name_switch").swap("deactivate");
 		}

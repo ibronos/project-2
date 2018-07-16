@@ -218,6 +218,10 @@ strong {
 		@include intro_text;
 	}
 
+	@at-root body:not(.theme_news) .typography .intro {
+		margin-top: 0;
+	}
+	
 	.copy {
 		@include body_text;
 	}
