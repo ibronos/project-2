@@ -91,11 +91,11 @@ if ($post):	setup_postdata( $post ); ?>
 												while (  $the_query->have_posts() ) :  $the_query->the_post(); ?>
                   									<div class="search_result" id="sr">
 														<h2 class="search_result_title">
-														<a class="search_result_title_link" href="www.rollingstone.com/music/artists/the-beatles">
+														<a class="search_result_title_link" href="the_permalink();">
 															<strong><?php the_title();?></strong>
 														</a>
 														</h2>
-														<a class="search_result_link" href="www.rollingstone.com/music/artists/the-beatles">
+														<a class="search_result_link" href="the_permalink();">
 														<?php esc_url( get_permalink() ); ?>
 														</a>
 														<div class="search_result_caption">
