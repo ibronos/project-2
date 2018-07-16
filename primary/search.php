@@ -41,7 +41,9 @@ if ($post):	setup_postdata( $post ); ?>
 								<meta itemprop="url" content="http://http://www.trincoll.edu/Pages/default.aspx">
 								<meta itemprop="target" content="http://http://www.trincoll.edu/Pages/default.aspx/static/templates/page-search.html?q={search_term_string_results}">
 									<?php if (get_field('google_cse_id')): ?>
-										<gcse:searchbox gname="storesearch"></gcse:searchbox>
+										<div class="trinity-google-custom-search">
+											<gcse:searchbox gname="storesearch"></gcse:searchbox>
+										</div>
 									<?php else: ?>
 										<form class="site_search_form" action="" id="cse-search-box" method="get">
 											<label class="site_search_label" for="search_term_string_results">Search</label>
