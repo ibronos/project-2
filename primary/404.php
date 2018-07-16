@@ -31,6 +31,15 @@ if(is_multisite()){
         $post   = $pages[0];
     }
 }
+else {
+    $args = [
+    'post_type' => 'page',
+    'meta_key' => '_wp_page_template',
+    'meta_value' => '404.php'
+    ];
+    $pages  = get_posts( $args );
+    $post   = $pages[0];
+}
 
 if ($post):
     setup_postdata( $post );  ?>

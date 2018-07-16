@@ -82,7 +82,7 @@ if ($post):	setup_postdata( $post ); ?>
 											<?php if (isset($_GET['search_input'])) :
 												$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 												$arg2=array(
-													'post_type' => 'post',
+													'post_type' => 'news_post',
 													'posts_per_page'=>5,
 													'paged' => $paged,
 													's' => $_GET['search_input']
