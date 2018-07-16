@@ -895,7 +895,7 @@ Site.modules.Page = (function($, Site) {
 		ariaShow($(".js-mobile-sidebar"));
 		$(".js-mobile-sidebar").focus();
 
-		$(".alert, .header, .breadcrumb_nav_wrapper, .page_inner, .footer").css("padding-right", getScrollbarWidth());
+		$(".alert, .header, .page_inner, .footer").css("padding-right", getScrollbarWidth());
 		$(".alert_close").css("right", getScrollbarWidth());
 		$(".mobile_sidebar").css("width", "");
 		$(".mobile_sidebar").css("right", "");
@@ -906,7 +906,7 @@ Site.modules.Page = (function($, Site) {
 		ariaHide($(".js-mobile-sidebar"));
 		$(".js-mobile-sidebar-handle").focus();
 
-		$(".alert, .header, .breadcrumb_nav_wrapper, .page_inner, .footer").css("padding-right", "");
+		$(".alert, .header, .page_inner, .footer").css("padding-right", "");
 		$(".alert_close").css("right", "");
 		$(".mobile_sidebar").css("width", "calc(100% + " + getScrollbarWidth() + "px)");
 		$(".mobile_sidebar").css("right", getScrollbarWidth() * -1);
