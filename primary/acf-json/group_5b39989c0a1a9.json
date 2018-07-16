@@ -113,7 +113,7 @@
                             "label": "Image",
                             "name": "image",
                             "type": "image",
-                            "instructions": "",
+                            "instructions": "minimum dimensions 980x740px",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -144,7 +144,7 @@
                     "sub_fields": [
                         {
                             "key": "field_5b3b1fc2f6e72",
-                            "label": "Rows",
+                            "label": "Topics",
                             "name": "rows",
                             "type": "repeater",
                             "instructions": "",
@@ -433,13 +433,11 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "default"
-            }
-        ],
-        [
+            },
             {
-                "param": "page",
+                "param": "page_type",
                 "operator": "!=",
-                "value": "7"
+                "value": "front_page"
             }
         ],
         [
@@ -450,7 +448,7 @@
             }
         ]
     ],
-    "menu_order": 7,
+    "menu_order": 10,
     "position": "normal",
     "style": "seamless",
     "label_placement": "top",
@@ -458,5 +456,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531713870
+    "modified": 1531728638
 }

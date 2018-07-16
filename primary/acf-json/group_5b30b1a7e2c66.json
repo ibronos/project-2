@@ -327,7 +327,7 @@
                             "label": "Background",
                             "name": "background",
                             "type": "image",
-                            "instructions": "minimum dimensions 740px x 1220px",
+                            "instructions": "minimum dimensions 740x1220px",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -395,7 +395,7 @@
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
-                                    "instructions": "",
+                                    "instructions": "minimum dimensions 980x740px",
                                     "required": 0,
                                     "conditional_logic": [
                                         [
@@ -733,9 +733,16 @@
                 "operator": "==",
                 "value": "news_post"
             }
+        ],
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
         ]
     ],
-    "menu_order": 8,
+    "menu_order": 11,
     "position": "normal",
     "style": "seamless",
     "label_placement": "top",
@@ -743,5 +750,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531713898
+    "modified": 1531728759
 }
