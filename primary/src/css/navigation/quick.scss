@@ -141,4 +141,28 @@
 	}
 }
 
-.quick_nav_link_label {}
+.quick_nav_link_label {
+	position: relative;
+
+	&:after {
+		height: 1px;
+		width: 100%;
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		background: rgba($yellow, .6);
+		content: "";
+		transform: scaleX(0);
+		transition: transform .25s;
+	}
+
+	.quick_nav_link:focus &,
+	.quick_nav_link:hover & {
+
+		&:after {
+			transform: scaleX(1);
+		}
+	}
+}
