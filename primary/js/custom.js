@@ -1,4 +1,50 @@
 /*-------------------------------------------
+	new filter function
+-------------------------------------------*/
+(function($) {
+	var qs = (function(a) {
+	    if (a == "") return {};
+	    var b = {};
+	    for (var i = 0; i < a.length; ++i)
+	    {
+	        var p=a[i].split('=', 2);
+	        if (p.length == 1)
+	            b[p[0]] = "";
+	        else
+	            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+	    }
+	    return b;
+	})(window.location.search.substr(1).split('&'));
+
+	var query = {
+	    fcat: qs['fcat'] ? qs['fcat'] : '',
+	    fsearch: qs['fsearch'] ? qs['fsearch'] : ''
+	};
+	var settingQuery = function(queryName, value) {
+		query[queryName] = typeof value === 'undefined' ? '' : value;
+		return query;
+	}
+
+	var input = document.getElementById('search_by_keyword');
+	input.addEventListener('keypress', function(e) {
+	    if (e.key === 'Enter') {
+			e.preventDefault();
+			e.stopPropagation();
+	      	window.location.href = '?' + $.param(settingQuery('fsearch', input.value));
+	    }
+	});
+
+	var categs = document.getElementsByClassName('news-filter-option');
+	for (var i = categs.length - 1; i >= 0; i--) {
+		categs[i].addEventListener('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			window.location.href = '?' + $.param(settingQuery('fcat', e.target.dataset.filterOptionValue));
+		});
+	}
+})(jQuery);
+
+/*-------------------------------------------
 	Filter Program
 -------------------------------------------*/
 (function($) {
@@ -56,15 +102,6 @@
 				}
 			}
 		});
-	});
-
-	$(document).ready(function() {
-		if (document.getElementsByClassName('fs-dropdown-item')[0]) {
-			document.getElementsByClassName('fs-dropdown-item')[0].innerHTML = 'View All';
-		}
-		if (document.getElementsByClassName('fs-dropdown-selected')[0]) {
-			document.getElementsByClassName('fs-dropdown-selected')[0].classList.add('filter_options_swap');
-		}
 	});
 })(jQuery);
 

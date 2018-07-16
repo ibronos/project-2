@@ -7,37 +7,49 @@
  * @package Trinity_College
  */
 
-$term_tax 	= get_terms( array(
+$term_tax   = get_terms( array(
     'taxonomy' => 'news-category' ,
     'hide_empty' => false,
 ) );
-
+$featureFilterSearch = isset($_GET['fsearch']) && $_GET['fsearch'] ? $_GET['fsearch'] : '';
+$featureFilterCategory = isset($_GET['fcat']) && $_GET['fcat'] ? $_GET['fcat'] : '';
+if(!empty($featureFilterCategory)) {
+	$tmp = array_map(function($e) {
+		return $e->name;
+	}, array_filter($term_tax, function($e,$i) use($featureFilterCategory) {
+		return $e->slug == $featureFilterCategory;
+	}, ARRAY_FILTER_USE_BOTH));
+}
+$featureFilterDefaultCategory = isset($tmp) && !empty($tmp) ? array_shift($tmp) : 'View Category';
 ?>
 
-	<div class="filter">
-		<div class="fs-row">
-			<div class="fs-cell fs-xl-10 fs-all-justify-center">
-				<div class="filter_inner">
+    <div class="filter">
+        <div class="fs-row">
+            <div class="fs-cell fs-xl-10 fs-all-justify-center">
+                <div class="filter_inner">
 					<div class="input_wrapper filter_search_input_wrapper">
-						<form method="get" name="searchform">
-							<input class="input_field filter_search_input_field" type="text" id="search_by_keyword" placeholder="Search by keyword" name="fsearch" value="<?php echo isset($_GET['fsearch']) && $_GET['fsearch'] ? $_GET['fsearch'] : '' ?>" />
-						</form>
+						<input class="input_field filter_search_input_field" type="text" id="search_by_keyword" placeholder="Search by keyword" value="<?php echo $featureFilterSearch?>">
 						<label class="input_label filter_search_input_label">Search by keyword</label>
 					</div>
-					<div class="fs-dropdown-wrapper filter_options_wrapper">
-						<form method="get" name="filterform">
-							<select class="js-dropdown dropdown_field filter_options_dropdown_select" id="filter_by_category_dropdown" name="fcat" onchange="this.form.submit()">
-								<option value="0">View by Category</option>
-
-								<?php foreach ($term_tax as $term): ?>
-									<option value="<?php echo $term->slug;?>"><?php echo $term->name;?></option>
-								<?php endforeach ?>
-
-							</select>
-						</form>
-<!-- 						<label class="dropdown_label filter_options_dropdown_label" for="filter_by_category_dropdown">View All</label> -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!-- .filter -->
+                    <div class="filter_options_wrapper">
+						<button class="js-swap filter_options_swap" data-swap-target=".filter_options">
+						    <span class="filter_options_swap_label"><?php echo $featureFilterDefaultCategory; ?></span>
+						    <span class="filter_options_swap_icon">
+						        <svg class="icon icon_caret_down">
+						            <use xlink:href="<?php tric_icon('caret_down') ?>"></use>
+						        </svg>
+						    </span>
+						</button>
+		                <div class="filter_options">
+		                	<a class="filter_option news-filter-option" href="#" tabindex="0">View All</a>
+	                        <?php foreach ($term_tax as $term): ?>
+	                            <a class="filter_option news-filter-option" href="#" tabindex="0" data-filter-option-value="<?php echo $term->slug;?>">
+	                            	<?php echo $term->name;?>
+	                            </a>
+	                        <?php endforeach ?>
+		                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .filter -->
