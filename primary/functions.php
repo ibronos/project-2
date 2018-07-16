@@ -261,6 +261,25 @@ function sync_all_custom_taxonomy(){
 		}
 	}
 }
+
+add_action('admin_init', 't_custom_code');
+function t_custom_code(){
+	$id_front_page = get_option('page_on_front');
+	$post_id = isset($_GET['post']) ? $_GET['post'] : 0 ;
+	if((int) $post_id != (int) $id_front_page){
+		add_action('admin_head', 't_custom_style');
+	}
+}
+
+function t_custom_style(){
+?>
+<style type="text/css">
+	div.acf-fc-popup.-top ul li a[data-layout="news_events"] {
+		display: none !important;
+	}	
+</style>
+<?php
+}
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
