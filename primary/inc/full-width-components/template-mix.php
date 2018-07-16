@@ -37,7 +37,7 @@ $posts_event = $acf['events'];
 								<?php setup_postdata($post); ?>
 								<?php if(get_field('header_image')): ?>
 								<figure class="mix_news_item_figure">
-									<a class="mix_news_item_figure_link" href="<?php echo get_the_guid(get_the_ID()); ?>">
+									<a class="mix_news_item_figure_link" href="<?php echo get_site_url($posts['site_id']).'/blog/'.basename(get_post_type_archive_link( 'news_post' )).'/'.basename(get_the_permalink(get_the_ID())).'/'; ?>">
 										<img class="mix_news_item_image" src="<?php the_field('header_image'); ?>" alt="image">
 									</a>
 								</figure>
@@ -45,7 +45,7 @@ $posts_event = $acf['events'];
 								<div class="mix_news_item_body">
 									<header class="mix_news_item_header">
 										<h3 class="mix_news_item_title">
-											<a class="mix_news_item_title_link" href="<?php echo get_the_guid(get_the_ID()); ?>">
+											<a class="mix_news_item_title_link" href="<?php echo get_site_url($posts['site_id']).'/blog/'.basename(get_post_type_archive_link( 'news_post' )).'/'.basename(get_the_permalink(get_the_ID())).'/'; ?>">
 											    <span class="mix_news_item_title_link_label"><?php the_title(); ?></span>
 											    <span class="mix_news_item_title_link_icon" aria-hidden="true">
 											    	<svg class="icon icon_arrow_right">
@@ -92,7 +92,7 @@ $posts_event = $acf['events'];
 									</time>
 									<div class="mix_event_body">
 										<h3 class="mix_event_title">
-											<a class="mix_event_title_link" href="<?php echo get_the_guid(get_the_ID()); ?>">
+											<a class="mix_event_title_link" href="<?php echo get_site_url($posts['site_id']).'/blog/'.basename(get_post_type_archive_link( 'events_post' )).'/'.basename(get_the_permalink(get_the_ID())).'/'; ?>">
 											    <span class="mix_event_title_link_label"><?php the_title(); ?></span>
 											    <span class="mix_event_title_link_icon" aria-hidden="true">
 											    	<svg class="icon icon_arrow_right">
