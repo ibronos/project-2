@@ -14,32 +14,36 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '') {
 	$siblings = [];
 
 	if ($id !== '' && $parent !== '') {
-		$siblings = get_pages(array(
-			'exclude' 	=> [$id, $frontpage_id],
-			'parent' 	=> $parent,
-			'post_type' => 'page'
-		));
+		// $siblings = get_pages(array(
+		// 	'exclude' 	=> [$frontpage_id],
+		// 	'parent' 	=> $parent,
+		// 	'post_type' => 'page'
+		// ));
+		$siblings = get_children(array('post_parent' => $id, 'post_type' => 'page'));
 	}
 
 	$br = '<div class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
 		    <button class="js-swap breadcrumb_name_switch breadcrumb_name" itemprop="name" data-swap-target=".breadcrumb_dropdown_'.$loop.'">
-		        <span class="breadcrumb_name_label">'.$label.'</span>
-		        <span class="breadcrumb_name_icon">
+		        <span class="breadcrumb_name_label">'.$label.'</span>';
+	if (!empty($siblings)) {
+
+		$br .=  '<span class="breadcrumb_name_icon">
 		            <svg class="icon icon_expand">
 		                <use xlink:href="'.tric_icon('expand', false).'"></use>
 		            </svg>
-		        </span>
-		    </button>
-		    <meta itemprop="position" content="'.($loop + 1).'">';
+		        </span>';
+	}
+		    $br .= '</button><meta itemprop="position" content="'.($loop + 1).'">';
 
-		    if ($siblings) {
+		    if (!empty($siblings)) {
 		    	$br .= '<nav class="breadcrumb_dropdown breadcrumb_dropdown_'.$loop.'">';
 		    		foreach ($siblings as $sibling) {
-		    			$br .= '<a class="breadcrumb_dropdown_item" href="'.$sibling->guid.'">'.$sibling->post_title.'</a>';
+		    			if(empty(get_post_meta($sibling->ID,'_np_nav_status')) || get_post_meta($sibling->ID,'_np_nav_status')[0] != 'hide'){
+		    				$br .= '<span class="breadcrumb_dropdown_item">'.$sibling->post_title.'</span>';
+		    			}
 		    		}
 		    	$br .= '</nav>';
 		    }
-
 	$br .= '</div>';
 	return $br;
 }
