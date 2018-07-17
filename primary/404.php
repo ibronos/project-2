@@ -90,11 +90,11 @@ if ($post):
                         <div class="fs-cell fs-xl-10 fs-all-justify-center">
                             <div class="search_field_inner">
                                 <div class="site_search site_search_results" id="site_search_results" itemscope="" itemtype="http://schema.org/WebSite" role="search">
-                                    <meta itemprop="url" content="http://http://www.trincoll.edu/Pages/default.aspx">
-                                    <meta itemprop="target" content="http://http://www.trincoll.edu/Pages/default.aspx/static/templates/page-search.html?q={search_term_string_results}">
+                                    <meta itemprop="url" content="http://www.trincoll.edu">
+                                    <meta itemprop="target" content="http://www.trincoll.edu/Pages/default.aspx/static/templates/page-search.html?q={search_term_string_results}">
                                     <?php if(get_current_blog_id() > 1): ?>
                                         <?php switch_to_blog(1); ?>
-                                        <?php if (get_field('google_cse_id')): ?>
+                                        <?php if (!empty(get_field('google_cse_id'))): ?>
                                             <gcse:searchbox gname="storesearch3"></gcse:searchbox>
                                         <?php else: ?>
                                             <form class="site_search_form" action="" id="cse-search-box" method="get">
@@ -112,7 +112,7 @@ if ($post):
                                         <?php endif ?>
                                         <?php restore_current_blog(); ?>
                                     <?php else: ?>
-                                        <?php if (get_field('google_cse_id')): ?>
+                                        <?php if (!empty(get_field('google_cse_id'))): ?>
                                             <gcse:searchbox gname="storesearch3"></gcse:searchbox>
                                         <?php else: ?>
                                             <form class="site_search_form" action="" id="cse-search-box" method="get">
@@ -184,12 +184,12 @@ if ($post):
                                         <div class="search_results">
                                             <?php if(get_current_blog_id() > 1): ?>
                                                 <?php switch_to_blog(1); ?>
-                                                <?php if (get_field('google_cse_id')): ?>
+                                                <?php if (!empty(get_field('google_cse_id'))): ?>
                                                     <gcse:searchresults gname="storesearch3"></gcse:searchresults>
                                                 <?php endif; ?>
                                                 <?php restore_current_blog(); ?>
                                             <?php else: ?>
-                                                <?php if (get_field('google_cse_id')): ?>
+                                                <?php if (!empty(get_field('google_cse_id'))): ?>
                                                     <gcse:searchresults gname="storesearch3"></gcse:searchresults>
                                                 <?php endif; ?>
                                             <?php endif; ?>
