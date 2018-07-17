@@ -49,7 +49,7 @@ if(get_current_blog_id() > 1){
 				<header class="related_news_header">
 					<?php if(get_current_blog_id() > 1): ?>
 						<?php switch_to_blog(1); ?>
-						<a class="related_news_link" href="<?php echo get_site_url(1).'/blog/'.basename(get_post_type_archive_link( 'news_post' )); ?>">
+						<a class="related_news_link" href="<?php echo get_post_type_archive_link( 'news_post' ); ?>">
 							<span class="related_news_link_label">View All News</span>
 							<span class="related_news_link_icon" aria-hidden="true">
 								<svg class="icon icon_arrow_right">
@@ -100,20 +100,20 @@ if(get_current_blog_id() > 1){
 							<div class="related_news_item">
 								<article class="mix_news_item">
 									<?php if ($post_len == 1): ?>
-										<a class="related_news_item_background_link" href="<?php echo get_site_url($posts['site_id']).'/blog/'.basename(get_post_type_archive_link( 'news_post' )).'/'.basename(get_the_permalink(get_the_ID())).'/'; ?>">
+										<a class="related_news_item_background_link" href="<?php echo get_the_permalink(get_the_ID()); ?>">
 											<div class="js-background related_news_item_background" data-background-options='{"source": {
 											"0px": "<?php echo the_field('list_image') ?>"}}'></div>
 										</a>
 									<?php endif ?>
 									<figure class="mix_news_item_figure">
-										<a class="mix_news_item_figure_link" href="<?php echo get_site_url($posts['site_id']).'/blog/'.basename(get_post_type_archive_link( 'news_post' )).'/'.basename(get_the_permalink(get_the_ID())).'/'; ?>">
+										<a class="mix_news_item_figure_link" href="<?php echo get_the_permalink(get_the_ID()); ?>">
 											<img class="mix_news_item_image" src="<?php echo the_field('list_image') ?>" alt="image">
 										</a>
 									</figure>
 									<div class="mix_news_item_body">
 										<header class="mix_news_item_header">
 											<h3 class="mix_news_item_title">
-												<a class="mix_news_item_title_link" href="<?php echo get_site_url($posts['site_id']).'/blog/'.basename(get_post_type_archive_link( 'news_post' )).'/'.basename(get_the_permalink(get_the_ID())).'/'; ?>">
+												<a class="mix_news_item_title_link" href="<?php echo get_the_permalink(get_the_ID()); ?>">
 													<span class="mix_news_item_title_link_label"><?php the_title(); ?></span>
 													<span class="mix_news_item_title_link_icon" aria-hidden="true">
 														<svg class="icon icon_arrow_right">
