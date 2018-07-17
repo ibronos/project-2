@@ -312,8 +312,33 @@ function remove_posts_menus() {
 }
 add_action( 'admin_menu', 'remove_posts_menus' );
 
+add_action( 'admin_bar_menu', 'remove_on_new_handle', 999 );
+function remove_on_new_handle() 
+{
+    global $wp_admin_bar, $blog_id;   
+    $wp_admin_bar->remove_node( 'new-post' );
+
+    if(is_multisite()){
+    	if($blog_id > 1){
+    		$wp_admin_bar->remove_node( 'new-alerts_post' );
+    		$wp_admin_bar->remove_node( 'new-events_post' );
+    		$wp_admin_bar->remove_node( 'new-news_post' );
+    		$wp_admin_bar->remove_node( 'new-programs_post' );
+    		$wp_admin_bar->remove_node( 'new-stories_post' );
+    	}
+    }
+}
+
 //remove featured image on 'page'
 function remove_thumbnail_box() {
     remove_meta_box( 'postimagediv','page','side' );
 }
 add_action('do_meta_boxes', 'remove_thumbnail_box');
+
+function reset_permalinks() {
+    global $wp_rewrite;
+    if($wp_rewrite->permalink_structure != '/%postname%/'){
+    	$wp_rewrite->set_permalink_structure( '/%postname%/' );
+    }
+}
+add_action( 'init', 'reset_permalinks' );
