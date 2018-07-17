@@ -20,7 +20,7 @@ if(!empty($featureFilterCategory)) {
 		return $e->slug == $featureFilterCategory;
 	}, ARRAY_FILTER_USE_BOTH));
 }
-$featureFilterDefaultCategory = isset($tmp) && !empty($tmp) ? array_shift($tmp) : 'View Category';
+$featureFilterDefaultCategory = isset($tmp) && !empty($tmp) ? array_shift($tmp) : 'View By Category';
 ?>
 
     <div class="filter">
