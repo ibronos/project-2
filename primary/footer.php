@@ -174,7 +174,8 @@
 <script>
 (function() {
     // var cx = '001368822544131965319:33phyglvqd4';
-    var cx = "<?php the_field('google_cse_id') ?>";
+    var cx = "<?php the_field('google_cse_id'); ?>";
+    console.log(cx);
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;
