@@ -36,7 +36,7 @@ function programs_init() {
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'programs' ),
 		'capability_type'    => 'post',
-		'has_archive'        => true,
+		'has_archive'        => false,
 		'hierarchical'       => false,
 		'menu_position'      => 5,
 		'supports'           => array( 'title', 'editor')

@@ -36,7 +36,7 @@ function alerts_init() {
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'alerts' ),
 		'capability_type'    => 'post',
-		'has_archive'        => true,
+		'has_archive'        => false,
 		'hierarchical'       => false,
 		'menu_position'      => 5,
 		'supports'           => array( 'title' )
