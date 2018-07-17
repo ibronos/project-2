@@ -173,9 +173,10 @@
 
 <script>
 (function() {
-    // var cx = '001368822544131965319:33phyglvqd4';
     var cx = "<?php the_field('google_cse_id'); ?>";
-    console.log(cx);
+    if(cx.trim() === ""){
+    	cx = "011737558837375720776:mbfrjmyam1g";
+    }
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;
