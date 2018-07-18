@@ -8,7 +8,6 @@
  *
  * @package Trinity_College
  */
-
 ?>
 
 	</div><!-- #content -->
@@ -52,20 +51,22 @@
 							        <h2 class="social_nav_title">Social Navigation</h2>
 							    </div>
 							    <div class="social_nav_list">
-							    	<?php foreach (tric_navigation('footer-social') as $object): ?>
-							    		<?php if (tric_social_filter($object->title)): ?>
-									        <div class="social_nav_item">
-									            <a class="social_nav_link" href="<?php echo esc_url($object->url) ?>" target="_blank" itemprop="sameAs">
-									                <span class="social_nav_icon">
-									                    <svg class="icon icon_<?php echo $object->title ?>">
-									                        <use xlink:href="<?php tric_icon($object->title) ?>"></use>
-									                    </svg>
-									                </span>
-									                <span class="social_nav_label"><?php echo $object->title ?></span>
-									            </a>
-									        </div>
-										<?php endif ?>
-							    	<?php endforeach ?>
+							    	<?php (get_current_blog_id() > 1) ? switch_to_blog(1) : '' ?>
+								    	<?php foreach (tric_navigation('footer-social') as $object): ?>
+								    		<?php if (tric_social_filter($object->title)): ?>
+										        <div class="social_nav_item">
+										            <a class="social_nav_link" href="<?php echo esc_url($object->url) ?>" target="_blank" itemprop="sameAs">
+										                <span class="social_nav_icon">
+										                    <svg class="icon icon_<?php echo $object->title ?>">
+										                        <use xlink:href="<?php tric_icon($object->title) ?>"></use>
+										                    </svg>
+										                </span>
+										                <span class="social_nav_label"><?php echo $object->title ?></span>
+										            </a>
+										        </div>
+											<?php endif ?>
+								    	<?php endforeach ?>
+							    	<?php restore_current_blog() ?>
 							    </div>
 							</div><!--.social_nav-->
 
@@ -75,13 +76,15 @@
 								</header>
 								<nav class="quick_nav" aria-label="" itemscope itemtype="http://schema.org/SiteNavigationElement">
 								    <div class="quick_nav_list" role="navigation">
-								    	<?php foreach (tric_navigation('footer-info') as $object): ?>
-									        <div class="quick_nav_item">
-									            <a class="quick_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
-									                <span class="quick_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
-									            </a>
-									        </div>
-								        <?php endforeach ?>
+								    	<?php (get_current_blog_id() > 1) ? switch_to_blog(1) : '' ?>
+									    	<?php foreach (tric_navigation('footer-info') as $object): ?>
+										        <div class="quick_nav_item">
+										            <a class="quick_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
+										                <span class="quick_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
+										            </a>
+										        </div>
+									        <?php endforeach ?>
+								        <?php restore_current_blog() ?>
 								    </div>
 								</nav>
 							</div><!--.quick_nav_wrapper-->
@@ -99,13 +102,15 @@
 					        <h2 class="footer_nav_title">Footer Navigation</h2>
 					    </div>
 					    <div class="footer_nav_list" role="navigation">
-					    	<?php foreach (tric_navigation('footer-primary') as $object): ?>
-						        <div class="footer_nav_item">
-						            <a class="footer_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
-						                <span class="footer_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
-						            </a>
-						        </div>
-					    	<?php endforeach ?>
+					    	<?php (get_current_blog_id() > 1) ? switch_to_blog(1) : '' ?>
+						    	<?php foreach (tric_navigation('footer-primary') as $object): ?>
+							        <div class="footer_nav_item">
+							            <a class="footer_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
+							                <span class="footer_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
+							            </a>
+							        </div>
+						    	<?php endforeach ?>
+					    	<?php restore_current_blog() ?>
 					    </div>
 					</nav>
 				</div>
@@ -114,74 +119,90 @@
 	</footer><!-- #footer -->
 </div><!-- #page -->
 
-<div class="js-mobile-sidebar mobile_sidebar" id="mobile_sidebar" tabindex="-1">
+<?php (get_current_blog_id() > 1) ? switch_to_blog(1) : '' ?>
+	<div class="js-mobile-sidebar mobile_sidebar" id="mobile_sidebar" tabindex="-1">
 
-	<div class="site_search site_search_sm" id="site_search_sm" itemscope itemtype="http://schema.org/WebSite" role="search">
-	    <meta itemprop="url" content="<?php echo home_url( '/' ) ?>">
-	    <form class="site_search_form" itemprop="potentialAction" method="get" action="<?php echo esc_url( home_url( '/' ) ) ?>">
-	        <meta itemprop="target" content="<?php echo home_url( '/' ) ?>?s=<?php the_search_query(); ?>">
-	        <label class="site_search_label" for="search_term_string_sm">Search</label>
-	        <input aria-live="polite" class="site_search_input" itemprop="query-input" type="search" id="search_term_string_sm" name="s" value="<?php the_search_query(); ?>" placeholder="Search by keyword">
-	        <button class="site_search_button" type="submit" title="submit" aria-label="submit">
-	            <span class="site_search_button_label">Submit Search Query</span>
-	            <span class="site_search_button_icon">
-	                <svg class="icon icon_search">
-	                    <use xlink:href="<?php tric_icon('search') ?>"></use>
-	                </svg>
-	            </span>
-	        </button>
-	    </form>
-	</div><!--.site_search-->
+		<div class="site_search site_search_sm" id="site_search_sm" itemscope itemtype="http://schema.org/WebSite" role="search">
+		    <meta itemprop="url" content="<?php echo home_url( '/' ) ?>">
+		    <form class="site_search_form" id="tric_nav_bar_search" itemprop="potentialAction" method="get" action="<?php echo esc_url( home_url( '/' ) ) ?>">
+		        <meta itemprop="target" content="<?php echo home_url( '/' ) ?>?s=<?php the_search_query(); ?>">
+		        <label class="site_search_label" for="search_term_string_sm">Search</label>
+		        <input aria-live="polite" class="site_search_input" itemprop="query-input" type="search" id="search_term_string_sm" name="s" value="<?php the_search_query(); ?>" placeholder="Search by keyword">
+		        <button class="site_search_button" type="submit" title="submit" aria-label="submit">
+		            <span class="site_search_button_label">Submit Search Query</span>
+		            <span class="site_search_button_icon">
+		                <svg class="icon icon_search">
+		                    <use xlink:href="<?php tric_icon('search') ?>"></use>
+		                </svg>
+		            </span>
+		        </button>
+		    </form>
+		</div><!--.site_search-->
 
-	<nav class="js-main-nav js-main-nav-sm main_nav main_nav_sm" aria-label="Mobile Site Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-   		<?php $args = array(
-			'menu' 			=> 'nested-pages',
-			'items_wrap' 	=> '<div id="%1$s" class="main_nav_list" role="navigation">%3$s</div>',
-			'container'		=> false,
-			'menu_class' 	=> 'nav navbar-nav',
-			'walker'		=> new tric_walker_nav_menu()
-		);
-		wp_nav_menu( $args  ); ?>
-	</nav><!--nav .js-main-nav-->
+		<nav class="js-main-nav js-main-nav-sm main_nav main_nav_sm" aria-label="Mobile Site Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	   		<?php $args = array(
+				'menu' 			=> 'nested-pages',
+				'items_wrap' 	=> '<div id="%1$s" class="main_nav_list" role="navigation">%3$s</div>',
+				'container'		=> false,
+				'menu_class' 	=> 'nav navbar-nav',
+				'walker'		=> new tric_walker_nav_menu()
+			);
+			wp_nav_menu( $args  ); ?>
+		</nav><!--nav .js-main-nav-->
 
-	<nav class="secondary_nav secondary_nav_sm" aria-label="Mobile Secondary Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-	    <div class="secondary_nav_header">
-	        <h2 class="secondary_nav_title">Mobile Secondary Navigation</h2>
-	    </div>
-	    <div class="secondary_nav_list" role="navigation">
-	        <?php foreach (tric_navigation('secondary') as $object): ?>
-	        	<div class="secondary_nav_item">
-	        	    <a class="secondary_nav_link arrow_right" href="<?php echo esc_url($object->url) ?>" itemprop="url">
-	        	        <span class="secondary_nav_link_icon">
-	        	            <svg class="icon icon_arrow_right">
-	        	                <use xlink:href="<?php tric_icon('arrow_right') ?>"></use>
-	        	            </svg>
-	        	        </span>
-	        	        <span class="secondary_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
-	        	    </a>
-	        	</div>
-	        <?php endforeach; ?>
-	    </div>
-	</nav><!--.secondary_nav-->
+		<nav class="secondary_nav secondary_nav_sm" aria-label="Mobile Secondary Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <div class="secondary_nav_header">
+		        <h2 class="secondary_nav_title">Mobile Secondary Navigation</h2>
+		    </div>
+		    <div class="secondary_nav_list" role="navigation">
+		        <?php foreach (tric_navigation('secondary') as $object): ?>
+		        	<div class="secondary_nav_item">
+		        	    <a class="secondary_nav_link arrow_right" href="<?php echo esc_url($object->url) ?>" itemprop="url">
+		        	        <span class="secondary_nav_link_icon">
+		        	            <svg class="icon icon_arrow_right">
+		        	                <use xlink:href="<?php tric_icon('arrow_right') ?>"></use>
+		        	            </svg>
+		        	        </span>
+		        	        <span class="secondary_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
+		        	    </a>
+		        	</div>
+		        <?php endforeach; ?>
+		    </div>
+		</nav><!--.secondary_nav-->
 
-</div>
+	</div>
+<?php restore_current_blog() ?>
 
 <?php wp_footer(); ?>
 
 </body>
 </html>
 
-<script>
-(function() {
-    var cx = "<?php the_field('google_cse_id'); ?>";
-    if(cx.trim() === ""){
-    	cx = "011737558837375720776:mbfrjmyam1g";
-    }
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
+<?php $c_blog_id = get_current_blog_id() ?>
+<?php (get_current_blog_id() > 1) ? switch_to_blog(1) : '' ?>
+
+	<?php if ($c_blog_id > 1):
+		$args = [
+		    'post_type' => 'page',
+		    'meta_key' => '_wp_page_template',
+		    'meta_value' => '404.php'
+		];
+		$pages  = get_posts( $args );
+		$post   = $pages[0];
+	endif ?>
+
+	<script>
+	(function() {
+	    var cx = "<?php the_field('google_cse_id'); ?>";
+	    if(cx.trim() === ""){
+	    	cx = "011737558837375720776:mbfrjmyam1g";
+	    }
+	    var gcse = document.createElement('script');
+	    gcse.type = 'text/javascript';
+	    gcse.async = true;
+	    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(gcse, s);
+	  })();
+	</script>
+<?php restore_current_blog() ?>

@@ -50,17 +50,19 @@
 								        <h2 class="utility_nav_title">Utility Navigation</h2>
 								    </div>
 								    <div class="utility_nav_list" role="navigation">
-								        <?php foreach (tric_navigation('exposed') as $object): ?>
-								        	<div class="utility_nav_item">
-								        	    <a class="utility_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
-								        	        <span class="utility_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
-								        	    </a>
-								        	</div>
-								        <?php endforeach ?>
+								    	<?php (get_current_blog_id() > 1) ? switch_to_blog(1) : '' ?>
+									        <?php foreach (tric_navigation('exposed') as $object): ?>
+									        	<div class="utility_nav_item">
+									        	    <a class="utility_nav_link" href="<?php echo esc_url($object->url) ?>" itemprop="url">
+									        	        <span class="utility_nav_link_label" itemprop="name"><?php echo $object->title ?></span>
+									        	    </a>
+									        	</div>
+									        <?php endforeach ?>
+								        <?php restore_current_blog() ?>
 								    </div>
 								</nav><!-- .utility_nav -->
 
-								<a class="js-swap js-mobile-sidebar-handle mobile_sidebar_handle mobile_sidebar_handle_primary" href="#mobile_sidebar" data-swap-target=".mobile_sidebar" data-swap-linked="mobile_sidebar">
+								<a class="js-swap js-mobile-sidebar-handle mobile_sidebar_handle mobile_sidebar_handle_primary" href="#mobile_sidebar" data-swap-target=".mobile_sidebar" data-swap-linked="mobile_sidebar" onclick="return resetSearchFooter()">
 								    <span class="mobile_sidebar_handle_icon mobile_sidebar_handle_icon_open">
 								        <svg class="icon icon_menu">
 								            <use xlink:href="<?php tric_icon('menu') ?>"></use>

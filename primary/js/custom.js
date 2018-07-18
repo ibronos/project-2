@@ -13,6 +13,9 @@ const JQS = (function(a) {
     return b;
 })(window.location.search.substr(1).split('&'));
 
+function resetSearchFooter() {
+   jQuery("#tric_nav_bar_search .site_search_input").val('');
+}
 /*-------------------------------------------
 	search page functionality
 -------------------------------------------*/

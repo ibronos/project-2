@@ -11,7 +11,9 @@ body.logged-in .spotlight_takeover_items {
 body.logged-in .mobile_sidebar {
 	top: 113px;
 }
-
+.breadcrumb_item .breadcrumb_name_label {
+    color: #0f0f11;
+}
 
 /* ==========================================================================
 	Google CSE
