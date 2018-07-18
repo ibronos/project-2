@@ -276,7 +276,7 @@ function t_custom_style(){
 <style type="text/css">
 	div.acf-fc-popup.-top ul li a[data-layout="news_events"] {
 		display: none !important;
-	}	
+	}
 </style>
 <?php
 }
@@ -313,9 +313,9 @@ function remove_posts_menus() {
 add_action( 'admin_menu', 'remove_posts_menus' );
 
 add_action( 'admin_bar_menu', 'remove_on_new_handle', 999 );
-function remove_on_new_handle() 
+function remove_on_new_handle()
 {
-    global $wp_admin_bar, $blog_id;   
+    global $wp_admin_bar, $blog_id;
     $wp_admin_bar->remove_node( 'new-post' );
 
     if(is_multisite()){
@@ -342,3 +342,43 @@ function reset_permalinks() {
     }
 }
 add_action( 'init', 'reset_permalinks' );
+
+
+/**
+ * Functions ACF Multisite location rule
+ */
+if ( is_multisite() ) {
+	add_filter('acf/location/rule_types', 'acf_location_rule_type_multisite');
+	add_filter('acf/location/rule_values/site',  'acf_location_rule_values_multisites');
+	add_filter('acf/location/rule_match/site', 'acf_location_rules_match_site', 10, 3);
+}
+function acf_location_rule_type_multisite( $choices ) {
+
+	$choices['Multisite']['site'] = 'Site';
+	return $choices;
+
+}
+function acf_location_rule_values_multisites( $choices ) {
+
+	$choices ['all'] = 'All';
+	$sites = get_sites();
+
+	foreach( $sites as $site ) {
+		$choices[ get_object_vars($site)["blog_id"] ] = get_object_vars($site)["path"];
+	}
+
+	return $choices;
+}
+function acf_location_rules_match_site( $match, $rule, $options ) {
+	$current_site = get_current_blog_id();
+	$selected_site = (int) $rule['value'];
+
+	if($rule['operator'] == "==") {
+		$match = ( $current_site == $selected_site );
+	}
+	elseif($rule['operator'] == "!=") {
+		$match = ( $current_site != $selected_site );
+	}
+
+	return $match;
+}
