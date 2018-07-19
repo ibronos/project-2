@@ -8,14 +8,7 @@
  */
 
 get_header();
-?>
 
-<div class="page_content">
-	<div class="full_width_callouts">
-
-		<?php get_template_part( 'inc/template-parts/content', 'archive' ); ?>
-
-	</div><!--.full_width_callouts -->
-</div><!--.page_content-->
+get_template_part( 'inc/template-parts/content', 'archive' ); ?>
 
 <?php get_footer(); ?>

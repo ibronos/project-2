@@ -33,7 +33,7 @@
 						<div class="header_ribbon_inner">
 
 							<div class="logo logo_header logo_icon" itemscope itemtype="http://schema.org/Organization">
-								<a class="logo_link" itemprop="url" href="<?php echo get_site_url() ?>">
+								<a class="logo_link" itemprop="url" href="<?php echo network_site_url() ?>">
 									<span class="logo_link_label">Trinity College</span>
 									<span class="logo_link_icon">
 										<svg class="icon icon_logo">

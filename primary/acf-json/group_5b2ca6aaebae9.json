@@ -392,9 +392,7 @@
                     ],
                     "taxonomy": [],
                     "filters": [
-                        "search",
-                        "post_type",
-                        "taxonomy"
+                        "search"
                     ],
                     "elements": "",
                     "min": 1,
@@ -626,9 +624,7 @@
                     ],
                     "taxonomy": [],
                     "filters": [
-                        "search",
-                        "post_type",
-                        "taxonomy"
+                        "search"
                     ],
                     "elements": "",
                     "min": 1,
@@ -860,9 +856,7 @@
                     ],
                     "taxonomy": [],
                     "filters": [
-                        "search",
-                        "post_type",
-                        "taxonomy"
+                        "search"
                     ],
                     "elements": "",
                     "min": 1,
@@ -891,8 +885,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1531902523
+    "modified": 1531975574
 }

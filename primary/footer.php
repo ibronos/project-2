@@ -20,7 +20,7 @@
 					<div class="footer_ribbon_inner">
 						<div class="footer_ribbon_group">
 							<div class="logo logo_footer logo_icon" itemscope itemtype="http://schema.org/Organization">
-							    <a class="logo_link" itemprop="url" href="<?php echo home_url( '/' ) ?>">
+							    <a class="logo_link" itemprop="url" href="<?php echo network_site_url() ?>">
 							        <span class="logo_link_label">Trinity College</span>
 							        <span class="logo_link_icon">
 							            <svg class="icon icon_logo">
