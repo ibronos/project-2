@@ -8,7 +8,7 @@
  */
 ?>
 <?php
-function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '') {
+function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '', $current_link = '') {
 	global $post;
 
     $frontpage_id = get_option( 'page_on_front' );
@@ -22,6 +22,11 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '') {
         ));
     }
 
+    if ($id && $id != 'id') {
+    	$current_page = get_page($id);
+    	$current_link = get_permalink($current_page->ID);
+    }
+
     $br = '<div class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">';
     		if (!empty($siblings)) {
             $br .= '<button class="js-swap breadcrumb_name_switch breadcrumb_name" itemprop="name" data-swap-target=".breadcrumb_dropdown_'.$loop.'">
@@ -32,10 +37,9 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '') {
             	    </svg>
             	</span>';
             } else {
-            	$no_sibling_page = get_page($id);
             	$br .= '<button class="breadcrumb_name_switch breadcrumb_name" itemprop="name" data-swap-target=".breadcrumb_dropdown_'.$loop.'">';
-            	$br .= (isset($post) && $post->ID != $id) ?
-            	'<a href="'.get_permalink($no_sibling_page->ID).'" class="breadcrumb_name_label">'.$label.'</a>' :
+            	$br .= (isset($post) && $post->ID != $id && $id) ?
+            	'<a href="'.$current_link.'" class="breadcrumb_name_label">'.$label.'</a>' :
             	'<span class="breadcrumb_name_label">'.$label.'</span>';
             }
             $br .= '</button>
@@ -43,7 +47,11 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '') {
 
             if (!empty($siblings)) {
                 $br .= '<nav class="breadcrumb_dropdown breadcrumb_dropdown_'.$loop.'">';
-                    $br .= '<span class="breadcrumb_dropdown_item">'.$label.'</span>';
+
+                    $br .= (isset($post) && $post->ID != $id) ?
+                    '<a href="'.$current_link.'" class="breadcrumb_dropdown_item">'.$label.'</a>' :
+                    '<span class="breadcrumb_dropdown_item">'.$label.'</span>';
+
                     foreach ($siblings as $sibling) {
                         if(empty(get_post_meta($sibling->ID,'_np_nav_status')) || get_post_meta($sibling->ID,'_np_nav_status')[0] != 'hide'){
                             $br .= '<a class="breadcrumb_dropdown_item" href="'.get_permalink($sibling->ID).'">'.$sibling->post_title.'</a>';
@@ -112,7 +120,7 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '') {
 
                             // on single custom post type news_post
                             } elseif (is_singular( 'news_post' )) {
-                                echo tric_breadcrumbs_part('News', 1);
+                                echo tric_breadcrumbs_part('News', 1, 'id', '', home_url( '/news' ));
                                 echo tric_breadcrumbs_part(get_the_title(), 2);
 
                             // on archive
