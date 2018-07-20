@@ -1059,7 +1059,26 @@ Site.modules.Spotlight = (function($, Site) {
 	function init() {
 		if ($(".spotlight").length) {
 			$(".spotlight_takeover_option").checkbox();
+
+			testQueryString();
 			bindUI();
+		}
+	}
+
+	function testQueryString() {
+		var field = 'query';
+		var url = window.location.href;
+
+		if (url.indexOf('?query') != -1) {
+			$("body").addClass("fs-navigation-lock spotlight-lock");
+
+			if (url.indexOf('programs') != -1) {
+				$(".spotlight_items:not('.spotlight_items_clone') .spotlight_item:nth-child(1)").trigger("click");
+			} else if (url.indexOf('people') != -1) {
+				$(".spotlight_items:not('.spotlight_items_clone') .spotlight_item:nth-child(2)").trigger("click");
+			}
+
+			$(".video_item_iframe").remove();
 		}
 	}
 
