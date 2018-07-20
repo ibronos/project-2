@@ -1045,6 +1045,11 @@
 		line-height: (24 / 20);
 		padding: 28px 20px;
 	}
+
+	&::-webkit-search-cancel-button{
+		position: relative;
+		right: 30px;
+	}
 }
 
 .spotlight_takeover_input_label {

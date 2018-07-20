@@ -8381,6 +8381,9 @@ button {
       font-size: 1.25rem;
       line-height: 1.2;
       padding: 28px 20px; } }
+  .spotlight_takeover_input_field::-webkit-search-cancel-button {
+    position: relative;
+    right: 30px; }
 
 .spotlight_takeover_input_label {
   width: 1px;
