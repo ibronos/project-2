@@ -1076,6 +1076,10 @@ Site.modules.Spotlight = (function($, Site) {
 				$(".spotlight_items:not('.spotlight_items_clone') .spotlight_item:nth-child(1)").trigger("click");
 			} else if (url.indexOf('people') != -1) {
 				$(".spotlight_items:not('.spotlight_items_clone') .spotlight_item:nth-child(2)").trigger("click");
+			} else if (url.indexOf('places') != -1) {
+				$(".spotlight_items:not('.spotlight_items_clone') .spotlight_item:nth-child(3)").trigger("click");
+			} else if (url.indexOf('pride') != -1) {
+				$(".spotlight_items:not('.spotlight_items_clone') .spotlight_item:nth-child(4)").trigger("click");
 			}
 
 			$(".video_item_iframe").remove();
