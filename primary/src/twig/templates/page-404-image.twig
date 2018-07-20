@@ -19,10 +19,22 @@
 	
 	{% include full ~ "basic-list.twig" with {
 		items: [
-			"Find Departments",
-			"Find People",
-			"News Listing",
-			"Events Listing"
+			{
+				name: "Find Programs",
+				href: "page-home.html?query=programs"
+			},
+			{
+				name: "Find People",
+				href: "page-home.html?query=people"
+			},
+			{
+				name: "News Listing",
+				href: "#"
+			},
+			{
+				name: "Events listing",
+				href: "#"
+			}
 		]
 	} %}
 {% endblock %}
