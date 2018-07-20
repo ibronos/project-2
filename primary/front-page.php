@@ -92,22 +92,6 @@ $program_terms = get_terms( array(
 				<?php endforeach ?>
 			</div>
 
-			<!-- spotlight_takeover_mini_filter -->
-			<div class="spotlight_takeover_mini_filter">
-				<div class="spotlight_takeover_mini_filter_inner">
-					<div class="input_wrapper spotlight_takeover_mini_input_wrapper">
-						<input class="input_field spotlight_takeover_mini_input_field" type="search" id="search_by_keyword" placeholder="Search by keyword" />
-						<label class="input_label spotlight_takeover_mini_input_label">Search by keyword</label>
-					</div>
-					<select class="spotlight_takeover_mini_select">
-						<option>View All Programs</option>
-						<?php foreach ($program_terms as $program_term): ?>
-							<option><?php echo $program_term->name ?></option>
-						<?php endforeach ?>
-					</select>
-				</div>
-			</div>
-
 			<?php include get_template_directory() . '/inc/partials/homepage-programs.php' ?>
 
 			<?php foreach ($spotlight_item as $i => $item): ?>

@@ -166,6 +166,13 @@ function tric_bulrb_autofill() {
 /**
  * Enqueue scripts and styles.
  */
+add_action('wp_ajax_data_fetch' , 'data_fetch');
+add_action('wp_ajax_nopriv_data_fetch','data_fetch');
+function data_fetch() {
+	include get_template_directory() . '/inc/partials/homepage-programs-ajax.php';
+	exit;
+}
+
 function tric_scripts() {
 	wp_enqueue_style( 'tric-style', get_stylesheet_uri() );
 
@@ -176,6 +183,15 @@ function tric_scripts() {
 	wp_enqueue_script( 'tric-site', get_template_directory_uri() . '/js/site.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'tric-custom-script', get_template_directory_uri() . '/js/custom.js', array('jquery'), '20180709', true );
+
+	wp_register_script( 'tric-program-filter', get_template_directory_uri() . '/js/program.js', array('jquery'), '20180709', true );
+
+	if (is_front_page()) {
+		wp_localize_script ( 'tric-program-filter', 'search_by_keyword', array (
+		   'ajaxurl' => admin_url('admin-ajax.php')
+		));
+		wp_enqueue_script('tric-program-filter');
+	}
 
 	?>
 	<script>

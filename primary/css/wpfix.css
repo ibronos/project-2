@@ -14,7 +14,9 @@ body.logged-in .mobile_sidebar {
 .breadcrumb_item .breadcrumb_name_label {
     color: #0f0f11;
 }
-
+#spotlight_takeover_content_js {
+	display: none;
+}
 /* ==========================================================================
 	Google CSE
 ============================================================================= */

@@ -5,9 +5,30 @@
 
 $item = 'programs';
 $programs_post = get_posts( array(
-	'post_type' => 'programs_post'
+	'posts_per_page' 	=> -1,
+	'post_type' 		=> 'programs_post',
+	'orderby' 			=> 'title',
+	'order'				=> 'ASC'
 ) );
 ?>
+
+<!-- spotlight_takeover_mini_filter -->
+<div class="spotlight_takeover_mini_filter">
+	<div class="spotlight_takeover_mini_filter_inner">
+		<div class="input_wrapper spotlight_takeover_mini_input_wrapper">
+			<input class="input_field spotlight_takeover_mini_input_field" type="search" id="search_by_keyword_mini" placeholder="Search by keyword" />
+			<label class="input_label spotlight_takeover_mini_input_label">Search by keyword</label>
+		</div>
+		<select class="spotlight_takeover_mini_select">
+			<option value="0">View All Programs</option>
+			<?php foreach ($program_terms as $program_term): ?>
+				<option value="<?php echo $program_term->slug ?>">
+					<?php echo $program_term->name ?>
+				</option>
+			<?php endforeach ?>
+		</select>
+	</div>
+</div>
 
 <!-- Programs -->
 <div class="spotlight_takeover_item spotlight_takeover_item_1 theme_sea layout_pair layout_filters">
@@ -40,12 +61,12 @@ $programs_post = get_posts( array(
 				<div class="spotlight_takeover_options">
 					<div class="choices_wrapper spotlight_takeover_choices_wrapper">
 						<label class="choices_label spotlight_takeover_choices_label" for="view_all_programs">
-							<input class="js-radio choices_field spotlight_takeover_choices_field" type="radio" name="spotlight_takeover" id="view_all_programs" value="0">
+							<input class="js-radio choices_field spotlight_takeover_choices_field" type="radio" name="spotlight_takeover" id="view_all_programs" value="0" checked="checked">
 							<span class="choices_name spotlight_takeover_choices_name">View All Programs</span>
 						</label>
 						<?php foreach ($program_terms as $program_term): ?>
 							<label class="choices_label spotlight_takeover_choices_label" for="<?php echo $program_term->slug ?>">
-								<input class="js-radio choices_field spotlight_takeover_choices_field" type="radio" name="spotlight_takeover" id="<?php echo $program_term->slug; ?>" value="<?php echo $program_term->name ?>">
+								<input class="js-radio choices_field spotlight_takeover_choices_field" type="radio" name="spotlight_takeover" id="<?php echo $program_term->slug; ?>" value="<?php echo $program_term->slug ?>">
 								<span class="choices_name spotlight_takeover_choices_name"><?php echo $program_term->name ?></span>
 							</label>
 						<?php endforeach ?>
@@ -58,7 +79,12 @@ $programs_post = get_posts( array(
 			</div>
 		</div><!-- only program 1-->
 	</div>
-	<div class="spotlight_takeover_content">
+
+	<div class="spotlight_takeover_content" id="spotlight_takeover_content_js">
+		<div id="datafetch"></div>
+	</div>
+
+	<div class="spotlight_takeover_content" id="spotlight_takeover_content_default">
 
 		<div class="spotlight_takeover_details">
 			<div class="spotlight_takeover_detail">
@@ -141,7 +167,6 @@ $programs_post = get_posts( array(
 					</div>
 				<?php endif ?>
 			</article>
-
 		<?php endforeach ?>
 		<?php wp_reset_postdata() ?>
 
