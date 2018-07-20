@@ -18,25 +18,32 @@ Site.modules.Spotlight = (function($, Site) {
 			$(".spotlight").removeClass("interested");
 		});
 
-		$(".spotlight_item").on("click", function() {
-			$("body").addClass("fs-navigation-lock spotlight-lock");
-			$("body").addClass("spotlight-active-" + ($(this).index() + 1));
-			$(".video_item_iframe").remove();
-		});
+		$(".spotlight_item").on("click", triggerSpotlight);
 
-		$(".spotlight_takeover_item_close").on("click", function() {
-			$("body").removeClass("fs-navigation-lock spotlight-lock");
-			$("body").removeClass("spotlight-active-1");
-			$("body").removeClass("spotlight-active-2");
-			$("body").removeClass("spotlight-active-3");
-			$("body").removeClass("spotlight-active-4");
-		});
+		$(".spotlight_takeover_item_close").on("click", closeSpotlight);
 
 		$(".spotlight_video_trigger").on("click", updateVideo);
 
+		$(".spotlight_takeover_content").on("scroll", scrollSpotlight);
+
 		Site.onScroll.push(hideSpotlight);
+	}
+
+	function triggerSpotlight() {
+		var item = $(this);
 		
-		$(".spotlight_takeover_content").on("scroll", closeSpotlight);
+		$("body").addClass("fs-navigation-lock spotlight-lock");
+
+		if ($(item).index() == 0) {
+			$("body").addClass("spotlight-active-1");
+		}
+
+		$(".video_item_iframe").remove();
+	}
+
+	function closeSpotlight() {
+		$("body").removeClass("fs-navigation-lock spotlight-lock");
+		$("body").removeClass("spotlight-active-1");
 	}
 
 	function updateVideo() {
@@ -59,16 +66,29 @@ Site.modules.Spotlight = (function($, Site) {
 		}
 	}
 
-	function closeSpotlight() {
+	function scrollSpotlight() {
 		var item = $(this);
 
+		scrollSpotlightProgress(item);
+		closeSpotlightScroll(item);
+	}
+
+	function scrollSpotlightProgress(item) {
+		var progress = Math.floor($(item).scrollTop() / ($(item)[0].scrollHeight - $(item).innerHeight() - 180) * $(item).innerWidth());
+		console.log(progress);
+		$(item).find(".spotlight_takeover_content_progress").css("width", progress + "px");
+	}
+
+	function closeSpotlightScroll(item) {
 		if ($(item).closest(".spotlight_takeover_item").hasClass("fs-swap-active")) {
 			if ($(item)[0].scrollHeight - $(item).innerHeight() <= $(item).scrollTop()) {
-				$(item).closest(".spotlight_takeover_item").find(".spotlight_takeover_item_close").trigger("click");
+				setTimeout(function() {
+					$(item).closest(".spotlight_takeover_item").find(".spotlight_takeover_item_close").trigger("click");
+				}, 150);
 
 				setTimeout(function() {
 					$(item).scrollTop(0);
-				}, 150);
+				}, 300);
 			}
 		}
 	}

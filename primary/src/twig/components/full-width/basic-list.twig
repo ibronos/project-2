@@ -3,7 +3,7 @@
 		<div class="fs-cell fs-xl-10 fs-all-justify-center">
 			<nav class="basic_list_nav">
 				{% for item in items %}
-					{{site.button("basic_list", item, "#", "arrow_right")}}
+					{{site.button("basic_list", item.name, item.href, "arrow_right")}}
 				{% endfor %}
 			</nav>
 		</div>
