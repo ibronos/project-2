@@ -747,12 +747,12 @@
 		z-index: 200;
 
 		border-bottom: 10px solid $navy;
-		border-left: 10px solid $navy;
+		border-right: 10px solid $navy;
 	}
 
 	@media #{$min_xl} {
 		border-bottom-width: 20px;
-		border-left-width: 20px;
+		border-right-width: 20px;
 	}
 
 	&:before {
@@ -816,15 +816,15 @@
 
 		top: 0;
 		bottom: auto;
-		left: -10px;
-		z-index: 8;
+		right: -10px;
+		z-index: 20;
 	}
 
 	@media #{$min_xl} {
 		height: 60px;
 		width: 60px;
 
-		left: -20px;
+		right: -20px;
 	}
 
 	&:focus,

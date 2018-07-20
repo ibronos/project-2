@@ -8122,11 +8122,11 @@ button {
       top: 0;
       z-index: 200;
       border-bottom: 10px solid #003473;
-      border-left: 10px solid #003473; } }
+      border-right: 10px solid #003473; } }
   @media screen and (min-width: 1220px) {
     .spotlight_takeover_item {
       border-bottom-width: 20px;
-      border-left-width: 20px; } }
+      border-right-width: 20px; } }
   .spotlight_takeover_item:before {
     height: 5px;
     width: 100%;
@@ -8169,13 +8169,13 @@ button {
       width: 40px;
       top: 0;
       bottom: auto;
-      left: -10px;
-      z-index: 8; } }
+      right: -10px;
+      z-index: 20; } }
   @media screen and (min-width: 1220px) {
     .spotlight_takeover_item_close {
       height: 60px;
       width: 60px;
-      left: -20px; } }
+      right: -20px; } }
   .spotlight_takeover_item_close:focus, .spotlight_takeover_item_close:hover {
     background: #1573DD; }
   @media screen and (max-width: 739px) {
