@@ -27,7 +27,7 @@ function tric_body_classes( $classes ) {
 	}
 
 	// Page & Singular Class
-	if (is_page() || is_singular()) {
+	if ((is_page() || is_singular()) && !is_front_page()) {
 		$classes[] = 'page_layout_default';
 		if (get_field('header_image')) {
 			$classes[] = 'page_theme_image';

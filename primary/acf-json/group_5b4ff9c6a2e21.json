@@ -7,7 +7,7 @@
             "label": "Header Image",
             "name": "header_image",
             "type": "image",
-            "instructions": "",
+            "instructions": "minimum dimensions 1440 x 617px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -52,6 +52,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
+                "value": "front_page"
             }
         ]
     ],
@@ -63,5 +68,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531969723
+    "modified": 1532060294
 }

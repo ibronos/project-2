@@ -29,7 +29,7 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '', $current_l
 
     $br = '<div class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">';
     		if (!empty($siblings)) {
-            $br .= '<button class="js-swap breadcrumb_name_switch breadcrumb_name" itemprop="name" data-swap-target=".breadcrumb_dropdown_'.$loop.'">
+            $br .= '<button class="js-swap breadcrumb_name_switch breadcrumb_name" itemprop="name" data-swap-target=".breadcrumb_dropdown_'.$loop.'" data-swap-group="breadcrumb_dropdown">
                 <span class="breadcrumb_name_label">'.$label.'</span>';
             	$br .= '<span class="breadcrumb_name_icon">
             	    <svg class="icon icon_expand">
@@ -37,10 +37,10 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '', $current_l
             	    </svg>
             	</span>';
             } else {
-            	$br .= '<button class="breadcrumb_name_switch breadcrumb_name" itemprop="name" data-swap-target=".breadcrumb_dropdown_'.$loop.'">';
+            	$br .= '<button class="breadcrumb_name_switch breadcrumb_name" itemprop="name" data-swap-target=".breadcrumb_dropdown_'.$loop.'" data-swap-group="breadcrumb_dropdown">';
             	$br .= (isset($post) && $post->ID != $id && $id) ?
             	'<a href="'.$current_link.'" class="breadcrumb_name_label">'.$label.'</a>' :
-            	'<span class="breadcrumb_name_label">'.$label.'</span>';
+            	'<a class="breadcrumb_name_label">'.$label.'</a>';
             }
             $br .= '</button>
             <meta itemprop="position" content="'.($loop + 1).'">';
@@ -50,7 +50,7 @@ function tric_breadcrumbs_part($label, $loop, $id = '', $parent = '', $current_l
 
                     $br .= (isset($post) && $post->ID != $id) ?
                     '<a href="'.$current_link.'" class="breadcrumb_dropdown_item">'.$label.'</a>' :
-                    '<span class="breadcrumb_dropdown_item">'.$label.'</span>';
+                    '<a class="breadcrumb_dropdown_item">'.$label.'</a>';
 
                     foreach ($siblings as $sibling) {
                         if(empty(get_post_meta($sibling->ID,'_np_nav_status')) || get_post_meta($sibling->ID,'_np_nav_status')[0] != 'hide'){
