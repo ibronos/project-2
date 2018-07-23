@@ -14,6 +14,7 @@
 			'orderby' 			=> 'title',
 			'order' 			=> 'ASC'
 		);
+		$keyword = 'Keyword: '.$keyword;
 	} else {
         $args = array(
             'posts_per_page'    => -1,

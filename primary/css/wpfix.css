@@ -8,6 +8,9 @@ body.logged-in .media_gallery_body.fs-swap-active,
 body.logged-in .spotlight_takeover_items {
 	top:32px;
 }
+.logged-in .spotlight_takeover_items {
+	height: calc(100% - 32px);
+}
 body.logged-in .mobile_sidebar {
 	top: 113px;
 }
