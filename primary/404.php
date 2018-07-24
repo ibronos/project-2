@@ -7,7 +7,7 @@
  *
  * @package Trinity_College
  */
-
+ 
 get_header();
 if(is_multisite()){
     $c_blog_id = get_current_blog_id();
