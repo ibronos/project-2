@@ -360,6 +360,15 @@ body .search_results .gs-title{
     border-bottom: 9px solid;
     border-bottom-color: #1573DD;
 }
+.search_field_inner .gsib_b {
+	padding-right: 40px;
+}
+
+.search_field_inner .gsc-search-button {
+	padding-left: 4px;
+	padding-right: 8px;
+}
+
 /* ==========================================================================
 	Gravity From Styling
 ============================================================================= */

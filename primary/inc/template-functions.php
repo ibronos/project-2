@@ -33,6 +33,7 @@ function tric_body_classes( $classes ) {
 			$classes[] = 'page_theme_image';
 		} else {
 			$classes[] = 'page_theme_default';
+			$classes[] = 'page_theme_sky';
 		}
 	}
 
@@ -89,6 +90,7 @@ function tric_body_classes( $classes ) {
 	}
 	if (is_search()) {
 		$classes[] = 'page_layout_default';
+		$classes[] = 'page_theme_sky';
 		$classes[] = 'page_theme_default';
 	}
 

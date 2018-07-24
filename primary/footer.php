@@ -66,7 +66,7 @@
 										        </div>
 											<?php endif ?>
 								    	<?php endforeach ?>
-							    	<?php restore_current_blog() ?>
+							    	<?php (get_current_blog_id() > 1) ? restore_current_blog() : '' ?>
 							    </div>
 							</div><!--.social_nav-->
 
@@ -84,7 +84,7 @@
 										            </a>
 										        </div>
 									        <?php endforeach ?>
-								        <?php restore_current_blog() ?>
+								        <?php (get_current_blog_id() > 1) ? restore_current_blog() : '' ?>
 								    </div>
 								</nav>
 							</div><!--.quick_nav_wrapper-->
@@ -110,7 +110,7 @@
 							            </a>
 							        </div>
 						    	<?php endforeach ?>
-					    	<?php restore_current_blog() ?>
+					    	 <?php (get_current_blog_id() > 1) ? restore_current_blog() : '' ?>
 					    </div>
 					</nav>
 				</div>
@@ -171,7 +171,7 @@
 		</nav><!--.secondary_nav-->
 
 	</div>
-<?php restore_current_blog() ?>
+<?php (get_current_blog_id() > 1) ? restore_current_blog() : '' ?>
 
 <?php wp_footer(); ?>
 
@@ -205,4 +205,4 @@
 	    s.parentNode.insertBefore(gcse, s);
 	  })();
 	</script>
-<?php restore_current_blog() ?>
+<?php (get_current_blog_id() > 1) ? restore_current_blog() : '' ?>

@@ -58,7 +58,7 @@
 									        	    </a>
 									        	</div>
 									        <?php endforeach ?>
-								        <?php restore_current_blog() ?>
+								        <?php (get_current_blog_id() > 1) ? restore_current_blog() : '' ?>
 								    </div>
 								</nav><!-- .utility_nav -->
 

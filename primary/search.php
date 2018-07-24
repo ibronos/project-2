@@ -8,6 +8,7 @@
  * @package Trinity_College
  */
 
+
 get_header();
 
 $args = [
@@ -27,12 +28,13 @@ if ($post):	setup_postdata( $post ); ?>
 				<div class="fs-row">
 				    <div class="fs-cell fs-lg-11 fs-xl-10 fs-xl-push-1 content_wrapper">
 						<div class="page_header_body">
-							<h1 class="page_title"><?php wp_title(''); ?></h1>
+							<h1 class="page_title"> 
+								<?php wp_title(''); ?>		
+							</h1>
 						</div>
 					 </div>
 				</div>
 			</div>
-			<?php //get_template_part( 'inc/partials/feature', 'search' ); ?>
 			<div class="search_field_block">
 				<div class="fs-row">
 					<div class="fs-cell fs-xl-10 fs-all-justify-center">
@@ -67,13 +69,11 @@ if ($post):	setup_postdata( $post ); ?>
 
 		<div class="page_content">
 			<div class="full_width_callouts">
-				<?php //get_template_part( 'inc/full-width-components/template', 'search' ); ?>
 				<section class="search_results_block">
 					<div class="fs-row">
 						<div class="fs-cell fs-xl-10 fs-all-justify-center">
 							<div class="search_results_inner">
 								<div class="search_results_body">
-									<!-- <p class="search_results_count">About 73,400,000 results (0.60 seconds)</p> -->
 									<div class="search_results">
 										<?php if (get_field('google_cse_id')): ?>
 											<gcse:searchresults gname="storesearch"></gcse:searchresults>
@@ -121,5 +121,12 @@ if ($post):	setup_postdata( $post ); ?>
 <?php endif ?>
 
 <?php get_footer(); ?>
+
+<script type="text/javascript">
+	document.document.getElementsByClassName('gsc-clear-button').onclick = function() {
+   alert("button was clicked");
+}​;​
+
+</script>
 
 

@@ -398,3 +398,16 @@ function acf_location_rules_match_site( $match, $rule, $options ) {
 
 	return $match;
 }
+
+
+add_filter('wp_title', 'filter_pagetitle', 10, 2);
+function filter_pagetitle($title) {
+	if ( is_search() )
+	{
+		if (get_search_query() != '') {
+    		$title='Search Results';
+    	}
+	}
+
+    return $title;
+}

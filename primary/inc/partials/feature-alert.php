@@ -74,4 +74,4 @@
 		<?php endif ?>
 	<?php endif ?>
 
-<?php restore_current_blog() ?>
+<?php (get_current_blog_id() > 1) ? restore_current_blog() : '' ?>
