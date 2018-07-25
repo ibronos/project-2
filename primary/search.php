@@ -122,11 +122,3 @@ if ($post):	setup_postdata( $post ); ?>
 
 <?php get_footer(); ?>
 
-<script type="text/javascript">
-	document.document.getElementsByClassName('gsc-clear-button').onclick = function() {
-   alert("button was clicked");
-}​;​
-
-</script>
-
-
